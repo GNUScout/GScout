@@ -12,6 +12,8 @@ AUTOLOAD_SITECONF = 'indexes'
 
 SECRET_KEY = '=r-$b*8hglm+858&9t043hlm6-&6-3d3vfc4((7yd0dbrakhvi'
 
+SITE_ID = 1
+
 INSTALLED_APPS = (
 #    'django.contrib.admin',
     'django.contrib.contenttypes',
@@ -20,9 +22,12 @@ INSTALLED_APPS = (
     'djangotoolbox',
     'autoload',
     'dbindexer',
-
+    'plus',
+    'gaeauth',
     # djangoappengine should come last, so it can override a few manage.py commands
     'djangoappengine',
+    #'socios',
+    'empleados',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -32,6 +37,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -48,3 +54,8 @@ ADMIN_MEDIA_PREFIX = '/media/admin/'
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'templates'),)
 
 ROOT_URLCONF = 'urls'
+
+AUTHENTICATION_BACKENDS = (
+      'gaeauth.backends.GoogleAccountBackend',
+)
+ALLOWED_DOMAINS = ('dsic.ull.es',)

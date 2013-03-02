@@ -12,6 +12,9 @@ from django.utils.hashcompat import md5_constructor, sha_constructor
 from django.utils.translation import ugettext_lazy as _
 from django.utils.crypto import constant_time_compare
 
+from oauth2client.django_orm import FlowField
+from oauth2client.django_orm import CredentialsField
+
 
 UNUSABLE_PASSWORD = '!' # This will never be a valid hash
 
@@ -204,6 +207,8 @@ class User(models.Model):
 
     Username and password are required. Other fields are optional.
     """
+    
+    credential = CredentialsField()
     username = models.CharField(_('username'), max_length=30, unique=True, help_text=_("Required. 30 characters or fewer. Letters, numbers and @/./+/-/_ characters"))
     first_name = models.CharField(_('first name'), max_length=30, blank=True)
     last_name = models.CharField(_('last name'), max_length=30, blank=True)
@@ -218,6 +223,7 @@ class User(models.Model):
         help_text=_("In addition to the permissions manually assigned, this user will also get all permissions granted to each group he/she is in."))
     user_permissions = models.ManyToManyField(Permission, verbose_name=_('user permissions'), blank=True)
     objects = UserManager()
+    
 
     class Meta:
         verbose_name = _('user')

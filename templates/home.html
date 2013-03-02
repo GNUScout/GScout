@@ -2,7 +2,14 @@
 {% block title %}It works!{% endblock %}
 
 {% block content %}
-<h1>It works!</h1>
+<h1>It works! {{ user }}</h1>
+
+<table border=1>
+      <tr><td>{{ people_id }}</td></tr>
+	  <tr><td>{{ people_name }}</td></tr>
+	  <tr><td><img src={{ people_image }}></td></tr>	
+</table>
+
 <p>
 Your Django-nonrel installation is working fine. Now go and build something useful with it. :)
 </p>
