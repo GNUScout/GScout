@@ -209,6 +209,7 @@ class User(models.Model):
     """
     
     credential = CredentialsField()
+    cargo= models.CharField(max_length=30)
     username = models.CharField(_('username'), max_length=30, unique=True, help_text=_("Required. 30 characters or fewer. Letters, numbers and @/./+/-/_ characters"))
     first_name = models.CharField(_('first name'), max_length=30, blank=True)
     last_name = models.CharField(_('last name'), max_length=30, blank=True)

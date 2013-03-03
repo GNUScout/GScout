@@ -13,6 +13,8 @@ from django.shortcuts import render_to_response
 from plus.models import CredentialsModel
 from django.contrib.auth.models import User
 
+
+
 from oauth2client import xsrfutil
 from oauth2client.client import flow_from_clientsecrets
 from oauth2client.django_orm import Storage
@@ -35,6 +37,7 @@ FLOW = OAuth2WebServerFlow (
 def index(request):
     usuario = request.user
     storage = User.objects.get(username = usuario.username) #Storage(CredentialsModel, 'id', request.user, 'credential')
+    
     credential = storage.credential #storage.get()
     if credential is None or credential.invalid == True:
         FLOW.params['state'] = xsrfutil.generate_token(settings.SECRET_KEY,

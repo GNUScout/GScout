@@ -32,6 +32,8 @@ from google.appengine.api import users
 
 from .utils import get_google_login_url
 
+from django.contrib.auth.models import User
+
 # redirects to the google user api generated login url
 def login(request, redirect_field_name=REDIRECT_FIELD_NAME):
     redirect_to = request.REQUEST.get(redirect_field_name, '')
@@ -51,6 +53,12 @@ def authenticate(request):
         user=users.get_current_user(), admin=users.is_current_user_admin()) 
     if user is not None:
         django_login(request, user)
+        usuario = request.user
+
+        if (usuario.cargo == ""):
+            usuario.cargo = "ninguno"
+            usuario.save()
+    
         #redirect to valid logged page (preferably the user's request)
         redirect_to = request.REQUEST.get(REDIRECT_FIELD_NAME, '')
         if not redirect_to or '//' in redirect_to or ' ' in redirect_to:
