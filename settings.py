@@ -4,6 +4,8 @@
 from djangoappengine.settings_base import *
 
 import os
+import django
+
 
 # Activate django-dbindexer for the default database
 DATABASES['native'] = DATABASES['default']
@@ -13,6 +15,9 @@ AUTOLOAD_SITECONF = 'indexes'
 SECRET_KEY = '=r-$b*8hglm+858&9t043hlm6-&6-3d3vfc4((7yd0dbrakhvi'
 
 SITE_ID = 1
+
+
+
 
 INSTALLED_APPS = (
 #    'django.contrib.admin',
@@ -24,10 +29,12 @@ INSTALLED_APPS = (
     'dbindexer',
     'plus',
     'gaeauth',
-    # djangoappengine should come last, so it can override a few manage.py commands
-    'djangoappengine',
+    # djangoappengine should come last, so it can override a few manage.py commands 
     #'socios',
     'empleados',
+   # 'django.contrib.staticfiles',
+    'djangoappengine',
+    
 )
 
 MIDDLEWARE_CLASSES = (
@@ -44,8 +51,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.request',
     'django.core.context_processors.media',
+  
 )
-
+   
 # This test runner captures stdout and associates tracebacks with their
 # corresponding output. Helps a lot with print-debugging.
 TEST_RUNNER = 'djangotoolbox.test.CapturingTestSuiteRunner'
@@ -59,3 +67,7 @@ AUTHENTICATION_BACKENDS = (
       'gaeauth.backends.GoogleAccountBackend',
 )
 ALLOWED_DOMAINS = ('dsic.ull.es',)
+
+
+
+
