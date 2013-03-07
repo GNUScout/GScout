@@ -29,9 +29,11 @@ CLIENT_SECRETS = os.path.join(os.path.dirname(__file__), '..', 'client_secrets.j
 FLOW = OAuth2WebServerFlow (
     client_id ='480482329789-dj8a6lggtm9cpml3oib7imbvs3b9fv4q.apps.googleusercontent.com',
     client_secret = 'C5umC7xa_ML704wnmdT79Bh0',
+    token_uri='https://accounts.google.com/o/oauth2/token',
     scope='https://www.googleapis.com/auth/plus.me',
-    redirect_uri= 'http://localhost:8000/oauth2callback') #'http://ctstprueba.appspot.com/oauth2callback')
-
+    redirect_uri= 'http://localhost:8000/oauth2callback', #'http://ctstprueba.appspot.com/oauth2callback',
+    access_type='offline',
+    approval_prompt='force')
 
 @login_required
 def index(request):
@@ -66,6 +68,9 @@ def auth_return(request):
                                  request.user):
         return  HttpResponseBadRequest()
     credential = FLOW.step2_exchange(request.REQUEST)
+    http = httplib2.Http()
+    http = credential.authorize(http)
+    service = build('plus', 'v1', http=http)
     usuario = request.user
     usuario.credential = credential #storage = Storage(CredentialsModel, 'id', request.user, 'credential')
     usuario.save()#storage.put(credential)

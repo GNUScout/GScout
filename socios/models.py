@@ -1,28 +1,28 @@
 from django.db import models
 
 class D_Personales(models.Model):
-    nombre=models.CharField()
-    apellidos=models.CharField()
-    dni=models.CharField()
+    nombre=models.CharField(max_length=100)
+    apellidos=models.CharField(max_length=100)
+    dni=models.CharField(max_length=100)
     f_nacimiento=models.DateTimeField()
     direccion=models.TextField()
-    c_postal=models.CharField()
-    Localidad=models.CharField()
-    Provincia=models.CharField()
-    fijo=models.CharField()
-    movil=models.CharField()
-    f_ingreso=models.CharField()
-    f_baja=models.CharField()
-    seccion=models.CharField()
+    c_postal=models.CharField(max_length=100)
+    Localidad=models.CharField(max_length=100)
+    Provincia=models.CharField(max_length=100)
+    fijo=models.CharField(max_length=100)
+    movil=models.CharField(max_length=100)
+    f_ingreso=models.CharField(max_length=100)
+    f_baja=models.CharField(max_length=100)
+    seccion=models.CharField(max_length=100)
     estudios=models.TextField()
     profesion=models.TextField()
     deportes=models.TextField()
     aficciones=models.TextField()
     
 class Medicamentos(models.Model):
-    nombre=models.CharField()
-    dosis=models.CharField()
-    pauta=models.CharField()
+    nombre=models.CharField(max_length=100)
+    dosis=models.CharField(max_length=100)
+    pauta=models.CharField(max_length=100)
         
     
 class D_Medicos(models.Model):
@@ -46,15 +46,15 @@ class D_Medicos(models.Model):
     
  
 class D_Economicos(models.Model):
-    titular=models.CharField()
-    NIF_titular=models.CharField()
-    Banco=models.CharField()
-    Sucursal=models.CharField()
-    Localidad=models.CharField()
-    d_banco=models.CharField()
-    d_sucursal=models.CharField()
-    dc=models.CharField()
-    n_cuenta=models.CharField()
+    titular=models.CharField(max_length=100)
+    NIF_titular=models.CharField(max_length=100)
+    Banco=models.CharField(max_length=100)
+    Sucursal=models.CharField(max_length=100)
+    Localidad=models.CharField(max_length=100)
+    d_banco=models.CharField(max_length=100)
+    d_sucursal=models.CharField(max_length=100)
+    dc=models.CharField(max_length=100)
+    n_cuenta=models.CharField(max_length=100)
     
 class Autorizaciones(models.Model):
     #3 autorizaciones de momento
@@ -63,15 +63,15 @@ class Autorizaciones(models.Model):
     autorizacion_fotografias=models.BooleanField()
     
 class Familiares(models.Model):
-    nombre=models.CharField()
-    apellidos=models.CharField()
-    NIF=models.CharField()
-    movil=models.CharField() 
-    email=models.CharField()
-    profesion=models.CharField()
+    nombre=models.CharField(max_length=100)
+    apellidos=models.CharField(max_length=100)
+    NIF=models.CharField(max_length=100)
+    movil=models.CharField(max_length=100) 
+    email=models.CharField(max_length=100)
+    profesion=models.CharField(max_length=100)
 
 class Socio(models.Model):
-    n_asociado=models.CharField()
+    n_asociado=models.CharField(max_length=100)
     d_personales=models.ForeignKey(D_Personales, null=True)
     d_medicos=models.ForeignKey(D_Medicos, null=True)
     d_personales=models.ForeignKey(D_Economicos, null=True)

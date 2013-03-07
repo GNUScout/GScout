@@ -30,7 +30,7 @@ INSTALLED_APPS = (
     'plus',
     'gaeauth',
     # djangoappengine should come last, so it can override a few manage.py commands 
-    #'socios',
+    'socios',
     'empleados',
    # 'django.contrib.staticfiles',
     'djangoappengine',

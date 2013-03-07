@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     
     (r'^prueba/', 'plus.views.index'),
     (r'^oauth2callback', 'plus.views.auth_return'),
+    (r'^socios/', include('socios.urls')),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs'
     # to INSTALLED_APPS to enable admin documentation:
