@@ -4,8 +4,9 @@ class D_Personales(models.Model):
     nombre=models.CharField(max_length=100)
     apellidos=models.CharField(max_length=100)
     dni=models.CharField(max_length=100)
+    sexo=models.BooleanField()
     f_nacimiento=models.DateTimeField()
-    direccion=models.TextField()
+    direccion=models.CharField(max_length=200)
     c_postal=models.CharField(max_length=100)
     Localidad=models.CharField(max_length=100)
     Provincia=models.CharField(max_length=100)
@@ -17,7 +18,7 @@ class D_Personales(models.Model):
     estudios=models.TextField()
     profesion=models.TextField()
     deportes=models.TextField()
-    aficciones=models.TextField()
+    aficiones=models.TextField()
     
 class Medicamentos(models.Model):
     nombre=models.CharField(max_length=100)

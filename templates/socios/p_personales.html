@@ -10,8 +10,8 @@
 				background-color: #f5f5f5;
 			}
 			.form-personal {
-		        max-width: 800px;
-		        height: 400px;
+		        max-width: 600px;
+		        height: 1075px;
 		        padding: 19px 29px 29px;
 		        margin: 0 auto 20px;
 		        background-color: #fff;
@@ -28,53 +28,127 @@
 	<body>
 		<div class="container">
 			<div class="form-personal">
-				<form class="form-horizontal">
-					<div class="span5">
-						<div class="control-group">
-							<label class="control-label" for="inputNombre">Nombre</label>
-							<div class"controls">
-								<input type="text" id="inputNombre" name="nombre"><br>
-							</div>
+			<h2>Datos del Socio</h2>
+				<form class="form-horizontal" method="post" action="/socios/create_personal/">
+					{% csrf_token %}
+					<div class="control-group">
+						<label class="control-label" for="inputNombre">Nombre</label>
+						<div class="controls">
+						  <input type="text" id="inputNombre" name="nombre" placeholder="Nombre">
 						</div>
-						<div class="control-group">
-							<label class="control-label" for="inputApellidos">Apellidos</label>
-							<div class"controls">
-								<input type="text" id="inputApellidos" name="apellidos"><br>
-							</div>
-						</div>
-						<div class="control-group">
-							<label class="control-label" for="inputDNI">DNI</label>
-							<div class"controls">
-								<input type="text" id="inputDNI" name="dni"><br>
-							</div>
+					  </div>
+					<div class="control-group">
+						<label class="control-label" for="inputApellidos">Apellidos</label>
+						<div class="controls">
+						  <input type="text" id="inputApellidos" name="apellidos" placeholder="Apellidos">
 						</div>
 					</div>
-					<div class="span5">
-						<div class="control-group">
-							<label class="control-label" for="inputSexo">Sexo</label>
-							<div class"controls">
-								<select id="inputSexo">
-									<option value=True>Hombre</option>
-									<option value=False>Mujer</option>
-								</select>
-							</div>
-						</div>
-						<div class="control-group">
-							<label class="control-label" for="inputApellidos">Apellidos</label>
-							<div class"controls">
-								<input type="text" id="inputApellidos" name="apellidos"><br>
-							</div>
-						</div>
-						<div class="control-group">
-							<label class="control-label" for="inputDNI">DNI</label>
-							<div class"controls">
-								<input type="text" id="inputDNI" name="dni"><br>
-							</div>
+					<div class="control-group">
+						<label class="control-label" for="inputDNI">DNI</label>
+						<div class="controls">
+						  <input type="text" id="inputDNI" name="dni" placeholder="DNI">
 						</div>
 					</div>
-					<div class="span8">				
-						<input type="submit" value="Submit">
+					<div class="control-group">
+						<label class="control-label" for="inputSexo">Sexo</label>
+						<div class="controls">
+						  <select id="inputSexo">
+						  	<option value=True>Hombre</option>
+						  	<option value=False>Mujer</option> 	
+						  </select>
+						</div>
 					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputBorn">Fecha de Nacimiento</label>
+						<div class="controls">
+						  <input type="date" id="inputBorn" name="f_nacimiento">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputDir">Dirección</label>
+						<div class="controls">
+						  <input type="text" id="inputDir" name="direccion" placeholder="Dirección">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputPostal">Código Postal</label>
+						<div class="controls">
+						  <input type="text" id="inputPostal" name="c_postal" placeholder="Código postal">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputLocalidad">Localidad</label>
+						<div class="controls">
+						  <input type="text" id="inputLocalidad" name="localidad" placeholder="Localidad">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputProvincia">Provincia</label>
+						<div class="controls">
+						  <input type="text" id="inputProvincia" name="provincia" placeholder="Provincia">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputFijo">Tel. Fijo</label>
+						<div class="controls">
+						  <input type="text" id="inputFijo" name="fijo" placeholder="Tel. Fijo">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputMovil">Tel. Móvil</label>
+						<div class="controls">
+						  <input type="text" id="inputMovil" name="movil" placeholder="Tel. Móvil">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputIngreso">F. Ingreso</label>
+						<div class="controls">
+						  <input type="text" id="inputIngreso" name="f_ingreso" placeholder="F. Ingreso">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputIngreso">F. Baja</label>
+						<div class="controls">
+						  <input type="text" id="inputBaja" name="f_baja" placeholder="F. Baja">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputSeccion">Sección</label>
+						<div class="controls">
+						  <input type="text" id="inputSeccion" name="seccion" placeholder="Sección">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputEstudios">Estudios</label>
+						<div class="controls">
+						  <textarea  id="inputEstudios" name="estudios"></textarea>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputProfesion">Profesión</label>
+						<div class="controls">
+						  <textarea  id="inputProfesion" name="profesion"></textarea>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputDeportes">Deportes</label>
+						<div class="controls">
+						  <textarea  id="inputDeportes" name="deportes"></textarea>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputAficones">Aficiones</label>
+						<div class="controls">
+						  <textarea  id="inputAficiones" name="aficiones"></textarea>
+						</div>
+					</div>
+					
+					
+					<div class="control-group">
+						<div class="controls">
+						  <button type="submit" class="btn">Crear</button>
+						</div>
+					</div>				
 				</form>
 			</div>
 		</div>
