@@ -12,8 +12,8 @@ from socios.models import D_Personales
 @csrf_protect
 def newPersonal(request):
             
-            datos = D_Personales(nombre = request.POST['nombre'],
-                                 f_nacimiento = request.POST['f_nacimiento'],
+            datos = D_Personales(nombre = request.f2['nombre'],
+                                 f_nacimiento = request.f2['f_nacimiento'],
                         )
    
             datos.save() # and saved to database

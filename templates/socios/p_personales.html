@@ -1,42 +1,24 @@
-<!DOCTYPE html>
-<html lang="es">
-	<head>
-		<meta charset="utf-8">
-		<link href="/static/css/bootstrap.css" rel="stylesheet">
-		<style type="text/css">
-			body {
-				padding-top: 40px;
-				padding-bottom: 40px;
-				background-color: #f5f5f5;
-			}
-			.form-personal {
-		        max-width: 600px;
-		        height: 1075px;
-		        padding: 19px 29px 29px;
-		        margin: 0 auto 20px;
-		        background-color: #fff;
-		        border: 1px solid #e5e5e5;
-		        -webkit-border-radius: 5px;
-		           -moz-border-radius: 5px;
-		                border-radius: 5px;
-		        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-		           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-		                box-shadow: 0 1px 2px rgba(0,0,0,.05);
-		    }
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<div class="form-personal">
-			<h2>Datos del Socio</h2>
-				<form class="form-horizontal" method="post" action="/socios/create_personal/">
-					{% csrf_token %}
+{% extends 'socios/form_base.html' %}
+{% block form-header %}<h2>Datos Personales</h2>{% endblock %}
+{% block form %}
+			<form method="post" action="/socios/create_personal/">
+			{% csrf_token %}
+				<form id="f1" method="post" class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label" for="inputNsocio">Numero de Asociado</label>
+						<div class="controls">
+						  <input type="text" id="inputNsocio" name="n_asociado" placeholder="Numero de Asociado">
+						</div>
+					</div>
+				</form>	
+				<form id="f2" method="post" class="form-horizontal">
+					
 					<div class="control-group">
 						<label class="control-label" for="inputNombre">Nombre</label>
 						<div class="controls">
 						  <input type="text" id="inputNombre" name="nombre" placeholder="Nombre">
 						</div>
-					  </div>
+					</div>
 					<div class="control-group">
 						<label class="control-label" for="inputApellidos">Apellidos</label>
 						<div class="controls">
@@ -144,13 +126,12 @@
 					</div>
 					
 					
-					<div class="control-group">
+								
+				</form>
+				<div class="control-group">
 						<div class="controls">
 						  <button type="submit" class="btn">Crear</button>
 						</div>
-					</div>				
-				</form>
-			</div>
-		</div>
-		
-	</body>
+				</div>	
+			</form>
+{% endblock %}
