@@ -1,18 +1,8 @@
 {% extends 'socios/form_base.html' %}
-{% block form-header %}<h2>Datos Personales</h2>{% endblock %}
+{% block form-title %}<h2>Datos Personales</h2>{% endblock %}
 {% block form %}
-			<form method="post" action="/socios/create_personal/">
-			{% csrf_token %}
-				<form id="f1" method="post" class="form-horizontal">
-					<div class="control-group">
-						<label class="control-label" for="inputNsocio">Numero de Asociado</label>
-						<div class="controls">
-						  <input type="text" id="inputNsocio" name="n_asociado" placeholder="Numero de Asociado">
-						</div>
-					</div>
-				</form>	
-				<form id="f2" method="post" class="form-horizontal">
-					
+				<form id="f2" method="post" class="form-horizontal" action="/socios/create_personal/">
+					{% csrf_token %}
 					<div class="control-group">
 						<label class="control-label" for="inputNombre">Nombre</label>
 						<div class="controls">
@@ -34,7 +24,7 @@
 					<div class="control-group">
 						<label class="control-label" for="inputSexo">Sexo</label>
 						<div class="controls">
-						  <select id="inputSexo">
+						  <select id="inputSexo" name="sexo">
 						  	<option value=True>Hombre</option>
 						  	<option value=False>Mujer</option> 	
 						  </select>
@@ -85,19 +75,19 @@
 					<div class="control-group">
 						<label class="control-label" for="inputIngreso">F. Ingreso</label>
 						<div class="controls">
-						  <input type="text" id="inputIngreso" name="f_ingreso" placeholder="F. Ingreso">
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="inputIngreso">F. Baja</label>
-						<div class="controls">
-						  <input type="text" id="inputBaja" name="f_baja" placeholder="F. Baja">
+						  <input type="date" id="inputIngreso" name="f_ingreso" placeholder="F. Ingreso">
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label" for="inputSeccion">Sección</label>
 						<div class="controls">
-						  <input type="text" id="inputSeccion" name="seccion" placeholder="Sección">
+						  <select id="inputSeccion" name="seccion">
+						  	<option value="Manada">Manada</option>
+						  	<option value="Tropa">Tropa</option> 
+						  	<option value="Esculta">Esculta</option>
+						  	<option value="Rover">Rover</option>
+						  	<option value="Scouter">Scouter</option>	
+						  </select>
 						</div>
 					</div>
 					<div class="control-group">
@@ -124,14 +114,11 @@
 						  <textarea  id="inputAficiones" name="aficiones"></textarea>
 						</div>
 					</div>
-					
-					
-								
-				</form>
-				<div class="control-group">
+					<input type="hidden" value="f2" name="form_id" />
+					<div class="control-group">
 						<div class="controls">
 						  <button type="submit" class="btn">Crear</button>
 						</div>
-				</div>	
-			</form>
+					</div>							
+				</form>
 {% endblock %}

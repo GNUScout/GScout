@@ -1,0 +1,19 @@
+{% extends 'socios/form_base.html' %}
+{% block form-title %}<h2>Datos Asociados</h2>{% endblock %}
+{% block form %}
+				<form id="f1" method="post" class="form-horizontal" action="/socios/create_personal/">
+					{% csrf_token %}
+					<div class="control-group">
+						<label class="control-label" for="inputNsocio">Numero de Asociado</label>
+						<div class="controls">
+						  <input type="text" id="inputNsocio" name="n_asociado" placeholder="Numero de Asociado">
+						</div>
+					</div>
+					<input type="hidden" value="f1" name="form_id" />
+					<div class="control-group">
+						<div class="controls">
+						  <button type="submit" class="btn">Crear</button>
+						</div>
+					</div>	
+				</form>				
+{% endblock %}

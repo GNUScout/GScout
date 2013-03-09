@@ -1,0 +1,52 @@
+{% extends 'socios/form_base.html' %}
+{% block form-title %}<h2>Datos Economicos</h2>{% endblock %}
+{% block form %}
+				<form id="f1" method="post" class="form-horizontal" action="/socios/create_personal/">
+					{% csrf_token %}
+					<div class="control-group">
+						<label class="control-label" for="inputTitular">Titular de la cuenta</label>
+						<div class="controls">
+						  <input type="text" id="inputTitular" name="titular" placeholder="Titular de la cuenta">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputNIF">N.I.F. del titular</label>
+						<div class="controls">
+						  <input type="text" id="inputNIF" name="nif_titular" placeholder="N.I.F. del titular">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputBanco">Banco o caja</label>
+						<div class="controls">
+						  <input type="text" id="inputBanco" name="banco" placeholder="Banco o caja">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputSucursal">Sucursal</label>
+						<div class="controls">
+						  <input type="text" id="inputSucursal" name="sucursal" placeholder="Sucursal">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputLocalidad">Localidad</label>
+						<div class="controls">
+						  <input type="text" id="inputLocalidad" name="localidad" placeholder="Localidad">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputCCC">Código cuenta corriente (C.C.C.)</label>
+						<div class="controls">
+						  <input type="text" style="width:60px;" id="inputCCC" name="d_banco" placeholder="Banco">
+						  <input type="text" style="width:60px;" name="d_sucursal" placeholder="Sucursal">
+						  <input type="text" style="width:30px;" name="dc" placeholder="D.C.">
+						  <input type="text" style="width:120px;" name="n_cuenta" placeholder="Número de cuenta">
+						</div>
+					</div>
+					<input type="hidden" value="f3" name="form_id" />
+					<div class="control-group">
+						<div class="controls">
+						  <button type="submit" class="btn">Crear</button>
+						</div>
+					</div>	
+				</form>				
+{% endblock %}
