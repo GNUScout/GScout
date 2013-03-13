@@ -1,0 +1,15 @@
+{% extends 'socios/form_base.html' %}
+{% block form-title %}<h2>Busqueda de Socio</h2>{% endblock %}
+{% block form %}
+				<form class="form-search" method="post" action="/socios/search_socio/">
+					{% csrf_token %}
+					{% if errorNoFound %}
+						<div class="alert">
+						  <button type="button" class="close" data-dismiss="alert">&times;</button>
+						  <strong>{{ errorNoFound }}</strong>
+						</div>
+					{% endif %} 
+				  <input type="text" name="asociado" class="input-medium search-query">
+				  <button type="submit" class="btn">Search</button>
+				</form>
+{% endblock %}

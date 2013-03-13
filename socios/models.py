@@ -1,5 +1,28 @@
 from django.db import models
 
+
+class Autorizaciones(models.Model):
+    #3 autorizaciones de momento
+    autorizacion_medica=models.BooleanField()
+    autorizacion_actividades=models.BooleanField()
+    autorizacion_fotografias=models.BooleanField()
+    
+class Familiares(models.Model):
+    nombre=models.CharField(max_length=100)
+    apellidos=models.CharField(max_length=100)
+    nif=models.CharField(max_length=100)
+    movil=models.CharField(max_length=100) 
+    email=models.CharField(max_length=100)
+    profesion=models.CharField(max_length=100)
+
+class Socio(models.Model):
+    n_asociado=models.CharField(max_length=100, primary_key=True, unique=True)
+    #d_personales=models.ForeignKey(D_Personales, null=True)
+    #d_medicos=models.ForeignKey(D_Medicos, null=True)
+    #d_economicos=models.ForeignKey(D_Economicos, null=True)
+    familiares=models.ForeignKey(Familiares, null=True)
+    autorizaciones=models.ForeignKey(Autorizaciones, null=True)     
+    
 class D_Personales(models.Model):
     nombre=models.CharField(max_length=100)
     apellidos=models.CharField(max_length=100)
@@ -19,6 +42,7 @@ class D_Personales(models.Model):
     profesion=models.TextField()
     deportes=models.TextField()
     aficiones=models.TextField()
+    socio_id=models.ForeignKey(Socio)
     
 
     
@@ -40,6 +64,7 @@ class D_Medicos(models.Model):
     t_dieta=models.TextField()
     toma_medicamentos=models.CharField(max_length=2)
     info_adicional=models.TextField()
+    socio_id=models.ForeignKey(Socio)
     
  
 class D_Economicos(models.Model):
@@ -52,28 +77,11 @@ class D_Economicos(models.Model):
     d_sucursal=models.CharField(max_length=100)
     dc=models.CharField(max_length=100)
     n_cuenta=models.CharField(max_length=100)
+    socio_id=models.ForeignKey(Socio)
     
-class Autorizaciones(models.Model):
-    #3 autorizaciones de momento
-    autorizacion_medica=models.BooleanField()
-    autorizacion_actividades=models.BooleanField()
-    autorizacion_fotografias=models.BooleanField()
-    
-class Familiares(models.Model):
-    nombre=models.CharField(max_length=100)
-    apellidos=models.CharField(max_length=100)
-    nif=models.CharField(max_length=100)
-    movil=models.CharField(max_length=100) 
-    email=models.CharField(max_length=100)
-    profesion=models.CharField(max_length=100)
 
-class Socio(models.Model):
-    n_asociado=models.CharField(max_length=100)
-    d_personales=models.ForeignKey(D_Personales, null=True)
-    d_medicos=models.ForeignKey(D_Medicos, null=True)
-    d_economicos=models.ForeignKey(D_Economicos, null=True)
-    familiares=models.ForeignKey(Familiares, null=True)
-    autorizaciones=models.ForeignKey(Autorizaciones, null=True)     
+
+
     
 class Medicamentos(models.Model):
     nombre=models.CharField(max_length=100)

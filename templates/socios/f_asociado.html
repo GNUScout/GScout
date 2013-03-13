@@ -3,6 +3,13 @@
 {% block form %}
 				<form id="f1" method="post" class="form-horizontal" action="/socios/create_personal/">
 					{% csrf_token %}
+					{% if errorSocio %} 
+						<div class="alert">
+						  <button type="button" class="close" data-dismiss="alert">&times;</button>
+						  <strong>{{ errorSocio }}</strong>
+						</div>
+					{% endif %}
+					
 					<div class="control-group">
 						<label class="control-label" for="inputNsocio">Numero de Asociado</label>
 						<div class="controls">
