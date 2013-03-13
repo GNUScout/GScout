@@ -125,4 +125,26 @@ def search(request):
     except:
         return render_to_response('socios/search.html',{'errorNoFound': 'El número de asociado no existe.'}, context_instance=RequestContext(request))
     
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/socios/'+socio.n_asociado+'/personales')
+
+def personales_socio(request, n_asociado):
+    try:
+        socio = Socio.objects.get(n_asociado=n_asociado)
+    except:
+        return  HttpResponseRedirect('/socios/search')
+    
+    personales = D_Personales.objects.get(socio_id=socio)
+    economicos = D_Economicos.objects.get(socio_id=socio)
+    medicos = D_Medicos.objects.get(socio_id=socio)
+    if medicos.toma_medicamentos == "si":
+        medicamentos = Medicamentos.objects.filter(socio_id=socio)
+    else:
+        medicamentos = None
+
+    if personales.f_baja is not None:
+        f_baja = personales.f_baja.strftime("%d-%m-%Y")
+    else:
+        f_baja = "No"
+    
+    return render_to_response('socios/datos_personales.html', {'personales': personales, 'f_nacimiento':personales.f_nacimiento.strftime("%d-%m-%Y"),'f_ingreso':personales.f_ingreso.strftime("%d-%m-%Y"), 'f_baja': f_baja})
+

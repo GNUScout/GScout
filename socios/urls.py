@@ -10,7 +10,6 @@ urlpatterns = patterns('',
      {'template': 'socios/search.html'}),                    
    (r'^create_personal/', newPersonal),
    (r'^search_socio/', search),
-   ('^prueba/', 'django.views.generic.simple.direct_to_template',
-     {'template': 'socios/f_medicos.html'}),
+   (r'([0-9]+)/personales/?', personales_socio)
 )
 

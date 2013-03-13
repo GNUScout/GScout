@@ -27,7 +27,7 @@ class D_Personales(models.Model):
     nombre=models.CharField(max_length=100)
     apellidos=models.CharField(max_length=100)
     dni=models.CharField(max_length=100)
-    sexo=models.BooleanField()
+    sexo=models.CharField(max_length=20)
     f_nacimiento=models.DateTimeField()
     direccion=models.CharField(max_length=200)
     c_postal=models.CharField(max_length=100)
