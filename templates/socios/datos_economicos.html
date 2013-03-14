@@ -1,0 +1,10 @@
+{% extends 'socios/form_base.html' %}
+{% block form-title %}<h2>Datos Economicos del socio nº {{ economicos.socio_id.n_asociado }}</h2>{% endblock %}
+{% block form %}
+	<p><strong>Titular de la cuenta: </strong> {{economicos.nombre}}</p>
+	<p><strong>N.I.F. del Titular: </strong> {{economicos.nif_titular}}</p>
+	<p><strong>Banco: </strong> {{economicos.banco}}</p>
+	<p><strong>Sucursal: </strong> {{economicos.sucursal}}</p>
+	<p><strong>Localidad: </strong> <time>{{economicos.localidad}}</time></p>
+	<p><strong>Datos de la cuenta: </strong> {{economicos.d_banco}} {{economicos.d_sucursal}} {{economicos.dc}} {{economicos.n_cuenta}}</p>
+{% endblock %}
