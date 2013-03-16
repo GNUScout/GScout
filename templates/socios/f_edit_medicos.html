@@ -1,0 +1,291 @@
+{% extends 'socios/form_base.html' %}
+{% block form-head %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+</script>
+<script LANGUAGE="JavaScript">
+
+	var medicamentos = 0;
+	
+	function clickNo() {
+		$("#boton_add").hide();
+		$("#boton_del").hide();
+		medicamentos = 0;
+		$("#todo").remove();
+		item= "<div id='todo'><div id ='content'></div></div>"
+		$("#boton_add").before(item)
+	};
+	function total_medicamentos() {
+		item= "<input id='total_medicamentos' type='hidden' name='total_medicamentos' value='"+medicamentos+"'>"
+		$("#boton_add").before(item)
+	};
+		
+	function addMedicamento() {
+		++medicamentos;
+		$("#boton_add").show();
+		$("#boton_del").show();
+		item=	"<div class='control-group'>"+
+					"<label class='control-label' for='inputMedicamento"+medicamentos+"'>Medicamento "+medicamentos+"</label>"+
+					"<div class='controls'>"+
+				  		"<input id='inputMedicamento"+medicamentos+"' type='text' name='m"+medicamentos+"' placeholder='¿Cual?'>"+
+				  		"<input type='text' name='md"+medicamentos+"' placeholder='Dosis'>"+
+				  		"<input type='text' name='mp"+medicamentos+"' placeholder='Pauta'>"+
+					"</div>"+
+				"</div>";
+		$("#content").before(item)
+	};
+	
+	function deleteMedicamento() {
+		$("#inputMedicamento"+medicamentos).parent().parent().remove();
+		--medicamentos;
+		if (medicamentos == 0) {
+			$("#boton_del").hide();
+			$("#boton_add").hide();
+		}
+		
+	};
+	
+
+
+</script>
+{% endblock %}
+{% block form-title %}<h2 >Datos Médicos del socio nº {{medicos.socio_id.n_asociado}}</h2>{% endblock %}
+{% block form %}
+				<form id="f1" method="post" class="form-horizontal" action="/socios/create_personal/">
+					{% csrf_token %}
+					<div class="control-group">
+						<label class="control-label" for="inputSeguro">Tipo de seguro</label>
+						<div class="controls">
+							<input id="ss" type="hidden" name="ss" value="{{medicos.ss}}">
+							<input id="smp" type="hidden" name="smp" value="{{medicos.smp}}">
+						  	<input id="inputSeguro1" type="checkbox" name="ss" value="Seguridad social">	Seguridad social
+						  	<br><input id="inputSeguro2" type="checkbox" name="smp" value="Seguro medico Privado">	Seguro médico privado</br>
+						  	<script language="JavaScript">
+								var opcion = $("#ss").val();
+								if (opcion == "Seguridad social")
+									{
+							    	$('input[name=ss]').attr('checked', true);
+							    	}
+							    	var opcion = $("#smp").val();
+								if (opcion == "Seguro medico Privado")
+									{
+							    	$('input[name=smp]').attr('checked', true);
+							    	}
+							</script>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputPoliza">Nº de Poliza</label>
+						<div class="controls">
+						  <input type="text" id="inputPoliza" name="n_poliza" placeholder="Nº de Poliza">
+						</div>
+					</div>
+					<h4 align="center">Patologías específicas e intervenciones quirúrgicas</h4>
+					<hr align="left" noshade="noshade" size="3" width="100%" />
+					<div class="control-group">
+						<label class="control-label">¿Padece o ha padecido alguna enfermedad?</label>
+						<div class="controls">	
+							<label class="radio">
+								<input type="radio" name="enfermedad" id="optionsRadios1" value="no" checked>
+								No
+							</label>
+							<label class="radio">
+								<input type="radio" name="enfermedad" id="optionsRadios2" value="si">
+								Si
+							</label>
+							<input id="enfermedad" type="hidden" value="{{medicos.enfermedad}}">
+							<script language="JavaScript">
+								var opcion = $("#enfermedad").val();
+								if (opcion == "si")
+									{
+							    	$('input[id="optionsRadios2"]').attr('checked', true);
+							    	}
+							</script>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputEnfermedad">¿Cual?</label>
+						<div class="controls">
+						  <textarea id="inputEnfermedad" name="t_enfermedad"></textarea>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">¿Padece alguna enfermedad crónica, fisica o psíquica??</label>
+						<div class="controls">
+							<label class="radio">
+								<input type="radio" name="enfermedad_cfp" id="optionsRadios1" value="no" checked>
+								No
+							</label>
+							<label class="radio">
+								<input type="radio" name="enfermedad_cfp" id="optionsRadios2" value="si">
+								Si
+							</label>
+							<input id="enfermedad_cfp" type="hidden" value="{{medicos.enfermedad_cfp}}">
+							<script language="JavaScript">
+								var opcion = $("#enfermedad_cfp").val();
+								if (opcion == "si")
+									{
+							    	$('input[id="optionsRadios2"]').attr('checked', true);
+							    	}
+							</script>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputCFP">¿Cual? ¿Y en que grado?</label>
+						<div class="controls">
+						  <textarea id="inputCFP" name="t_enfermedad_cfp"></textarea>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">¿Esta operado?</label>
+						<div class="controls">
+							<label class="radio">
+								<input type="radio" name="operado" id="optionsRadios1" value="no" checked>
+								No
+							</label>
+							<label class="radio">
+								<input type="radio" name="operado" id="optionsRadios2" value="si">
+								Si
+							</label>
+							<input id="operado" type="hidden" value="{{medicos.operado}}">
+							<script language="JavaScript">
+								var opcion = $("#operado").val();
+								if (opcion == "si")
+									{
+							    	$('input[id="optionsRadios2"]').attr('checked', true);
+							    	}
+							</script>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputOperdado">¿De que?</label>
+						<div class="controls">
+						  <textarea id="inputOperado" name="t_operado"></textarea>
+						</div>
+					</div>
+					<h4 align="center">Alergias y dietas específicas</h4>
+					<hr align="left" noshade="noshade" size="3" width="100%" />
+					<div class="control-group">
+						<label class="control-label">¿Es alergico a algun tipo de medicamento?</label>
+						<div class="controls">
+							<label class="radio">
+								<input type="radio" name="alergia" id="optionsRadios1" value="no" checked>
+								No
+							</label>
+							<label class="radio">
+								<input type="radio" name="alergia" id="optionsRadios2" value="si">
+								Si
+							</label>
+							<input id="alergia" type="hidden" value="{{medicos.alergia}}">
+							<script language="JavaScript">
+								var opcion = $("#alergia").val();
+								if (opcion == "si")
+									{
+							    	$('input[id="optionsRadios2"]').attr('checked', true);
+							    	}
+							</script>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputAlergia">¿Cual?</label>
+						<div class="controls">
+						  <textarea id="inputAlergia" name="t_alergia"></textarea>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">¿Presenta mas alergias?</label>
+						<div class="controls">
+							<label class="radio">
+								<input type="radio" name="otras_alergias" id="optionsRadios1" value="no" checked>
+								No
+							</label>
+							<label class="radio">
+								<input type="radio" name="otras_alergias" id="optionsRadios2" value="si">
+								Si
+							</label>
+							<input id="otras_alergias" type="hidden" value="{{medicos.otras_alergias}}">
+							<script language="JavaScript">
+								var opcion = $("#otras_alergias").val();
+								if (opcion == "si")
+									{
+							    	$('input[id="optionsRadios2"]').attr('checked', true);
+							    	}
+							</script>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputOtrasAlergias">¿A que?</label>
+						<div class="controls">
+						  <textarea id="inputOtrasAlergias" name="t_otras_alergias"></textarea>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">¿Sigue algun regimen o dieta especial?</label>
+						<div class="controls">
+							<label class="radio">
+								<input type="radio" name="dieta" id="optionsRadios1" value="no" checked>
+								No
+							</label>
+							<label class="radio">
+								<input type="radio" name="dieta" id="optionsRadios2" value="si">
+								Si
+							</label>
+							<input id="dieta" type="hidden" value="{{medicos.dieta}}">
+							<script language="JavaScript">
+								var opcion = $("#dieta").val();
+								if (opcion == "si")
+									{
+							    	$('input[id="optionsRadios2"]').attr('checked', true);
+							    	}
+							</script>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputDieta">¿Cual? Y motivos</label>
+						<div class="controls">
+						  <textarea id="inputDieta" name="t_dieta"></textarea>
+						</div>
+					</div>
+					<h4 align="center">Medicación</h4>
+					<hr align="left" noshade="noshade" size="3" width="100%" />
+					<div class="control-group">
+						<label class="control-label">¿Esta tomando actualmente algún medicamento?</label>
+						<div class="controls">
+							<label class="radio">
+								<input type="radio" name="toma_medicamentos" id="medicamento1" onclick="clickNo()" value="no" checked>
+								No
+							</label>
+							<label class="radio">
+								<input type="radio" name="toma_medicamentos" id="medicamento2" onclick="addMedicamento()" value="si">
+								Si
+							</label>
+							<input id="toma_medicamentos" type="hidden" value="{{medicos.toma_medicamentos}}">
+							<script language="JavaScript">
+								var opcion = $("#toma_medicamentos").val();
+								
+								if (opcion == "si")
+									{
+							    	$('input[id="medicamento2"]').attr('checked', true);
+							    	}
+							</script>
+						</div>
+					</div>
+					<div id="todo">
+						<div id ="content"></div>
+					</div>
+					<input id="boton_add" class="radius button btn" type="button" value="Añadir medicamento" style="display:none" onclick="addMedicamento()">
+							<input id="boton_del" class="radius button btn" type="button" value="Eliminar medicamento" style="display:none" onclick="deleteMedicamento()">
+					<hr align="left" noshade="noshade" size="3" width="100%" />
+					<div class="control-group">
+						<label class="control-label" for="inputInfo">Otra información de interes</label>
+						<div class="controls">
+						  <textarea id="inputInfo" name="info_adicional"></textarea>
+						</div>
+					</div>
+					<input type="hidden" value="f4" name="form_id" />
+					<div class="control-group">
+						<div class="controls">
+						  <button type="submit" class="btn" onclick="total_medicamentos()">Crear</button>
+						</div>
+					</div>
+				</form>				
+{% endblock %}

@@ -148,3 +148,101 @@ def personales_socio(request, n_asociado):
     
     return render_to_response('socios/datos_personales.html', {'personales': personales, 'f_nacimiento':personales.f_nacimiento.strftime("%d-%m-%Y"),'f_ingreso':personales.f_ingreso.strftime("%d-%m-%Y"), 'f_baja': f_baja})
 
+
+def medicos_socio(request, n_asociado):
+    try:
+        socio = Socio.objects.get(n_asociado=n_asociado)
+    except:
+        return  HttpResponseRedirect('/socios/search')
+    
+    medicos = D_Medicos.objects.get(socio_id=socio)
+    if medicos.toma_medicamentos == "si":
+        medicamentos = Medicamentos.objects.filter(socio_id=socio)
+    else:
+        medicamentos = None
+
+    
+    return render_to_response('socios/datos_medicos.html', {'medicos': medicos, 'medicamentos': medicamentos })
+
+def economicos_socio(request, n_asociado):
+    try:
+        socio = Socio.objects.get(n_asociado=n_asociado)
+    except:
+        return  HttpResponseRedirect('/socios/search')
+    
+    economicos = D_Economicos.objects.get(socio_id=socio)
+    
+    return render_to_response('socios/datos_economicos.html', {'economicos': economicos })
+
+
+def edit_personales(request, n_asociado):
+    socio = Socio.objects.get(n_asociado=n_asociado)
+    personales = D_Personales.objects.get(socio_id=socio)
+    
+    if personales.f_baja is not None:
+        f_baja = personales.f_baja.strftime("%Y-%m-%d")
+    else:
+        f_baja = "No"
+        
+    return render_to_response('socios/f_edit_personales.html', {'personales': personales, 'f_nacimiento':personales.f_nacimiento.strftime("%Y-%m-%d"),'f_ingreso':personales.f_ingreso.strftime("%Y-%m-%d"), 'f_baja': f_baja}, context_instance=RequestContext(request))
+
+def edit_economicos(request, n_asociado):
+    socio = Socio.objects.get(n_asociado=n_asociado)
+    economicos = D_Economicos.objects.get(socio_id=socio)
+       
+    return render_to_response('socios/f_edit_economicos.html', {'economicos': economicos} ,context_instance=RequestContext(request))
+
+def edit_medicos(request, n_asociado):
+    socio = Socio.objects.get(n_asociado=n_asociado)
+    medicos = D_Medicos.objects.get(socio_id=socio)
+       
+    return render_to_response('socios/f_edit_medicos.html', {'medicos': medicos} ,context_instance=RequestContext(request))
+
+#@csrf_protect
+def modify_personales(request):
+    socio = D_Personales.objects.get(socio_id= request.POST['socio'])
+    socio.nombre = request.POST['nombre']
+    socio.apellidos = request.POST['apellidos']
+    socio.dni = request.POST['dni']
+    socio.sexo = request.POST['sexo']
+    socio.f_nacimiento = request.POST['f_nacimiento']
+    socio.direccion = request.POST['direccion']
+    socio.c_postal = request.POST['c_postal']
+    socio.localidad = request.POST['localidad']
+    socio.provincia = request.POST['provincia']
+    socio.fijo = request.POST['fijo']
+    socio.movil = request.POST['movil']
+    socio.f_ingreso = request.POST['f_ingreso']
+    if request.POST['f_baja'] != "":
+        socio.f_baja = request.POST['f_baja']
+    socio.seccion = request.POST['seccion']
+    socio.estudios = request.POST['estudios']
+    socio.profesion = request.POST['profesion']
+    socio.deportes = request.POST['deportes']
+    socio.aficiones = request.POST['aficiones']
+    
+    socio.save()
+                            
+    
+    return  HttpResponseRedirect('/socios/'+socio.socio_id.n_asociado+'/personales')
+
+def modify_economicos(request):
+    socio = D_Economicos.objects.get(socio_id= request.POST['socio'])
+    socio.titular = request.POST['titular']
+    socio.nif_titular = request.POST['nif_titular']
+    socio.banco = request.POST['banco']
+    socio.sucursal = request.POST['sucursal']
+    socio.localidad = request.POST['localidad']
+    socio.d_banco = request.POST['d_banco']
+    socio.d_sucursal = request.POST['d_sucursal']
+    socio.dc = request.POST['dc']
+    socio.n_cuenta = request.POST['n_cuenta']
+    
+    
+    socio.save()
+                            
+    
+    return  HttpResponseRedirect('/socios/'+socio.socio_id.n_asociado+'/economicos')
+
+
+        

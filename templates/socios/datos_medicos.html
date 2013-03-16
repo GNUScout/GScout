@@ -1,5 +1,9 @@
 {% extends 'socios/form_base.html' %}
-{% block form-title %}<h2>Datos Medicos del socio nº {{ medicos.socio_id.n_asociado }}</h2>{% endblock %}
+{% block form-title %}<h2>Datos Medicos del socio nº {{ medicos.socio_id.n_asociado }}</h2>
+<a class="btn btn-large btn-primary" href="/socios/{{ medicos.socio_id.n_asociado }}/personales">Personales</a>
+<a class="btn btn-large btn-primary" href="/socios/{{ medicos.socio_id.n_asociado }}/economicos">Economicos</a>
+<a class="btn btn-large btn-primary" href="/socios/{{ medicos.socio_id.n_asociado }}/medicos">Medicos</a>
+{% endblock %}
 {% block form %}
 	<p><strong>Tipo de </strong> {{medicos.ss}}</p>
 	<p><strong>Seguro: </strong> {{medicos.smp}}</p>
@@ -14,8 +18,27 @@
 	<p><strong>¿Cual?: </strong> {{medicos.t_alergia}}</p>
 	<p><strong>¿Otras Alergias? </strong> {{medicos.otras_alergias}}</p>
 	<p><strong>¿Cuales?: </strong> {{medicos.t_otras_alergias}}</p>
-	<p><strong>¿Dieta?: </strong> {{medicos.dieta}</p>
+	<p><strong>¿Dieta?: </strong> {{medicos.dieta}}</p>
 	<p><strong>Regimen: </strong> {{medicos.t_dieta}}</p>
 	<p><strong>¿Toma medicamentos?: </strong> {{medicos.toma_medicamentos}}</p>
+	{% if medicos.toma_medicamentos == "si" %}
+		<div class="form-personal">
+			<table  WIDTH=50%>
+				<tr>
+					<th><strong>Nombre </strong></th>
+					<th><strong>Pauta </strong></th>
+					<th><strong>Dosis </strong></th>
+				</tr>
+			{% for m in medicamentos %}
+				<tr>
+					<td ALIGN=CENTER><p>{{m.nombre}} </p></td>
+					<td ALIGN=CENTER><p>{{m.pauta}} </p></td>
+					<td ALIGN=CENTER><p>{{m.dosis}} </p></td>
+				</tr>
+			{% endfor %}
+			</table>
+		</div>
+	{% endif %}
 	<p><strong>Información adicional: </strong> {{medicos.info_adicional}}</p>
+	<a class="btn btn-large btn-primary" href="/socios/{{ medicos.socio_id.n_asociado }}/edit_medicos">Editar</a>	
 {% endblock %}

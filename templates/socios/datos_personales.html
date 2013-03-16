@@ -1,5 +1,9 @@
 {% extends 'socios/form_base.html' %}
-{% block form-title %}<h2>Datos Personales del socio nº {{ personales.socio_id.n_asociado }}</h2>{% endblock %}
+{% block form-title %}<h2>Datos Personales del socio nº {{ personales.socio_id.n_asociado }}</h2>
+<a class="btn btn-large btn-primary" href="/socios/{{ personales.socio_id.n_asociado }}/personales">Personales</a>
+<a class="btn btn-large btn-primary" href="/socios/{{ personales.socio_id.n_asociado }}/economicos">Economicos</a>
+<a class="btn btn-large btn-primary" href="/socios/{{ personales.socio_id.n_asociado }}/medicos">Medicos</a>
+{% endblock %}
 {% block form %}
 	<p><strong>Nombres: </strong> {{personales.nombre}}</p>
 	<p><strong>Apellidos: </strong> {{personales.apellidos}}</p>
@@ -14,9 +18,10 @@
 	<p><strong>Móvil: </strong> {{personales.movil}}</p>
 	<p><strong>Fecha de Ingreso: </strong> {{f_ingreso}}</p>
 	<p><strong>Fecha de Baja: </strong> {{f_baja}}</p>
-	<p><strong>Sección: </strong> {{personales.seccion}</p>
+	<p><strong>Sección: </strong> {{personales.seccion}}</p>
 	<p><strong>Estudios: </strong> {{personales.estudios}}</p>
 	<p><strong>Profesión: </strong> {{personales.profesion}}</p>
 	<p><strong>Deportes: </strong> {{personales.deportes}}</p>
-	<p><strong>Aficiones: </strong> {{personales.aficiones}}</p>	
+	<p><strong>Aficiones: </strong> {{personales.aficiones}}</p>
+	<a class="btn btn-large btn-primary" href="/socios/{{ personales.socio_id.n_asociado }}/edit_personales">Editar</a>	
 {% endblock %}
