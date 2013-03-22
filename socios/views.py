@@ -244,5 +244,14 @@ def modify_economicos(request):
     
     return  HttpResponseRedirect('/socios/'+socio.socio_id.n_asociado+'/economicos')
 
+def listado(request):
+    
+    socios = D_Personales.objects.all()
+    
+    
+    return render_to_response('socios/list.html', {'socios': socios} ,context_instance=RequestContext(request))
+    
+    
+
 
         
