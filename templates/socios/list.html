@@ -90,7 +90,7 @@
 	<table class="tablesorter">
 	<thead>
 		<tr>
-			<th>Nombre</th>
+			<th>ID</th>
 			<th>Apellidos</th>
 			<th>DNI</th>
 			<th class="filter-select filter-exact" data-placeholder="Pick a gender">Sexo</th>
@@ -101,6 +101,7 @@
 	</thead>
 	<tfoot>
 		<tr>
+			<th>ID</th>
 			<th>Nombre</th>
 			<th>Apellidos</th>
 			<th>DNI</th>
@@ -128,7 +129,7 @@
 	</tfoot>
 	<tbody>
 		{% for s in socios %}
-			<tr><td>{{s.nombre}}</td><td>{{s.apellidos}}</td><td>{{s.dni}}</td><td>{{s.sexo}}</td><td>{{s.f_nacimiento}}</td><td>{{s.localidad}}</td><td>{{s.provincia}}</td></tr>
+			<tr><td><a href="/socios/{{ s.socio_id.n_asociado }}/personales">{{s.socio_id.n_asociado}}</a></td><td>{{s.nombre}}</td><td>{{s.apellidos}}</td><td>{{s.dni}}</td><td>{{s.sexo}}</td><td>{{s.f_nacimiento}}</td><td>{{s.localidad}}</td><td>{{s.provincia}}</td></tr>
 		{% endfor %}
 	</tbody>	
 	</table>
