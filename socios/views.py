@@ -10,6 +10,8 @@ from django.contrib.sessions.models import Session
 import datetime  
 
 
+
+
 @csrf_protect
 def newPersonal(request):
     if request.POST['form_id'] == "f1":
@@ -195,8 +197,12 @@ def edit_economicos(request, n_asociado):
 def edit_medicos(request, n_asociado):
     socio = Socio.objects.get(n_asociado=n_asociado)
     medicos = D_Medicos.objects.get(socio_id=socio)
-       
-    return render_to_response('socios/f_edit_medicos.html', {'medicos': medicos} ,context_instance=RequestContext(request))
+    medicamentos = Medicamentos.objects.filter(socio_id=socio)
+    n_medicamentos = medicamentos.count()
+    
+   
+    
+    return render_to_response('socios/f_edit_medicos.html', {'medicos': medicos, 'medicamentos': medicamentos, "n_medicamentos" : n_medicamentos } ,context_instance=RequestContext(request))
 
 #@csrf_protect
 def modify_personales(request):
@@ -243,6 +249,30 @@ def modify_economicos(request):
                             
     
     return  HttpResponseRedirect('/socios/'+socio.socio_id.n_asociado+'/economicos')
+
+def modify_medicos(request):
+    socio = D_Medicos.objects.get(socio_id= request.POST['socio'])
+    socio.ss= request.POST['ss'],
+    socio.smp = request.POST['smp']
+    socio.n_poliza = request.POST['n_poliza']
+    socio.enfermedad = request.POST['enfermedad']
+    socio.t_enfermedad = request.POST['t_enfermedad']
+    socio.enfermedad_cfp = request.POST['enfermedad_cfp']
+    socio.t_enfermedad_cfp = request.POST['t_enfermedad_cfp']
+    socio.operado = request.POST['operado']
+    socio.t_operado = request.POST['t_operado']
+    socio.alergia = request.POST['alergia']
+    socio.t_alergia = request.POST['t_alergia']
+    socio.otras_alergias = request.POST['otras_alergias']
+    socio.t_otras_alergias = request.POST['t_otras_alergias']
+    socio.dieta = request.POST['dieta']
+    socio.t_dieta = request.POST['t_dieta']
+    socio.toma_medicamentos = request.POST['toma_medicamentos']
+    socio.info_adicional = request.POST['info_adicional']
+    
+    
+   
+    return  HttpResponseRedirect('/socios/'+socio.socio_id.n_asociado+'/medicos')
 
 def listado(request):
     

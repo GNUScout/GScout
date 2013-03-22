@@ -1,10 +1,15 @@
 {% extends 'socios/form_base.html' %}
 {% block form-head %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+<script src="/static/js/jquery-1.9.1.js" type='text/javascript'></script>
 </script>
 <script LANGUAGE="JavaScript">
 
 	var medicamentos = 0;
+	
+	var nombre = new Array();
+	var dosis = new Array();
+	var pauta = new Array();
+	
 	
 	function clickNo() {
 		$("#boton_add").hide();
@@ -50,8 +55,12 @@
 {% endblock %}
 {% block form-title %}<h2 >Datos Médicos del socio nº {{medicos.socio_id.n_asociado}}</h2>{% endblock %}
 {% block form %}
-				<form id="f1" method="post" class="form-horizontal" action="/socios/create_personal/">
+				<form method="post" class="form-horizontal" action="/socios/modify_medicos/">
 					{% csrf_token %}
+					<input type="hidden" name="socio" value="{{medicos.socio_id.n_asociado}}">
+					<input type="hidden" id="n_medicamentos" name="n_medicamentos" value="{{n_medicamentos}}">
+					
+
 					<div class="control-group">
 						<label class="control-label" for="inputSeguro">Tipo de seguro</label>
 						<div class="controls">
@@ -261,12 +270,40 @@
 							<input id="toma_medicamentos" type="hidden" value="{{medicos.toma_medicamentos}}">
 							<script language="JavaScript">
 								var opcion = $("#toma_medicamentos").val();
-								
+
 								if (opcion == "si")
 									{
 							    	$('input[id="medicamento2"]').attr('checked', true);
 							    	}
 							</script>
+							{% for m in medicamentos %}
+								<script language="JavaScript">
+									++medicamentos;
+									nombre[medicamentos-1] = "{{ m.nombre }}";
+									dosis[medicamentos-1] = "{{ m.dosis }}";
+									pauta[medicamentos-1] = "{{ m.pauta }}";
+								</script>
+							{% endfor %}	
+							<script language="JavaScript">								
+								$(document).ready(function() {
+									$("#boton_add").show();
+									$("#boton_del").show();
+									var item = "";
+									for (var i=0;i<medicamentos;i++){
+										item=item +"<div class='control-group'>"+
+													"<label class='control-label' for='inputMedicamento"+(i+1)+"'>Medicamento "+(i+1)+"</label>"+
+													"<div class='controls'>"+
+												  		"<input id='inputMedicamento"+(i+1)+"' type='text' name='m"+(i+1)+"' value='"+nombre[i]+"'>"+
+												  		"<input type='text' name='md"+(i+1)+"' value='"+dosis[i]+"'>"+
+												  		"<input type='text' name='mp"+(i+1)+"' value='"+pauta[i]+"'>"+
+													"</div>"+
+												"</div>";
+								};
+									$("#content").before(item);
+								});
+							</script>
+							
+							
 						</div>
 					</div>
 					<div id="todo">

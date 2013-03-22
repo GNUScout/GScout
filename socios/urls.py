@@ -18,7 +18,7 @@ urlpatterns = patterns('',
    (r'([0-9]+)/edit_economicos/?', edit_economicos),
    (r'^modify_economicos/?', modify_economicos),
    (r'([0-9]+)/edit_medicos/?', edit_medicos),
- #  (r'^modify_medicos/?', modify_medicos),
+   (r'^modify_medicos/?', modify_medicos),
    (r'^listado/', listado),
 )
 
