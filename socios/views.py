@@ -251,8 +251,10 @@ def modify_economicos(request):
     return  HttpResponseRedirect('/socios/'+socio.socio_id.n_asociado+'/economicos')
 
 def modify_medicos(request):
+    total_medicamentos= request.POST['total_medicamentos']
+    
     socio = D_Medicos.objects.get(socio_id= request.POST['socio'])
-    socio.ss= request.POST['ss'],
+    socio.ss = request.POST['ss']
     socio.smp = request.POST['smp']
     socio.n_poliza = request.POST['n_poliza']
     socio.enfermedad = request.POST['enfermedad']
@@ -269,6 +271,22 @@ def modify_medicos(request):
     socio.t_dieta = request.POST['t_dieta']
     socio.toma_medicamentos = request.POST['toma_medicamentos']
     socio.info_adicional = request.POST['info_adicional']
+    
+    
+    socio.save()
+    
+    old_medicamentos = Medicamentos.objects.filter(socio_id=request.POST['socio'])
+    for j in old_medicamentos:
+        j.delete()
+    
+    if total_medicamentos > 0:
+            for i in range(int(total_medicamentos)):
+                medicamento = Medicamentos(nombre=request.POST['m'+str(i+1)],
+                                           dosis=request.POST['md'+str(i+1)],
+                                           pauta=request.POST['mp'+str(i+1)],
+                                           socio_id=socio.socio_id,
+                                           )
+                medicamento.save()
     
     
    

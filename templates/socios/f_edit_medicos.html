@@ -21,7 +21,7 @@
 	};
 	function total_medicamentos() {
 		item= "<input id='total_medicamentos' type='hidden' name='total_medicamentos' value='"+medicamentos+"'>"
-		$("#boton_add").before(item)
+		$("#content").after(item)
 	};
 		
 	function addMedicamento() {
@@ -64,18 +64,18 @@
 					<div class="control-group">
 						<label class="control-label" for="inputSeguro">Tipo de seguro</label>
 						<div class="controls">
-							<input id="ss" type="hidden" name="ss" value="{{medicos.ss}}">
-							<input id="smp" type="hidden" name="smp" value="{{medicos.smp}}">
+							<input type="hidden" name="ss" value="">
+							<input type="hidden" name="smp" value="">
 						  	<input id="inputSeguro1" type="checkbox" name="ss" value="Seguridad social">	Seguridad social
 						  	<br><input id="inputSeguro2" type="checkbox" name="smp" value="Seguro medico Privado">	Seguro médico privado</br>
 						  	<script language="JavaScript">
-								var opcion = $("#ss").val();
+								var opcion = "{{medicos.ss}}";
 								if (opcion == "Seguridad social")
 									{
 							    	$('input[name=ss]').attr('checked', true);
 							    	}
-							    	var opcion = $("#smp").val();
-								if (opcion == "Seguro medico Privado")
+							    var opcion2 = "{{medicos.smp}}";
+								if (opcion2 == "Seguro medico Privado")
 									{
 							    	$('input[name=smp]').attr('checked', true);
 							    	}
@@ -318,7 +318,7 @@
 						  <textarea id="inputInfo" name="info_adicional"></textarea>
 						</div>
 					</div>
-					<input type="hidden" value="f4" name="form_id" />
+					<input type="hidden"  />
 					<div class="control-group">
 						<div class="controls">
 						  <button type="submit" class="btn" onclick="total_medicamentos()">Crear</button>
