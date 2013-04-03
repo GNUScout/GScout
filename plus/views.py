@@ -31,7 +31,7 @@ FLOW = OAuth2WebServerFlow (
     client_secret = 'C5umC7xa_ML704wnmdT79Bh0',
     token_uri='https://accounts.google.com/o/oauth2/token',
     scope='https://www.googleapis.com/auth/plus.me',
-    redirect_uri= 'http://localhost:8000/oauth2callback', #'http://ctstprueba.appspot.com/oauth2callback',
+    redirect_uri= 'http://ctstprueba.appspot.com/oauth2callback',
     access_type='offline',
     approval_prompt='force')
 
@@ -54,11 +54,11 @@ def index(request):
         people_resource = service.people()    
         people_document = people_resource.get(userId='me').execute()
         people_id = "ID: " + people_document['id']
-        people_name = "Display name: " + people_document['displayName']
+        people_name =  people_document['displayName']
         people_image = people_document['image']['url']
     
         return render_to_response('home.html', {
-                    'people_id': people_id, 'people_name': people_name, 'people_image': people_image, 'user': user,
+                    'people_id': people_id, 'people_name': people_name, 'people_image': people_image, 'user': user, 'cargo': user.cargo
                     })
 
 
