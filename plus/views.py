@@ -31,7 +31,7 @@ FLOW = OAuth2WebServerFlow (
     client_secret = 'C5umC7xa_ML704wnmdT79Bh0',
     token_uri='https://accounts.google.com/o/oauth2/token',
     scope='https://www.googleapis.com/auth/plus.me',
-    redirect_uri= 'http://ctstprueba.appspot.com/oauth2callback',
+    redirect_uri= 'http://ctstprueba.appspot.com/oauth2callback', #'http://localhost:8000/oauth2callback'
     access_type='offline',
     approval_prompt='force')
 
