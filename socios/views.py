@@ -12,6 +12,8 @@ import datetime
 
 
 
+
+
 @csrf_protect
 def newPersonal(request):
     if request.POST['form_id'] == "f1":
@@ -104,12 +106,17 @@ def newPersonal(request):
         datos.save()
         #new_socio.d_medicos = datos
          # and saved to database
+         
+        
         
         if total_medicamentos > 0:
-            for i in range(int(total_medicamentos)):
-                medicamento = Medicamentos(nombre=request.POST['m'+str(i+1)],
-                                           dosis=request.POST['md'+str(i+1)],
-                                           pauta=request.POST['mp'+str(i+1)],
+            a_nombre =request.POST.getlist('m[]')
+            a_dosis =request.POST.getlist('md[]')
+            a_pauta =request.POST.getlist('mp[]')
+            for i in range(len(a_nombre)):
+                medicamento = Medicamentos(nombre=a_nombre[i],
+                                           dosis=a_dosis[i],
+                                           pauta=a_pauta[i],
                                            socio_id=new_socio
                                            )
                 medicamento.save()
@@ -280,11 +287,14 @@ def modify_medicos(request):
         j.delete()
     
     if total_medicamentos > 0:
-            for i in range(int(total_medicamentos)):
-                medicamento = Medicamentos(nombre=request.POST['m'+str(i+1)],
-                                           dosis=request.POST['md'+str(i+1)],
-                                           pauta=request.POST['mp'+str(i+1)],
-                                           socio_id=socio.socio_id,
+            a_nombre =request.POST.getlist('m[]')
+            a_dosis =request.POST.getlist('md[]')
+            a_pauta =request.POST.getlist('mp[]')
+            for i in range(len(a_nombre)):
+                medicamento = Medicamentos(nombre=a_nombre[i],
+                                           dosis=a_dosis[i],
+                                           pauta=a_pauta[i],
+                                           socio_id=socio.socio_id
                                            )
                 medicamento.save()
     
