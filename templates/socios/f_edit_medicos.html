@@ -4,8 +4,6 @@
 </script>
 <script LANGUAGE="JavaScript">
 
-	var tabla = 0;
-	
 	var medicamentos = 0;
 	
 	var nombre = new Array();
@@ -17,105 +15,39 @@
 		$("#boton_add").hide();
 		$("#boton_del").hide();
 		medicamentos = 0;
-		tabla=0;
 		$("#todo").remove();
 		item= "<div id='todo'><div id ='content'></div></div>"
 		$("#boton_add").before(item)
 	};
-	function total_medicamentos(tableID) {
-        var table = document.getElementById(tableID);
-        medicamentos = table.rows.length;
+	function total_medicamentos() {
 		item= "<input id='total_medicamentos' type='hidden' name='total_medicamentos' value='"+medicamentos+"'>"
-		$("#boton_add").before(item)
+		$("#content").after(item)
+	};
+		
+	function addMedicamento() {
+		++medicamentos;
+		$("#boton_add").show();
+		$("#boton_del").show();
+		item=	"<div class='control-group'>"+
+					"<label class='control-label' for='inputMedicamento"+medicamentos+"'>Medicamento "+medicamentos+"</label>"+
+					"<div class='controls'>"+
+				  		"<input id='inputMedicamento"+medicamentos+"' type='text' name='m"+medicamentos+"' placeholder='¿Cual?'>"+
+				  		"<input type='text' name='md"+medicamentos+"' placeholder='Dosis'>"+
+				  		"<input type='text' name='mp"+medicamentos+"' placeholder='Pauta'>"+
+					"</div>"+
+				"</div>";
+		$("#content").before(item)
 	};
 	
-	function ver(tableID) {
-		var table = document.getElementById(tableID);
-        medicamentos = table.rows.length;
-       	alert(medicamentos);
-	}
-	function addTable() {
-		
-		if (tabla == 0){
-			//medicamentos = medicamentos + 1;
-			tabla = 1;
-			$("#boton_add").show();
-			$("#boton_del").show();
-			item=	"<TABLE id='dataTable' width='350px'>" +
-						        "<TR>"+
-						        	"<TD><INPUT type='checkbox' name='chk'/></TD>"+
-						            "<td><input id='inputMedicamento"+medicamentos+"' type='text' name='m[]' placeholder='¿Cual?'></td>"+
-									"<td><input type='text' name='md[]' placeholder='Dosis'></td>"+
-									"<td><input type='text' name='mp[]' placeholder='Pauta'></td>"+
-						        "</TR>"+
-						    "</TABLE>";
-			$("#content").before(item)
+	function deleteMedicamento() {
+		$("#inputMedicamento"+medicamentos).parent().parent().remove();
+		--medicamentos;
+		if (medicamentos == 0) {
+			$("#boton_del").hide();
+			$("#boton_add").hide();
 		}
-	};	
-	function addRow(tableID) {
- 			
-			$("#boton_add").show();
-			$("#boton_del").show();
-            var table = document.getElementById(tableID);
- 
-            medicamentos = table.rows.length;
-            
-            var row = table.insertRow(medicamentos);
- 
-            var colCount = table.rows[0].cells.length;
- 
-            for(var i=0; i<colCount; i++) {
- 
-                var newcell = row.insertCell(i);
- 
-                newcell.innerHTML = table.rows[0].cells[i].innerHTML;
-                //alert(newcell.childNodes);
-                switch(newcell.childNodes[0].type) {
-                    case "text":
-                            newcell.childNodes[0].value = "";
-                            break;
-                    case "checkbox":
-                            newcell.childNodes[0].checked = false;
-                            break;
-                    case "select-one":
-                            newcell.childNodes[0].selectedIndex = 0;
-                            break;
-                }
-            }
-       };
-       
-    function deleteRow(tableID) {
-            try {
-            var table = document.getElementById(tableID);
-            medicamentos = table.rows.length;
- 
-            for(var i=0; i<medicamentos; i++) {
-                var row = table.rows[i];
-                var chkbox = row.cells[0].childNodes[0];
-                if(null != chkbox && true == chkbox.checked) {
-                    if(medicamentos <= 1) {
-                        alert("Cannot delete all the rows.");
-                        break;
-                    }
-                    table.deleteRow(i);
-                    medicamentos--;
-                    i--;
-                    if (medicamentos == 0) {
-						$("#boton_del").hide();
-						$("#boton_add").hide();
-						tabla=0;
-						$("#todo").remove();
-						item= "<div id='todo'><div id ='content'></div></div>"
-						$("#boton_add").before(item)
-					}
-                }
- 
- 
-            }
-            }catch(e) {
-                alert(e);
-            }
-        };
+		
+	};
 	
 
 
@@ -332,7 +264,7 @@
 								No
 							</label>
 							<label class="radio">
-								<input type="radio" name="toma_medicamentos" id="medicamento2" onclick="addTable()" value="si">
+								<input type="radio" name="toma_medicamentos" id="medicamento2" onclick="addMedicamento()" value="si">
 								Si
 							</label>
 							<input id="toma_medicamentos" type="hidden" value="{{medicos.toma_medicamentos}}">
@@ -344,70 +276,32 @@
 							    	$('input[id="medicamento2"]').attr('checked', true);
 							    	}
 							</script>
-							{% if medicos.toma_medicamentos == "si" %}
-								{% for m in medicamentos %}
-									<script language="JavaScript">
-										++medicamentos;
-										nombre[medicamentos-1] = "{{ m.nombre }}";
-										dosis[medicamentos-1] = "{{ m.dosis }}";
-										pauta[medicamentos-1] = "{{ m.pauta }}";
-									</script>
-								{% endfor %}	
-								<script language="JavaScript">								
-									$(document).ready(function() {
-										$("#boton_add").show();
-										$("#boton_del").show();
-										var item = "<TABLE id='dataTable' width='350px'>"+
-												        "<TR>"+
-												        	"<TD><INPUT type='checkbox' name='chk'/></TD>"+
-												            "<td><input id='inputMedicamento"+medicamentos+"' type='text' name='m[]' value='"+nombre[0]+"'></td>"+
-															"<td><input type='text' name='md[]' value='"+dosis[0]+"'></td>"+
-															"<td><input type='text' name='mp[]' value='"+pauta[0]+"'></td>"+
-												        "</TR>"+
-												    "</TABLE>";
-										
-										$("#content").before(item);
-										
-										
-	   									for (var i=1;i<medicamentos;i++){
-											var table = document.getElementById("dataTable");
-										
-											var table_length = table.rows.length;
-											var row = table.insertRow(table_length);
-											
-											var colCount = table.rows[0].cells.length;
-											
-											for(var j=0; j<colCount; j++) {
-											 	
-												var newcell = row.insertCell(j);
-												 
-												newcell.innerHTML = table.rows[0].cells[j].innerHTML;
-												//alert(newcell.childNodes);
-												switch(newcell.childNodes[0].type) {
-													case "text":
-														if (j==1){
-															newcell.childNodes[0].value = nombre[i];
-														};
-														if (j==2){
-															newcell.childNodes[0].value = dosis[i];
-														};
-														if (j==3){
-															newcell.childNodes[0].value = pauta[i];
-														};
-														break;
-													case "checkbox":
-														newcell.childNodes[0].checked = false;
-														break;
-													case "select-one":
-														newcell.childNodes[0].selectedIndex = 0;
-														break;
-												}
-											}
-										};
-										
-									});
+							{% for m in medicamentos %}
+								<script language="JavaScript">
+									++medicamentos;
+									nombre[medicamentos-1] = "{{ m.nombre }}";
+									dosis[medicamentos-1] = "{{ m.dosis }}";
+									pauta[medicamentos-1] = "{{ m.pauta }}";
 								</script>
-							{% endif %}
+							{% endfor %}	
+							<script language="JavaScript">								
+								$(document).ready(function() {
+									$("#boton_add").show();
+									$("#boton_del").show();
+									var item = "";
+									for (var i=0;i<medicamentos;i++){
+										item=item +"<div class='control-group'>"+
+													"<label class='control-label' for='inputMedicamento"+(i+1)+"'>Medicamento "+(i+1)+"</label>"+
+													"<div class='controls'>"+
+												  		"<input id='inputMedicamento"+(i+1)+"' type='text' name='m"+(i+1)+"' value='"+nombre[i]+"'>"+
+												  		"<input type='text' name='md"+(i+1)+"' value='"+dosis[i]+"'>"+
+												  		"<input type='text' name='mp"+(i+1)+"' value='"+pauta[i]+"'>"+
+													"</div>"+
+												"</div>";
+								};
+									$("#content").before(item);
+								});
+							</script>
 							
 							
 						</div>
@@ -415,8 +309,8 @@
 					<div id="todo">
 						<div id ="content"></div>
 					</div>
-					<INPUT id="boton_add" type="button" value="Add Row" style="display:none" onclick="addRow('dataTable')" />
-					<INPUT id="boton_del" type="button" value="Delete Row" style="display:none" onclick="deleteRow('dataTable')" />
+					<input id="boton_add" class="radius button btn" type="button" value="Añadir medicamento" style="display:none" onclick="addMedicamento()">
+							<input id="boton_del" class="radius button btn" type="button" value="Eliminar medicamento" style="display:none" onclick="deleteMedicamento()">
 					<hr align="left" noshade="noshade" size="3" width="100%" />
 					<div class="control-group">
 						<label class="control-label" for="inputInfo">Otra información de interes</label>
@@ -427,8 +321,7 @@
 					<input type="hidden"  />
 					<div class="control-group">
 						<div class="controls">
-							<INPUT  type="button" value="Ver" onclick="ver('dataTable')" />
-						   <button type="submit" class="btn" onclick="total_medicamentos('dataTable')">Crear</button>
+						  <button type="submit" class="btn" onclick="total_medicamentos()">Crear</button>
 						</div>
 					</div>
 				</form>				
