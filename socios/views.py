@@ -10,7 +10,16 @@ from django.contrib.sessions.models import Session
 import datetime  
 
 
+import csv
 
+import httplib2
+import pprint
+
+from apiclient.discovery import build
+from apiclient.http import MediaFileUpload
+from oauth2client.client import OAuth2WebServerFlow
+
+from django.contrib.auth.models import User
 
 
 
@@ -307,9 +316,52 @@ def listado(request):
     socios = D_Personales.objects.all()
     
     
+    
+    
     return render_to_response('socios/list.html', {'socios': socios} ,context_instance=RequestContext(request))
     
+def export_to_csv(request):
+    response = HttpResponse(mimetype='text/csv')
+    response['Content-Disposition'] = 'attachment;filename="export.csv"'
     
+    writer = csv.writer(response)
+    
+    socios = D_Personales.objects.all()
+    
+    for socio in socios:
+            writer.writerow([socio.nombre, socio.apellidos])
+    
+    return response   
+
+def prueba_csv(request):
+    
+    usuario = request.user
+    storage = User.objects.get(username = usuario.username)
+    
+    # Path to the file to upload
+    FILENAME = 'document.txt'
+    
+    
+    credentials = storage.credential
+    
+    # Create an httplib2.Http object and authorize it with our credentials
+    http = httplib2.Http()
+    http = credentials.authorize(http)
+    
+    drive_service = build('drive', 'v2', http=http)
+    
+    # Insert a file
+    media_body = MediaFileUpload(FILENAME, mimetype='text/plain', resumable=True)
+    body = {
+      'title': 'My document',
+      'description': 'A test document',
+      'mimeType': 'text/plain'
+    }
+    
+    file = drive_service.files().insert(body=body, media_body=media_body).execute()
+    pprint.pprint(file)
+    
+    return  HttpResponseRedirect('/')  
 
 
         
