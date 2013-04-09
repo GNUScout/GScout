@@ -339,7 +339,7 @@ def prueba_csv(request):
     storage = User.objects.get(username = usuario.username)
     
     # Path to the file to upload
-    FILENAME = 'document.txt'
+    FILENAME = 'export.csv'
     
     
     credentials = storage.credential
@@ -351,14 +351,14 @@ def prueba_csv(request):
     drive_service = build('drive', 'v2', http=http)
     
     # Insert a file
-    media_body = MediaFileUpload(FILENAME, mimetype='text/plain', resumable=True)
+    media_body = MediaFileUpload(FILENAME, mimetype="text/csv", resumable=True)
     body = {
       'title': 'My document',
       'description': 'A test document',
-      'mimeType': 'text/plain'
+      'mimeType': "text/csv"
     }
     
-    file = drive_service.files().insert(body=body, media_body=media_body).execute()
+    file = drive_service.files().insert(body=body, media_body=media_body, convert="true").execute()
     pprint.pprint(file)
     
     return  HttpResponseRedirect('/')  
