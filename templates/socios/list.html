@@ -87,6 +87,8 @@
 {% block form-title %}<h2>Listado de Socios (Datos Personales)</h2>
 {% endblock %}
 {% block form %}
+	<form method="post"  action="/socios/del_socios/">
+		{% csrf_token %}
 	<table class="tablesorter">
 	<thead>
 		<tr>
@@ -94,7 +96,8 @@
 			<th>Nombre</th>
 			<th>Apellidos</th>
 			<th>DNI</th>
-			<th class="filter-select filter-exact" data-placeholder="Pick a gender">Sexo</th>
+			<th class="filter-select filter-exact" data-placeholder="Todos">Sexo</th>
+			<th class="filter-select filter-exact" data-placeholder="Todos">Sección</th>
 			<th>F. Nacimiento</th>
 			<th>Localidad</th>
 			<th>Provincia</th>
@@ -107,12 +110,13 @@
 			<th>Apellidos</th>
 			<th>DNI</th>
 			<th>Sexo</th>
+			<th>Sección</th>
 			<th>F. Nacimiento</th>
 			<th>Localidad</th>
 			<th>Provincia</th>
 		</tr>
 		<tr>
-			<th colspan="7" class="pager form-horizontal">
+			<th colspan="9" class="pager form-horizontal">
 				<button class="btn first"><i class="icon-step-backward"></i></button>
 				<button class="btn prev"><i class="icon-arrow-left"></i></button>
 				<span class="pagedisplay"></span> <!-- this can be any element, including an input -->
@@ -128,11 +132,14 @@
 			</th>
 		</tr>
 	</tfoot>
+	
 	<tbody>
 		{% for s in socios %}
-			<tr><td><a href="/socios/{{ s.socio_id.n_asociado }}/personales">{{s.socio_id.n_asociado}}</a></td><td>{{s.nombre}}</td><td>{{s.apellidos}}</td><td>{{s.dni}}</td><td>{{s.sexo}}</td><td>{{s.f_nacimiento}}</td><td>{{s.localidad}}</td><td>{{s.provincia}}</td></tr>
+			<tr><td><a href="/socios/{{ s.socio_id.n_asociado }}/personales">{{s.socio_id.n_asociado}}</a>	<input type="checkbox" name="sel_borrar[]" value="{{ s.socio_id.n_asociado }}"></td><td>{{s.nombre}}</td><td>{{s.apellidos}}</td><td>{{s.dni}}</td><td>{{s.sexo}}</td><td>{{s.seccion}}</td><td>{{s.f_nacimiento}}</td><td>{{s.localidad}}</td><td>{{s.provincia}}</td></tr>
 		{% endfor %}
 	</tbody>	
 	</table>
+	<button type="submit" class="btn btn-large btn-danger ">Borrar seleccionados</button>
 	<a class="btn btn-large btn-primary" href="/socios/export">Export</a>
+	</form>
 {% endblock %}

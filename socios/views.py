@@ -319,6 +319,28 @@ def listado(request):
     
     
     return render_to_response('socios/list.html', {'socios': socios} ,context_instance=RequestContext(request))
+
+def del_socios(request):
+    sel_socios =request.POST.getlist('sel_borrar[]')
+
+    for i in range(len(sel_socios)):
+        lista_medicamentos = Medicamentos.objects.filter(socio_id=sel_socios[i])
+        for j in lista_medicamentos:
+            j.delete()
+        aux= D_Medicos.objects.get(socio_id=sel_socios[i])
+        aux.delete()
+        aux= D_Economicos.objects.get(socio_id=sel_socios[i])
+        aux.delete()
+        aux= D_Personales.objects.get(socio_id=sel_socios[i])
+        aux.delete()
+        aux= Socio.objects.get(n_asociado=sel_socios[i])
+        aux.delete()
+    
+    socios = D_Personales.objects.all()
+    
+    return render_to_response('socios/list.html', {'socios': socios} ,context_instance=RequestContext(request))
+            
+    
     
 def export_to_csv(request):
     response = HttpResponse(mimetype='text/csv')
@@ -351,7 +373,7 @@ def prueba_csv(request):
     drive_service = build('drive', 'v2', http=http)
     
     # Insert a file
-    media_body = MediaFileUpload(FILENAME, mimetype="text/csv", resumable=True)
+    media_body = MediaFileUpload("export.csv", mimetype="text/csv", resumable=True)
     body = {
       'title': 'My document',
       'description': 'A test document',

@@ -20,6 +20,7 @@ urlpatterns = patterns('',
    (r'([0-9]+)/edit_medicos/?', edit_medicos),
    (r'^modify_medicos/?', modify_medicos),
    (r'^listado/', listado),
+   (r'^del_socios/', del_socios),
    (r'^export/', export_to_csv),
    (r'^prueba_csv/', prueba_csv),
 )
