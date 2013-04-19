@@ -14,12 +14,15 @@ import csv
 
 import httplib2
 import pprint
+import StringIO
 
 from apiclient.discovery import build
-from apiclient.http import MediaFileUpload
+from apiclient.http import MediaIoBaseUpload,MediaFileUpload
 from oauth2client.client import OAuth2WebServerFlow
 
 from django.contrib.auth.models import User
+
+import re
 
 
 
@@ -314,11 +317,14 @@ def modify_medicos(request):
 def listado(request):
     
     socios = D_Personales.objects.all()
-    
-    
-    
-    
+     
     return render_to_response('socios/list.html', {'socios': socios} ,context_instance=RequestContext(request))
+
+def listado_del(request):
+    
+    socios = D_Personales.objects.all()
+     
+    return render_to_response('socios/list_del.html', {'socios': socios} ,context_instance=RequestContext(request))
 
 def del_socios(request):
     sel_socios =request.POST.getlist('sel_borrar[]')
@@ -338,32 +344,15 @@ def del_socios(request):
     
     socios = D_Personales.objects.all()
     
-    return render_to_response('socios/list.html', {'socios': socios} ,context_instance=RequestContext(request))
+    return render_to_response('socios/list_del.html', {'socios': socios} ,context_instance=RequestContext(request))
             
-    
-    
-def export_to_csv(request):
-    response = HttpResponse(mimetype='text/csv')
-    response['Content-Disposition'] = 'attachment;filename="export.csv"'
-    
-    writer = csv.writer(response)
-    
-    socios = D_Personales.objects.all()
-    
-    for socio in socios:
-            writer.writerow([socio.nombre, socio.apellidos])
-    
-    return response   
 
-def prueba_csv(request):
+def export(request):
     
     usuario = request.user
     storage = User.objects.get(username = usuario.username)
     
-    # Path to the file to upload
-    FILENAME = 'export.csv'
-    
-    
+        
     credentials = storage.credential
     
     # Create an httplib2.Http object and authorize it with our credentials
@@ -372,16 +361,53 @@ def prueba_csv(request):
     
     drive_service = build('drive', 'v2', http=http)
     
-    # Insert a file
-    media_body = MediaFileUpload("export.csv", mimetype="text/csv", resumable=True)
-    body = {
-      'title': 'My document',
-      'description': 'A test document',
-      'mimeType': "text/csv"
-    }
+    socios = D_Personales.objects.values()
+    lista=[]
+    for i in range(len(socios)):
+        selected=False
+        if (
+            (re.match(r'.*'+str(request.POST['filter0'])+'\.*',str(socios[i]['id']),re.IGNORECASE)) and
+            (re.match(r'.*'+str(request.POST['filter1'])+'\.*',str(socios[i]['nombre']),re.IGNORECASE)) and
+            (re.match(r'.*'+str(request.POST['filter2'])+'\.*',str(socios[i]['apellidos']),re.IGNORECASE)) and
+            (re.match(r'.*'+str(request.POST['filter3'])+'\.*',str(socios[i]['dni']),re.IGNORECASE)) and
+            (re.match(r'.*'+str(request.POST['filter4'])+'\.*',str(socios[i]['sexo']),re.IGNORECASE)) and
+            (re.match(r'.*'+str(request.POST['filter5'])+'\.*',str(socios[i]['seccion']),re.IGNORECASE)) and
+            #(re.match(r'.*'+str(request.POST['filter6'])+'\.*',socios[i]['f_nacimiento']),re.IGNORECASE)) and
+            (re.match(r'.*'+str(request.POST['filter7'])+'\.*',str(socios[i]['localidad']),re.IGNORECASE)) and
+            (re.match(r'.*'+str(request.POST['filter8'])+'\.*',str(socios[i]['provincia']),re.IGNORECASE))
+            ):
+                selected=True
+        
+        if selected:
+            lista.append(socios[i])
     
-    file = drive_service.files().insert(body=body, media_body=media_body, convert="true").execute()
-    pprint.pprint(file)
+    if (
+        (
+            (str(request.POST['filter0']) != "") and
+            (str(request.POST['filter1']) != "") and
+            (str(request.POST['filter2']) != "") and
+            (str(request.POST['filter3']) != "") and
+            (str(request.POST['filter4']) != "") and
+            (str(request.POST['filter5']) != "") and
+            #(str(request.POST['filter6']) != "") and
+            (str(request.POST['filter7']) != "") and
+            (str(request.POST['filter8']) != "")) or len(lista) > 0 
+        ):  
+            datos="ID, Nombre, Apellidos, DNI, Sexo, Seccion, F.Nacimiento, Localidad, Provincia\n"
+            for d in range(len(lista)):
+                datos += str(lista[d]['id']) + "," + str(lista[d]['nombre']) + "," + str(lista[d]['apellidos']) + "," + str(lista[d]['dni']) + "," + str(lista[d]['sexo']) + "," + str(lista[d]['seccion']) + "," + str(lista[d]['f_nacimiento']) + "," + str(lista[d]['localidad']) + "," + str(lista[d]['provincia']) + "\n"
+                
+            
+            # Insert a file
+            media_body = MediaIoBaseUpload(StringIO.StringIO(datos), 'text/csv', resumable=False)
+            body = {
+              'title': 'Prueba12345',
+              'description': 'A test document',
+              'mimeType': "text/csv"
+            }
+            
+            file = drive_service.files().insert(body=body, media_body=media_body, convert="true").execute()
+            pprint.pprint(file) 
     
     return  HttpResponseRedirect('/')  
 

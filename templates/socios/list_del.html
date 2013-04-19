@@ -87,7 +87,7 @@
 {% block form-title %}<h2>Listado de Socios (Datos Personales)</h2>
 {% endblock %}
 {% block form %}
-	<form method="post"  action="/socios/export/">
+	<form method="post"  action="/socios/del_socios/">
 		{% csrf_token %}
 	<table class="tablesorter">
 	<thead>
@@ -135,10 +135,10 @@
 	
 	<tbody>
 		{% for s in socios %}
-			<tr><td><a href="/socios/{{ s.socio_id.n_asociado }}/personales">{{s.socio_id.n_asociado}}</a></td><td>{{s.nombre}}</td><td>{{s.apellidos}}</td><td>{{s.dni}}</td><td>{{s.sexo}}</td><td>{{s.seccion}}</td><td>{{s.f_nacimiento}}</td><td>{{s.localidad}}</td><td>{{s.provincia}}</td></tr>
+			<tr><td><a href="/socios/{{ s.socio_id.n_asociado }}/personales">{{s.socio_id.n_asociado}}</a>	<input type="checkbox" name="sel_borrar[]" value="{{ s.socio_id.n_asociado }}"></td><td>{{s.nombre}}</td><td>{{s.apellidos}}</td><td>{{s.dni}}</td><td>{{s.sexo}}</td><td>{{s.seccion}}</td><td>{{s.f_nacimiento}}</td><td>{{s.localidad}}</td><td>{{s.provincia}}</td></tr>
 		{% endfor %}
 	</tbody>	
 	</table>
-	<button type="submit" class="btn btn-large btn-primary">Export</button>
+	<button type="submit" class="btn btn-large btn-danger ">Borrar seleccionados</button>
 	</form>
 {% endblock %}

@@ -543,7 +543,7 @@ $.tablesorter.addWidget({
 					}
 
 					if (sel){
-						t = $('<select>').appendTo( $fr.eq(i) );
+						t = $('<select name="filter'+i+'" value="">').appendTo( $fr.eq(i) );
 					} else {
 						if (wo.filter_formatter && $.isFunction(wo.filter_formatter[i])) {
 							t = wo.filter_formatter[i]( $fr.eq(i), i );
@@ -554,7 +554,7 @@ $.tablesorter.addWidget({
 								$fr.eq(i).append(t);
 							}
 						} else {
-							t = $('<input type="search">').appendTo( $fr.eq(i) );
+							t = $('<input type="search" value="" name="filter'+i+'">').appendTo( $fr.eq(i) );
 						}
 						if (t) {
 							t.attr('placeholder', $th.attr('data-placeholder') || '');
