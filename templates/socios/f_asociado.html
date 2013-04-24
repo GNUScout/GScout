@@ -1,4 +1,13 @@
 {% extends 'socios/form_base.html' %}
+{% block navbar-content %}	
+	<li><a href="/">Home</a></li>
+	<li class="active"><a href="/socios/new">Nuevo Socio</a></li>
+	<li ><a href="/socios/listado">Listado Socios</a></li>
+	<li><a href="/socios/listado_del">Borrar Socios</a></li>	  
+	<li><a href="/socios/search">Buscar ID</a></li>
+{% endblock %}
+
+			      
 {% block form-title %}<h2>Datos Asociados</h2>{% endblock %}
 {% block form %}
 				<form id="f1" method="post" class="form-horizontal" action="/socios/create_personal/">
@@ -19,7 +28,7 @@
 					<input type="hidden" value="f1" name="form_id" />
 					<div class="control-group">
 						<div class="controls">
-						  <button type="submit" class="btn">Crear</button>
+						  <button type="submit" class="btn">Siguiente</button>
 						</div>
 					</div>	
 				</form>				

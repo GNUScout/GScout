@@ -1,4 +1,11 @@
 {% extends 'socios/form_base.html' %}
+{% block navbar-content %}	
+	<li><a href="/">Home</a></li>
+	<li><a href="/socios/new">Nuevo Socio</a></li>
+	<li><a href="/socios/listado">Listado Socios</a></li>
+	<li><a href="/socios/listado_del">Borrar Socios</a></li>
+	<li class="active"><a href="/socios/search">Buscar ID</a></li>	  
+{% endblock %}
 {% block form-title %}<h2>Busqueda de Socio</h2>{% endblock %}
 {% block form %}
 				<form class="form-search" method="post" action="/socios/search_socio/">

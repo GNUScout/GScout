@@ -1,4 +1,12 @@
 {% extends 'socios/form_base.html' %}
+{% block navbar-content %}	
+	<li class="active"><a href="/">Home</a></li>
+	<li><a href="/socios/new">Nuevo Socio</a></li>
+	<li ><a href="/socios/listado">Listado Socios</a></li>
+	<li><a href="/socios/listado_del">Borrar Socios</a></li>
+	<li><a href="/socios/search">Buscar ID</a></li>
+{% endblock %}
+
 {% block form-head %}
 <style type="text/css">
      .centrar{

@@ -1,4 +1,11 @@
 {% extends 'socios/form_base.html' %}
+{% block navbar-content %}	
+	<li><a href="/">Home</a></li>
+	<li class="active"><a href="/socios/new">Nuevo Socio</a></li>
+	<li ><a href="/socios/listado">Listado Socios</a></li>
+	<li><a href="/socios/listado_del">Borrar Socios</a></li>	
+	<li><a href="/socios/search">Buscar ID</a></li>  
+{% endblock %}
 {% block form-head %}
 <script src="/static/js/jquery-1.9.1.js" type='text/javascript'></script>
 </script>
@@ -24,11 +31,6 @@
 		$("#boton_add").before(item)
 	};
 	
-	function ver(tableID) {
-		var table = document.getElementById(tableID);
-        medicamentos = table.rows.length;
-       	alert(medicamentos);
-	}
 	function addTable() {
 		
 		if (tabla == 0){
@@ -286,8 +288,7 @@
 					<input type="hidden" value="f4" name="form_id" />
 					<div class="control-group">
 						<div class="controls">
-							<INPUT  type="button" value="Ver" onclick="ver('dataTable')" />
-						  <button type="submit" class="btn" onclick="total_medicamentos('dataTable')">Crear</button>
+						  <button type="submit" class="btn" onclick="total_medicamentos('dataTable')">Finalizar</button>
 						</div>
 					</div>
 				</form>				

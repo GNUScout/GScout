@@ -1,4 +1,11 @@
 {% extends 'socios/form_base.html' %}
+{% block navbar-content %}	
+	<li><a href="/">Home</a></li>
+	<li><a href="/socios/new">Nuevo Socio</a></li>
+	<li class="active"><a href="/socios/listado">Listado Socios</a></li>
+	<li><a href="/socios/listado_del">Borrar Socios</a></li>	
+	<li><a href="/socios/search">Buscar ID</a></li>  
+{% endblock %}
 {% block form-title %}<h2>Datos Personales del socio nº {{ personales.socio_id.n_asociado }}</h2>
 <a class="btn btn-large btn-primary" href="/socios/{{ personales.socio_id.n_asociado }}/personales">Personales</a>
 <a class="btn btn-large btn-primary" href="/socios/{{ personales.socio_id.n_asociado }}/economicos">Economicos</a>

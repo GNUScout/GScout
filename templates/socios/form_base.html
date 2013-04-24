@@ -28,7 +28,26 @@
 		{% endblock %}
 	</head>
 	<body>
+		
 		<div class="container">
+			<div class="navbar">
+			  <div class="navbar-inner">
+			    <a class="brand" href="http://www.gruposcoutaguere70.org/">Aguere70</a>
+			    	<ul class="nav">				
+						{% block navbar-content %}{% endblock %}
+					<!--	<li>
+							<form class="navbar-search pull-left" method="post" action="/socios/search_socio/">
+								{% csrf_token %}
+					  			<input type="text" name="asociado" class="search-query" placeholder="Buscar por ID">
+				  			</form>
+				  </li> -->
+					</ul>
+					<ul class="nav pull-right">
+						<li class="divider-vertical"></li>
+						<li><a href="/accounts/logout">Logout</a></li>
+					</ul>	
+			  </div>
+			</div>
 			<div class="form-personal">
 			{% block form-title %}{% endblock %}
 			{% block form %}
