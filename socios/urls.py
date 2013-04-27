@@ -23,5 +23,7 @@ urlpatterns = patterns('',
    (r'^listado_del/', listado_del),
    (r'^del_socios/', del_socios),
    (r'^export/', export),
+   ('^familiares_new/', 'django.views.generic.simple.direct_to_template',
+     {'template': 'socios/f_familiares.html'}),
 )
 

@@ -7,21 +7,35 @@ class Autorizaciones(models.Model):
     autorizacion_actividades=models.BooleanField()
     autorizacion_fotografias=models.BooleanField()
     
+
+class Familia(models.Model):
+    nombre=models.CharField(max_length=100)
+    apellidos=models.CharField(max_length=100)
+    nif=models.CharField(max_length=100,primary_key=True, unique=True)
+    
+    
 class Familiares(models.Model):
     nombre=models.CharField(max_length=100)
     apellidos=models.CharField(max_length=100)
-    nif=models.CharField(max_length=100)
+    nif=models.CharField(max_length=100,primary_key=True, unique=True)
+    telefono=models.CharField(max_length=100) 
     movil=models.CharField(max_length=100) 
     email=models.CharField(max_length=100)
-    profesion=models.CharField(max_length=100)
+    rol=models.CharField(max_length=100)
+    familia_id=models.ForeignKey(Familia,null=True)
+    
+    
+
+    
+    
 
 class Socio(models.Model):
     n_asociado=models.CharField(max_length=100, primary_key=True, unique=True)
     #d_personales=models.ForeignKey(D_Personales, null=True)
     #d_medicos=models.ForeignKey(D_Medicos, null=True)
     #d_economicos=models.ForeignKey(D_Economicos, null=True)
-    familiares=models.ForeignKey(Familiares, null=True)
-    autorizaciones=models.ForeignKey(Autorizaciones, null=True)     
+    autorizaciones=models.ForeignKey(Autorizaciones, null=True)
+    familia_id=models.ForeignKey(Familia,null=True)     
     
 class D_Personales(models.Model):
     nombre=models.CharField(max_length=100)
@@ -43,6 +57,7 @@ class D_Personales(models.Model):
     deportes=models.TextField()
     aficiones=models.TextField()
     socio_id=models.ForeignKey(Socio)
+    
     
 
     

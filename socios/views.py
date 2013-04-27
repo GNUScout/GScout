@@ -28,8 +28,10 @@ import re
 
 @csrf_protect
 def newPersonal(request):
+    
     if request.POST['form_id'] == "f1":
         s_socio = request.session.get('d_socio', {})
+        
         s_socio['socio'] = Socio(n_asociado = request.POST['n_asociado']) 
         if (Socio.objects.filter(n_asociado=s_socio['socio'].n_asociado).count() > 0):
             return render_to_response('socios/f_asociado.html',{'errorSocio': 'El Número de asociado ya existe.'}, context_instance=RequestContext(request))
@@ -37,6 +39,9 @@ def newPersonal(request):
             request.session['d_socio'] = s_socio
             return render_to_response('socios/f_personales.html', context_instance=RequestContext(request))
     if request.POST['form_id'] == "f2":
+        
+        familia=Familiares.objects.all()
+        
         s_socio = request.session.get('d_socio', {})
         datos = D_Personales(nombre = request.POST['nombre'],
                              apellidos = request.POST['apellidos'],
@@ -63,7 +68,48 @@ def newPersonal(request):
        # new_socio.save() # and saved to database
         s_socio['personales'] = datos
         request.session['d_socio'] = s_socio
+        return render_to_response('socios/f_familiares.html',{'familia': familia}, context_instance=RequestContext(request))
+    if request.POST['form_id'] == "f5":
+        
+        s_socio = request.session.get('d_socio', {})
+        
+        
+        if request.POST['new_family'] == "si":
+            f_nombre =request.POST.getlist('fn[]')
+            f_apellidos =request.POST.getlist('fa[]')
+            f_nif =request.POST.getlist('fd[]')
+            f_rol =request.POST.getlist('fr[]')
+            f_tel =request.POST.getlist('ft[]')
+            f_movil =request.POST.getlist('fm[]')
+            f_email =request.POST.getlist('fe[]')
+            
+            new = Familia(nombre=f_nombre[0],
+                          apellidos=f_apellidos[0],
+                          nif=str(f_nif[0]),
+                          )
+            new.save()
+            
+            for i in range(len(f_nombre)):
+                familiar = Familiares(nombre=f_nombre[i],
+                                           apellidos=f_apellidos[i],
+                                           nif=f_nif[i],
+                                           rol=f_rol[i],
+                                           telefono=f_tel[i],
+                                           movil=f_movil[i],
+                                           email=f_email[i],
+                                           familia_id=Familia.objects.get(nif=str(f_nif[0]))
+                                           )
+                familiar.save()
+            
+            s_socio['socio'].familia_id= Familia.objects.get(nif=f_nif[0]) 
+            
+        else:
+            s_socio['socio'].familia_id=Familia.objects.get(nif=request.POST['nif_family'])
+            
+        request.session['d_socio'] = s_socio
+            
         return render_to_response('socios/f_economicos.html', context_instance=RequestContext(request))
+    
     if request.POST['form_id'] == "f3":
         s_socio = request.session.get('d_socio', {})
         datos = D_Economicos(titular = request.POST['titular'],
