@@ -11,8 +11,9 @@
 {% endblock %}
 {% block form-title %}<h2>Datos Medicos del socio nº {{ medicos.socio_id.n_asociado }}</h2>
 <a class="btn btn-large btn-primary" href="/socios/{{ medicos.socio_id.n_asociado }}/personales">Personales</a>
+<a class="btn btn-large btn-primary" href="/socios/{{ medicos.socio_id.n_asociado }}/familiares">Familia</a>
 <a class="btn btn-large btn-primary" href="/socios/{{ medicos.socio_id.n_asociado }}/economicos">Economicos</a>
-<a class="btn btn-large btn-primary" href="/socios/{{ medicos.socio_id.n_asociado }}/medicos">Medicos</a>
+<a class="btn btn-large btn-success" href="/socios/{{ medicos.socio_id.n_asociado }}/medicos">Medicos</a>
 {% endblock %}
 {% block form %}
 	<p><strong>Tipo de </strong> {{medicos.ss}}</p>

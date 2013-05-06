@@ -231,6 +231,31 @@ def medicos_socio(request, n_asociado):
     
     return render_to_response('socios/datos_medicos.html', {'medicos': medicos, 'medicamentos': medicamentos })
 
+def familiares_socio(request, n_asociado):
+    try:
+        socio = Socio.objects.get(n_asociado=n_asociado)
+    except:
+        return  HttpResponseRedirect('/socios/search')
+    
+    if socio.familia_id != None:
+    
+        familia = Familia.objects.get(nif=socio.familia_id.nif)
+        
+        familiares = Familiares.objects.filter(familia_id=socio.familia_id)
+        
+        hermanos = Socio.objects.filter(familia_id=socio.familia_id)
+        
+        lista = []
+        
+        for i in range(hermanos.count()):
+            lista.extend(D_Personales.objects.filter(socio_id=hermanos[i]))
+    
+        return render_to_response('socios/datos_familiares.html', {'socio': socio, 'familia': familia, 'familiares': familiares, 'hermanos': lista },context_instance=RequestContext(request))
+    
+    else:
+        return  HttpResponseRedirect('/socios/search')
+
+
 def economicos_socio(request, n_asociado):
     try:
         socio = Socio.objects.get(n_asociado=n_asociado)

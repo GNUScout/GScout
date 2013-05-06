@@ -8,7 +8,8 @@
 {% endblock %}
 {% block form-title %}<h2>Datos Economicos del socio nº {{ economicos.socio_id.n_asociado }}</h2>
 <a class="btn btn-large btn-primary" href="/socios/{{ economicos.socio_id.n_asociado }}/personales">Personales</a>
-<a class="btn btn-large btn-primary" href="/socios/{{ economicos.socio_id.n_asociado }}/economicos">Economicos</a>
+<a class="btn btn-large btn-primary" href="/socios/{{ economicos.socio_id.n_asociado }}/familiares">Familia</a>
+<a class="btn btn-large btn-success" href="/socios/{{ economicos.socio_id.n_asociado }}/economicos">Economicos</a>
 <a class="btn btn-large btn-primary" href="/socios/{{ economicos.socio_id.n_asociado }}/medicos">Medicos</a>
 {% endblock %}
 {% block form %}
