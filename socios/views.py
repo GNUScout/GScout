@@ -483,4 +483,29 @@ def export(request):
     return  HttpResponseRedirect('/')  
 
 
+def search_familia(request):
+
+    familia= Familia.objects.all()
+    
+    return render_to_response('socios/search_familia.html', {'familia': familia} ,context_instance=RequestContext(request))
+
+def edit_familia(request, familia_id):
+    
+    familia = Familia.objects.get(nif=familia_id)
+    
+    familiares = Familiares.objects.filter(familia_id=familia)
+    
+    hermanos = Socio.objects.filter(familia_id=familia)
+        
+    lista = []
+        
+    for i in range(hermanos.count()):
+        lista.extend(D_Personales.objects.filter(socio_id=hermanos[i]))
+        
+    return render_to_response('socios/f_edit_familiares.html', {'familia': familia, 'familiares': familiares, 'hermanos': lista },context_instance=RequestContext(request))
+    
+def modify_familia(request):
+    
+    return None
+
         

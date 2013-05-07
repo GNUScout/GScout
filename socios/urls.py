@@ -26,5 +26,8 @@ urlpatterns = patterns('',
    (r'^export/', export),
    ('^familiares_new/', 'django.views.generic.simple.direct_to_template',
      {'template': 'socios/f_familiares.html'}),
+   (r'search_familia', search_familia),
+   (r'([0-9]+)/edit_familia/?', edit_familia),
+   (r'modify_familia/?', modify_familia),
 )
 
