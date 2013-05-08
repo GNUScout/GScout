@@ -230,12 +230,13 @@
 
 });</script>
 {% endblock %}
-{% block form-title %}<h2>Datos Familiares</h2>{% endblock %}
+{% block form-title %}<h2>Cambio de Familia para el socio nº {{ socio }}</h2>{% endblock %}
 {% block form %}
-				<form id="f5" method="post" class="form-horizontal" action="/socios/create_personal/">
+				<form id="f5" method="post" class="form-horizontal" action="/socios/post_change_familia/">
 					{% csrf_token %}
 					<div class="control-group">
 						<label class="control-label">¿Familia nueva?</label>
+						<input type="hidden" name="n_asociado" value="{{ socio }}">
 						<div class="controls">
 							<label class="radio">
 								<input type="radio" name="new_family" id="optionsRadios1" onclick="clickNo()" value="no" checked>
@@ -315,7 +316,7 @@
 					<div class="control-group">
 						<div class="controls">
 							<input type="hidden" value="f5" name="form_id" />
-						  <button type="submit" class="btn">Siguiente</button>
+						  <button type="submit" class="btn">Cambiar</button>
 						</div>
 					</div>
 											

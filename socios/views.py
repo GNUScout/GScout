@@ -493,7 +493,15 @@ def edit_familia(request, familia_id):
     
     familia = Familia.objects.get(nif=familia_id)
     
-    familiares = Familiares.objects.filter(familia_id=familia)
+    familiares =[]
+    
+    familiares.extend(Familiares.objects.filter(nif=familia_id))
+    
+    todos=Familiares.objects.filter(familia_id=familia)
+    for i in todos:
+        if i.nif != familia_id:
+           familiares.extend([i]) 
+    
     
     hermanos = Socio.objects.filter(familia_id=familia)
         
@@ -502,10 +510,100 @@ def edit_familia(request, familia_id):
     for i in range(hermanos.count()):
         lista.extend(D_Personales.objects.filter(socio_id=hermanos[i]))
         
+    
+        
     return render_to_response('socios/f_edit_familiares.html', {'familia': familia, 'familiares': familiares, 'hermanos': lista },context_instance=RequestContext(request))
+    
     
 def modify_familia(request):
     
-    return None
+    
+    
+    familia_old = Familia.objects.get(nif=request.POST['oldfamily'])
+    
+    hijos= Socio.objects.filter(familia_id= familia_old)
+    
+    familiares_old = Familiares.objects.filter(familia_id=familia_old)
+    for f in familiares_old:
+        f.delete()
+    
+    familia_old.delete()
+    
+    a_nombre =request.POST.getlist('fn[]')
+    a_apellidos =request.POST.getlist('fa[]')
+    a_nif =request.POST.getlist('fd[]')
+    a_rol =request.POST.getlist('fr[]')
+    a_telefono =request.POST.getlist('ft[]')
+    a_movil =request.POST.getlist('fm[]')
+    a_email =request.POST.getlist('fe[]')
+    
+    familia_new = Familia(nif=a_nif[0],
+                          nombre=a_nombre[0],
+                          apellidos=a_apellidos[0])
+    
+    familia_new.save()
+    
+    for i in range(len(a_nombre)):
+      familiar = Familiares(nombre=a_nombre[i],
+                            apellidos=a_apellidos[i],
+                            nif=a_nif[i],
+                            rol=a_rol[i],
+                            telefono=a_telefono[i],
+                            movil=a_movil[i],
+                            email=a_email[i],
+                            familia_id=familia_new)
+      familiar.save()
+      
+    for i in hijos:
+        i.familia_id=familia_new
+        i.save()
+       
+    
+    
+    return  HttpResponseRedirect('/socios/'+familia_new.nif+'/edit_familiares')
 
+def change_familia(request,n_asociado):
         
+        familia=Familiares.objects.all()
+        
+        return render_to_response('socios/f_change_familia.html', {'socio': n_asociado, 'familia': familia},context_instance=RequestContext(request))
+    
+def post_change_familia(request):
+         
+    socio = Socio.objects.get(n_asociado=request.POST["n_asociado"])
+        
+    if request.POST['new_family'] == "si":
+        f_nombre =request.POST.getlist('fn[]')
+        f_apellidos =request.POST.getlist('fa[]')
+        f_nif =request.POST.getlist('fd[]')
+        f_rol =request.POST.getlist('fr[]')
+        f_tel =request.POST.getlist('ft[]')
+        f_movil =request.POST.getlist('fm[]')
+        f_email =request.POST.getlist('fe[]')
+        
+        new = Familia(nombre=f_nombre[0],
+                      apellidos=f_apellidos[0],
+                      nif=str(f_nif[0]),
+                      )
+        new.save()
+        
+        for i in range(len(f_nombre)):
+            familiar = Familiares(nombre=f_nombre[i],
+                                       apellidos=f_apellidos[i],
+                                       nif=f_nif[i],
+                                       rol=f_rol[i],
+                                       telefono=f_tel[i],
+                                       movil=f_movil[i],
+                                       email=f_email[i],
+                                       familia_id=Familia.objects.get(nif=str(f_nif[0]))
+                                       )
+            familiar.save()
+        
+        socio.familia_id= Familia.objects.get(nif=f_nif[0]) 
+        
+    else:
+        socio.familia_id=Familia.objects.get(nif=request.POST['nif_family'])
+        
+    socio.save()
+        
+    return HttpResponseRedirect('socios/'+request.POST["n_asociado"]+"/familiares")        

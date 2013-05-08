@@ -186,6 +186,7 @@
 					{% csrf_token %}
 					<div class="control-group">
 							<p><b>Nota:</b> El la primera persona que figure en la lista sera el identificador de la familia. </p>
+							<input type="hidden" name="oldfamily" value="{{familia.nif}}">
 							
 							<div id="todo">
 								<div id ="content"></div>

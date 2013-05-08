@@ -3,7 +3,8 @@
 	<li><a href="/">Home</a></li>
 	<li><a href="/socios/new">Nuevo Socio</a></li>
 	<li class="active"><a href="/socios/listado">Listado Socios</a></li>
-	<li><a href="/socios/listado_del">Borrar Socios</a></li>	
+	<li><a href="/socios/listado_del">Borrar Socios</a></li>
+	<li><a href="/socios/search_familia">Editar Familias</a></li>	
 	<li><a href="/socios/search">Buscar ID</a></li>  
 {% endblock %}
 {% block form-head %}
@@ -82,4 +83,5 @@
 			</tbody>
 		</table>
 	</div>
+	<a class="btn btn-large btn-danger" href="/socios/{{ socio.n_asociado }}/change_familia">Cambiar Familia</a>
 {% endblock %}
