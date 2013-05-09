@@ -23,7 +23,7 @@
 		tabla=0;
 		$("#todo").remove();
 		item= "<div id='todo'><div id ='content'></div></div>"
-		$("#boton_add").before(item)
+		$("#f1").after(item)
 	};
 	function total_medicamentos(tableID) {
         var table = document.getElementById(tableID);
@@ -277,8 +277,8 @@
 					<div id="todo">
 						<div id ="content"></div>
 					</div>
-					<INPUT id="boton_add" type="button" value="Add Row" style="display:none" onclick="addRow('dataTable')" />
-					<INPUT id="boton_del" type="button" value="Delete Row" style="display:none" onclick="deleteRow('dataTable')" />
+					<INPUT id="boton_add" type="button" value="Add Row" style="display:none" onclick="addRow('dataTable')">
+					<INPUT id="boton_del" type="button" value="Delete Row" style="display:none" onclick="deleteRow('dataTable')">
 					<hr align="left" noshade="noshade" size="3" width="100%" />
 					<div class="control-group">
 						<label class="control-label" for="inputInfo">Otra información de interes</label>

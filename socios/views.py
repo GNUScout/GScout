@@ -133,7 +133,7 @@ def newPersonal(request):
     if request.POST['form_id'] == "f4":
         s_socio = request.session.get('d_socio', {})
         new_socio = s_socio['socio']
-        total_medicamentos= request.POST['total_medicamentos']
+        toma_medicamentos= request.POST['toma_medicamentos']
         
         
         
@@ -167,7 +167,7 @@ def newPersonal(request):
          
         
         
-        if total_medicamentos > 0:
+        if toma_medicamentos == "si":
             a_nombre =request.POST.getlist('m[]')
             a_dosis =request.POST.getlist('md[]')
             a_pauta =request.POST.getlist('mp[]')
