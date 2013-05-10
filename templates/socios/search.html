@@ -2,7 +2,20 @@
 {% block navbar-content %}	
 	<li><a href="/">Home</a></li>
 	<li><a href="/socios/new">Nuevo Socio</a></li>
-	<li><a href="/socios/listado">Listado Socios</a></li>
+	<li class="dropdown">
+		<a href='#' class="dropdown-toggle" data-toggle="dropdown">
+			Listados
+			<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="/socios/listado">Listado Socios</a>
+			</li>
+			<li>
+				<a href="/socios/listado_economicos">Listado Economico</a>
+			</li>	
+		</ul>
+	</li>
 	<li><a href="/socios/listado_del">Borrar Socios</a></li>
 	<li><a href="/socios/search_familia">Editar Familias</a></li>
 	<li class="active"><a href="/socios/search">Buscar ID</a></li>	  

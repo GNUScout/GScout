@@ -397,6 +397,16 @@ def listado_del(request):
      
     return render_to_response('socios/list_del.html', {'socios': socios} ,context_instance=RequestContext(request))
 
+def listado_economicos(request):
+    
+    socios = D_Personales.objects.all()
+    
+    economicos = D_Economicos.objects.all()
+    
+    lista = zip(socios, economicos)
+     
+    return render_to_response('socios/listado_economicos.html', {'lista': lista} ,context_instance=RequestContext(request))
+
 def del_socios(request):
     sel_socios =request.POST.getlist('sel_borrar[]')
 
@@ -417,6 +427,68 @@ def del_socios(request):
     
     return render_to_response('socios/list_del.html', {'socios': socios} ,context_instance=RequestContext(request))
             
+def export_economicos(request):
+    
+    usuario = request.user
+    storage = User.objects.get(username = usuario.username)
+    
+        
+    credentials = storage.credential
+    
+    # Create an httplib2.Http object and authorize it with our credentials
+    http = httplib2.Http()
+    http = credentials.authorize(http)
+    
+    drive_service = build('drive', 'v2', http=http)
+    
+    socios = D_Personales.objects.values()
+    economicos = D_Economicos.objects.values()
+    
+    lista=[]
+    
+    for i in range(len(socios)):
+        selected=False
+        if (
+            (re.match(r'.*'+str(request.POST['filter0'])+'\.*',str(socios[i]['id']),re.IGNORECASE)) and
+            (re.match(r'.*'+str(request.POST['filter1'])+'\.*',str(economicos[i]['titular']),re.IGNORECASE)) and
+            (re.match(r'.*'+str(request.POST['filter2'])+'\.*',str(economicos[i]['nif_titular']),re.IGNORECASE)) and
+            (re.match(r'.*'+str(request.POST['filter3'])+'\.*',str(economicos[i]['banco']),re.IGNORECASE)) and
+            (re.match(r'.*'+str(request.POST['filter4'])+'\.*',str(socios[i]['nombre']),re.IGNORECASE)) and
+            (re.match(r'.*'+str(request.POST['filter5'])+'\.*',str(socios[i]['apellidos']),re.IGNORECASE)) and
+            (re.match(r'.*'+str(request.POST['filter6'])+'\.*',str(socios[i]['dni']),re.IGNORECASE))
+            ):
+                selected=True
+        
+        if selected:
+            lista.append(i)
+    
+    if (
+        (
+            (str(request.POST['filter0']) != "") and
+            (str(request.POST['filter1']) != "") and
+            (str(request.POST['filter2']) != "") and
+            (str(request.POST['filter3']) != "") and
+            (str(request.POST['filter4']) != "") and
+            (str(request.POST['filter5']) != "") and
+            (str(request.POST['filter6']) != "")) or len(lista) > 0 
+        ):  
+            datos="ID, Titular, NIF Titular, Banco, Nombre Socio, Apellidos Socio, DNI Socio\n"
+            for d in range(len(lista)):
+                datos += str(socios[lista[d]]['socio_id_id']) + "," + str(economicos[lista[d]]['titular']) + "," + str(economicos[lista[d]]['nif_titular']) + "," + str(economicos[lista[d]]['banco']) + "," + str(socios[lista[d]]['nombre']) + "," + str(socios[lista[d]]['apellidos']) + "," + str(socios[lista[d]]['dni']) + "\n"
+                
+            
+            # Insert a file
+            media_body = MediaIoBaseUpload(StringIO.StringIO(datos), 'text/csv', resumable=False)
+            body = {
+              'title': 'Economicos12345',
+              'description': 'A test document',
+              'mimeType': "text/csv"
+            }
+            
+            file = drive_service.files().insert(body=body, media_body=media_body, convert="true").execute()
+            pprint.pprint(file) 
+    
+    return  HttpResponseRedirect('/')  
 
 def export(request):
     
@@ -480,7 +552,9 @@ def export(request):
             file = drive_service.files().insert(body=body, media_body=media_body, convert="true").execute()
             pprint.pprint(file) 
     
-    return  HttpResponseRedirect('/')  
+    return  HttpResponseRedirect('/')
+
+
 
 
 def search_familia(request):

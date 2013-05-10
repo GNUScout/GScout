@@ -2,7 +2,7 @@
 {% block navbar-content %}	
 	<li><a href="/">Home</a></li>
 	<li><a href="/socios/new">Nuevo Socio</a></li>
-	<li class="dropdown">
+	<li class="active dropdown">
 		<a href='#' class="dropdown-toggle" data-toggle="dropdown">
 			Listados
 			<b class="caret"></b>
@@ -16,7 +16,7 @@
 			</li>	
 		</ul>
 	</li>
-	<li class="active"><a href="/socios/listado_del">Borrar Socios</a></li>
+	<li><a href="/socios/listado_del">Borrar Socios</a></li>
 	<li><a href="/socios/search_familia">Editar Familias</a></li>	  
 	<li><a href="/socios/search">Buscar ID</a></li>
 {% endblock %}
@@ -105,39 +105,35 @@
 
 });</script>
 {% endblock %}
-{% block form-title %}<h2>Listado de Socios (Datos Personales)</h2>
+{% block form-title %}<h2>Listado de Socios (Datos Economicos)</h2>
 {% endblock %}
 {% block form %}
-	<form method="post"  action="/socios/del_socios/">
+	<form method="post"  action="/socios/export_economicos/">
 		{% csrf_token %}
 	<table class="tablesorter">
 	<thead>
 		<tr>
-			<th>ID</th>
-			<th>Nombre</th>
-			<th>Apellidos</th>
-			<th>DNI</th>
-			<th class="filter-select filter-exact" data-placeholder="Todos">Sexo</th>
-			<th class="filter-select filter-exact" data-placeholder="Todos">Sección</th>
-			<th>F. Nacimiento</th>
-			<th>Localidad</th>
-			<th>Provincia</th>
+			<th>ID Socio</th>
+			<th>Titular</th>
+			<th>DNI Titular</th>
+			<th>Banco</th>
+			<th>Nombre Socio</th>
+			<th>Apellidos Socio</th>
+			<th>DNI Socio</th>
 		</tr>
 	</thead>
 	<tfoot>
 		<tr>
-			<th>ID</th>
-			<th>Nombre</th>
-			<th>Apellidos</th>
-			<th>DNI</th>
-			<th>Sexo</th>
-			<th>Sección</th>
-			<th>F. Nacimiento</th>
-			<th>Localidad</th>
-			<th>Provincia</th>
+			<th>ID Socio</th>
+			<th>Titular</th>
+			<th>DNI Titular</th>
+			<th>Banco</th>
+			<th>Nombre Socio</th>
+			<th>Apellidos Socio</th>
+			<th>DNI Socio</th>
 		</tr>
 		<tr>
-			<th colspan="9" class="pager form-horizontal">
+			<th colspan="7" class="pager form-horizontal">
 				<button class="btn first"><i class="icon-step-backward"></i></button>
 				<button class="btn prev"><i class="icon-arrow-left"></i></button>
 				<span class="pagedisplay"></span> <!-- this can be any element, including an input -->
@@ -155,11 +151,12 @@
 	</tfoot>
 	
 	<tbody>
-		{% for s in socios %}
-			<tr><td><a href="/socios/{{ s.socio_id.n_asociado }}/personales">{{s.socio_id.n_asociado}}</a>	<input type="checkbox" name="sel_borrar[]" value="{{ s.socio_id.n_asociado }}"></td><td>{{s.nombre}}</td><td>{{s.apellidos}}</td><td>{{s.dni}}</td><td>{{s.sexo}}</td><td>{{s.seccion}}</td><td>{{s.f_nacimiento}}</td><td>{{s.localidad}}</td><td>{{s.provincia}}</td></tr>
+		{% for s in lista %}
+			
+			<tr><td><a href="/socios/{{ s.0.socio_id.n_asociado }}/economicos">{{s.0.socio_id.n_asociado}}</a></td><td>{{s.1.titular}}</td><td>{{s.1.nif_titular}}</td><td>{{s.1.banco}}</td><td>{{s.0.nombre}}</td><td>{{s.0.apellidos}}</td><td>{{s.0.dni}}</td></tr>
 		{% endfor %}
 	</tbody>	
 	</table>
-	<button type="submit" class="btn btn-large btn-danger ">Borrar seleccionados</button>
+	<button type="submit" class="btn btn-large btn-primary">Export</button>
 	</form>
 {% endblock %}

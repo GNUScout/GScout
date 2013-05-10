@@ -2,17 +2,32 @@
 {% block navbar-content %}	
 	<li><a href="/">Home</a></li>
 	<li><a href="/socios/new">Nuevo Socio</a></li>
-	<li><a href="/socios/listado">Listado Socios</a></li>
+	<li class="dropdown">
+		<a href='#' class="dropdown-toggle" data-toggle="dropdown">
+			Listados
+			<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="/socios/listado">Listado Socios</a>
+			</li>
+			<li>
+				<a href="/socios/listado_economicos">Listado Economico</a>
+			</li>	
+		</ul>
+	</li>
 	<li><a href="/socios/listado_del">Borrar Socios</a></li>	
 	<li class="active"><a href="/socios/search_familia">Editar Familias</a></li>  
 	<li><a href="/socios/search">Buscar ID</a></li>
 {% endblock %}
 {% block form-head %}
-<script src="/static/js/jquery-1.9.1.js" type='text/javascript'></script>           
+         
 <script type="text/javascript" src="/static/js/jquery.tablesorter.js"></script>
-<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="screen"> 
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="screen">
+
+
   
-<!-- jQuery -->
+	<!-- jQuery -->
 	<script src="/static/js/jquery-1.9.1.js" type='text/javascript'></script>  
 
 	<!-- Demo stuff -->
@@ -26,8 +41,12 @@
 	<!-- Tablesorter: optional -->
 	<link rel="stylesheet" href="/static/addons/pager/jquery.tablesorter.pager.css">
 	<script src="/static/addons/pager/jquery.tablesorter.pager.js"></script>
+	
+	
 
 	<script id="js">$(function() {
+		
+	
 
 	$.extend($.tablesorter.themes.bootstrap, {
 		// these classes are added to the table. To see other table classes available,
