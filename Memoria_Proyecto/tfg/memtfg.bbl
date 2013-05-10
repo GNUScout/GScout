@@ -1,0 +1,41 @@
+\begin{thebibliography}{1}
+
+\bibitem{URL:XML}
+{ACM LaTeX Style}.
+\newblock http://www.acm.org/publications/latex\_style/.
+
+\bibitem{Fujitsu}
+{FACOM OS IV SSL II USER'S GUIDE, 99SP0050E5}.
+\newblock Technical report, 1990.
+
+\bibitem{Bailey}
+D.~H. Bailey and P.~Swarztrauber.
+\newblock The fractional {F}ourier transform and applications.
+\newblock {\em SIAM Rev.}, 33(3):389--404, 1991.
+
+\bibitem{Bay1}
+A.~Bayliss, C.~I. Goldstein, and E.~Turkel.
+\newblock An iterative method for the {H}elmholtz equation.
+\newblock {\em J. Comp. Phys.}, 49:443--457, 1983.
+
+\bibitem{Darwin:1859}
+C.~Darwin.
+\newblock {\em {The Origin Of Species}}.
+\newblock November 1859.
+
+\bibitem{Gold3}
+C.~Goldstein.
+\newblock Multigrid methods for elliptic problems in unbounded domains.
+\newblock {\em SIAM J. Numer. Anal.}, 30:159--183, 1993.
+
+\bibitem{Swa82}
+P.~Swarztrauber.
+\newblock {\em Vectorizing the {FFTs}}.
+\newblock Academic Press, New York, 1982.
+
+\bibitem{Ta84}
+S.~Ta\'asan.
+\newblock {\em Multigrid Methods for Highly Oscillatory Problems}.
+\newblock PhD thesis, Weizmann Institute of Science, Rehovot, Israel, 1984.
+
+\end{thebibliography}
