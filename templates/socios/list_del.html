@@ -25,7 +25,7 @@
 <script type="text/javascript" src="/static/js/jquery.tablesorter.js"></script>
 <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="screen"> 
   
-<!-- jQuery -->
+	<!-- jQuery -->
 	<script src="/static/js/jquery-1.9.1.js" type='text/javascript'></script>  
 
 	<!-- Demo stuff -->
@@ -35,6 +35,14 @@
 	<link rel="stylesheet" href="/static/css/theme.bootstrap.css">
 	<script src="/static/js/jquery.tablesorter.js"></script>
 	<script src="/static/js/jquery.tablesorter.widgets.js"></script>
+	
+	<!-- filter formatter code -->
+	<link rel="stylesheet" href="/static/css/filter.formatter.css">
+	<script src="/static/js/jquery.tablesorter.widgets-filter-formatter.js"></script>
+	
+  	<!-- jQuery UI for range slider -->
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/cupertino/jquery-ui.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
 
 	<!-- Tablesorter: optional -->
 	<link rel="stylesheet" href="/static/addons/pager/jquery.tablesorter.pager.css">
@@ -81,7 +89,20 @@
 			filter_reset : ".reset",
 
 			// set the uitheme widget to use the bootstrap theme class names
-			// uitheme : "bootstrap"
+			//uitheme : "bootstrap",
+			
+			filter_formatter : {
+			     6 : function($cell, indx){
+			      
+		          return $.tablesorter.filterFormatter.uiDatepicker( $cell, indx, {
+		            from : '12/1/1985',
+		            to   : '2/1/2014',
+		            changeMonth: true,
+		            changeYear : true
+		          });
+		        }
+			 }
+			
 
 		}
 	})

@@ -8,6 +8,7 @@ from django.contrib.sessions.models import Session
 from socios.models import *
 from django.contrib.sessions.models import Session
 import datetime  
+from time import strftime
 
 
 import csv
@@ -388,12 +389,18 @@ def modify_medicos(request):
 def listado(request):
     
     socios = D_Personales.objects.all()
+    
+    for s in socios:
+        s.f_nacimiento=s.f_nacimiento.strftime('%b %d, %Y')
      
     return render_to_response('socios/list.html', {'socios': socios} ,context_instance=RequestContext(request))
 
 def listado_del(request):
     
     socios = D_Personales.objects.all()
+    
+    for s in socios:
+        s.f_nacimiento=s.f_nacimiento.strftime('%b %d, %Y')
      
     return render_to_response('socios/list_del.html', {'socios': socios} ,context_instance=RequestContext(request))
 
@@ -476,11 +483,12 @@ def export_economicos(request):
             for d in range(len(lista)):
                 datos += str(socios[lista[d]]['socio_id_id']) + "," + str(economicos[lista[d]]['titular']) + "," + str(economicos[lista[d]]['nif_titular']) + "," + str(economicos[lista[d]]['banco']) + "," + str(socios[lista[d]]['nombre']) + "," + str(socios[lista[d]]['apellidos']) + "," + str(socios[lista[d]]['dni']) + "\n"
                 
-            
+            now = datetime.datetime.now()
+            now = now.strftime("%d-%m-%Y")
             # Insert a file
             media_body = MediaIoBaseUpload(StringIO.StringIO(datos), 'text/csv', resumable=False)
             body = {
-              'title': 'Economicos12345',
+              'title': 'Datos_Economicos_'+now+'',
               'description': 'A test document',
               'mimeType': "text/csv"
             }
@@ -519,7 +527,17 @@ def export(request):
             (re.match(r'.*'+str(request.POST['filter7'])+'\.*',str(socios[i]['localidad']),re.IGNORECASE)) and
             (re.match(r'.*'+str(request.POST['filter8'])+'\.*',str(socios[i]['provincia']),re.IGNORECASE))
             ):
-                selected=True
+                #Convertimos las fechas del POST en el formato correco para su comparacion
+                if (str(request.POST['from']) != "") and (str(request.POST['to']) != ""):
+                    date = str(request.POST['from']).split("/")
+                    fecha = datetime.datetime.now()
+                    f = fecha.replace(year=int(date[2]), month=int(date[0]), day=int(date[1]),hour=0, minute=0, second=0, microsecond=0) 
+                    date = str(request.POST['to']).split("/")
+                    t = fecha.replace(year=int(date[2]), month=int(date[0]), day=int(date[1]),hour=0, minute=0, second=0, microsecond=0)
+                    if ((socios[i]['f_nacimiento'] >= f) and (socios[i]['f_nacimiento'] <= t)): 
+                        selected=True
+                else:
+                    selected=True
         
         if selected:
             lista.append(socios[i])
@@ -538,13 +556,14 @@ def export(request):
         ):  
             datos="ID, Nombre, Apellidos, DNI, Sexo, Seccion, F.Nacimiento, Localidad, Provincia\n"
             for d in range(len(lista)):
-                datos += str(lista[d]['id']) + "," + str(lista[d]['nombre']) + "," + str(lista[d]['apellidos']) + "," + str(lista[d]['dni']) + "," + str(lista[d]['sexo']) + "," + str(lista[d]['seccion']) + "," + str(lista[d]['f_nacimiento']) + "," + str(lista[d]['localidad']) + "," + str(lista[d]['provincia']) + "\n"
+                datos += str(lista[d]['socio_id_id']) + "," + str(lista[d]['nombre']) + "," + str(lista[d]['apellidos']) + "," + str(lista[d]['dni']) + "," + str(lista[d]['sexo']) + "," + str(lista[d]['seccion']) + "," + str(lista[d]['f_nacimiento']) + "," + str(lista[d]['localidad']) + "," + str(lista[d]['provincia']) + "\n"
                 
-            
+            now = datetime.datetime.now()
+            now = now.strftime("%d-%m-%Y")
             # Insert a file
             media_body = MediaIoBaseUpload(StringIO.StringIO(datos), 'text/csv', resumable=False)
             body = {
-              'title': 'Prueba12345',
+              'title': 'Datos_Personales_'+now+'',
               'description': 'A test document',
               'mimeType': "text/csv"
             }
@@ -680,4 +699,27 @@ def post_change_familia(request):
         
     socio.save()
         
-    return HttpResponseRedirect('socios/'+request.POST["n_asociado"]+"/familiares")        
+    return HttpResponseRedirect('socios/'+request.POST["n_asociado"]+"/familiares")   
+
+def cambio_unidad(request):  
+    
+    socios = D_Personales.objects.all()
+    
+    date = datetime.datetime.now()
+    date = int(date.strftime('%Y'))
+    
+    for s in socios:
+        if (date - int(s.f_nacimiento.strftime('%Y')))  < 11 :
+            s.seccion="Manada"
+        if ((date - int(s.f_nacimiento.strftime('%Y'))  >= 11) and (date - int(s.f_nacimiento.strftime('%Y'))  < 14)):
+            s.seccion="Tropa"
+        if ((date - int(s.f_nacimiento.strftime('%Y'))  >= 14) and (date - int(s.f_nacimiento.strftime('%Y'))  < 17)):
+            s.seccion="Esculta"
+        if ((date - int(s.f_nacimiento.strftime('%Y'))  >= 17) and (date - int(s.f_nacimiento.strftime('%Y'))  < 20)):
+            s.seccion="Rover" 
+        if (date - int(s.f_nacimiento.strftime('%Y')))  >= 20 :
+            s.seccion="Scouter" 
+        
+        s.save()
+            
+    return HttpResponseRedirect('/')   

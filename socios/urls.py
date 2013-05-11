@@ -33,6 +33,7 @@ urlpatterns = patterns('',
    (r'modify_familia/?', modify_familia),
    (r'post_change_familia/?', post_change_familia),
    (r'([0-9]+)/change_familia/?', change_familia),
+   (r'cambio_unidad/?', cambio_unidad),
    
    
 )

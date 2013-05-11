@@ -26,6 +26,9 @@
      .centrar{
       	padding-left: 140px;
       }
+      .boton_centro_cambio{
+      	padding-left: 200px;
+      }
 </style>
 {% endblock %}
 {% block title %}It works!{% endblock %}
@@ -40,6 +43,10 @@
 		<a class="btn btn-large btn-primary" href="/socios/search">Buscar Socio</a>
 		<a class="btn btn-large btn-primary" href="/socios/listado">Listado de Socios</a>
 		<a class="btn btn-large btn-danger" href="/socios/listado_del">Borrar Socios</a>
+	</div>
+	<div class="boton_centro_cambio">
+		<p> </p>
+		<a class="btn btn-large btn-warning" href="/socios/cambio_unidad">Cambio de Unidad</a>
 	</div>
 </div>
 {% endblock %}
