@@ -1,5 +1,7 @@
 import os
 from django.conf.urls.defaults import *
+from django.conf.urls.static import static
+from django.conf import settings
 
 handler500 = 'djangotoolbox.errorviews.server_error'
 
@@ -10,9 +12,8 @@ urlpatterns = patterns('',
     
     (r'^prueba/', 'plus.views.index'),
     (r'^oauth2callback', 'plus.views.auth_return'),
-    (r'^socios/', include('socios.urls')),
-    ('^otra/', 'django.views.generic.simple.direct_to_template',
-     {'template': 'socios/prueba.html'}),  
+    (r'^socios/', include('socios.urls')), 
+    (r'^up/', include('upload.urls')), 
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs'
     # to INSTALLED_APPS to enable admin documentation:
@@ -28,4 +29,4 @@ urlpatterns = patterns('',
 #}),
                        
     
-)
+) 

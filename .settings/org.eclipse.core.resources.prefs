@@ -3,3 +3,7 @@ encoding//empleados/views.py=utf-8
 encoding//gaeauth/urls.py=utf-8
 encoding//socios/urls.py=utf-8
 encoding//socios/views.py=utf-8
+encoding//upload/forms.py=utf-8
+encoding//upload/models.py=utf-8
+encoding//upload/urls.py=utf-8
+encoding//upload/views.py=utf-8

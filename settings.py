@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'empleados',
    # 'django.contrib.staticfiles',
     'djangoappengine',
+    'upload',
     
 )
 
