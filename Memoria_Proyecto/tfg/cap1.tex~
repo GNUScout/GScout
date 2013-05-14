@@ -48,7 +48,8 @@ Resumen de los principales recursos utilizados en el desarrollo del proyecto.:
 \label{1:sec:3}
 El desarrollo del proyecto se organizó de la siguiente manera:
 
-
+\begin{table}[!ht]
+\begin{center}
 \begin{tabular}{|p{25mm}|p{80mm}|} \hline 
 \textbf{Tarea } & \textbf{Actividad} \\ \hline
 Tarea1 &
@@ -99,7 +100,10 @@ Puesta en producción (fase beta), formación de usuario y gestión de errores.
 \hline
 
 \end{tabular}
-
+\end{center}
+\caption{Tabla resumen de los Tipos}
+\label{table:tareas}
+\end{table}
 
 %---------------------------------------------------------------------------------
 \section{Sección Cuatro}

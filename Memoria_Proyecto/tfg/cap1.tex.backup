@@ -48,7 +48,8 @@ Resumen de los principales recursos utilizados en el desarrollo del proyecto.:
 \label{1:sec:3}
 El desarrollo del proyecto se organizó de la siguiente manera:
 
-
+\begin{table}[!ht]
+\begin{center}
 \begin{tabular}{|p{25mm}|p{80mm}|} \hline 
 \textbf{Tarea } & \textbf{Actividad} \\ \hline
 Tarea1 &
@@ -68,38 +69,17 @@ estrategia de branching.
 \\
 \hline
 
-Tarea 4 &
+Tarea 4&
 Definir u proyecto en Pivotal tracker[3] para el seguimiento del proyecto. Esta herramienta
 facilita el desarrollo siguiento metodologías ágiles.
 \\
 \hline
 
-Tarea 5 & 
-Desarrollo de un proyecto piloto, realizar la implantación en GAE[2] comprobando el 
-funcionamiento básico de esta plataforma.
-\\
-\hline
-
-Tarea 6 &
-Entrevistas de seguimiento. 2º reunión con los responsables del grupo Scout para
-mostrar el piloto de la aplicación, refinar diseños,etc
-\\
-\hline
-
-Tarea 7 &
-Desarrollo de la aplicación: implementar las funcionalidades requeridas (posibles
-entrevistas a lo largo del proceso para comprobar si la implementación cumple los requisitos
-del cliente: se realizarán por lo menos 4 iteraciones completas: análisis, desarrollo, test, implantación)
-\\
-\hline
-
-Tarea 8 &
-Puesta en producción (fase beta), formación de usuario y gestión de errores.
-\\
-\hline
-
 \end{tabular}
-
+\end{center}
+\caption{Tabla resumen de los Tipos}
+\label{table:resOthers}
+\end{table}
 
 %---------------------------------------------------------------------------------
 \section{Sección Cuatro}
