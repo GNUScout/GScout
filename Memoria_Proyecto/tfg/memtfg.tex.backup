@@ -105,10 +105,11 @@
 
 \HRule
 \begin{flushright}
-        {\Huge Título} \\[2.5mm] 
-        {\Huge Subtítulo.} \\[2.5mm]
+        {\Huge GScout} \\[2.5mm] 
+        {\Huge Desarrollo e implantación de una 
+        aplicación para la gestión de grupos Scout} \\[2.5mm]
         {\Large \textit{Title in English} .} \\[5mm]
-        {\Large Autor} \\[5mm]
+        {\Large José Daniel Juárez Dávila} \\[5mm]
         Dpto. Nombre del Departamento \\[5mm]
         Escuela T\'ecnica Superior de Ingenier\'{\i}a Inform\'atica \\[5mm]
         
@@ -180,7 +181,7 @@ Agradecimientos
 
 
 \hspace{3mm}
-XXX
+Equipo de scout Aguere por su colaboración en el proyecto.
 
 \hspace{3mm}
 XXX
@@ -203,13 +204,13 @@ XXX
 \begin{abstract}
 {\em 
 
-El objetivo de este trabajo ha sido .... 
-%
-bla, bla, bla
-%
-bla, bla, bla
-%
-bla, bla, bla
+El objetivo de este trabajo ha sido crear una aplicación web para los scout de Aguere 70, la cual facilite 
+la gestión de los socios de dicha organización.
+
+
+
+
+
 
 }
 

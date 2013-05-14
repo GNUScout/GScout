@@ -181,7 +181,7 @@ Agradecimientos
 
 
 \hspace{3mm}
-XXX
+Equipo de scout Aguere por su colaboración en el proyecto.
 
 \hspace{3mm}
 XXX
@@ -204,13 +204,26 @@ XXX
 \begin{abstract}
 {\em 
 
-El objetivo de este trabajo ha sido .... 
-%
-bla, bla, bla
-%
-bla, bla, bla
-%
-bla, bla, bla
+El objetivo de este trabajo ha sido crear una aplicación web para los scout de Aguere 70, la cual facilite 
+la gestión de los socios de dicha organización.
+
+Para ello usamos como framework Django, pero como tambien vamos a trabajar con la estructura de Google App Engine, utilizamos
+la version de django-nonrel que nos permite utilizar base de datos no relacionales ya que la que usa App Engine es la BigTable de Google
+y esta es no relacional. La ventaja del uso de este tipo de base de datos es que son mas escalable, y gracias al framework de Django se pueden 
+manipular por medio de este con QuerySet de Django, salvo que no podemos usar joins ni many to many, etc ni ninguna relacion entre
+tablas que no sea de clave foranea.
+
+Aparte del frameworky y de App Engine introducimos en la aplicación APIs de Google para poder iniciar sesión con una cuenta de google y obtener 
+los datos de dicha cuenta sin necesidad de almacenarlo,
+ademas tambien utilizamos otra API para la exportación de información a Google Drive.
+
+En cuanto a las templates de la aplicacion se utiliza la configuración CSS de nos brinda Bootstraps y alguno que otro codigo en jQuery para 
+crear dinamismo en las paginas y con la iteracion del usuario y la aplicación.
+
+
+
+
+
 
 }
 
