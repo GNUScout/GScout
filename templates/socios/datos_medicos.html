@@ -30,8 +30,7 @@
 <a class="btn btn-large btn-success" href="/socios/{{ medicos.socio_id.n_asociado }}/medicos">Medicos</a>
 {% endblock %}
 {% block form %}
-	<p><strong>Tipo de </strong> {{medicos.ss}}</p>
-	<p><strong>Seguro: </strong> {{medicos.smp}}</p>
+	<p><strong>Compañia de Seguro: </strong> {{medicos.c_seguro}}</p>
 	<p><strong>Numero de Poliza: </strong> {{medicos.n_poliza}}</p>
 	<p><strong>¿Enfermedad?: </strong> {{medicos.enfermedad}}</p>
 	<p><strong>¿Cual?: </strong> <time>{{medicos.t_enfermedad}}</time></p>

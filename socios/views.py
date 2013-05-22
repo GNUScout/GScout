@@ -138,8 +138,7 @@ def newPersonal(request):
         
         
         
-        datos = D_Medicos(ss= request.POST['ss'],
-                             smp = request.POST['smp'],
+        datos = D_Medicos(c_seguro= request.POST['c_seguro'],
                              n_poliza = request.POST['n_poliza'],
                              enfermedad = request.POST['enfermedad'],
                              t_enfermedad = request.POST['t_enfermedad'],
@@ -345,8 +344,7 @@ def modify_medicos(request):
     total_medicamentos= request.POST['total_medicamentos']
     
     socio = D_Medicos.objects.get(socio_id= request.POST['socio'])
-    socio.ss = request.POST['ss']
-    socio.smp = request.POST['smp']
+    socio.c_seguro = request.POST['c_seguro']
     socio.n_poliza = request.POST['n_poliza']
     socio.enfermedad = request.POST['enfermedad']
     socio.t_enfermedad = request.POST['t_enfermedad']

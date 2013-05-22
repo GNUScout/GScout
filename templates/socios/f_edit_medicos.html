@@ -147,30 +147,16 @@
 					
 
 					<div class="control-group">
-						<label class="control-label" for="inputSeguro">Tipo de seguro</label>
+						<label class="control-label" for="inputSeguro">Compañia de Seguro</label>
 						<div class="controls">
-							<input type="hidden" name="ss" value="">
-							<input type="hidden" name="smp" value="">
-						  	<input id="inputSeguro1" type="checkbox" name="ss" value="Seguridad social">	Seguridad social
-						  	<br><input id="inputSeguro2" type="checkbox" name="smp" value="Seguro medico Privado">	Seguro médico privado</br>
-						  	<script language="JavaScript">
-								var opcion = "{{medicos.ss}}";
-								if (opcion == "Seguridad social")
-									{
-							    	$('input[name=ss]').attr('checked', true);
-							    	}
-							    var opcion2 = "{{medicos.smp}}";
-								if (opcion2 == "Seguro medico Privado")
-									{
-							    	$('input[name=smp]').attr('checked', true);
-							    	}
-							</script>
+							<input type="text" id="inputSeguro" name="c_seguro" value="{{medicos.c_seguro}}">
+						  	
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label" for="inputPoliza">Nº de Poliza</label>
 						<div class="controls">
-						  <input type="text" id="inputPoliza" name="n_poliza" placeholder="Nº de Poliza">
+						  <input type="text" id="inputPoliza" name="n_poliza" value="{{medicos.n_poliza}}">
 						</div>
 					</div>
 					<h4 align="center">Patologías específicas e intervenciones quirúrgicas</h4>

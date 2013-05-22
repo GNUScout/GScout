@@ -10,6 +10,36 @@
 \usepackage{algorithmic}
 \usepackage{multirow}
 
+%
+\usepackage{listings}
+\usepackage{color}
+
+\lstloadlanguages{Python,C}
+\lstset{
+  language=Python,                      % C,Fortran,XML
+  basicstyle=\small,                    % Listados en small
+  keywordstyle=\color{red},             % Palabras clave en rojo
+  identifierstyle=\ttfamily,
+  escapeinside={(*@}{@*)},
+  commentstyle=\color{blue},            % comentarios en azul
+  stringstyle=\color{green},            % cadenas en verde
+  showstringspaces=false,
+  frame=tb,
+  captionpos=b,
+  framextopmargin=2pt,
+  framexbottommargin=2pt,
+  framesep=0pt,
+  belowskip=0pt,
+  aboveskip=0pt,
+  belowcaptionskip=0pt,
+  abovecaptionskip=0pt,
+  stepnumber=2,                                         % Opciones de lineas y etiquetas
+  numberstyle=\small,
+  numbersep=5pt,
+  tabsize=1
+}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\SONY}{{\sc Sony}}

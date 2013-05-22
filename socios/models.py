@@ -31,6 +31,7 @@ class Familiares(models.Model):
 
 class Socio(models.Model):
     n_asociado=models.CharField(max_length=100, primary_key=True, unique=True)
+    alta=models.BooleanField()
     #d_personales=models.ForeignKey(D_Personales, null=True)
     #d_medicos=models.ForeignKey(D_Medicos, null=True)
     #d_economicos=models.ForeignKey(D_Economicos, null=True)
@@ -49,7 +50,7 @@ class D_Personales(models.Model):
     provincia=models.CharField(max_length=100)
     fijo=models.CharField(max_length=100)
     movil=models.CharField(max_length=100)
-    f_ingreso=models.DateTimeField()
+    f_ingreso=models.DateTimeField(blank=True, null=True)
     f_baja=models.DateTimeField(blank=True, null=True)
     seccion=models.CharField(max_length=100)
     estudios=models.TextField()
@@ -62,22 +63,21 @@ class D_Personales(models.Model):
 
     
 class D_Medicos(models.Model):
-    ss=models.CharField(max_length=100)
-    smp=models.CharField(max_length=100)
+    c_seguro=models.CharField(max_length=100)
     n_poliza=models.CharField(max_length=100)
-    enfermedad=models.CharField(max_length=2)
+    enfermedad=models.CharField(max_length=2, default='no')
     t_enfermedad=models.TextField()
-    enfermedad_cfp=models.CharField(max_length=2)
+    enfermedad_cfp=models.CharField(max_length=2, default='no')
     t_enfermedad_cfp=models.TextField()
-    operado=models.CharField(max_length=2)
+    operado=models.CharField(max_length=2, default='no')
     t_operado=models.TextField()
-    alergia=models.CharField(max_length=2)
+    alergia=models.CharField(max_length=2, default='no')
     t_alergia=models.TextField()
-    otras_alergias=models.CharField(max_length=2)
+    otras_alergias=models.CharField(max_length=2, default='no')
     t_otras_alergias=models.TextField()
-    dieta=models.CharField(max_length=2)
+    dieta=models.CharField(max_length=2, default='no')
     t_dieta=models.TextField()
-    toma_medicamentos=models.CharField(max_length=2)
+    toma_medicamentos=models.CharField(max_length=2, default='no')
     info_adicional=models.TextField()
     socio_id=models.ForeignKey(Socio)
     
