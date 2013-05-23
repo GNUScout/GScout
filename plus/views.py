@@ -35,7 +35,7 @@ FLOW = OAuth2WebServerFlow (
     scope= ['https://www.googleapis.com/auth/drive','https://www.googleapis.com/auth/plus.me'],
     #scope='https://www.googleapis.com/auth/plus.me',
     #oauth_scope= 'https://www.googleapis.com/auth/drive',
-    redirect_uri= 'http://ctstprueba.appspot.com/oauth2callback', #'http://localhost:8000/oauth2callback', 
+    redirect_uri= 'http://localhost:8000/oauth2callback', #'http://ctstprueba.appspot.com/oauth2callback']
     access_type='offline',
     approval_prompt='force')
 

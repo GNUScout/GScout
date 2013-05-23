@@ -24,6 +24,7 @@ from oauth2client.client import OAuth2WebServerFlow
 from django.contrib.auth.models import User
 
 import re
+import unicodedata
 
 
 
@@ -455,12 +456,12 @@ def export_economicos(request):
         selected=False
         if (
             (re.match(r'.*'+str(request.POST['filter0'])+'\.*',str(socios[i]['id']),re.IGNORECASE)) and
-            (re.match(r'.*'+str(request.POST['filter1'])+'\.*',str(economicos[i]['titular']),re.IGNORECASE)) and
-            (re.match(r'.*'+str(request.POST['filter2'])+'\.*',str(economicos[i]['nif_titular']),re.IGNORECASE)) and
-            (re.match(r'.*'+str(request.POST['filter3'])+'\.*',str(economicos[i]['banco']),re.IGNORECASE)) and
-            (re.match(r'.*'+str(request.POST['filter4'])+'\.*',str(socios[i]['nombre']),re.IGNORECASE)) and
-            (re.match(r'.*'+str(request.POST['filter5'])+'\.*',str(socios[i]['apellidos']),re.IGNORECASE)) and
-            (re.match(r'.*'+str(request.POST['filter6'])+'\.*',str(socios[i]['dni']),re.IGNORECASE))
+            (re.match(r'.*'+request.POST['filter1']+'\.*',economicos[i]['titular'],re.IGNORECASE)) and
+            (re.match(r'.*'+request.POST['filter2']+'\.*',economicos[i]['nif_titular'],re.IGNORECASE)) and
+            (re.match(r'.*'+request.POST['filter3']+'\.*',economicos[i]['banco'],re.IGNORECASE)) and
+            (re.match(r'.*'+request.POST['filter4']+'\.*',socios[i]['nombre'],re.IGNORECASE)) and
+            (re.match(r'.*'+request.POST['filter5']+'\.*',socios[i]['apellidos'],re.IGNORECASE)) and
+            (re.match(r'.*'+request.POST['filter6']+'\.*',socios[i]['dni'],re.IGNORECASE))
             ):
                 selected=True
         
@@ -479,7 +480,7 @@ def export_economicos(request):
         ):  
             datos="ID, Titular, NIF Titular, Banco, Nombre Socio, Apellidos Socio, DNI Socio\n"
             for d in range(len(lista)):
-                datos += str(socios[lista[d]]['socio_id_id']) + "," + str(economicos[lista[d]]['titular']) + "," + str(economicos[lista[d]]['nif_titular']) + "," + str(economicos[lista[d]]['banco']) + "," + str(socios[lista[d]]['nombre']) + "," + str(socios[lista[d]]['apellidos']) + "," + str(socios[lista[d]]['dni']) + "\n"
+                datos += str(socios[lista[d]]['socio_id_id']) + "," + unicodedata.normalize('NFKD',economicos[lista[d]]['titular']).encode('ascii','ignore') + "," + str(economicos[lista[d]]['nif_titular']) + "," + str(economicos[lista[d]]['banco']) + "," + unicodedata.normalize('NFKD',socios[lista[d]]['nombre']).encode('ascii','ignore') + "," + unicodedata.normalize('NFKD',socios[lista[d]]['apellidos']).encode('ascii','ignore') + "," + str(socios[lista[d]]['dni']) + "\n"
                 
             now = datetime.datetime.now()
             now = now.strftime("%d-%m-%Y")
@@ -515,15 +516,15 @@ def export(request):
     for i in range(len(socios)):
         selected=False
         if (
-            (re.match(r'.*'+str(request.POST['filter0'])+'\.*',str(socios[i]['id']),re.IGNORECASE)) and
-            (re.match(r'.*'+str(request.POST['filter1'])+'\.*',str(socios[i]['nombre']),re.IGNORECASE)) and
-            (re.match(r'.*'+str(request.POST['filter2'])+'\.*',str(socios[i]['apellidos']),re.IGNORECASE)) and
-            (re.match(r'.*'+str(request.POST['filter3'])+'\.*',str(socios[i]['dni']),re.IGNORECASE)) and
-            (re.match(r'.*'+str(request.POST['filter4'])+'\.*',str(socios[i]['sexo']),re.IGNORECASE)) and
-            (re.match(r'.*'+str(request.POST['filter5'])+'\.*',str(socios[i]['seccion']),re.IGNORECASE)) and
-            #(re.match(r'.*'+str(request.POST['filter6'])+'\.*',socios[i]['f_nacimiento']),re.IGNORECASE)) and
-            (re.match(r'.*'+str(request.POST['filter7'])+'\.*',str(socios[i]['localidad']),re.IGNORECASE)) and
-            (re.match(r'.*'+str(request.POST['filter8'])+'\.*',str(socios[i]['provincia']),re.IGNORECASE))
+            (re.match(r'.*'+request.POST['filter0']+'\.*',str(socios[i]['id']),re.IGNORECASE)) and
+            (re.match(r'.*'+request.POST['filter1']+'\.*',socios[i]['nombre'],re.IGNORECASE)) and
+            (re.match(r'.*'+request.POST['filter2']+'\.*',socios[i]['apellidos'],re.IGNORECASE)) and
+            (re.match(r'.*'+request.POST['filter3']+'\.*',socios[i]['dni'],re.IGNORECASE)) and
+            (re.match(r'.*'+request.POST['filter4']+'\.*',socios[i]['sexo'],re.IGNORECASE)) and
+            (re.match(r'.*'+request.POST['filter5']+'\.*',socios[i]['seccion'],re.IGNORECASE)) and
+            #(re.match(r'.*'+request.POST['filter6']+'\.*',socios[i]['f_nacimiento'],re.IGNORECASE)) and
+            (re.match(r'.*'+request.POST['filter7']+'\.*',socios[i]['localidad'],re.IGNORECASE)) and
+            (re.match(r'.*'+request.POST['filter8']+'\.*',socios[i]['provincia'],re.IGNORECASE))
             ):
                 #Convertimos las fechas del POST en el formato correco para su comparacion
                 if (str(request.POST['from']) != "") and (str(request.POST['to']) != ""):
@@ -538,6 +539,8 @@ def export(request):
                     selected=True
         
         if selected:
+            socios[i]['nombre']= unicodedata.normalize('NFKD',socios[i]['nombre']).encode('ascii','ignore')
+            socios[i]['apellidos']=unicodedata.normalize('NFKD',socios[i]['apellidos']).encode('ascii','ignore')
             lista.append(socios[i])
     
     if (
@@ -555,7 +558,7 @@ def export(request):
             datos="ID, Nombre, Apellidos, DNI, Sexo, Seccion, F.Nacimiento, Localidad, Provincia\n"
             for d in range(len(lista)):
                 datos += str(lista[d]['socio_id_id']) + "," + str(lista[d]['nombre']) + "," + str(lista[d]['apellidos']) + "," + str(lista[d]['dni']) + "," + str(lista[d]['sexo']) + "," + str(lista[d]['seccion']) + "," + str(lista[d]['f_nacimiento']) + "," + str(lista[d]['localidad']) + "," + str(lista[d]['provincia']) + "\n"
-                
+               #"," + unicodedata.normalize('NFKD',lista[d]['nombre']).encode('ascii','ignore') + "," + unicodedata.normalize('NFKD',lista[d]['apellidos']).encode('ascii','ignore') + 
             now = datetime.datetime.now()
             now = now.strftime("%d-%m-%Y")
             # Insert a file

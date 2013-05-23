@@ -69,7 +69,7 @@ ROOT_URLCONF = 'urls'
 AUTHENTICATION_BACKENDS = (
       'gaeauth.backends.GoogleAccountBackend',
 )
-ALLOWED_DOMAINS = ('dsic.ull.es',)
+ALLOWED_DOMAINS = ('dsic.ull.es','gruposcoutaguere70.org',)
 
 
 
