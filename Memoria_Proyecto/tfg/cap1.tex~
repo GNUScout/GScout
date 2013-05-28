@@ -36,20 +36,20 @@ Resumen de los principales recursos utilizados en el desarrollo del proyecto.:
 \begin{itemize}
   \item Framework Django-nonrel
   \item Despliegue en Google App Engine
-  \item Google APIs
+  \item Google APIs (Google+ y Google Drive)
   \item Bootstrap CSS
   \item jQuery
   \item JavaScript
-  \item Google BigTable
+  \item GitHub
 \end{itemize}
+En los próximos capítulos se profundizará en las herramientas empleadas en la elaboración del proyecto.
 
 %---------------------------------------------------------------------------------
 \section{Actividades}
 \label{1:sec:3}
-El desarrollo del proyecto se organizó de la siguiente manera:
+El desarrollo del proyecto se organizó de las siguientes tareas:
 
-\begin{table}[!ht]
-\begin{center}
+
 \begin{tabular}{|p{25mm}|p{80mm}|} \hline 
 \textbf{Tarea } & \textbf{Actividad} \\ \hline
 Tarea1 &
@@ -100,17 +100,15 @@ Puesta en producción (fase beta), formación de usuario y gestión de errores.
 \hline
 
 \end{tabular}
-\end{center}
-\caption{Tabla resumen de los Tipos}
-\label{table:tareas}
-\end{table}
+
 
 %---------------------------------------------------------------------------------
-\section{Sección Cuatro}
+\section{Período de Desarrollo del Proyecto}
 \label{1:sec:4}
 
-Bla, bla, bla
-
+El período de elaboración del proyecto abarca desde el 11 de septiembre de 2012 cuando se presentaron las ofertas de los proyectos, 
+hasta mediados de junio de 2013 que es cuando corresponden las respectivas defensas orales, pero lo que es la elaboración en sí de la aplicación del proyecto
+abarcó del 30 de Enero de 2013 hasta primeros de Junio incluyendo los retoques finales y puesta a punto de la aplicación.
 %------------------------------------------------------------------------------
 \begin{figure}[!th]
 \begin{center}

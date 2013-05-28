@@ -238,8 +238,8 @@ El objetivo de este trabajo ha sido crear una aplicación web para los scout de A
 la gestión de los socios de dicha organización.
 
 Para ello usamos como framework Django, pero como tambien vamos a trabajar con la estructura de Google App Engine, utilizamos
-la version de django-nonrel que nos permite utilizar base de datos no relacionales ya que la que usa App Engine es la BigTable de Google
-y esta es no relacional. La ventaja del uso de este tipo de base de datos es que son mas escalable, y gracias al framework de Django se pueden 
+la version de django-nonrel que nos permite utilizar base de datos no relacionales ya que la que usa App Engine sigue la tecnología BigTable de Google. 
+La ventaja del uso de este tipo de base de datos es que son mas escalable, y gracias al framework de Django se pueden 
 manipular por medio de este con QuerySet de Django, salvo que no podemos usar joins ni many to many, etc ni ninguna relacion entre
 tablas que no sea de clave foranea.
 
