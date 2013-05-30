@@ -37,10 +37,11 @@ Resumen de los principales recursos utilizados en el desarrollo del proyecto.:
   \item Framework Django-nonrel
   \item Despliegue en Google App Engine
   \item Google APIs (Google+ y Google Drive)
-  \item Bootstrap CSS
+  \item GitHub
   \item jQuery
   \item JavaScript
-  \item GitHub
+  \item Bootstrap CSS
+  
 \end{itemize}
 En los próximos capítulos se profundizará en las herramientas empleadas en la elaboración del proyecto.
 

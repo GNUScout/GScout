@@ -4,6 +4,10 @@
 {ACM LaTeX Style}.
 \newblock http://www.acm.org/publications/latex\_style/.
 
+\bibitem{URL:GitHub}
+{GitHub}.
+\newblock http://www.github.com.
+
 \bibitem{Fujitsu}
 {FACOM OS IV SSL II USER'S GUIDE, 99SP0050E5}.
 \newblock Technical report, 1990.
