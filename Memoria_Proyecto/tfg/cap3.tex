@@ -1,51 +1,109 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Chapter 3: DescripciÃ³n de la AplicaciÃ³n
+% Chapter 3: Descripción de la Aplicación
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-Bla, Bla, Bla, .....
+En el cápitulo ~\ref{chapter:intro} se describió brevemente la aplicación. En este cápitulo nos expandiremos y eplicaremos toda la funcionalidad de GScout.
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-\section{Primer apartado de este capitulo}
+\section{Usuarios}
 \label{3:sec1}
 
+La aplicación esta destinada para el uso de los empleados de la organización de scout Aguere 70, el inicio de sesión esta restringido, por tanto solo podrán 
+acceder con su cuenta de Google perteneciente al dominio ``gruposcoutaguere70.com''. En principio todos los usuarios son genericos, pero la aplicación esta preparada
+para clasificarlos según su cargo, y que cada usuario pueda desempeñar una funcion y otras dependiendo del cargo asignado por el administrador.\\
 
-% Ejemplo de un listado de cÃ³digo
-\lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/socios-urls.py}
 
+[[Imagen del login]]
 
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-\section{Segundo apartado de este capitulo}
+\section{Gestión de socios}
 \label{3:sec2}
 
-% Ejemplo de listado de cÃ³digo escrito en el texto
+A continuación nombraremos las funcionalidades entorno a la gestión de socios.
 
-\begin{lstlisting}[caption={Ejemplo de listado puesto aquÃ­}]
-class D_Personales(models.Model):
-    nombre=models.CharField(max_length=100)
-    apellidos=models.CharField(max_length=100)
-    dni=models.CharField(max_length=100)
-    sexo=models.CharField(max_length=20)
-    f_nacimiento=models.DateTimeField()
-    direccion=models.CharField(max_length=200)
-    c_postal=models.CharField(max_length=100)
-    localidad=models.CharField(max_length=100)
-    provincia=models.CharField(max_length=100)
-    fijo=models.CharField(max_length=100)
-    movil=models.CharField(max_length=100)
-    f_ingreso=models.DateTimeField()
-    f_baja=models.DateTimeField(blank=True, null=True)
-    seccion=models.CharField(max_length=100)
-    estudios=models.TextField()
-    profesion=models.TextField()
-    deportes=models.TextField()
-    aficiones=models.TextField()
-    socio_id=models.ForeignKey(Socio)
-\end{lstlisting}
+\subsection{Creación de Socios}
+
+Los usuarios podrán crear nuevos socios rellenando los formularios predefinidos en la aplicación, donde se clasifican los datos en personales, economicos, familiares y medicos.\\
+
+[[Imagen de los formularios]]
+
+\subsection{Edición de Socios}
+
+Una vez creados los socios se pueden editar sus datos, de una manera similar a la de creación de socios, simplemente buscamos el socio y le damos a editar, en la pestaña del tipo de información
+que querramos cambiar.\\
+
+[[Imagen de formularios de edición]]
+
+\subsection{Borrado de Socios}
+Tambien podremos borrar los socios, solo que estos socios no son borrados permanentemente con esta opción, sino que su estado pasará a inactivo y no estara visible a todo el mundo.\\
+
+[[Imagen borrado y estado inactivo]]
+
+\subsection{Familiares}
+
+Es obligado que cada socio pertenezca a una familia, cuya familia tendra un responsable que sera el indentificador de la familia, a la que se le pueden asignar varios socios, padres y/o tutores. En cierto modo, podremos
+formar lo que seria un arbol de familia entre los socios, saber que socios conviven en la misma familia, saber quienes son los padres/tutores del socio, etc.\\
+
+[[ Imagen arbol familia]]\\
+
+Tambien GScout nos da la opción de cambiar o crear una familia nueva, por cualquier circunstancia que pueda pasar.\\
+
+[[ Imagen edicion familia]]
+
+\subsection{Medicamentos}
+
+Muchos de los socios podrían estar bajo medicación de algun tipo, por tanto existe un modulo en el que podemos anexar a los socios los datos de sus medicamentos, como el nombre, la pauta y la dosis correspondiente.\\
+
+[[imagen medicamentos]]
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-\section{Tercer apartado de este capitulo}
+\section{Cambios de unidad}
 \label{3:sec3}
+
+A petición de la organización scout Aguere 70 se creó una función que llamada \textbf{Cambio de Unidad} que consistes en analizar todos los socios, verificar su edad, y si procede cambiarlo a la sección/unidad acorde a su edad.\\
+
+[tabla de unidades por rango de edades]
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\section{Listados de información}
+\label{3:sec5}
+
+Hay una sección en la aplicación en la que podemos listar los socios visualizando sus datos dependiendo del listado, es decir, existen un listado especifico para los datos personales y otro para los datos economicos.\\
+
+En estos listados podremos interactuar filtrando los datos por medio de varios filtro, incluso ordenarlos alfabeticamente en orden creciente y decreciente si se desea.\\
+
+[[ Imagen de un listado ejemplo con algunos filtros ]]
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\section{Busquedas por ID}
+\label{3:sec6}
+
+Tambien se pueden realizar busquedas directas por el ID del socio, en la que nos redirecciona a directamente  a la ficha técnica del socio.\\
+
+[[ Imagen de busquedas por ID ]]
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\section{Exportaciones}
+\label{3:sec7}
+
+Los resultados de los listados los podemos exportar a Google Drive en formato de hoja de calculo, con solo darle al botón de exportar debajo del listado. Veamos un ejemplo con imagenes:\\
+
+[[ Boton exportar]]\\
+
+El resultado seria el siguiente:\\
+
+[[ Documento en drive ]]
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\section{Importaciones}
+\label{3:sec8}
+
+GScout brinda a la organización de scout Aguere 70 la posibilidad de migrar su base de datos en access a la propia aplicación, siempre y cuando este fichero se transforme en un archivo .csv, con la herramienta MDB Tools por ejemplo,
+y solo haría falta subirla a la aplicación que lo demás lo hace de manera automatica la aplicación. De esta manera tendremo los datos de la antigua base de datos en la nueva base de datos que pertenece a GScout.\\
+
+
+[[ Imagen de subida de archivo csv ]]
