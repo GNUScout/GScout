@@ -29,13 +29,14 @@ funcionalidades que tendría la aplicación, seleccionando las funciones fundament
 \label{4:sec2}
 
 Después de la reunión con los interesados se estableció un esquema compuesto por 7 aplicaciones,
-la cual una de ella era la principal y de esa dependerían el resto. Las aplicaciones son las siguientes:
+la cual una de ellas era la principal y de esa dependerían el resto. Las aplicaciones son las siguientes:
 \begin{itemize}
 \item Socios: esta es la aplicación principal que tendrá los datos de los socios que usaran las demás aplicaciones. Contiene:
 	\begin{itemize}
-	\item Mantenimiento de socios.
+	\item Mantenimiento de socios
 	\item Cambios de Unidad
 	\item Informes (Familiares, Unidades, Médicos, Personales)
+	\item Exportaciones
 	\end{itemize}
 
 \item Lista de espera
@@ -129,7 +130,7 @@ El archivo settings.py se configuró de la siguiente manera:\\
 \lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/authentication_settings.py}
 
 
-Donde se puede apreciar las \textsc{INSTALLE DAPPS} necesarias para este apartado de la aplicación. Pasamos a describir cada una:\\
+Donde se puede apreciar las \textsc{INSTALLED APPS} necesarias para este apartado de la aplicación. Pasamos a describir cada una:\\
 \begin{itemize}
 \item \textbf{djangoappengine}: es un backend para poder utilizar la base de datos que nos brinda Google App Engine.\\
 
@@ -139,27 +140,27 @@ para iniciar sesión con las cuentas de Google en nuestra aplicación.\\
 Es la ultima parte del archivo settings.py se ve claramente que esta seleccionado en \textsc{AUTHENTICATION BACKENDS} el backend de gaeauth y seguidamente elegimos en \textsc{ALLOWED DOMAINS} el dominio
 en el cual queremos restrigir el acceso, en nuestro caso solo los usuarios pertenecientes al dominio ``gruposcoutaguere70.org'' podran acceder a la aplicación.
 
-\item \textbf{plus}: Este es el modulo que nos permite obtener la información personaly foto de perfil de los usuarios que acceden a la aplicación por medio de su cuenta de Google+, sin necesidad
+\item \textbf{plus}: Este es el modulo que nos permite obtener la información personal, foto de perfil y demás datos de los usuarios que acceden a la aplicación por medio de su cuenta de Google+, sin necesidad
 de guardar esos datos en nuestra base de datos.
 
-Este fue uno de los modulos que más dio problemas, primero habia que acceder a la web de Google apis con la cuenta de desarrollador y activar la API de Google+ posteriormente tenemos que editar el acceso a las APIs,
-para introducir nuestra aplicación en el entorno, por lo tanto se nos generaria una serie de datos que podriamos introducirlos en nuestra aplicación uno a uno o bien en formato JSON, para que esta pueda acceder a los servicios
-que nos proporciona la API.
+Este fue uno de los modulos que más dio problemas. Primero habia que acceder a la web de Google APIs con la cuenta de desarrollador y activar la API de Google+ posteriormente tenemos que editar el acceso a las APIs,
+para introducir nuestra aplicación en el entorno, por lo tanto se nos generaria una serie de datos que podriamos introducirlos en nuestra aplicación uno a uno o bien en formato JSON, este paso es importante ya que sino la aplicación
+no podría acceder a los servicios que nos proporciona la API.
 
-Dicho esto una vez que el usuario inicia sesión, en el proceso se accede a la vista de la app plus, que esta cargara la configuración de Google API por medio de un archivo JSON o introduciendo una a una 
+Dicho esto una vez que el usuario inicia sesión, en el proceso se accede a la vista de la app plus, que esta cargara la configuración de Google API por medio del mencionado archivo JSON o introduciendo una a una 
 de la siguiente manera la configuración necesaria para utilizar el servicio de Google+:\\
 
 \lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/flow_plus.py}
 
-Donde \textbf{client-id} y \textbf{client-secret} son los datos que apuntan al acceso de API que ha establecido el programador de la aplicación, \textbf{token-uri} lo delegamos para que lo ejetute oauth2, en \textbf{scope}
+Donde \textbf{client-id} y \textbf{client-secret} son los datos que apuntan al acceso de API que ha establecido el programador de la aplicación, \textbf{token-uri} lo delegamos para que lo ejecute oauth2, en \textbf{scope}
 se añaden las direcciones de las API que se van a usar, en nuestro caso la de Google+ y la de Drive(esta la explicaremos mas adelante), en \textbf{redirect-uri} establecemos la direccion de retorno a nuestra aplicación 
 por medio de la llamada oauth2cabllback que la incorpora el modulo plus.
 
 Con todo esto lo que logramos es que en el inicio de sesión se establezca una conexion entre el usuario y las APIs de google, en la cual se acepten una serie de permisos para posteriormente generar una credencial,
-que se seguardara en el usuario, con la cual podra acceder a los servicios activados previamente por el programador en Google APIs. Es importante señalar que el modelo de User que nos ofrece django se modifico para que
+que se guardará en el usuario, con la cual podra acceder a los servicios activados previamente por el programador en Google APIs. Es importante señalar que el modelo de User que nos ofrece django se modificó para que
 se pudieran guardar las credenciales, ademas se añadio el campo de \textbf{cargo}, donde se le asignara a cada usuario un cargo especifico, por tanto las funciones que podra realizar en la aplicación estaran supeditadas a dicho cargo.
 
-\textbf{Nota:} las credenciales suelen expirar a la hora por tanto, una vez expiradas el usuario no podra acceder a la aplicación, al menos que se actualiecen, una forma de automatizar esto es que en cada inicio de sesión
+\textbf{Nota:} las credenciales suelen expirar a la hora por tanto, una vez expiradas el usuario no podra acceder a la aplicación, al menos que se actualicen. Una forma de automatizar esto es que en cada inicio de sesión
 se restablescan las credenciales, por eso añadimos dos campos mas a la variable FLOW, que son el \textbf{access-type='offline'} y \textbf{approval-prompt='force'} con esto logramos forzar el refrezco de
 credenciales una vez estas caduquen.
 \end{itemize}
@@ -170,7 +171,7 @@ credenciales una vez estas caduquen.
 Una vez definida la primera aproximación del modelo de datos que vamos a emplear en la aplicación, empezamos con la creacion de la app de socios que va a gestionar todo lo referente a la información de los socios de 
 la organización.\\
 
-Esta tarea era simple pero tediosa a la hora de realizar templates formularios para que luego en la vista de la app de socios por medio de diferentes llamadas POST, se fueran contruyendo los objetos necesarios
+Esta tarea era simple pero tediosa a la hora de realizar templates, formularios, etc, para que luego en la vista de la app de socios por medio de diferentes llamadas POST, se fueran contruyendo los objetos necesarios
 para la creacion de un nuevo socio, cada objeto almacenaba un tipo de información especifica segun el modelo de datos. Por tanto el modelo final de socios tenia las siguientes tablas:\\
 
 \lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/model_socio.py}
@@ -190,7 +191,7 @@ empezar por \textbf{f-[nombreTabla].html}
 
 \section{Modificación de Usuarios}
 \label{4:sec6}
-Un proceso similar al de creación de usuarios se implementó para la modificación de los respectivos datos de los socios, los archivos de las templates eran similares, salvo que tenian trozos de código en Javascript
+Un proceso similar al de creación de usuarios se implementó para la modificación de los respectivos datos de los socios, los archivos de las templates eran similares, salvo que tienen trozos de código en Javascript
 y variables que se pasaban de la vista a la template para autocompletar los campos de los formularios con los datos del socio, de esta forma si se va a editar un campo en concreto no es necesario rellenar 
 todos los campos restantes.\\
 
@@ -204,7 +205,9 @@ la visualización de los repectivos datos.
 \lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/datos_economicos.py}
 
 Por otro lado para tener un vistazo general de los socios, se elaboró una tabla donde se listan todos los socios mostrando sus datos acorde con el listado en el que se este, es decir existen varios listados para representar los 
-datos de los socios, listados de datos personales, economicos, etc. Para el formato de la tabla se encontro un widget con la  apariencia de bootstrap para mantener la escencia de la interfaz visual, en cuyas tablas se pueden
+datos de los socios, listados de datos personales, economicos, etc.\\
+
+Para el formato de la tabla se encontro un widget con la  apariencia de bootstrap para mantener la escencia de la interfaz visual, en cuyas tablas se pueden
 realizar ordenaciones, filtrados y exportaciones que describirán detalladamente en los siguientes apartados.
 
 \section{Filtrado de tablas}
@@ -224,10 +227,10 @@ Posteriormente la estructura de la tabla lleva la siguiente sintaxis:\\
 \label{4:sec9}
 
 Para poder llevar las exportaciones a Google Drive primero que nada se tiene que establecer un permiso entre el  usuario, la aplicación y la API de Google Drive para poder utilizar el servicio. Esto con las credenciales que se han
-comentado en la sección de \textbf{Inicio de Sesión}, añadiendo en el campo de textbf{scope} la ruta al servicio Drive antes de generar la credencial.\\
+comentado en la sección de \textbf{Inicio de Sesión}, añadiendo en el campo de \textbf{scope} la ruta al servicio Drive antes de generar la credencial.\\
 
 Ahora bien, los filtrados de los listados se realizan sobre la template en el cliente, por tanto si quieremos exportar una listado filtrado tenermos que en cierto modo, realizar el filtrado en el lado del servidor.
-Esto se logro modificando los archivos del tablesorter para que cuando generara la tabla, cada input de filtrado tenga un nombre, el cual se utilizara para por medio de una llamada POST, obtener los parametros de filtrado.
+Esto se logro modificando los archivos del \textbf{tablesorter} para que cuando generara la tabla, cada input de filtrado tenga un nombre (\textbf{name}), el cual se utiliza cuando se realiza una llamada POST, para poder obtener los parametros de filtrado.
 y realizar el filtrado directamente con el modelo de datos.\\
 
 Una vez realizado esto, nos queda el paso intermedio para poder exportar los datos a Google Drive, ya que para exportar necesitamos crear un fichero de extensión .csv para que la API de Google Drive lo interprete y lo procese.
@@ -253,7 +256,7 @@ y volcarla en nuestra aplicación.\\
 
 El principal problema era que esta toda la información en un sola tabla por tanto habria que implementar un mecanismo para separar la información y adaptarla a nuestro modelo de datos.\\
 
-Por otro lado tenemos el formato del fichero de la base de datos que estaba en formato textbf{access}, de modo que era necesario convertirlo a un formato que pudiera procesar la aplicación de manera eficiente. Se pensó 
+Por otro lado tenemos el formato del fichero de la base de datos que estaba en formato \textbf{Access}, de modo que era necesario convertirlo a un formato que pudiera procesar la aplicación de manera eficiente. Se pensó 
 en el formato .csv separado por comas, ya que habia una herramienta llamada \textbf{MDB Tools} que convertia los ficheros accecc en csv.
 
 Una vez obtenido el fichero csv, se implemento un mecanismo para subir el fichero a la aplicación sin que este se guardara en el servidor, sino que solo estuviera ahí mientras se este procesando. De modo que se creo 

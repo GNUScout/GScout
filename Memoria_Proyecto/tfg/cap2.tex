@@ -73,11 +73,11 @@ Como GAE ya posee un modulo de autenticación por medio de Google Auth,
 en el proyecto se modifico para que se hiciera por medio de Google Plus, generando unas credenciales que se guardaran en el usuarios
 para que la aplicaccion pueda tener determinados permisos y poder obtener información que proporciona Google Plus. El objetivo de la incorporación de esta 
 API a nuestra aplicación es evitar almacenar datos personales de los integrantes de la organización que usa la aplicación en una base de datos, sino usar directamente los
-que nos proporciona Google Plus, como nombre, apellidos, foto de perfíl, dirección, etc.
+datos que nos proporciona Google Plus, como nombre, apellidos, foto de perfíl, dirección, etc.
 
 \subsection{Google Drive}
 Uno de los objetivos de la aplicación en cuanto a funcionalidad era poder exportar una tabla filtrada o no con los datos de los socios, como estamos utilizando tecnologia Google,
-decidimos que la mejor forma era utilizar la API de Google Drive, para crear documentos de hoja de calculo con la información que le pasara la aplicación, para ello fue necesario
+decidimos que la mejor forma era utilizar la API de Google Drive, para crear documentos en formato de hoja de calculo en el entorno de Google Drive. Para ello fue necesario
 modificar las credenciales que se almacenaban en los usuarios, para darle permiso y poder utilizar las funciones que nos proporciona dicha API.
 
 \section{GitHub}
