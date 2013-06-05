@@ -7,7 +7,7 @@ datos="ID, Titular, NIF Titular, Banco, Nombre Socio, Apellidos Socio, DNI Socio
 for d in range(len(lista)):
     datos += str(socios[lista[d]]['socio_id_id']) + "," + unicodedata.normalize('NFKD',economicos[lista[d]]['titular']).encode('ascii','ignore') + "," + str(economicos[lista[d]]['nif_titular']) + "," + str(economicos[lista[d]]['banco']) + "," + unicodedata.normalize('NFKD',socios[lista[d]]['nombre']).encode('ascii','ignore') + "," + unicodedata.normalize('NFKD',socios[lista[d]]['apellidos']).encode('ascii','ignore') + "," + str(socios[lista[d]]['dni']) + "\n"
              
-# media_body preparará el contenido de datos para transformarlo al formato csv 
+# media_body preparara el contenido de datos para transformarlo al formato csv 
 # gracias a la funcion MediaIoBaseUpload, es importante poner la resumable=False
 # para evitar problemas de carga y de formato.
 media_body = MediaIoBaseUpload(StringIO.StringIO(datos), 'text/csv', resumable=False)

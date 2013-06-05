@@ -1,11 +1,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Chapter 4 : Desarrollo de la AplicaciÛn
+% Chapter 4 : Desarrollo de la Aplicaci√≥n
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-En el capitulo ~\ref{chapter:tres} se describieron las funcionalidades de la aplicaciÛn. A continuaciÛn
-hablaremos de todo lo que conllevÛ el proceso de  elaboraciÛn del proyeto, desde su comienzo hasta el final,
+En el capitulo ~\ref{chapter:tres} se describieron las funcionalidades de la aplicaci√≥n. A continuaci√≥n
+hablaremos de todo lo que conllev√≥ el proceso de  elaboraci√≥n del proyeto, desde su comienzo hasta el final,
 incluyendo las entrevistas, problemas, etc.
 
 
@@ -14,28 +14,28 @@ incluyendo las entrevistas, problemas, etc.
 \section{Primeros Pasos}
 \label{4:sec1}
 
-Partimos de una implementaciÛn en PHP, que poseÌa las funcionalidades b·sicas, pero el problema era que la base de datos
-no era compatible con nuestra tecnologÌa, debido a que seguÌa el modelo entidad-relaciÛn, y nosotros al contrario, necesit·bamos
-crear una base de datos no relacional. Por otro lado tenÌamos de ejemplo la aplicaciÛn web ``online scout'', la cual era muy completa
-pero era de pago, y nuestro objetivo era hacer una aplicaciÛn gratuita adaptada al cliente, en nuestro caso la organizaciÛn de scout Aguere 70 de La Laguna.\\
+Partimos de una implementaci√≥n en PHP, que pose√≠a las funcionalidades b√°sicas, pero el problema era que la base de datos
+no era compatible con nuestra tecnolog√≠a, debido a que segu√≠a el modelo entidad-relaci√≥n, y nosotros al contrario, necesit√°bamos
+crear una base de datos no relacional. Por otro lado ten√≠amos de ejemplo la aplicaci√≥n web ``online scout'', la cual era muy completa
+pero era de pago, y nuestro objetivo era hacer una aplicaci√≥n gratuita adaptada al cliente, en nuestro caso la organizaci√≥n de scout Aguere 70 de La Laguna.\\
 
-Para adaptarla lo mejor posible, lo primero que hicimos fue tener una reuniÛn con el grupo scout Aguere 70, previamente a esta reuniÛn se realizÛ una serie de tutoriales
-b·sicos de Django para refrescar conocimientos, ademas de hacer pruebas con la tecnologia de Google App Engine e incorporarlas al framework de django-nonrel.\\ 
+Para adaptarla lo mejor posible, lo primero que hicimos fue tener una reuni√≥n con el grupo scout Aguere 70, previamente a esta reuni√≥n se realiz√≥ una serie de tutoriales
+b√°sicos de Django para refrescar conocimientos, ademas de hacer pruebas con la tecnologia de Google App Engine e incorporarlas al framework de django-nonrel.\\ 
 
-DespuÈs de estos pasos previos, se realizo la primera reuniÛn con el grupo Aguere 70, en la que se elaborÛ un an·lisis de requisitos, se estudiaron las posibles 
-funcionalidades que tendrÌa la aplicaciÛn, seleccionando las funciones fundamentales, debido al corto tiempo y personal que habÌa para realizar la aplicaciÛn.\\
+Despu√©s de estos pasos previos, se realizo la primera reuni√≥n con el grupo Aguere 70, en la que se elabor√≥ un an√°lisis de requisitos, se estudiaron las posibles 
+funcionalidades que tendr√≠a la aplicaci√≥n, seleccionando las funciones fundamentales, debido al corto tiempo y personal que hab√≠a para realizar la aplicaci√≥n.\\
 
 \section{Requisitos Iniciales}
 \label{4:sec2}
 
-DespuÈs de la reuniÛn con los interesados se estableciÛ un esquema compuesto por 7 aplicaciones,
-la cual una de ellas era la principal y de esa dependerÌan el resto. Las aplicaciones son las siguientes:
+Despu√©s de la reuni√≥n con los interesados se estableci√≥ un esquema compuesto por 7 aplicaciones,
+la cual una de ellas era la principal y de esa depender√≠an el resto. Las aplicaciones son las siguientes:
 \begin{itemize}
-\item Socios: esta es la aplicaciÛn principal que tendr· los datos de los socios que usaran las dem·s aplicaciones. Contiene:
+\item Socios: esta es la aplicaci√≥n principal que tendr√° los datos de los socios que usaran las dem√°s aplicaciones. Contiene:
 	\begin{itemize}
 	\item Mantenimiento de socios
 	\item Cambios de Unidad
-	\item Informes (Familiares, Unidades, MÈdicos, Personales)
+	\item Informes (Familiares, Unidades, M√©dicos, Personales)
 	\item Exportaciones
 	\end{itemize}
 
@@ -49,13 +49,13 @@ la cual una de ellas era la principal y de esa dependerÌan el resto. Las aplicac
 \item Biblioteca
 	\begin{itemize}
 	\item Mantenimiento
-	\item PrÈstamos
+	\item Pr√©stamos
 	\end{itemize}
 
 \item Intendencia
 	\begin{itemize}
 	\item Mantenimiento
-	\item PrÈstamos
+	\item Pr√©stamos
 	\item Informes
 		\begin{itemize}
 		\item Prestados
@@ -65,18 +65,18 @@ la cual una de ellas era la principal y de esa dependerÌan el resto. Las aplicac
 	\end{itemize}
 \item Recursos
 	\begin{itemize}
-	\item Din·micas
+	\item Din√°micas
 	\item Talleres
 	\item Juegos
 	\item Resto de Actividades
 	\end{itemize}
 
-\item TesorerÌa
+\item Tesorer√≠a
 	\begin{itemize}
 	\item Control de Cuentas
 	\item Presupuestos
-	\item EmisiÛn de recursos
-	\item Res˙menes
+	\item Emisi√≥n de recursos
+	\item Res√∫menes
 		\begin{itemize}
 		\item Anual
 		\item Trimestral
@@ -85,29 +85,29 @@ la cual una de ellas era la principal y de esa dependerÌan el resto. Las aplicac
 
 \item Varios
 	\begin{itemize}
-	\item CompaÒÌa de seguridad
+	\item Compa√±√≠a de seguridad
 	\item Agenda
 	\item Recetario
 	\end{itemize}
 \end{itemize}
 
-Visto las siguientes aplicaciones se comprobÛ que el proyecto era ambicioso y extenso, 
+Visto las siguientes aplicaciones se comprob√≥ que el proyecto era ambicioso y extenso, 
 por lo tanto nos enfocamos en el apartado de la app de Socios que era la mas importante. 
-Se nos facilitÛ la ficha de inscripciÛn en formato papel que han de cumplimentar los socios para inscribirse en la organizaciÛn.
-Por tanto nos sirviÛ de modelo para generar una primera aproximaciÛn del modelo de datos que va a llevar la aplicaciÛn de Socios.\\
+Se nos facilit√≥ la ficha de inscripci√≥n en formato papel que han de cumplimentar los socios para inscribirse en la organizaci√≥n.
+Por tanto nos sirvi√≥ de modelo para generar una primera aproximaci√≥n del modelo de datos que va a llevar la aplicaci√≥n de Socios.\\
 
 [[Espacio para el primer modelo de datos]]
 
-\section{PreparaciÛn para el proyecto}
+\section{Preparaci√≥n para el proyecto}
 \label{4:sec3}
 
-Primero que nada necesitamos instalar el framework de django-nonrel, para ello lo que se hizo fue crear un nuevo proyecto vacÌo con el 
-programa ``Aptana Studio 3'', el cual debÌa de tener los archivos que nos proporciona la web ``www.allbuttonspressed.com'' que contienen 
+Primero que nada necesitamos instalar el framework de django-nonrel, para ello lo que se hizo fue crear un nuevo proyecto vac√≠o con el 
+programa ``Aptana Studio 3'', el cual deb√≠a de tener los archivos que nos proporciona la web ``www.allbuttonspressed.com'' que contienen 
 todos los archivos necesarios para configurar un proyecto que funcione con django-nonrel y Google App Engine, 
-de modo que el proyecto nos quedarÌa de la siguiente manera:
+de modo que el proyecto nos quedar√≠a de la siguiente manera:
 
 \begin{itemize}
-  \item django-nonrel/django => <project>/django
+  \item \lstinline!django-nonrel/django => <project>/django!
   \item djangotoolbox/djangotoolbox => <project>/djangotoolbox
   \item django-autoload/autoload => <project>/autoload
   \item django-dbindexer/dbindexer => <project>/dbindexer
@@ -119,147 +119,147 @@ Importante: Al instalar el SDK de App Engine incluir el PATH en el archivo .prof
 [[Archivo app.yaml]]
 Describir el archivo app.yaml
 
-\section{Inicio de sesiÛn}
+\section{Inicio de sesi√≥n}
 \label{4:sec4}
 
-Como se ha dicho en el capitulo ~\ref{chapter:tres} el inicio de sesiÛn esta limitado al dominio del grupo de scout de Aguere 70, lo cual se accede a la aplicaciÛn
+Como se ha dicho en el capitulo ~\ref{chapter:tres} el inicio de sesi√≥n esta limitado al dominio del grupo de scout de Aguere 70, lo cual se accede a la aplicaci√≥n
 por medio de sus cuentas de google asociadas a dicho dominio.\\
 
-El archivo settings.py se configurÛ de la siguiente manera:\\
+El archivo settings.py se configur√≥ de la siguiente manera:\\
 
 \lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/authentication_settings.py}
 
 
-Donde se puede apreciar las \textsc{INSTALLED APPS} necesarias para este apartado de la aplicaciÛn. Pasamos a describir cada una:\\
+Donde se puede apreciar las \textsc{INSTALLED APPS} necesarias para este apartado de la aplicaci√≥n. Pasamos a describir cada una:\\
 \begin{itemize}
 \item \textbf{djangoappengine}: es un backend para poder utilizar la base de datos que nos brinda Google App Engine.\\
 
-\item \textbf{gaeauth}: es otro backend que nos facilita el inicio de sesiÛn a traves de la interfaz de Google Accounts, 
-para iniciar sesiÛn con las cuentas de Google en nuestra aplicaciÛn.\\
+\item \textbf{gaeauth}: es otro backend que nos facilita el inicio de sesi√≥n a traves de la interfaz de Google Accounts, 
+para iniciar sesi√≥n con las cuentas de Google en nuestra aplicaci√≥n.\\
 
 Es la ultima parte del archivo settings.py se ve claramente que esta seleccionado en \textsc{AUTHENTICATION BACKENDS} el backend de gaeauth y seguidamente elegimos en \textsc{ALLOWED DOMAINS} el dominio
-en el cual queremos restrigir el acceso, en nuestro caso solo los usuarios pertenecientes al dominio ``gruposcoutaguere70.org'' podran acceder a la aplicaciÛn.
+en el cual queremos restrigir el acceso, en nuestro caso solo los usuarios pertenecientes al dominio ``gruposcoutaguere70.org'' podran acceder a la aplicaci√≥n.
 
-\item \textbf{plus}: Este es el modulo que nos permite obtener la informaciÛn personal, foto de perfil y dem·s datos de los usuarios que acceden a la aplicaciÛn por medio de su cuenta de Google+, sin necesidad
+\item \textbf{plus}: Este es el modulo que nos permite obtener la informaci√≥n personal, foto de perfil y dem√°s datos de los usuarios que acceden a la aplicaci√≥n por medio de su cuenta de Google+, sin necesidad
 de guardar esos datos en nuestra base de datos.
 
-Este fue uno de los modulos que m·s dio problemas. Primero habia que acceder a la web de Google APIs con la cuenta de desarrollador y activar la API de Google+ posteriormente tenemos que editar el acceso a las APIs,
-para introducir nuestra aplicaciÛn en el entorno, por lo tanto se nos generaria una serie de datos que podriamos introducirlos en nuestra aplicaciÛn uno a uno o bien en formato JSON, este paso es importante ya que sino la aplicaciÛn
-no podrÌa acceder a los servicios que nos proporciona la API.
+Este fue uno de los modulos que m√°s dio problemas. Primero habia que acceder a la web de Google APIs con la cuenta de desarrollador y activar la API de Google+ posteriormente tenemos que editar el acceso a las APIs,
+para introducir nuestra aplicaci√≥n en el entorno, por lo tanto se nos generaria una serie de datos que podriamos introducirlos en nuestra aplicaci√≥n uno a uno o bien en formato JSON, este paso es importante ya que sino la aplicaci√≥n
+no podr√≠a acceder a los servicios que nos proporciona la API.
 
-Dicho esto una vez que el usuario inicia sesiÛn, en el proceso se accede a la vista de la app plus, que esta cargara la configuraciÛn de Google API por medio del mencionado archivo JSON o introduciendo una a una 
-de la siguiente manera la configuraciÛn necesaria para utilizar el servicio de Google+:\\
+Dicho esto una vez que el usuario inicia sesi√≥n, en el proceso se accede a la vista de la app plus, que esta cargara la configuraci√≥n de Google API por medio del mencionado archivo JSON o introduciendo una a una 
+de la siguiente manera la configuraci√≥n necesaria para utilizar el servicio de Google+:\\
 
 \lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/flow_plus.py}
 
-Donde \textbf{client-id} y \textbf{client-secret} son los datos que apuntan al acceso de API que ha establecido el programador de la aplicaciÛn, \textbf{token-uri} lo delegamos para que lo ejecute oauth2, en \textbf{scope}
-se aÒaden las direcciones de las API que se van a usar, en nuestro caso la de Google+ y la de Drive(esta la explicaremos mas adelante), en \textbf{redirect-uri} establecemos la direccion de retorno a nuestra aplicaciÛn 
+Donde \textbf{client-id} y \textbf{client-secret} son los datos que apuntan al acceso de API que ha establecido el programador de la aplicaci√≥n, \textbf{token-uri} lo delegamos para que lo ejecute oauth2, en \textbf{scope}
+se a√±aden las direcciones de las API que se van a usar, en nuestro caso la de Google+ y la de Drive(esta la explicaremos mas adelante), en \textbf{redirect-uri} establecemos la direccion de retorno a nuestra aplicaci√≥n 
 por medio de la llamada oauth2cabllback que la incorpora el modulo plus.
 
-Con todo esto lo que logramos es que en el inicio de sesiÛn se establezca una conexion entre el usuario y las APIs de google, en la cual se acepten una serie de permisos para posteriormente generar una credencial,
-que se guardar· en el usuario, con la cual podra acceder a los servicios activados previamente por el programador en Google APIs. Es importante seÒalar que el modelo de User que nos ofrece django se modificÛ para que
-se pudieran guardar las credenciales, ademas se aÒadio el campo de \textbf{cargo}, donde se le asignara a cada usuario un cargo especifico, por tanto las funciones que podra realizar en la aplicaciÛn estaran supeditadas a dicho cargo.
+Con todo esto lo que logramos es que en el inicio de sesi√≥n se establezca una conexion entre el usuario y las APIs de google, en la cual se acepten una serie de permisos para posteriormente generar una credencial,
+que se guardar√° en el usuario, con la cual podra acceder a los servicios activados previamente por el programador en Google APIs. Es importante se√±alar que el modelo de User que nos ofrece django se modific√≥ para que
+se pudieran guardar las credenciales, ademas se a√±adio el campo de \textbf{cargo}, donde se le asignara a cada usuario un cargo especifico, por tanto las funciones que podra realizar en la aplicaci√≥n estaran supeditadas a dicho cargo.
 
-\textbf{Nota:} las credenciales suelen expirar a la hora por tanto, una vez expiradas el usuario no podra acceder a la aplicaciÛn, al menos que se actualicen. Una forma de automatizar esto es que en cada inicio de sesiÛn
-se restablescan las credenciales, por eso aÒadimos dos campos mas a la variable FLOW, que son el \textbf{access-type='offline'} y \textbf{approval-prompt='force'} con esto logramos forzar el refrezco de
+\textbf{Nota:} las credenciales suelen expirar a la hora por tanto, una vez expiradas el usuario no podra acceder a la aplicaci√≥n, al menos que se actualicen. Una forma de automatizar esto es que en cada inicio de sesi√≥n
+se restablescan las credenciales, por eso a√±adimos dos campos mas a la variable FLOW, que son el \textbf{access-type='offline'} y \textbf{approval-prompt='force'} con esto logramos forzar el refrezco de
 credenciales una vez estas caduquen.
 \end{itemize}
 
-\section{CreaciÛn de Usuarios}
+\section{Creaci√≥n de Usuarios}
 \label{4:sec5}
 
-Una vez definida la primera aproximaciÛn del modelo de datos que vamos a emplear en la aplicaciÛn, empezamos con la creacion de la app de socios que va a gestionar todo lo referente a la informaciÛn de los socios de 
-la organizaciÛn.\\
+Una vez definida la primera aproximaci√≥n del modelo de datos que vamos a emplear en la aplicaci√≥n, empezamos con la creacion de la app de socios que va a gestionar todo lo referente a la informaci√≥n de los socios de 
+la organizaci√≥n.\\
 
 Esta tarea era simple pero tediosa a la hora de realizar templates, formularios, etc, para que luego en la vista de la app de socios por medio de diferentes llamadas POST, se fueran contruyendo los objetos necesarios
-para la creacion de un nuevo socio, cada objeto almacenaba un tipo de informaciÛn especifica segun el modelo de datos. Por tanto el modelo final de socios tenia las siguientes tablas:\\
+para la creacion de un nuevo socio, cada objeto almacenaba un tipo de informaci√≥n especifica segun el modelo de datos. Por tanto el modelo final de socios tenia las siguientes tablas:\\
 
 \lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/model_socio.py}
 
 Como podemos ver el modelo esta compuesto por 8 tablas, debido a que no se pueden establecer relaciones en la base de datos de tipo no relacional, la unica forma de en cierto modo comunicar/unir una tabla con otra,
 es con lo que llamamos claves foraneas(ForeignKey), de esta manera podremos asosciar las tablas que nos interesen de manera unidimensional.\\
 
-Se puede observar para que es cada tabla y el tipo de informaciÛn que guarda, se dejo elaborada aunque no se usa todavÌa la tabla de \textbf{Autorizasiones} para que en un futuro los socios almacenen ahÌ las posibles autorizaciones/permisos
-cuando se realice una excursiÛn, uso de fotografias de manera p˙blica, etc.\\
+Se puede observar para que es cada tabla y el tipo de informaci√≥n que guarda, se dejo elaborada aunque no se usa todav√≠a la tabla de \textbf{Autorizasiones} para que en un futuro los socios almacenen ah√≠ las posibles autorizaciones/permisos
+cuando se realice una excursi√≥n, uso de fotografias de manera p√∫blica, etc.\\
 
-Retomando a la creaciÛn de usuarios es necesario rellenar todos los campos importantes de cada objecto para conservar la integridad de la base datos. Los formularios comprueban que esto se cumpla y al finalizar lo manda como un POST
+Retomando a la creaci√≥n de usuarios es necesario rellenar todos los campos importantes de cada objecto para conservar la integridad de la base datos. Los formularios comprueban que esto se cumpla y al finalizar lo manda como un POST
 al servidor donde es procesado y si todo esta correcto se guarda en la base de datos.\\
 
-Por otro lado en la carpeta \textbf{templates/socios} est·n todos los archivos .html que se usan para la interacciÛn del usuario desde el cliente con el servidor, las template que se usan para la creaciÛn de usuario se distinguen por 
+Por otro lado en la carpeta \textbf{templates/socios} est√°n todos los archivos .html que se usan para la interacci√≥n del usuario desde el cliente con el servidor, las template que se usan para la creaci√≥n de usuario se distinguen por 
 empezar por \textbf{f-[nombreTabla].html}
 
 
-\section{ModificaciÛn de Usuarios}
+\section{Modificaci√≥n de Usuarios}
 \label{4:sec6}
-Un proceso similar al de creaciÛn de usuarios se implementÛ para la modificaciÛn de los respectivos datos de los socios, los archivos de las templates eran similares, salvo que tienen trozos de cÛdigo en Javascript
+Un proceso similar al de creaci√≥n de usuarios se implement√≥ para la modificaci√≥n de los respectivos datos de los socios, los archivos de las templates eran similares, salvo que tienen trozos de c√≥digo en Javascript
 y variables que se pasaban de la vista a la template para autocompletar los campos de los formularios con los datos del socio, de esta forma si se va a editar un campo en concreto no es necesario rellenar 
 todos los campos restantes.\\
 
-Los archivos de templates relacionados con la ediciÛn de datos de los usuarios se caracterizan por tener la siguiente nomenclatura \textbf{f-edit-[nombreTabla]}
-\section{Listados de informaciÛn}
+Los archivos de templates relacionados con la edici√≥n de datos de los usuarios se caracterizan por tener la siguiente nomenclatura \textbf{f-edit-[nombreTabla]}
+\section{Listados de informaci√≥n}
 \label{4:sec7}
-Se implementaron dos formas de visualizar los datos de los socios, la mas simple es una vez obtenido el ID del socio, se accede a las paginas de informaciÛn del socio, donde cada template esta enfocada a una determinada tabla
+Se implementaron dos formas de visualizar los datos de los socios, la mas simple es una vez obtenido el ID del socio, se accede a las paginas de informaci√≥n del socio, donde cada template esta enfocada a una determinada tabla
 del modelo de datos, de esta forma los datos los clasificariamos en personales, economicos, medicos y familiares. En la vista lo unico que se hace es volcar los datos del socio a la template, que es la que se encarga de 
-la visualizaciÛn de los repectivos datos.
+la visualizaci√≥n de los repectivos datos.
 
 \lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/datos_economicos.py}
 
-Por otro lado para tener un vistazo general de los socios, se elaborÛ una tabla donde se listan todos los socios mostrando sus datos acorde con el listado en el que se este, es decir existen varios listados para representar los 
+Por otro lado para tener un vistazo general de los socios, se elabor√≥ una tabla donde se listan todos los socios mostrando sus datos acorde con el listado en el que se este, es decir existen varios listados para representar los 
 datos de los socios, listados de datos personales, economicos, etc.\\
 
 Para el formato de la tabla se encontro un widget con la  apariencia de bootstrap para mantener la escencia de la interfaz visual, en cuyas tablas se pueden
-realizar ordenaciones, filtrados y exportaciones que describir·n detalladamente en los siguientes apartados.
+realizar ordenaciones, filtrados y exportaciones que describir√°n detalladamente en los siguientes apartados.
 
 \section{Filtrado de tablas}
 \label{4:sec8}
-Para poder utilizar las funciones de filtrado y ordenaciones en los listados, era necesario incorporar en nuestra aplicaciÛn los siguientes scripts:\\
+Para poder utilizar las funciones de filtrado y ordenaciones en los listados, era necesario incorporar en nuestra aplicaci√≥n los siguientes scripts:\\
 
-\lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/script_tablesorter.html}
+\lstinputlisting[language=html,basicstyle=\scriptsize,caption={Ejemplo de listado desde archivo}]{codes/script_tablesorter.html}
 
-En la zona comentada de cada script se nombra para que se utiliza cada uno. Ademas de estos script es necesario introducir una funciÛn en Javascript que nos  proporciona el propio widget donde se especifican la configuracion de 
-tabla, como el tema de apariencia, los filtros, paginaciÛn etc.\\
+En la zona comentada de cada script se nombra para que se utiliza cada uno. Ademas de estos script es necesario introducir una funci√≥n en Javascript que nos  proporciona el propio widget donde se especifican la configuracion de 
+tabla, como el tema de apariencia, los filtros, paginaci√≥n etc.\\
 
 Posteriormente la estructura de la tabla lleva la siguiente sintaxis:\\
 
-\lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/sintaxis_tabla.html}
+\lstinputlisting[language=html,caption={Ejemplo de listado desde archivo}]{codes/sintaxis_tabla.html}
 
 \section{Exportaciones a Google Drive}
 \label{4:sec9}
 
-Para poder llevar las exportaciones a Google Drive primero que nada se tiene que establecer un permiso entre el  usuario, la aplicaciÛn y la API de Google Drive para poder utilizar el servicio. Esto con las credenciales que se han
-comentado en la secciÛn de \textbf{Inicio de SesiÛn}, aÒadiendo en el campo de \textbf{scope} la ruta al servicio Drive antes de generar la credencial.\\
+Para poder llevar las exportaciones a Google Drive primero que nada se tiene que establecer un permiso entre el  usuario, la aplicaci√≥n y la API de Google Drive para poder utilizar el servicio. Esto con las credenciales que se han
+comentado en la secci√≥n de \textbf{Inicio de Sesi√≥n}, a√±adiendo en el campo de \textbf{scope} la ruta al servicio Drive antes de generar la credencial.\\
 
 Ahora bien, los filtrados de los listados se realizan sobre la template en el cliente, por tanto si quieremos exportar una listado filtrado tenermos que en cierto modo, realizar el filtrado en el lado del servidor.
 Esto se logro modificando los archivos del \textbf{tablesorter} para que cuando generara la tabla, cada input de filtrado tenga un nombre (\textbf{name}), el cual se utiliza cuando se realiza una llamada POST, para poder obtener los parametros de filtrado.
 y realizar el filtrado directamente con el modelo de datos.\\
 
-Una vez realizado esto, nos queda el paso intermedio para poder exportar los datos a Google Drive, ya que para exportar necesitamos crear un fichero de extensiÛn .csv para que la API de Google Drive lo interprete y lo procese.
-De modo que la construcciÛn del fichero se realizÛ de la siguiente manera:\\
+Una vez realizado esto, nos queda el paso intermedio para poder exportar los datos a Google Drive, ya que para exportar necesitamos crear un fichero de extensi√≥n .csv para que la API de Google Drive lo interprete y lo procese.
+De modo que la construcci√≥n del fichero se realiz√≥ de la siguiente manera:\\
 
 \lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/export_drive.py}
 
 \section{Cambios de Unidad}
 \label{4:sec10}
 
-Esta funciÛn fue bastante demandada por la organizaciÛn y consiste en crear una funciÛn que calcule la edad de los socios y en seg˙n la edad los clasifique en la secciÛn/unidad que le corresponda de acuerdo al rango previamente
+Esta funci√≥n fue bastante demandada por la organizaci√≥n y consiste en crear una funci√≥n que calcule la edad de los socios y en seg√∫n la edad los clasifique en la secci√≥n/unidad que le corresponda de acuerdo al rango previamente
 establecido.\\
 
-El cÛdigo de dicha funciÛn es el siguiente:\\
+El c√≥digo de dicha funci√≥n es el siguiente:\\
 
 \lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/cambio_unidad.py}
 
-\section{ImportaciÛn de base de datos antigua}
+\section{Importaci√≥n de base de datos antigua}
 \label{4:sec11}
 
-La organizaciÛn de scout Aguere 70 tiene una base de datos donde hasta el momento guarda los datos de los socios, todos los datos est·n almacenados en una sola tabla y se nos propuso si era posible importar esta base de datos
-y volcarla en nuestra aplicaciÛn.\\
+La organizaci√≥n de scout Aguere 70 tiene una base de datos donde hasta el momento guarda los datos de los socios, todos los datos est√°n almacenados en una sola tabla y se nos propuso si era posible importar esta base de datos
+y volcarla en nuestra aplicaci√≥n.\\
 
-El principal problema era que esta toda la informaciÛn en un sola tabla por tanto habria que implementar un mecanismo para separar la informaciÛn y adaptarla a nuestro modelo de datos.\\
+El principal problema era que esta toda la informaci√≥n en un sola tabla por tanto habria que implementar un mecanismo para separar la informaci√≥n y adaptarla a nuestro modelo de datos.\\
 
-Por otro lado tenemos el formato del fichero de la base de datos que estaba en formato \textbf{Access}, de modo que era necesario convertirlo a un formato que pudiera procesar la aplicaciÛn de manera eficiente. Se pensÛ 
+Por otro lado tenemos el formato del fichero de la base de datos que estaba en formato \textbf{Access}, de modo que era necesario convertirlo a un formato que pudiera procesar la aplicaci√≥n de manera eficiente. Se pens√≥ 
 en el formato .csv separado por comas, ya que habia una herramienta llamada \textbf{MDB Tools} que convertia los ficheros accecc en csv.
 
-Una vez obtenido el fichero csv, se implemento un mecanismo para subir el fichero a la aplicaciÛn sin que este se guardara en el servidor, sino que solo estuviera ahÌ mientras se este procesando. De modo que se creo 
+Una vez obtenido el fichero csv, se implemento un mecanismo para subir el fichero a la aplicaci√≥n sin que este se guardara en el servidor, sino que solo estuviera ah√≠ mientras se este procesando. De modo que se creo 
 una nueva app llamada \textbf{upload} especificamente para este proceso.\\
 
 Esta app tiene un fichero \textbf{forms.py} que contiene el formato del form para datos de tipo fichero (FileField).\\
@@ -270,7 +270,7 @@ Esto lo procesa la template y posteriormente con la llamada de POST se envia el 
 \bigskip
 \lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/transformacion_fichero.py}
 
-DespuÈs se procesa casilla a casilla el array y se introducen los datos en la base de datos, siempre cuidando la integridad de la base de datos, de modo que no queden ambiguedades, ni campos vacios que sean importantes 
+Despu√©s se procesa casilla a casilla el array y se introducen los datos en la base de datos, siempre cuidando la integridad de la base de datos, de modo que no queden ambiguedades, ni campos vacios que sean importantes 
 en cada tabla del modelo.
 
 

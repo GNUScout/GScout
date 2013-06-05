@@ -1,131 +1,131 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Chapter 2: TÌtulo del capÌtulo 2
+% Chapter 2: T√≠tulo del cap√≠tulo 2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-En el capÌtulo anterior se ha introducido los antecedentes como el estado actual del proyecto, 
+En el cap√≠tulo anterior se ha introducido los antecedentes como el estado actual del proyecto, 
 nombrado sus herramientas, actividades y periodos de desarrollo. Ahora nos vamos enfocar y describir lo que es el
-entorno de desarrollo de la aplicaciÛn\\
+entorno de desarrollo de la aplicaci√≥n\\
 
-Partimos de una implementaciÛn en PHP, que poseÌa las funcionalidades b·sicas, pero el problema era que la base de datos
-no era compatile con nuestra tecnologÌa, debido a que seguÌa el model entidad-relaciÛn, y nosotros al contrario, necesit·bamos
-crear una base de datos no relacional. Por otro lado tenÌamos de ejemplo la aplicaciÛn web ``online scout'', la cual era muy completa
-pero era de pago, y nuestro objetivo era hacer una aplicaciÛn gratuita adaptada al cliente, en nuestro caso la organizaciÛn de scout Aguere 70 de La Laguna.
+Partimos de una implementaci√≥n en PHP, que pose√≠a las funcionalidades b√°sicas, pero el problema era que la base de datos
+no era compatile con nuestra tecnolog√≠a, debido a que segu√≠a el model entidad-relaci√≥n, y nosotros al contrario, necesit√°bamos
+crear una base de datos no relacional. Por otro lado ten√≠amos de ejemplo la aplicaci√≥n web ``online scout'', la cual era muy completa
+pero era de pago, y nuestro objetivo era hacer una aplicaci√≥n gratuita adaptada al cliente, en nuestro caso la organizaci√≥n de scout Aguere 70 de La Laguna.
 
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-\section{Bases de la aplicaciÛn}
+\section{Bases de la aplicaci√≥n}
 \label{2:sec1}
 
-La aplicaciÛn GScout esta programada principalmente en lenguaje python, bajo el framework de django-nonrel,  
+La aplicaci√≥n GScout esta programada principalmente en lenguaje python, bajo el framework de django-nonrel,  
 ya que como se ha comentado antes se necesitaba este framework especifico para trabajar con bases de datos no relacionales,
 debido a que como usamos Google App Engine para el despliegue, un requerimiento que tiene esta tecnologia es que solo trabaja con
-bases de datos no relacionales. En un principio se habia propuesto el uso de pivotaltracker para el seguimiento de la aplicaciÛn, 
-pero como solo habia un desarrollador en proceso, pues se descartÛ la idea y se limito a tener un repositorio gestor de versiones por medio de
-github, donde se van guardando los cambios oportunos, y segun la informaciÛn de los ``commit'' se puede ver lo que se ha hecho.
+bases de datos no relacionales. En un principio se habia propuesto el uso de pivotaltracker para el seguimiento de la aplicaci√≥n, 
+pero como solo habia un desarrollador en proceso, pues se descart√≥ la idea y se limito a tener un repositorio gestor de versiones por medio de
+github, donde se van guardando los cambios oportunos, y segun la informaci√≥n de los ``commit'' se puede ver lo que se ha hecho.
 
 \section{Modelo Vista Controlador: Django}
 \label{2:sec2}
 
-Django es un framework de desarrollo web de cÛdigo abierto, escrito en Python, que cumple en cierta medida el paradigma del Modelo Vista Controlador. 
-Fue desarrollado en origen para gestionar varias p·ginas orientadas a noticias de la World Company de Lawrence, Kansas, 
-y fue liberada al p˙blico bajo una licencia BSD en julio de 2005; el framework fue nombrado en alusiÛn al guitarrista de jazz gitano Django Reinhardt.
+Django es un framework de desarrollo web de c√≥digo abierto, escrito en Python, que cumple en cierta medida el paradigma del Modelo Vista Controlador. 
+Fue desarrollado en origen para gestionar varias p√°ginas orientadas a noticias de la World Company de Lawrence, Kansas, 
+y fue liberada al p√∫blico bajo una licencia BSD en julio de 2005; el framework fue nombrado en alusi√≥n al guitarrista de jazz gitano Django Reinhardt.
 
 \section{Google App Engine}
 \label{2:sec3}
 
 Google App Engine te permite ejecutar tus aplicaciones web en la infraestructura de Google.Las 
-aplicaciones App Engine son f·ciles de crear, de mantener y de ampliar al ir aumentando el tr·fico 
-y las necesidades de almacenamiento de datos. Con App Engine no necesitar·s utilizar ning˙n servidor: 
-solo tendr·s que subir tu aplicaciÛn para que los usuarios puedan empezar a utilizarla.\\
+aplicaciones App Engine son f√°ciles de crear, de mantener y de ampliar al ir aumentando el tr√°fico 
+y las necesidades de almacenamiento de datos. Con App Engine no necesitar√°s utilizar ning√∫n servidor: 
+solo tendr√°s que subir tu aplicaci√≥n para que los usuarios puedan empezar a utilizarla.\\
 
-Puedes proporcionar a la aplicaciÛn tu propio nombre de dominio (como, por ejemplo, http://www.example.com/) 
-a travÈs de Google Apps. TambiÈn puedes proporcionarle un nombre que estÈ disponible en el dominio appspot.com. 
-Podr·s compartir tu aplicaciÛn con todo el mundo o limitar el acceso a los miembros de tu organizaciÛn.\\
-
-
-Google App Engine admite aplicaciones escritas en varios lenguajes de programaciÛn.\\
+Puedes proporcionar a la aplicaci√≥n tu propio nombre de dominio (como, por ejemplo, http://www.example.com/) 
+a trav√©s de Google Apps. Tambi√©n puedes proporcionarle un nombre que est√© disponible en el dominio appspot.com. 
+Podr√°s compartir tu aplicaci√≥n con todo el mundo o limitar el acceso a los miembros de tu organizaci√≥n.\\
 
 
-Google App Engine permite desarrollar f·cilmente aplicaciones que se ejecuten de forma fiable, 
+Google App Engine admite aplicaciones escritas en varios lenguajes de programaci√≥n.\\
+
+
+Google App Engine permite desarrollar f√°cilmente aplicaciones que se ejecuten de forma fiable, 
 incluso con pesadas cargas de trabajo y grandes cantidades de datos. App Engine incluye las siguientes funciones:
 
 \begin{itemize}
-  \item Servidor web din·mico, totalmente compatible con las tecnologÌas web m·s comunes,
-  \item Almacenamiento permanente con funciones de consulta, clasificaciÛn y transacciones,
-  \item Escalado autom·tico y distribuciÛn de carga,
-  \item API para autenticar usuarios y enviar correo electrÛnico a travÈs de Google Accounts,
+  \item Servidor web din√°mico, totalmente compatible con las tecnolog√≠as web m√°s comunes,
+  \item Almacenamiento permanente con funciones de consulta, clasificaci√≥n y transacciones,
+  \item Escalado autom√°tico y distribuci√≥n de carga,
+  \item API para autenticar usuarios y enviar correo electr√≥nico a trav√©s de Google Accounts,
   \item Un completo entorno de desarrollo local que simula Google App Engine en tu equipo,
-  \item Colas de tareas que realizan trabajos fuera del ·mbito de una solicitud web,
+  \item Colas de tareas que realizan trabajos fuera del √°mbito de una solicitud web,
   \item Tareas programadas para activar eventos en momentos determinados y en intervalos regulares.
 \end{itemize}
 
 \section{Google APIs}
 \label{2:sec4}
 
-En la aplicaciÛn se usaron dos APIs de Google para aumentar y mejorar su funcionalidad. 
+En la aplicaci√≥n se usaron dos APIs de Google para aumentar y mejorar su funcionalidad. 
 
 
 \subsection{Google Plus}
-Como GAE ya posee un modulo de autenticaciÛn por medio de Google Auth,
+Como GAE ya posee un modulo de autenticaci√≥n por medio de Google Auth,
 en el proyecto se modifico para que se hiciera por medio de Google Plus, generando unas credenciales que se guardaran en el usuarios
-para que la aplicaccion pueda tener determinados permisos y poder obtener informaciÛn que proporciona Google Plus. El objetivo de la incorporaciÛn de esta 
-API a nuestra aplicaciÛn es evitar almacenar datos personales de los integrantes de la organizaciÛn que usa la aplicaciÛn en una base de datos, sino usar directamente los
-datos que nos proporciona Google Plus, como nombre, apellidos, foto de perfÌl, direcciÛn, etc.
+para que la aplicaccion pueda tener determinados permisos y poder obtener informaci√≥n que proporciona Google Plus. El objetivo de la incorporaci√≥n de esta 
+API a nuestra aplicaci√≥n es evitar almacenar datos personales de los integrantes de la organizaci√≥n que usa la aplicaci√≥n en una base de datos, sino usar directamente los
+datos que nos proporciona Google Plus, como nombre, apellidos, foto de perf√≠l, direcci√≥n, etc.
 
 \subsection{Google Drive}
-Uno de los objetivos de la aplicaciÛn en cuanto a funcionalidad era poder exportar una tabla filtrada o no con los datos de los socios, como estamos utilizando tecnologia Google,
+Uno de los objetivos de la aplicaci√≥n en cuanto a funcionalidad era poder exportar una tabla filtrada o no con los datos de los socios, como estamos utilizando tecnologia Google,
 decidimos que la mejor forma era utilizar la API de Google Drive, para crear documentos en formato de hoja de calculo en el entorno de Google Drive. Para ello fue necesario
 modificar las credenciales que se almacenaban en los usuarios, para darle permiso y poder utilizar las funciones que nos proporciona dicha API.
 
 \section{GitHub}
 \label{2:sec5}
 GitHub es un software para alojar proyectos utilizando el sistema de control de versiones Git. 
-El cÛdigo se almacena de forma p˙blica, aunque tambiÈn se puede hacer de forma privada, creando una cuenta de pago.\\
+El c√≥digo se almacena de forma p√∫blica, aunque tambi√©n se puede hacer de forma privada, creando una cuenta de pago.\\
 
-Nuestra aplicaciÛn esta alojada en un repertorio p˙blico, cuyo repertorio se facilitara en la secciÛn de enlances.
+Nuestra aplicaci√≥n esta alojada en un repertorio p√∫blico, cuyo repertorio se facilitara en la secci√≥n de enlances.
 
 \section{JavaScript y JQuery}
 \label{2:sec6}
 
 
 \subsection{JavaScript}
-JavaScript es un lenguaje de programaciÛn interpretado, orientado a objetos, basado en prototipos, imperativo, dÈbilmente tipado y din·mico. 
+JavaScript es un lenguaje de programaci√≥n interpretado, orientado a objetos, basado en prototipos, imperativo, d√©bilmente tipado y din√°mico. 
 Se utiliza principalmente en su forma del lado del cliente (client-side), implementado como parte de un navegador web permitiendo mejoras en 
-la interfaz de usuario y p·ginas web din·micas, en bases de datos locales al navegador, etc.
+la interfaz de usuario y p√°ginas web din√°micas, en bases de datos locales al navegador, etc.
 
 \subsection{JQuery}
 jQuery es una biblioteca de JavaScript, creada inicialmente por John Resig, que permite simplificar la manera de interactuar con los documentos HTML,
-manipular el ·rbol DOM, manejar eventos, desarrollar animaciones (FLV) y agregar interacciÛn con la tÈcnica AJAX a p·ginas web. Cuyas caracteristicas son:
+manipular el √°rbol DOM, manejar eventos, desarrollar animaciones (FLV) y agregar interacci√≥n con la t√©cnica AJAX a p√°ginas web. Cuyas caracteristicas son:
 
 \begin{itemize}
-  \item SelecciÛn de elementos DOM.
-  \item Interactividad y modificaciones del ·rbol DOM, incluyendo soporte para CSS 1-3 y un plugin b·sico de XPath.
+  \item Selecci√≥n de elementos DOM.
+  \item Interactividad y modificaciones del √°rbol DOM, incluyendo soporte para CSS 1-3 y un plugin b√°sico de XPath.
   \item Eventos.
-  \item ManipulaciÛn de la hoja de estilos CSS.
+  \item Manipulaci√≥n de la hoja de estilos CSS.
   \item Efectos y animaciones.
   \item Animaciones personalizadas.
   \item AJAX.
   \item Soporta extensiones.
-  \item Utilidades varias como obtener informaciÛn del navegador, operar con objetos y vectores, funciones para rutinas comunes, etc.
+  \item Utilidades varias como obtener informaci√≥n del navegador, operar con objetos y vectores, funciones para rutinas comunes, etc.
   \item Compatible con los navegadores Mozilla Firefox 2.0+, Internet Explorer 6+, Safari 3+, Opera 10.6+ y Google Chrome 8+.
 \end{itemize}
 
 \section{CSS y Bootstrap}
 \label{2:sec7}
 
-Para generar el estilo de nuestra aplicaciÛn utilizamos las tecnologÌas que se descriran a continuaciÛn.
+Para generar el estilo de nuestra aplicaci√≥n utilizamos las tecnolog√≠as que se descriran a continuaci√≥n.
 
 \subsection{CSS (Hojas de estilo)}
 Las hojas de estilo en cascada (Cascading Style Sheets, o sus siglas CSS) hacen referencia a un 
-lenguaje de hojas de estilos usado para describir la presentaciÛn sem·ntica (el aspecto y formato) de un 
-documento escrito en lenguaje de marcas. Su aplicaciÛn m·s com˙n es dar estilo a p·ginas webs escritas en lenguaje HTML y XHTML, 
-pero tambiÈn puede ser aplicado a cualquier tipo de documentos XML, incluyendo SVG y XUL.
+lenguaje de hojas de estilos usado para describir la presentaci√≥n sem√°ntica (el aspecto y formato) de un 
+documento escrito en lenguaje de marcas. Su aplicaci√≥n m√°s com√∫n es dar estilo a p√°ginas webs escritas en lenguaje HTML y XHTML, 
+pero tambi√©n puede ser aplicado a cualquier tipo de documentos XML, incluyendo SVG y XUL.
 
 \subsection{Bootstrap}
-Para agilizar el maquetado de las p·ginas web de la aplicaciÛn utilizamos Twitter Bootstrap, que es una colecciÛn de herramientas de software
-libre para la creaciÛn de sitios y aplicaciones web. Contiene plantillas de diseÒo basadas en HTML y CSS con tipografÌas, 
-formularios, botones, gr·ficos, barras de navegaciÛn y dem·s componentes de interfaz, asÌ como extensiones opcionales de JavaScript.
+Para agilizar el maquetado de las p√°ginas web de la aplicaci√≥n utilizamos Twitter Bootstrap, que es una colecci√≥n de herramientas de software
+libre para la creaci√≥n de sitios y aplicaciones web. Contiene plantillas de dise√±o basadas en HTML y CSS con tipograf√≠as, 
+formularios, botones, gr√°ficos, barras de navegaci√≥n y dem√°s componentes de interfaz, as√≠ como extensiones opcionales de JavaScript.
 
