@@ -1,10 +1,12 @@
+""" Archivo setting.py"""
+
 # Initialize App Engine and import the default settings (DB backend, etc.).
 # If you want to use a different backend you have to remove all occurences
 # of "djangoappengine" from this file.
-from djangoappengine.settings_base import *
+from djangoappengine.settings_base import DATABASES
 
 import os
-import django
+
 
 
 # Activate django-dbindexer for the default database
@@ -22,7 +24,7 @@ DEBUG = True
 
 
 INSTALLED_APPS = (
-#    'django.contrib.admin',
+    #'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.auth',
     'django.contrib.sessions',
@@ -31,10 +33,8 @@ INSTALLED_APPS = (
     'dbindexer',
     'plus',
     'gaeauth',
-    # djangoappengine should come last, so it can override a few manage.py commands 
     'socios',
     'empleados',
-   # 'django.contrib.staticfiles',
     'djangoappengine',
     'upload',
     
@@ -69,7 +69,7 @@ ROOT_URLCONF = 'urls'
 AUTHENTICATION_BACKENDS = (
       'gaeauth.backends.GoogleAccountBackend',
 )
-ALLOWED_DOMAINS = ('dsic.ull.es','gruposcoutaguere70.org',)
+ALLOWED_DOMAINS = ('dsic.ull.es', 'gruposcoutaguere70.org',)
 
 
 

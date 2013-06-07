@@ -13,7 +13,7 @@ import csv
 
 from datetime import datetime
 
-def list(request):
+def upload_file(request):
     # Handle file upload
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
@@ -128,7 +128,7 @@ def list(request):
             # Redirect to the document list after POST
             #return HttpResponseRedirect(reverse('upload.views.list'))
             return render_to_response(
-                'upload/list.html',
+                'upload/upload_file.html',
                 {'prueba': prueba},
                 context_instance=RequestContext(request)
             )
@@ -141,7 +141,7 @@ def list(request):
 
     # Render list page with the documents and the form
     return render_to_response(
-        'upload/list.html',
+        'upload/upload_file.html',
         {'documents': documents, 'form': form},
         context_instance=RequestContext(request)
     )

@@ -20,18 +20,31 @@
 	<li><a href="/socios/search_familia">Editar Familias</a></li>	  
 	<li><a href="/socios/search">Buscar ID</a></li>
 {% endblock %}
-{% block form-title %}<h2>Datos Economicos del socio nº {{ economicos.socio_id.n_asociado }}</h2>
+{% block botones %}
+<div class="botones" style="margin-left: 20%;">
 <a class="btn btn-large btn-primary" href="/socios/{{ economicos.socio_id.n_asociado }}/personales">Personales</a>
 <a class="btn btn-large btn-primary" href="/socios/{{ economicos.socio_id.n_asociado }}/familiares">Familia</a>
 <a class="btn btn-large btn-success" href="/socios/{{ economicos.socio_id.n_asociado }}/economicos">Economicos</a>
 <a class="btn btn-large btn-primary" href="/socios/{{ economicos.socio_id.n_asociado }}/medicos">Medicos</a>
+</div>
 {% endblock %}
 {% block form %}
-	<p><strong>Titular de la cuenta: </strong> {{economicos.titular}}</p>
-	<p><strong>N.I.F. del Titular: </strong> {{economicos.nif_titular}}</p>
-	<p><strong>Banco: </strong> {{economicos.banco}}</p>
-	<p><strong>Sucursal: </strong> {{economicos.sucursal}}</p>
-	<p><strong>Localidad: </strong> <time>{{economicos.localidad}}</time></p>
-	<p><strong>Datos de la cuenta: </strong> {{economicos.d_banco}}-{{economicos.d_sucursal}}-{{economicos.dc}}-{{economicos.n_cuenta}}</p>
+	<h2>Datos Economicos del socio nº {{ economicos.socio_id.n_asociado }}</h2>
+	<table style="margin-bottom: 20px" class="table table-striped table-bordered" width=100%>
+		<tr>
+			<td colspan="2"><p><strong>Titular de la cuenta: </strong> {{economicos.titular}}</p></td>
+			<td><p><strong>N.I.F. del Titular: </strong> {{economicos.nif_titular}}</p></td>	
+		</tr>
+		<tr>
+			<td><p><strong>Banco: </strong> {{economicos.banco}}</p></td>
+			<td><p><strong>Sucursal: </strong> {{economicos.sucursal}}</p></td>
+			<td><p><strong>Localidad: </strong> <time>{{economicos.localidad}}</time></p></td>		
+		</tr>
+		<tr >
+			<td  colspan="3" style="text-align: center" ><p><strong>Datos de la cuenta: </strong> {{economicos.d_banco}}-{{economicos.d_sucursal}}-{{economicos.dc}}-{{economicos.n_cuenta}}</p></td>
+		</tr>
+		
+		
+	</table>
 	<a class="btn btn-large btn-primary" href="/socios/{{ economicos.socio_id.n_asociado }}/edit_economicos">Editar</a>	
 {% endblock %}

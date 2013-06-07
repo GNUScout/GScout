@@ -23,78 +23,76 @@
 {% block form-head %}
 
 {% endblock %}
-{% block form-title %}<h2>Datos Familiares del socio nº {{ socio.n_asociado }}</h2>
+{% block botones %}
+<div class="botones" style="margin-left: 20%;">
 <a class="btn btn-large btn-primary" href="/socios/{{ socio.n_asociado }}/personales">Personales</a>
 <a class="btn btn-large btn-success" href="/socios/{{ socio.n_asociado }}/familiares">Familia</a>
 <a class="btn btn-large btn-primary" href="/socios/{{ socio.n_asociado }}/economicos">Economicos</a>
 <a class="btn btn-large btn-primary" href="/socios/{{ socio.n_asociado }}/medicos">Medicos</a>
+</div>
 {% endblock %}
 {% block form %}
-	
+	<h2>Datos Familiares del socio nº {{ socio.n_asociado }}</h2>
 	<h3> NIF Familia = {{familia.nif}}</h3>
 	
-	<div class="form-personal">
-		<table WIDTH=50%>
-			<thead>
+	<table style="margin-bottom: 20px" class="table table-striped table-bordered" WIDTH=100%>
+		<thead>
+			<tr>
+				<th colspan="7">
+					<h3 align="center">Padres/Tutores</h3>
+				</th>
+			</tr>
+			<tr>
+				<th><strong>NIF </strong></th>
+				<th><strong>Nombre </strong></th>
+				<th><strong>Apellidos </strong></th>
+				<th><strong>Rol </strong></th>
+				<th><strong>Tel </strong></th>
+				<th><strong>Movil </strong></th>
+				<th><strong>Email </strong></th>
+				
+			</tr>
+		</thead>
+		<tbody>
+		{% for f in familiares %}
+			<tr>
+				<td ALIGN=CENTER><p>{{f.nif}} </p></td>
+				<td ALIGN=CENTER><p>{{f.nombre}} </p></td>
+				<td ALIGN=CENTER><p>{{f.apellidos}} </p></td>
+				<td ALIGN=CENTER><p>{{f.rol}} </p></td>
+				<td ALIGN=CENTER><p>{{f.telefono}} </p></td>
+				<td ALIGN=CENTER><p>{{f.movil}} </p></td>
+				<td ALIGN=CENTER><p>{{f.email}} </p></td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	<table style="margin-bottom: 20px" class="table table-striped table-bordered" WIDTH=100%>
+		<thead>
+			<tr>
+				<th colspan="4">
+					<h3 align="center">Hermanos</h3>
+				</th>
+			</tr>
+			<tr>
+				<th><strong>NIF </strong></th>
+				<th><strong>Nombre </strong></th>
+				<th><strong>Apellidos </strong></th>
+				<th><strong>Seccion </strong></th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for h in hermanos %}
+			{% if h.socio_id != socio %}
 				<tr>
-					<th colspan="7">
-						<h3>Padres/Tutores</h3>
-					</th>
+					<td ALIGN=CENTER><p>{{h.dni}} </p></td>
+					<td ALIGN=CENTER><p>{{h.nombre}} </p></td>
+					<td ALIGN=CENTER><p>{{h.apellidos}} </p></td>
+					<td ALIGN=CENTER><p>{{h.seccion}} </p></td>
 				</tr>
-				<tr>
-					<th><strong>NIF </strong></th>
-					<th><strong>Nombre </strong></th>
-					<th><strong>Apellidos </strong></th>
-					<th><strong>Rol </strong></th>
-					<th><strong>Tel </strong></th>
-					<th><strong>Movil </strong></th>
-					<th><strong>Email </strong></th>
-					
-				</tr>
-			</thead>
-			<tbody>
-			{% for f in familiares %}
-				<tr>
-					<td ALIGN=CENTER><p>{{f.nif}} </p></td>
-					<td ALIGN=CENTER><p>{{f.nombre}} </p></td>
-					<td ALIGN=CENTER><p>{{f.apellidos}} </p></td>
-					<td ALIGN=CENTER><p>{{f.rol}} </p></td>
-					<td ALIGN=CENTER><p>{{f.telefono}} </p></td>
-					<td ALIGN=CENTER><p>{{f.movil}} </p></td>
-					<td ALIGN=CENTER><p>{{f.email}} </p></td>
-				</tr>
-			{% endfor %}
-			</tbody>
-		</table>
-	</div>
-	<div class="form-personal">
-		<table WIDTH=50%>
-			<thead>
-				<tr>
-					<th colspan="4">
-						<h3>Hermanos</h3>
-					</th>
-				</tr>
-				<tr>
-					<th><strong>NIF </strong></th>
-					<th><strong>Nombre </strong></th>
-					<th><strong>Apellidos </strong></th>
-					<th><strong>Seccion </strong></th>
-				</tr>
-			</thead>
-			<tbody>
-			{% for h in hermanos %}
-				{% if h.socio_id != socio %}
-					<tr>
-						<td ALIGN=CENTER><p>{{h.dni}} </p></td>
-						<td ALIGN=CENTER><p>{{h.nombre}} </p></td>
-						<td ALIGN=CENTER><p>{{h.apellidos}} </p></td>
-						<td ALIGN=CENTER><p>{{h.seccion}} </p></td>
-					</tr>
-				{% endif %}
-			{% endfor %}
-			</tbody>
-		</table>
-	</div>
+			{% endif %}
+		{% endfor %}
+		</tbody>
+	</table>
 	<a class="btn btn-large btn-danger" href="/socios/{{ socio.n_asociado }}/change_familia">Cambiar Familia</a>
 {% endblock %}

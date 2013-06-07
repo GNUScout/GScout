@@ -1,7 +1,4 @@
 eclipse.preferences.version=1
-encoding//Memoria_Proyecto/tfg/codes/authentication_settings.py=utf-8
-encoding//Memoria_Proyecto/tfg/codes/form_upload.py=utf-8
-encoding//Memoria_Proyecto/tfg/codes/socios-urls.py=utf-8
 encoding//empleados/views.py=utf-8
 encoding//gaeauth/urls.py=utf-8
 encoding//socios/urls.py=utf-8
@@ -10,3 +7,4 @@ encoding//upload/forms.py=utf-8
 encoding//upload/models.py=utf-8
 encoding//upload/urls.py=utf-8
 encoding//upload/views.py=utf-8
+encoding/settings.py=utf-8

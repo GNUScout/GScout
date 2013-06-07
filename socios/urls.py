@@ -1,6 +1,7 @@
+""" urls de la aplicacion"""
 # -*- coding: utf-8 -*-
 
-from django.conf.urls.defaults import *
+from django.conf.urls.defaults import patterns
 from socios.views import *
 
 urlpatterns = patterns('',
@@ -29,7 +30,7 @@ urlpatterns = patterns('',
    ('^familiares_new/', 'django.views.generic.simple.direct_to_template',
      {'template': 'socios/f_familiares.html'}),
    (r'search_familia', search_familia),
-   (r'([A-Z]?[0-9]+[A-Z]?)/edit_familia/?', edit_familia),
+   (r'([A-Z]?[0-9]+\-?[a-z]?[A-Z]?)/edit_familia/?', edit_familia),
    (r'modify_familia/?', modify_familia),
    (r'post_change_familia/?', post_change_familia),
    (r'([0-9]+)/change_familia/?', change_familia),

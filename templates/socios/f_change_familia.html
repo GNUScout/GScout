@@ -48,7 +48,8 @@
 			$("#boton_add").show();
 			$("#boton_del").show();
 			$("#family_div").hide();
-			item=	"<TABLE id='dataTable' width='750px'>" +
+			item=	"<p><b>Nota:</b> El la primera persona que figure en la lista sera el identificador de la familia. </p>"+
+					"<TABLE id='dataTable' width='750px'>" +
 						        "<TR>"+
 						        	
 						            "<td><input id='inputFamiliar"+familiares+"' type='text' name='fn[]' placeholder='Nombre'></td>"+
@@ -260,7 +261,7 @@
 								Si
 							</label>
 						</div>
-					
+							
 							<div id="todo">
 								<div id ="content"></div>
 							</div>
@@ -329,7 +330,7 @@
 					<div class="control-group">
 						<div class="controls">
 							<input type="hidden" value="f5" name="form_id" />
-						  <button type="submit" class="btn">Cambiar</button>
+						  <button type="submit" class="btn btn-large btn-danger">Cambiar</button>
 						</div>
 					</div>
 											

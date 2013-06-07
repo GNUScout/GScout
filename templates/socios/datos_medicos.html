@@ -23,50 +23,84 @@
 {% block form-head %}
 
 {% endblock %}
-{% block form-title %}<h2>Datos Medicos del socio nº {{ medicos.socio_id.n_asociado }}</h2>
+{% block botones %}
+<div class="botones" style="margin-left: 20%;">
 <a class="btn btn-large btn-primary" href="/socios/{{ medicos.socio_id.n_asociado }}/personales">Personales</a>
 <a class="btn btn-large btn-primary" href="/socios/{{ medicos.socio_id.n_asociado }}/familiares">Familia</a>
 <a class="btn btn-large btn-primary" href="/socios/{{ medicos.socio_id.n_asociado }}/economicos">Economicos</a>
 <a class="btn btn-large btn-success" href="/socios/{{ medicos.socio_id.n_asociado }}/medicos">Medicos</a>
+</div>
 {% endblock %}
 {% block form %}
-	<p><strong>Compañia de Seguro: </strong> {{medicos.c_seguro}}</p>
-	<p><strong>Numero de Poliza: </strong> {{medicos.n_poliza}}</p>
-	<p><strong>¿Enfermedad?: </strong> {{medicos.enfermedad}}</p>
-	<p><strong>¿Cual?: </strong> <time>{{medicos.t_enfermedad}}</time></p>
-	<p><strong>¿Enfermedad Cronica, Fisica y/o Psiquica?: </strong> {{medicos.enfermedad_cfp}}</p>
-	<p><strong>¿Cual? </strong> {{medicos.t_enfermedad_cfp}}</p>
-	<p><strong>¿Operado?: </strong> {{medicos.operado}}</p>
-	<p><strong>¿De que?: </strong> {{medicos.t_operado}}</p>
-	<p><strong>¿Alergia?: </strong> {{medicos.alergia}}</p>
-	<p><strong>¿Cual?: </strong> {{medicos.t_alergia}}</p>
-	<p><strong>¿Otras Alergias? </strong> {{medicos.otras_alergias}}</p>
-	<p><strong>¿Cuales?: </strong> {{medicos.t_otras_alergias}}</p>
-	<p><strong>¿Dieta?: </strong> {{medicos.dieta}}</p>
-	<p><strong>Regimen: </strong> {{medicos.t_dieta}}</p>
-	<p><strong>¿Toma medicamentos?: </strong> {{medicos.toma_medicamentos}}</p>
+	<h2>Datos Medicos del socio nº {{ medicos.socio_id.n_asociado }}</h2>
+	<table style="margin-bottom: 20px" class="table table-striped table-bordered" width=100%>
+		<tr>
+			<td><p><strong>Compañia de Seguro: </strong> {{medicos.c_seguro}}</p></td>
+			<td><p><strong>Numero de Poliza: </strong> {{medicos.n_poliza}}</p></td>
+		</tr>
+		<tr>
+			<td><p><strong>¿Enfermedad?: </strong> {{medicos.enfermedad}}</p></td>
+			<td><p><strong>¿Cual?: </strong> <time>{{medicos.t_enfermedad}}</time></p></td>
+		</tr>
+		<tr>
+			<td><p><strong>¿Enfermedad Cronica, Fisica y/o Psiquica?: </strong> {{medicos.enfermedad_cfp}}</p></td>
+			<td><p><strong>¿Cual? </strong> {{medicos.t_enfermedad_cfp}}</p></td>			
+		</tr>
+		<tr>
+			<td><p><strong>¿Operado?: </strong> {{medicos.operado}}</p></td>
+			<td><p><strong>¿De que?: </strong> {{medicos.t_operado}}</p></td>			
+		</tr>
+		<tr>
+			<td><p><strong>¿Alergia?: </strong> {{medicos.alergia}}</p></td>
+			<td><p><strong>¿Cual?: </strong> {{medicos.t_alergia}}</p></td>
+		</tr>
+		<tr>
+			<td><p><strong>¿Otras Alergias? </strong> {{medicos.otras_alergias}}</p></td>
+			<td><p><strong>¿Cuales?: </strong> {{medicos.t_otras_alergias}}</p></td>
+		</tr>
+		<tr>
+			<td><p><strong>¿Dieta?: </strong> {{medicos.dieta}}</p></td>
+			<td><p><strong>Regimen: </strong> {{medicos.t_dieta}}</p></td>
+		</tr>
+		<tr>
+			<td colspan="2"><p><strong>¿Toma medicamentos?: </strong> {{medicos.toma_medicamentos}}</p></td>
+		</tr>
+		<tr>
+			<td colspan="2"><p><strong>Información adicional: </strong> {{medicos.info_adicional}}</p></td>
+		</tr>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</table>
 	{% if medicos.toma_medicamentos == "si" %}
-		<div class="form-personal">
-			<table WIDTH=50%>
-				<thead>
-					<tr>
-						<th><strong>Nombre </strong></th>
-						<th><strong>Pauta </strong></th>
-						<th><strong>Dosis </strong></th>
-					</tr>
-				</thead>
-				<tbody>
-				{% for m in medicamentos %}
-					<tr>
-						<td ALIGN=CENTER><p>{{m.nombre}} </p></td>
-						<td ALIGN=CENTER><p>{{m.pauta}} </p></td>
-						<td ALIGN=CENTER><p>{{m.dosis}} </p></td>
-					</tr>
-				{% endfor %}
-				</tbody>
-			</table>
-		</div>
+		<h3>Medicamentos</h3>
+		
+		<table class="table table-striped table-bordered" style="margin-bottom: 20px" WIDTH=100%>
+			<thead>
+				<tr>
+					<th style="text-align: center"><strong>Nombre </strong></th>
+					<th style="text-align: center"><strong>Pauta </strong></th>
+					<th style="text-align: center"><strong>Dosis </strong></th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for m in medicamentos %}
+				<tr>
+					<td style="text-align: center"><p>{{m.nombre}} </p></td>
+					<td style="text-align: center"><p>{{m.pauta}} </p></td>
+					<td style="text-align: center"><p>{{m.dosis}} </p></td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+
 	{% endif %}
-	<p><strong>Información adicional: </strong> {{medicos.info_adicional}}</p>
+	
 	<a class="btn btn-large btn-primary" href="/socios/{{ medicos.socio_id.n_asociado }}/edit_medicos">Editar</a>	
 {% endblock %}
