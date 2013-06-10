@@ -16,7 +16,13 @@ acceder con su cuenta de Google perteneciente al dominio ``gruposcoutaguere70.co
 para clasificarlos según su cargo, y que cada usuario pueda desempeñar unas funciones u otras dependiendo del cargo asignado por el administrador.\\
 
 
-[[Imagen del login]]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{images/login.jpg}
+\caption{Ventana de login}
+\label{fig:ArbolBinario}
+\end{center}
+\end{figure}
 
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -29,44 +35,123 @@ A continuación nombraremos las funcionalidades entorno a la gestión de socios.
 
 Los usuarios podrán crear nuevos socios rellenando los formularios predefinidos en la aplicación, donde se clasifican los datos en personales, economicos, familiares y medicos.\\
 
-[[Imagen de los formularios]]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{images/ejemplo_formulario_personal.jpg}
+\caption{Ejemplo de Formulario}
+\label{fig:ArbolBinario}
+\end{center}
+\end{figure}
 
-\subsection{Edición de Socios}
+\subsection{Visualización y Edición de Socios}
 
-Una vez creados los socios se pueden editar sus datos, de una manera similar a la de creación de socios, simplemente buscamos el socio y le damos a editar, en la pestaña del tipo de información
+Una vez creados los socios podremos visualizar su información accediendo a la ficha de socio, donde la informacion se divide en 4 pestañas: Personales, Familia, Economicos y Médicos \\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{images/datos_personales.jpg}
+\caption{Ficha del Socio}
+\label{fig:ArbolBinario}
+\end{center}
+\end{figure}
+
+Tambien se pueden editar sus datos, de una manera similar a la de creación de socios, simplemente buscamos el socio y le damos a editar, en la pestaña del tipo de información
 que querramos cambiar.\\
 
-[[Imagen de formularios de edición]]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.15\textwidth]{images/boton_editar.jpg}
+\caption{Boton de Editar}
+\label{fig:ArbolBinario}
+\end{center}
+\end{figure}
 
 \subsection{Borrado de Socios}
-Tambien podremos borrar los socios, solo que estos socios no son borrados permanentemente con esta opción, sino que su estado pasará a inactivo y no estara visible a todo el mundo.\\
+Tambien podremos borrar los socios, de momento los socios se borran permanentemente, pero en el modelo de datos esta configurado pera poder implementar un metodo que en vez de borrarlos los socios pasen
+a un estado inactivo.\\
 
-[[Imagen borrado y estado inactivo]]
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{images/borrado_socios.jpg}
+\caption{Borrado de Socios}
+\label{fig:ArbolBinario}
+\end{center}
+\end{figure}
 
 \subsection{Familiares}
 
 Es obligado que cada socio pertenezca a una familia, la cual tendra un responsable que sera el indentificador de la familia, a la que se le pueden asignar varios socios, padres y/o tutores. En cierto modo, podremos
 formar lo que seria un arbol de familia entre los socios, saber que socios conviven en la misma familia, saber quienes son los padres/tutores del socio, etc.\\
 
-[[ Imagen arbol familia]]\\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{images/familia_socio.jpg}
+\caption{Borrado de Socios}
+\label{fig:ArbolBinario}
+\end{center}
+\end{figure}
 
 Tambien GScout nos da la opción de cambiar o crear una familia nueva, por cualquier circunstancia que pueda pasar, en la que se necesite modificar las familias ya existentes.\\
 
-[[ Imagen edicion familia]]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{images/cambio_familia.jpg}
+\caption{Edición de Familia}
+\label{fig:ArbolBinario}
+\end{center}
+\end{figure}
+
 
 \subsection{Medicamentos}
 
 Muchos de los socios podrían estar bajo medicación de algun tipo, por tanto existe un modulo en el que podemos anexar a los socios los datos de sus medicamentos, como el nombre, las pautas y las dosis correspondientes.\\
 
-[[imagen medicamentos]]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{images/medicamentos.jpg}
+\caption{Medicamentos}
+\label{fig:ArbolBinario}
+\end{center}
+\end{figure}
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \section{Cambios de unidad}
 \label{3:sec3}
 
 A petición de la organización scout Aguere 70 se creó una función que llamada \textbf{Cambio de Unidad} que consistes en analizar todos los socios, verificar su edad, y si procede cambiarlo a la sección/unidad acorde a su edad.\\
+\begin{figure}[H]
+\begin{center}
+\begin{tabular}{c|p{25mm}c|p{25mm}|} \hline 
+\textbf{Intervalo(Años)} & \textbf{Unidad} \\ \hline
+0-11 &
+Manada
+\\
+\hline
 
-[tabla de unidades por rango de edades]
+11-14 &
+Tropa
+\\
+\hline
+
+14-17 &
+Esculta
+\\
+\hline
+
+17-20 &
+Rover
+\\
+\hline
+
+20+ & 
+Scouter
+\\
+\hline
+\end{tabular}
+\caption{Rango de edades}
+\end{center}
+\end{figure}
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \section{Listados de información}
@@ -76,7 +161,14 @@ Hay una sección en la aplicación en la que podemos listar los socios visualiza
 
 En estos listados podremos interactuar filtrando los datos por medio de varios filtro, incluso ordenarlos alfabeticamente en orden creciente y decreciente si se desea.\\
 
-[[ Imagen de un listado ejemplo con algunos filtros ]]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{images/filtrado.jpg}
+\caption{Aplicación de algunos filtros al listado}
+\label{fig:ArbolBinario}
+\end{center}
+\end{figure}
+
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \section{Busquedas por ID}
@@ -84,7 +176,13 @@ En estos listados podremos interactuar filtrando los datos por medio de varios f
 
 Tambien se pueden realizar busquedas directas por el ID del socio, en la que nos redirecciona a directamente  a la ficha técnica del socio.\\
 
-[[ Imagen de busquedas por ID ]]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.40\textwidth]{images/busqueda_id.jpg}
+\caption{Busqueda ID}
+\label{fig:ArbolBinario}
+\end{center}
+\end{figure}
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \section{Exportaciones}
@@ -92,11 +190,23 @@ Tambien se pueden realizar busquedas directas por el ID del socio, en la que nos
 
 Los resultados de los listados los podemos exportar a Google Drive en formato de hoja de calculo, con solo darle al botón de exportar debajo del listado. Veamos un ejemplo con imagenes:\\
 
-[[ Boton exportar]]\\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{images/listado_export.jpg}
+\caption{Exportación de un listado}
+\label{fig:ArbolBinario}
+\end{center}
+\end{figure}
 
 El resultado seria el siguiente:\\
 
-[[ Documento en drive ]]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{images/result_export.jpg}
+\caption{Resultado de la Esportación}
+\label{fig:ArbolBinario}
+\end{center}
+\end{figure}
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \section{Importaciones}
@@ -106,4 +216,10 @@ GScout brinda a la organización de scout Aguere 70 la posibilidad de migrar su 
 y solo haría falta subirla a la aplicación, que lo demás lo hace la propia aplicación de manera automatica. De esta manera tendremo los datos de la antigua base de datos en la nueva base de datos que pertenece a GScout.\\
 
 
-[[ Imagen de subida de archivo csv ]]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{images/import_db.jpg}
+\caption{Subiendo archivo csv para importar base de datos}
+\label{fig:ArbolBinario}
+\end{center}
+\end{figure}

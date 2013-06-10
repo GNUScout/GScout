@@ -114,10 +114,15 @@ de modo que el proyecto nos quedaría de la siguiente manera:
   \item \lstinline!djangoappengine => <project>/djangoappengine!
 \end{itemize}
 
-Importante: Al instalar el SDK de App Engine incluir el PATH en el archivo .profile de nuestra carpeta personal en Linux.\\
+\textbf{Importante:} Al instalar el SDK de App Engine incluir el PATH en el archivo .profile de nuestra carpeta personal en Linux.\\
 
-[[Archivo app.yaml]]
-Describir el archivo app.yaml
+Por otro lado es importante hablar del archivo de configuración app.yaml, que especifica la manera en la que las rutas de URL se corresponden con los 
+controladores de solicitudes y con los archivos estáticos en el entorno de Google App Engine. 
+También debe contener información sobre el código de la aplicación como, por ejemplo, el ID de la aplicación y el identificador de la última versión.\\
+
+De modo que el arhivo seria el siguiente:\\
+\lstinputlisting[caption={Archivo de configuración app.yaml}]{codes/app.yaml}
+
 
 \section{Inicio de sesión}
 \label{4:sec4}
@@ -128,6 +133,8 @@ por medio de sus cuentas de google asociadas a dicho dominio.\\
 El archivo settings.py se configuró de la siguiente manera:\\
 
 \lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/authentication_settings.py}
+
+
 
 
 Donde se puede apreciar las \textsc{INSTALLED APPS} necesarias para este apartado de la aplicación. Pasamos a describir cada una:\\
@@ -271,7 +278,21 @@ Esto lo procesa la template y posteriormente con la llamada de POST se envia el 
 \lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/transformacion_fichero.py}
 
 Después se procesa casilla a casilla el array y se introducen los datos en la base de datos, siempre cuidando la integridad de la base de datos, de modo que no queden ambiguedades, ni campos vacios que sean importantes 
-en cada tabla del modelo.
+en cada tabla del modelo.\\
+
+\section{Calidad de Código: Pylint}
+\label{4:sec12}
+Para finalizar el periodo de desarrollo del proyecto, mejoramos la calidad de código de los principales archivos escritos en Python de la aplicación. Para ello utilizamos la herramienta Pylint, obteniendo una nota media en los
+archivos de 9.0 en cuanto a calidad de código.\\
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{images/pylint.jpg}
+\caption{Resultado tras analizar socios/views.py con el Pylint.}
+\label{fig:ArbolBinario}
+\end{center}
+\end{figure}
 
 
 
