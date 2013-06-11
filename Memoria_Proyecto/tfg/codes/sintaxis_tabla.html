@@ -24,7 +24,7 @@
 			<th colspan="9" class="pager form-horizontal">
 				<button class="btn first"><i class="icon-step-backward"></i></button>
 				<button class="btn prev"><i class="icon-arrow-left"></i></button>
-				<span class="pagedisplay"></span> <!-- this can be any element, including an input -->
+				<span class="pagedisplay"></span>
 				<button class="btn next"><i class="icon-arrow-right"></i></button>
 				<button class="btn last"><i class="icon-step-forward"></i></button>
 				<select class="pagesize input-mini" title="Select page size">
@@ -37,12 +37,13 @@
 			</th>
 		</tr>
 	</tfoot>
-	<!-- Por ultimo esta el cuerpo de la tabla que es el que va a contener los datos de los socios. -->
+	<!-- Por ultimo esta el cuerpo de la tabla que es el que va a contener 
+		los datos de los socios. -->
 	<tbody>
 		{% for s in socios %}
 			<th><td>
-					<!-- Aqui se introduce una etiqueda <td> por cada dato que se quiere representar -->
-					<!-- segun el numero de columnas -->
+					<!-- Aqui se introduce una etiqueda <td> por cada dato 
+						que se quiere representar segun el numero de columnas -->
 				</td>
 			</th>
 		{% endfor %}

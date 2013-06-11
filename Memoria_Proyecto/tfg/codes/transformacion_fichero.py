@@ -1,5 +1,5 @@
-# Con la llamda a request.FILES['nombre'] se guarda el contenido del fichero
-# en la variable paramFile
+# Con la llamda a request.FILES['nombre'] se guarda el contenido 
+# del fichero en la variable paramFile
 paramFile = request.FILES['docfile'].read()
 
 # Con csv.reader(paramFile.splitlines()) dividimos en lineas el 
