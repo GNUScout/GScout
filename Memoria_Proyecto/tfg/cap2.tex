@@ -10,7 +10,7 @@ entorno de desarrollo de la aplicación\\
 
 Partimos de una implementación en PHP, que poseía las funcionalidades básicas, pero el problema era que la base de datos
 no era compatile con nuestra tecnología, debido a que seguía el model entidad-relación, y nosotros al contrario, necesitábamos
-crear una base de datos no relacional. Por otro lado teníamos de ejemplo la aplicación web ``online scout'', la cual era muy completa
+crear una base de datos no relacional. Por otro lado teníamos de ejemplo la aplicación web ``online scout manager'', la cual era muy completa
 pero era de pago, y nuestro objetivo era hacer una aplicación gratuita adaptada al cliente, en nuestro caso la organización de scout Aguere 70 de La Laguna.
 
 
@@ -19,23 +19,62 @@ pero era de pago, y nuestro objetivo era hacer una aplicación gratuita adaptada
 \section{Bases de la aplicación}
 \label{2:sec1}
 
-La aplicación GScout esta programada principalmente en lenguaje python, bajo el framework de django-nonrel,  
+La aplicación GScout esta programada principalmente en lenguaje Python, bajo el framework de Django-nonrel,  
 ya que como se ha comentado antes se necesitaba este framework especifico para trabajar con bases de datos no relacionales,
-debido a que como usamos Google App Engine para el despliegue, un requerimiento que tiene esta tecnologia es que solo trabaja con
-bases de datos no relacionales. En un principio se habia propuesto el uso de pivotaltracker para el seguimiento de la aplicación, 
+debido a que usamos Google App Engine para el despliegue. Por lo cual unn requerimiento que tiene esta tecnologia es que solo trabaja con
+bases de datos no relacionales. En un principio se habia propuesto el uso de pivotaltracker para el seguimiento del desarrollo de la aplicación, 
 pero como solo habia un desarrollador en proceso, pues se descartó la idea y se limito a tener un repositorio gestor de versiones por medio de
-github, donde se van guardando los cambios oportunos, y segun la información de los ``commit'' se puede ver lo que se ha hecho.
+github, donde se van guardando los cambios oportunos, y segun la información de los ``commit'' se puede ver lo que se ha hecho.\\
 
-\section{Modelo Vista Controlador: Django}
+Por otro lado el desarrollo del proyecto fue basado en metedologias agiles, en el cual se realizaban una serie de iteraciones compuestas por diferentes fases, como 
+las de planificación, análisis de requerimientos, diseño codificación, etc. De modo que al finalizar cada iteración se realizaba una evaluación y se repetia el ciclo una y otra vez,
+con el fin de elaborar un producto que cumpla las espectativas y necesidades del cliente.\\
+
+\section{Arquitectura Software}
 \label{2:sec2}
 
-Django es un framework de desarrollo web de código abierto, escrito en Python, que cumple en cierta medida el paradigma del Modelo Vista Controlador. 
-Fue desarrollado en origen para gestionar varias páginas orientadas a noticias de la World Company de Lawrence, Kansas, 
-y fue liberada al público bajo una licencia BSD en julio de 2005; el framework fue nombrado en alusión al guitarrista de jazz gitano Django Reinhardt.
+En esta sección nos expandiremos en describir lo que es la arquitectura software de la aplicación, es decir el modelo y el framework de desarrollo.\\
 
-\section{Google App Engine}
+
+\subsection{Modelo Template View (MTV)}
+Empezaremos diciendo que la aplicación sigue el paradigma del modelo template view(\textbf{MTV}).
+Pero para entender este modelo primero tenemos tener claro lo que es el modelo vista controlador(\textbf{MVC}), el cual se define de la siguiente manera:\\
+
+\begin{itemize}
+  \item \textbf{Modelo}: El modelo tiene como objetivo mapear a la base de datos de tal forma que crea una sincronización
+			  entre la base de datos y la aplicación, con el fin de mantener actualizada toda la información de 
+			  las tablas, campos, y datos de nuestra base. 
+  \item \textbf{Controlador}: Responde a las peticiones y comunicaciones que existen entre los modelos y las vistas.
+  \item \textbf{Vista}: Decide cómo se va a mostrar la información. 
+\end{itemize}
+
+Visto esto el modelo template vista funciona de la siguiente manera:\\
+
+
+\begin{itemize}
+  \item \textbf{Modelo}: Cumple la misma función que en el modelo anterior.
+  \item \textbf{Template}: Es basicamente un archivo html que tiene como objetivo mostrar las respuestas enviadas por la vista.
+  \item \textbf{Vista}: La vista tiene como objetivo recibir el requerimiento que es enviado por el navegador, procesar la información,
+			 si es necesario realizar una petición al modelo para extraer un valor de base de datos entre otras funcionalidades, para posiblemente
+			 devolver una respuesta a la template.
+\end{itemize}
+
+
+\subsection{Django}
+Django es un framework de desarrollo web de código abierto, escrito en Python, que cumple en cierta medida el paradigma del Modelo Vista Controlador, 
+pero especificamente el modelo que usa es el Modelo Template View. Fue desarrollado en origen para gestionar varias páginas orientadas a noticias de la World Company de Lawrence, Kansas, 
+y fue liberada al público bajo una licencia BSD en julio de 2005; el framework fue nombrado en alusión al guitarrista de jazz gitano Django Reinhardt.\\
+
+En la aplicación se usa una variante de este framework, \textbf{Django-nonrel}, debido a que la aplicación necesita gestionar una base de datos no relacional por requerimientos
+de la propia tecnologia Googgle App Engine, cosa que la versión normal de Django no soporta.
+
+
+
+
+\section{Herramientas de Desarrollo}
 \label{2:sec3}
 
+\subsection{Despliegue: Google App Engine}
 Google App Engine te permite ejecutar tus aplicaciones web en la infraestructura de Google.Las 
 aplicaciones App Engine son fáciles de crear, de mantener y de ampliar al ir aumentando el tráfico 
 y las necesidades de almacenamiento de datos. Con App Engine no necesitarás utilizar ningún servidor: 
@@ -45,9 +84,7 @@ Puedes proporcionar a la aplicación tu propio nombre de dominio (como, por ejem
 a través de Google Apps. También puedes proporcionarle un nombre que esté disponible en el dominio appspot.com. 
 Podrás compartir tu aplicación con todo el mundo o limitar el acceso a los miembros de tu organización.\\
 
-
 Google App Engine admite aplicaciones escritas en varios lenguajes de programación.\\
-
 
 Google App Engine permite desarrollar fácilmente aplicaciones que se ejecuten de forma fiable, 
 incluso con pesadas cargas de trabajo y grandes cantidades de datos. App Engine incluye las siguientes funciones:
@@ -62,41 +99,39 @@ incluso con pesadas cargas de trabajo y grandes cantidades de datos. App Engine 
   \item Tareas programadas para activar eventos en momentos determinados y en intervalos regulares.
 \end{itemize}
 
-\section{Google APIs}
-\label{2:sec4}
+\subsection{Aumento funcionalidad: Google APIs}
+
 
 En la aplicación se usaron dos APIs de Google para aumentar y mejorar su funcionalidad. 
 
 
-\subsection{Google Plus}
+\subsubsection{Google Plus}
 Como GAE ya posee un modulo de autenticación por medio de Google Auth,
 en el proyecto se modifico para que se hiciera por medio de Google Plus, generando unas credenciales que se guardaran en el usuarios
 para que la aplicaccion pueda tener determinados permisos y poder obtener información que proporciona Google Plus. El objetivo de la incorporación de esta 
 API a nuestra aplicación es evitar almacenar datos personales de los integrantes de la organización que usa la aplicación en una base de datos, sino usar directamente los
 datos que nos proporciona Google Plus, como nombre, apellidos, foto de perfíl, dirección, etc.
 
-\subsection{Google Drive}
+\subsubsection{Google Drive}
 Uno de los objetivos de la aplicación en cuanto a funcionalidad era poder exportar una tabla filtrada o no con los datos de los socios, como estamos utilizando tecnologia Google,
 decidimos que la mejor forma era utilizar la API de Google Drive, para crear documentos en formato de hoja de calculo en el entorno de Google Drive. Para ello fue necesario
 modificar las credenciales que se almacenaban en los usuarios, para darle permiso y poder utilizar las funciones que nos proporciona dicha API.
 
-\section{GitHub}
-\label{2:sec5}
+\subsection{Gestión de versiones y repositorio: GitHub}
+
 GitHub es un software para alojar proyectos utilizando el sistema de control de versiones Git. 
 El código se almacena de forma pública, aunque también se puede hacer de forma privada, creando una cuenta de pago.\\
 
 Nuestra aplicación esta alojada en un repertorio público, cuyo repertorio se facilitara en la sección de enlances.
 
-\section{JavaScript y JQuery}
-\label{2:sec6}
+\subsection{Dinamismo en las plantillas: JavaScript y JQuery}
 
-
-\subsection{JavaScript}
+\subsubsection{JavaScript}
 JavaScript es un lenguaje de programación interpretado, orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico. 
 Se utiliza principalmente en su forma del lado del cliente (client-side), implementado como parte de un navegador web permitiendo mejoras en 
 la interfaz de usuario y páginas web dinámicas, en bases de datos locales al navegador, etc.
 
-\subsection{JQuery}
+\subsubsection{JQuery}
 jQuery es una biblioteca de JavaScript, creada inicialmente por John Resig, que permite simplificar la manera de interactuar con los documentos HTML,
 manipular el árbol DOM, manejar eventos, desarrollar animaciones (FLV) y agregar interacción con la técnica AJAX a páginas web. Cuyas caracteristicas son:
 
@@ -113,24 +148,28 @@ manipular el árbol DOM, manejar eventos, desarrollar animaciones (FLV) y agrega
   \item Compatible con los navegadores Mozilla Firefox 2.0+, Internet Explorer 6+, Safari 3+, Opera 10.6+ y Google Chrome 8+.
 \end{itemize}
 
-\section{CSS y Bootstrap}
-\label{2:sec7}
+\subsection{Apariencia de la Aplicación: CSS y Bootstrap}
+
 
 Para generar el estilo de nuestra aplicación utilizamos las tecnologías que se descriran a continuación.
 
-\subsection{CSS (Hojas de estilo)}
+\subsubsection{CSS (Hojas de estilo)}
 Las hojas de estilo en cascada (Cascading Style Sheets, o sus siglas CSS) hacen referencia a un 
 lenguaje de hojas de estilos usado para describir la presentación semántica (el aspecto y formato) de un 
 documento escrito en lenguaje de marcas. Su aplicación más común es dar estilo a páginas webs escritas en lenguaje HTML y XHTML, 
 pero también puede ser aplicado a cualquier tipo de documentos XML, incluyendo SVG y XUL.
 
-\subsection{Bootstrap}
+\subsubsection{Bootstrap}
 Para agilizar el maquetado de las páginas web de la aplicación utilizamos Twitter Bootstrap, que es una colección de herramientas de software
 libre para la creación de sitios y aplicaciones web. Contiene plantillas de diseño basadas en HTML y CSS con tipografías, 
 formularios, botones, gráficos, barras de navegación y demás componentes de interfaz, así como extensiones opcionales de JavaScript.
 
-\section{Pylint}
-\label{2:sec8}
-Pylint es una herramienta que básicamente tiene como función analizar código Python en busca de errores o síntomas de mala calidad en el código fuente. Con el uso de esta herramienta
-hacemos que nuestro código tenga mayor calidad y sea mas legible por lo demás.
+\section{Herramientas para Calidad de Código}
+\label{2:sec4}
 
+Con el uso de este tipo de herramientas hacemos que nuestro código tenga mayor calidad y sea mas legible por lo demás. En este proyecto se usaron las siguiente:\\
+\subsubsection{Pylint}
+Pylint es una herramienta que básicamente tiene como función analizar código Python en busca de errores o síntomas de mala calidad en el código fuente.\\ 
+
+\subsubsection{Pymetrics}
+Pymetrics es similar a la herramienta nombrada anteriormente pero esta calcula la complejidad que posee cada función dentro del archivo con código python que analiza.\\

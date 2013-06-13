@@ -1,0 +1,132 @@
+=== File: socios/views.py ===
+In file socios/views.py, function newPersonal has 7 extra exits at lines 42, 47, 79, 121, 142, 194, 196
+In file socios/views.py, function search has 1 extra exit at line 203
+In file socios/views.py, function personales_socio has 1 extra exit at line 214
+In file socios/views.py, function medicos_socio has 1 extra exit at line 241
+In file socios/views.py, function familiares_socio has 3 extra exits at lines 258, 273, 280
+In file socios/views.py, function economicos_socio has 1 extra exit at line 288
+
+Basic Metrics for module socios/views.py
+----------------------------------------
+
+          5    maxBlockDepth
+         95    numBlocks
+      33434    numCharacters
+         19    numComments
+         25    numDocStrings
+         25    numFcnDocStrings
+         24    numFunctions
+        218    numKeywords
+        798    numLines
+          1    numModuleDocStrings
+          6    numMultipleExitFcns
+       8328    numTokens
+
+          2.38 %Comments
+        100.00 %FunctionsHavingDocStrings
+
+Functions DocString present(+) or missing(-)
+--------------------------------------------
+
++ __main__
++ cambio_unidad
++ change_familia
++ del_socios
++ economicos_socio
++ edit_economicos
++ edit_familia
++ edit_medicos
++ edit_personales
++ export
++ export_economicos
++ familiares_socio
++ listado
++ listado_del
++ listado_economicos
++ medicos_socio
++ modify_economicos
++ modify_familia
++ modify_medicos
++ modify_personales
++ newPersonal
++ personales_socio
++ post_change_familia
++ search
++ search_familia
+
+
+McCabe Complexity Metric for file socios/views.py
+--------------------------------------------------
+
+          1    __main__
+          7    cambio_unidad
+          1    change_familia
+          3    del_socios
+          1    economicos_socio
+          1    edit_economicos
+          4    edit_familia
+          1    edit_medicos
+          3    edit_personales
+          9    export
+          6    export_economicos
+          4    familiares_socio
+          2    listado
+          2    listado_del
+          1    listado_economicos
+          3    medicos_socio
+          1    modify_economicos
+          4    modify_familia
+          4    modify_medicos
+          2    modify_personales
+         14    newPersonal
+          5    personales_socio
+          4    post_change_familia
+          1    search
+          1    search_familia
+
+=== File: socios/models.py ===
+
+Basic Metrics for module socios/models.py
+-----------------------------------------
+
+          1    maxBlockDepth
+          9    numBlocks
+       4123    numCharacters
+          8    numClassDocStrings
+          8    numClasses
+          9    numDocStrings
+          1    numFcnDocStrings
+         10    numKeywords
+        111    numLines
+          1    numModuleDocStrings
+       1163    numTokens
+
+        100.00 %ClassesHavingDocStrings
+        100.00 %FunctionsHavingDocStrings
+
+Functions DocString present(+) or missing(-)
+--------------------------------------------
+
++ __main__
+
+
+Classes DocString present(+) or missing(-)
+------------------------------------------
+
++ Autorizaciones
++ D_Economicos
++ D_Medicos
++ D_Personales
++ Familia
++ Familiares
++ Medicamentos
++ Socio
+
+
+McCabe Complexity Metric for file socios/models.py
+---------------------------------------------------
+
+          1    __main__
+
+
+*** Processed 2 modules in run ***
