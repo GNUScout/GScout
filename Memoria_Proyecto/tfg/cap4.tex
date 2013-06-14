@@ -29,67 +29,71 @@ funcionalidades que tendría la aplicación, seleccionando las funciones fundame
 \label{4:sec2}
 
 Después de la reunión con los interesados se estableció un esquema compuesto por 7 aplicaciones,
-la cual una de ellas era la principal y de esa dependerían el resto. Las aplicaciones son las siguientes:
-\begin{itemize}
-\item Socios: esta es la aplicación principal que tendrá los datos de los socios que usaran las demás aplicaciones. Contiene:
-	\begin{itemize}
-	\item Mantenimiento de socios
-	\item Cambios de Unidad
-	\item Informes (Familiares, Unidades, Médicos, Personales)
-	\item Exportaciones
-	\end{itemize}
+la cual una de ellas era la principal y de esa dependerían el resto. El esquema inicial de aplicaciones se muestra en la Figura \ref{fig:aplicaciones}.\\
 
-\item Lista de espera
-	\begin{itemize}
-	\item Entradas
-	\item Propuestas de entrada a grupo
-	\item Incidencias
-	\end{itemize}
+\begin{figure}[H]
+\begin{center}
+\begin{tabular}{|p{30mm}|p{90mm}|} \hline 
+\textbf{Aplicación} & \textbf{Enfoque} \\ \hline
+Socios &
+Mantenimiento de socios\\
+& Cambios de Unidad\\
+& Informes (Familiares, Unidades, Médicos, Personales)\\
+& Exportaciones
+\\
+\hline
 
-\item Biblioteca
-	\begin{itemize}
-	\item Mantenimiento
-	\item Préstamos
-	\end{itemize}
+Lista de Espera &
+Entradas \\
+& Propuestas de entrada a grupo \\
+& Incidencias
+\\
+\hline
 
-\item Intendencia
-	\begin{itemize}
-	\item Mantenimiento
-	\item Préstamos
-	\item Informes
-		\begin{itemize}
-		\item Prestados
-		\item Estados
-		\end{itemize}
-	\item Campamentos
-	\end{itemize}
-\item Recursos
-	\begin{itemize}
-	\item Dinámicas
-	\item Talleres
-	\item Juegos
-	\item Resto de Actividades
-	\end{itemize}
+Biblioteca &
+Mantenimiento \\
+& Préstamos
+\\
+\hline
 
-\item Tesorería
-	\begin{itemize}
-	\item Control de Cuentas
-	\item Presupuestos
-	\item Emisión de recursos
-	\item Resúmenes
-		\begin{itemize}
-		\item Anual
-		\item Trimestral
-		\end{itemize}
-	\end{itemize}
+Intendencia &
+Mantenimiento \\
+& Préstamos \\
+& Informes(Prestamos y Estados) \\
+& Campamentos
+\\
+\hline
 
-\item Varios
-	\begin{itemize}
-	\item Compañía de seguridad
-	\item Agenda
-	\item Recetario
-	\end{itemize}
-\end{itemize}
+Recursos &
+Dinámicas \\
+& Talleres \\
+& Juegos \\
+& Resto de Actividades
+\\
+\hline
+
+Tesorería &
+Control de Cuentas \\
+& Presupuestos \\
+& Emisión de recursos \\
+& Resúmenes(Anual, Trimestral, ...)
+\\
+\hline
+
+Varios &
+Compañía de seguridad \\
+& Agenda \\
+& Recetario
+\\
+\hline
+
+\end{tabular}
+\caption{Propuesta del Grupo Aguere 70}
+\label{fig:aplicaciones}
+\end{center}
+\end{figure}
+
+
 
 Visto las siguientes aplicaciones se comprobó que el proyecto era ambicioso y extenso, 
 por lo tanto nos enfocamos en el apartado de la app de Socios que era la mas importante. 
@@ -101,7 +105,7 @@ Por tanto nos sirvió de modelo para generar una primera aproximación del model
 \section{Preparación para el proyecto}
 \label{4:sec3}
 
-Primero que nada necesitamos instalar el framework de django-nonrel, para ello lo que se hizo fue crear un nuevo proyecto vacío con el 
+En primer lugar necesitamos instalar el framework de django-nonrel, para ello lo que se hizo fue crear un nuevo proyecto vacío con el 
 programa ``Aptana Studio 3'', el cual debía de tener los archivos que nos proporciona la web ``www.allbuttonspressed.com'' que contienen 
 todos los archivos necesarios para configurar un proyecto que funcione con django-nonrel y Google App Engine, 
 de modo que el proyecto nos quedaría de la siguiente manera:
@@ -120,8 +124,8 @@ Por otro lado es importante hablar del archivo de configuración app.yaml, que e
 controladores de solicitudes y con los archivos estáticos en el entorno de Google App Engine. 
 También debe contener información sobre el código de la aplicación como, por ejemplo, el ID de la aplicación y el identificador de la última versión.\\
 
-De modo que el arhivo seria el siguiente:\\
-\lstinputlisting[caption={Archivo de configuración app.yaml}]{codes/app.yaml}
+De modo que el arhivo seria el que aparece en el Listado \ref{cod:yaml}.\\
+\lstinputlisting[caption={Archivo de configuración app.yaml}, label={cod:yaml}]{codes/app.yaml}
 
 
 \section{Inicio de sesión}
@@ -130,12 +134,9 @@ De modo que el arhivo seria el siguiente:\\
 Como se ha dicho en el capitulo ~\ref{chapter:tres} el inicio de sesión esta limitado al dominio del grupo de scout de Aguere 70, lo cual se accede a la aplicación
 por medio de sus cuentas de google asociadas a dicho dominio.\\
 
-El archivo settings.py se configuró de la siguiente manera:\\
+El archivo settings.py se configuró como muestra el listado \ref{cod:settings}.\\
 
-\lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/authentication_settings.py}
-
-
-
+\lstinputlisting[caption={Archivo settings.py, sección de autenticación}, label={cod:settings}]{codes/authentication_settings.py}
 
 Donde se puede apreciar las \textsc{INSTALLED APPS} necesarias para este apartado de la aplicación. Pasamos a describir cada una:\\
 \begin{itemize}
@@ -152,12 +153,30 @@ de guardar esos datos en nuestra base de datos.
 
 Este fue uno de los modulos que más dio problemas. Primero habia que acceder a la web de Google APIs con la cuenta de desarrollador y activar la API de Google+ posteriormente tenemos que editar el acceso a las APIs,
 para introducir nuestra aplicación en el entorno, por lo tanto se nos generaria una serie de datos que podriamos introducirlos en nuestra aplicación uno a uno o bien en formato JSON, este paso es importante ya que sino la aplicación
-no podría acceder a los servicios que nos proporciona la API.
+no podría acceder a los servicios que nos proporciona la API.\\
+
+\end{itemize}
+
+Aparte de esto como se utiliza las API de Google Plus para la obtención de datos, es necesario que antes de iniciar sesión el usuario posea un perfil en Google Plus.
+Por defecto este servicio esta deshabilitado cuando se crea un dominio dentro de Google, por tanto se necesita de una cuenta administradora del dominio para activar este servicio.\\
+
+\textbf{Importante:} Antes de activar el servicio de Google Plus es necesario activar el servicio de Talk.\\
+
+En la Figura \ref{fig:panel} se muestra  que ambos servicios están activos en el dominio \textbf{gruposcoutaguere70}.\\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{images/panel_google.jpg}
+\caption{Panel de Control de administrador de Google}
+\label{fig:panel}
+\end{center}
+\end{figure}
+
 
 Dicho esto una vez que el usuario inicia sesión, en el proceso se accede a la vista de la app plus, que esta cargara la configuración de Google API por medio del mencionado archivo JSON o introduciendo una a una 
-de la siguiente manera la configuración necesaria para utilizar el servicio de Google+:\\
+como muestra el Listado \ref{cod:flow} la configuración necesaria para utilizar el servicio de Google+:\\
 
-\lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/flow_plus.py}
+\lstinputlisting[caption={Configuración del FLOW para utilizar los servicios de Google.}, label={cod:flow}]{codes/flow_plus.py}
 
 Donde \textbf{client-id} y \textbf{client-secret} son los datos que apuntan al acceso de API que ha establecido el programador de la aplicación, \textbf{token-uri} lo delegamos para que lo ejecute oauth2, en \textbf{scope}
 se añaden las direcciones de las API que se van a usar, en nuestro caso la de Google+ y la de Drive(esta la explicaremos mas adelante), en \textbf{redirect-uri} establecemos la direccion de retorno a nuestra aplicación 
@@ -170,7 +189,7 @@ se pudieran guardar las credenciales, ademas se añadio el campo de \textbf{carg
 \textbf{Nota:} las credenciales suelen expirar a la hora por tanto, una vez expiradas el usuario no podra acceder a la aplicación, al menos que se actualicen. Una forma de automatizar esto es que en cada inicio de sesión
 se restablescan las credenciales, por eso añadimos dos campos mas a la variable FLOW, que son el \textbf{access-type='offline'} y \textbf{approval-prompt='force'} con esto logramos forzar el refrezco de
 credenciales una vez estas caduquen.
-\end{itemize}
+
 
 \section{Creación de Usuarios}
 \label{4:sec5}
@@ -179,56 +198,58 @@ Una vez definida la primera aproximación del modelo de datos que vamos a emplea
 la organización.\\
 
 Esta tarea era simple pero tediosa a la hora de realizar templates, formularios, etc, para que luego en la vista de la app de socios por medio de diferentes llamadas POST, se fueran contruyendo los objetos necesarios
-para la creacion de un nuevo socio, cada objeto almacenaba un tipo de información especifica segun el modelo de datos. Por tanto el modelo final de socios tenia las siguientes tablas:\\
+para la creacion de un nuevo socio, cada objeto almacenaba un tipo de información especifica segun el modelo de datos. Por tanto un extracto de lo que seria el modelo de datos y la sintaxis se refleja en el Listado \ref{cod:modelo}.\\
 
-\lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/model_socio.py}
+\lstinputlisting[caption={Extracto del modelo de datos de la aplicación}, label={cod:modelo}]{codes/model_socio.py}
 
-Como podemos ver el modelo esta compuesto por 8 tablas, debido a que no se pueden establecer relaciones en la base de datos de tipo no relacional, la unica forma de en cierto modo comunicar/unir una tabla con otra,
-es con lo que llamamos claves foraneas(ForeignKey), de esta manera podremos asosciar las tablas que nos interesen de manera unidimensional.\\
+El modelo esta compuesto por 8 tablas, debido a que no se pueden establecer relaciones en la base de datos de tipo no relacional, la unica forma de en cierto modo comunicar/unir una tabla con otra,
+es con claves foraneas(ForeignKey), de esta manera podremos asociar las tablas que nos interesen de manera unidimensional.\\
 
-Se puede observar para que es cada tabla y el tipo de información que guarda, se dejo elaborada aunque no se usa todavía la tabla de \textbf{Autorizasiones} para que en un futuro los socios almacenen ahí las posibles autorizaciones/permisos
+Cada tabla posee un nombre caracteristico que define para que se usa y el tipo de información que guarda, se dejo elaborada aunque no se usa todavía la tabla de \textbf{Autorizaciones} para que en un futuro los socios almacenen ahí las posibles autorizaciones/permisos
 cuando se realice una excursión, uso de fotografias de manera pública, etc.\\
 
 Retomando a la creación de usuarios es necesario rellenar todos los campos importantes de cada objecto para conservar la integridad de la base datos. Los formularios comprueban que esto se cumpla y al finalizar lo manda como un POST
 al servidor donde es procesado y si todo esta correcto se guarda en la base de datos.\\
 
-Por otro lado en la carpeta \textbf{templates/socios} están todos los archivos .html que se usan para la interacción del usuario desde el cliente con el servidor, las template que se usan para la creación de usuario se distinguen por 
+Por otro lado en la carpeta \textbf{templates/socios} están todos los archivos .html que se usan para la interacción del usuario desde el cliente con el servidor, las plantillas que se usan para la creación de usuario se distinguen por 
 empezar por \textbf{f-[nombreTabla].html}
 
 
 \section{Modificación de Usuarios}
 \label{4:sec6}
-Un proceso similar al de creación de usuarios se implementó para la modificación de los respectivos datos de los socios, los archivos de las templates eran similares, salvo que tienen trozos de código en Javascript
-y variables que se pasaban de la vista a la template para autocompletar los campos de los formularios con los datos del socio, de esta forma si se va a editar un campo en concreto no es necesario rellenar 
+Un proceso similar al de creación de usuarios se implementó para la modificación de los respectivos datos de los socios, los archivos de las plantillas eran similares, salvo que tienen trozos de código en Javascript
+y variables que se pasaban de la vista a la plantilla para autocompletar los campos de los formularios con los datos del socio, de esta forma si se va a editar un campo en concreto no es necesario rellenar 
 todos los campos restantes.\\
 
 Los archivos de templates relacionados con la edición de datos de los usuarios se caracterizan por tener la siguiente nomenclatura \textbf{f-edit-[nombreTabla]}
 \section{Listados de información}
 \label{4:sec7}
-Se implementaron dos formas de visualizar los datos de los socios, la mas simple es una vez obtenido el ID del socio, se accede a las paginas de información del socio, donde cada template esta enfocada a una determinada tabla
-del modelo de datos, de esta forma los datos los clasificariamos en personales, economicos, medicos y familiares. En la vista lo unico que se hace es volcar los datos del socio a la template, que es la que se encarga de 
-la visualización de los repectivos datos.
+Se implementaron dos formas de visualizar los datos de los socios, la más simple es una vez obtenido el ID del socio, se accede a las páginas de información del socio, donde cada template esta enfocada a una determinada tabla
+del modelo de datos, de esta forma los datos los clasificaríamos en personales, económicos, médicos y familiares. En la vista (Listado \ref{cod:economicos_py}) lo único que se hace es volcar los datos del socio a la plantilla 
+(Listado \ref{cod:economicos_html}), que es la que se encarga de la visualización de los repectivos datos.
 
-\lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/datos_economicos.py}
+\lstinputlisting[caption={Vista que gestiona la visualización de los datos económicos}, label={cod:economicos_py}]{codes/datos_economicos.py}
 
-Por otro lado para tener un vistazo general de los socios, se elaboró una tabla donde se listan todos los socios mostrando sus datos acorde con el listado en el que se este, es decir existen varios listados para representar los 
-datos de los socios, listados de datos personales, economicos, etc.\\
+\lstinputlisting[language=html,caption={Plantilla que muestra los datos económicos}, label={cod:economicos_html}]{codes/datos_economicos.html}
+
+Por otro lado para tener un vistazo general de los socios, se elaboró una tabla donde se listan todos los socios mostrando sus datos acorde con el listado en el que se esté, es decir existen varios listados para representar los 
+datos de los socios, listados de datos personales, económicos, etc.\\
 
 Para el formato de la tabla se encontro un widget con la  apariencia de bootstrap para mantener la escencia de la interfaz visual, en cuyas tablas se pueden
 realizar ordenaciones, filtrados y exportaciones que describirán detalladamente en los siguientes apartados.
 
 \section{Filtrado de tablas}
 \label{4:sec8}
-Para poder utilizar las funciones de filtrado y ordenaciones en los listados, era necesario incorporar en nuestra aplicación los siguientes scripts:\\
+Para poder utilizar las funciones de filtrado y ordenaciones en los listados, era necesario incorporar en nuestra aplicación los scripts que se muestran en el Listado \ref{cod:script_tablesorter}.\\
 
-\lstinputlisting[language=html,basicstyle=\scriptsize,caption={Ejemplo de listado desde archivo}]{codes/script_tablesorter.html}
+\lstinputlisting[language=html,basicstyle=\scriptsize,caption={Configuración de la plantilla para usar el widget Tablesorter}, label={cod:script_tablesorter}]{codes/script_tablesorter.html}
 
 En la zona comentada de cada script se nombra para que se utiliza cada uno. Ademas de estos script es necesario introducir una función en Javascript que nos  proporciona el propio widget donde se especifican la configuracion de 
 tabla, como el tema de apariencia, los filtros, paginación etc.\\
 
-Posteriormente la estructura de la tabla lleva la siguiente sintaxis:\\
+Posteriormente la sintaxis de la tabla se muestra en el Listado \ref{cod:sintaxis_tabla}.\\
 
-\lstinputlisting[language=html,caption={Ejemplo de listado desde archivo}]{codes/sintaxis_tabla.html}
+\lstinputlisting[language=html,caption={Sintaxis de la tabla}, label={cod:sintaxis_tabla}]{codes/sintaxis_tabla.html}
 
 \section{Exportaciones a Google Drive}
 \label{4:sec9}
@@ -241,9 +262,9 @@ Esto se logro modificando los archivos del \textbf{tablesorter} para que cuando 
 y realizar el filtrado directamente con el modelo de datos.\\
 
 Una vez realizado esto, nos queda el paso intermedio para poder exportar los datos a Google Drive, ya que para exportar necesitamos crear un fichero de extensión .csv para que la API de Google Drive lo interprete y lo procese.
-De modo que la construcción del fichero se realizó de la siguiente manera:\\
+De modo que la construcción del fichero se puede apreciar en el Listado \ref{cod:export_drive}\\
 
-\lstinputlisting[basicstyle=\small,caption={Ejemplo de listado desde archivo}]{codes/export_drive.py}
+\lstinputlisting[basicstyle=\small,caption={Descripción de como se construye un fichero para exportar a Drive}, label={cod:export_drive}]{codes/export_drive.py}
 
 \section{Cambios de Unidad}
 \label{4:sec10}
@@ -251,9 +272,9 @@ De modo que la construcción del fichero se realizó de la siguiente manera:\\
 Esta función fue bastante demandada por la organización y consiste en crear una función que calcule la edad de los socios y en según la edad los clasifique en la sección/unidad que le corresponda de acuerdo al rango previamente
 establecido.\\
 
-El código de dicha función es el siguiente:\\
+El código de dicha aparece en el Listado \ref{cod:cambio_unidad}.\\
 
-\lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/cambio_unidad.py}
+\lstinputlisting[caption={Función Cambio de Unidad}, label={cod:cambio_unidad}]{codes/cambio_unidad.py}
 
 \section{Importación de base de datos antigua}
 \label{4:sec11}
@@ -261,36 +282,42 @@ El código de dicha función es el siguiente:\\
 La organización de scout Aguere 70 tiene una base de datos donde hasta el momento guarda los datos de los socios, todos los datos están almacenados en una sola tabla y se nos propuso si era posible importar esta base de datos
 y volcarla en nuestra aplicación.\\
 
-El principal problema era que esta toda la información en un sola tabla por tanto habria que implementar un mecanismo para separar la información y adaptarla a nuestro modelo de datos.\\
+El principal problema era que esta toda la información en un sola tabla por tanto habría que implementar un mecanismo para separar la información y adaptarla a nuestro modelo de datos.\\
 
 Por otro lado tenemos el formato del fichero de la base de datos que estaba en formato \textbf{Access}, de modo que era necesario convertirlo a un formato que pudiera procesar la aplicación de manera eficiente. Se pensó 
-en el formato .csv separado por comas, ya que habia una herramienta llamada \textbf{MDB Tools} que convertia los ficheros accecc en csv.
+en el formato .csv separado por comas, ya que había una herramienta llamada \textbf{MDB Tools} que convertía los ficheros accecc en csv.
 
-Una vez obtenido el fichero csv, se implemento un mecanismo para subir el fichero a la aplicación sin que este se guardara en el servidor, sino que solo estuviera ahí mientras se este procesando. De modo que se creo 
+Una vez obtenido el fichero csv, se implemento un mecanismo para subir el fichero a la aplicación sin que este se guardara en el servidor, sino que sólo estuviera ahí mientras se este procesando. De modo que se creo 
 una nueva app llamada \textbf{upload} especificamente para este proceso.\\
 
-Esta app tiene un fichero \textbf{forms.py} que contiene el formato del form para datos de tipo fichero (FileField).\\
+Esta app tiene un fichero \textbf{forms.py} (Listado \ref{cod:form_upload}) que contiene el formato del form para datos de tipo fichero (FileField).\\
 
-\lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/form_upload.py}
+\lstinputlisting[caption={Código del form para subir un archivo}, label={cod:form_upload}]{codes/form_upload.py}
 \bigskip
-Esto lo procesa la template y posteriormente con la llamada de POST se envia el archivo al servidor, que se tratara de la manera siguiente:
+Esto lo procesa la plantilla y posteriormente con la llamada de POST se envía el archivo al servidor, que se tratara como indica el Listado \ref{cod:transformacion_fichero}.
 \bigskip
-\lstinputlisting[caption={Ejemplo de listado desde archivo}]{codes/transformacion_fichero.py}
+\lstinputlisting[caption={Ejemplo de listado desde archivo}, label={cod:transformacion_fichero}]{codes/transformacion_fichero.py}
 
 Después se procesa casilla a casilla el array y se introducen los datos en la base de datos, siempre cuidando la integridad de la base de datos, de modo que no queden ambiguedades, ni campos vacios que sean importantes 
 en cada tabla del modelo.\\
 
-\section{Calidad de Código: Pylint}
+\section{Calidad de Código: Pylint y Pymetrics}
 \label{4:sec12}
-Para finalizar el periodo de desarrollo del proyecto, mejoramos la calidad de código de los principales archivos escritos en Python de la aplicación. Para ello utilizamos la herramienta Pylint, obteniendo una nota media en los
-archivos de 9.0 en cuanto a calidad de código.\\
+Para finalizar el periodo de desarrollo del proyecto, mejoramos la calidad de código de los principales archivos escritos en Python de la aplicación. 
+Para ello creamos un script llamado \textbf{metrics.sh} (Listado \ref{cod:metrics})
+
+\lstinputlisting[caption={Script metrics.sh}, label={cod:metrics}]{codes/metrics.sh}
+
+Este script crea dos directorios dentro  del directorio raíz de la aplicación (/pymetrics y /pylint), los cuales guardan los resultados que se obtiene al ejecutar ambas herramientas.\\
+
+Se logró obtener una nota media (Figura \ref{fig:resultado}) en los archivos principales de 8.70 en cuanto a calidad de código.\\
 
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{images/pylint.jpg}
-\caption{Resultado tras analizar socios/views.py con el Pylint.}
-\label{fig:ArbolBinario}
+\caption{Resultado del Pylint tras analizar un conjunto de ficheros con el script.}
+\label{fig:resultado}
 \end{center}
 \end{figure}
 

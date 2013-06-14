@@ -3,12 +3,43 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[dvips]{graphicx}
 \usepackage[dvips]{epsfig}
-\usepackage[latin1]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{alltt}
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage{multirow}
+
+%
+\usepackage{listings}
+\usepackage{color}
+
+\lstloadlanguages{Python,C,HTML}
+\lstset{
+  language=Python,                      % C,Fortran,XML
+  basicstyle=\small,             % Listados en small
+  keywordstyle=\color{red},             % Palabras clave en rojo
+  identifierstyle=\ttfamily,
+  escapeinside={(*@}{@*)},
+  commentstyle=\color{blue},            % comentarios en azul
+  stringstyle=\color{green},            % cadenas en verde
+  showstringspaces=false,
+  frame=tb,
+  captionpos=b,
+  framextopmargin=2pt,
+  framexbottommargin=2pt,
+  framesep=0pt,
+  belowskip=0pt,
+  aboveskip=0pt,
+  %belowcaptionskip=0pt,
+  %abovecaptionskip=0pt,
+  stepnumber=2,                                         % Opciones de lineas y etiquetas
+  numberstyle=\small,
+  numbersep=5pt,
+  tabsize=1
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -34,7 +65,7 @@
 \newcommand{\AND}{\textbf{y} }
 \newcommand{\OR}{\textbf{o} }
 
-%%%%%%%%%%%%%%%%% Creamos un entorno para listar cÛdigo fuente %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% Creamos un entorno para listar c√≥digo fuente %%%%%%%%%%%%%%%
 \newenvironment{sourcecode}
 {\begin{list}{}{\setlength{\leftmargin}{1em}}\item\scriptsize\bfseries}
 {\end{list}}
@@ -106,10 +137,10 @@
 \HRule
 \begin{flushright}
         {\Huge GScout} \\[2.5mm] 
-        {\Huge Desarrollo e implantaciÛn de una 
-        aplicaciÛn para la gestiÛn de grupos Scout} \\[2.5mm]
+        {\Huge Desarrollo e implantaci√≥n de una 
+        aplicaci√≥n para la gesti√≥n de grupos Scout} \\[2.5mm]
         {\Large \textit{Title in English} .} \\[5mm]
-        {\Large JosÈ Daniel Ju·rez D·vila} \\[5mm]
+        {\Large Jos√© Daniel Ju√°rez D√°vila} \\[5mm]
         Dpto. Nombre del Departamento \\[5mm]
         Escuela T\'ecnica Superior de Ingenier\'{\i}a Inform\'atica \\[5mm]
         
@@ -130,11 +161,11 @@
 \cleardoublepage
 \thispagestyle{empty}
 
-D. {\bf Nombre Apellido1 Apellido2}, con N.I.F. 12.345.678-X 
+D. {\bf Vicente Jos√© Blanco P√©rez}, con N.I.F. 42.171.808-C 
 profesor
 Titular de Universidad 
 adscrito al Departamento 
-de Nombre del Departamento 
+de Estad√≠stica, Investigaci√≥n Operativa y Computaci√≥n
 de la Universidad de La Laguna
 
 \bigskip
@@ -156,13 +187,13 @@ Que la presente memoria titulada:
 \bigskip
 \bigskip
 
-\noindent ha sido realizada bajo su direcciÛn por D. {\bf Nombre Apellido1 Apellido2},
-con N.I.F. 12.345.678-X.
+\noindent ha sido realizada bajo su direcci√≥n por D. {\bf Jos√© Daniel Ju√°rez D√°vila},
+con N.I.F. 78.645.387-S.
 
 \bigskip
 \bigskip
 
-Y para que asÌ conste, en cumplimiento de la legislaciÛn vigente y a los efectos
+Y para que as√≠ conste, en cumplimiento de la legislaci√≥n vigente y a los efectos
 oportunos firman la presente en La Laguna a \today 
 
 \cleardoublepage
@@ -181,19 +212,7 @@ Agradecimientos
 
 
 \hspace{3mm}
-Equipo de scout Aguere por su colaboraciÛn en el proyecto.
-
-\hspace{3mm}
-XXX
-
-
-\hspace{3mm}
-XXX
-
-
-\hspace{3mm}
-XXX
-
+Equipo de scout Aguere 70 por su colaboraci√≥n en el  desarrollo del proyecto.
 
 \end{large}
 
@@ -204,8 +223,21 @@ XXX
 \begin{abstract}
 {\em 
 
-El objetivo de este trabajo ha sido crear una aplicaciÛn web para los scout de Aguere 70, la cual facilite 
-la gestiÛn de los socios de dicha organizaciÛn.
+El objetivo de este trabajo ha sido crear una aplicaci√≥n web para los scout de Aguere 70, la cual facilite 
+la gesti√≥n de los socios de dicha organizaci√≥n.
+
+Para ello utilizaremos el framework Django y realizando el despliegue en la infraestructura de Google App Engine, utilizamos
+la version de django-nonrel que nos permite utilizar base de datos no relacionales ya que la que usa App Engine sigue la tecnolog√≠a BigTable de Google. 
+La ventaja del uso de este tipo de base de datos es que son mas escalable, y gracias al framework de Django se pueden 
+manipular por medio de este con QuerySet de Django, salvo que no podemos usar joins ni many to many, ni ninguna relacion entre
+tablas que no sea de clave foranea.
+
+Aparte del frameworky y de App Engine introducimos en la aplicaci√≥n APIs de Google para poder iniciar sesi√≥n con una cuenta de google y obtener 
+los datos de dicha cuenta sin necesidad de almacenarlo,
+ademas tambien utilizamos otra API para la exportaci√≥n de informaci√≥n a Google Drive.
+
+En cuanto a las templates de la aplicacion se utiliza la configuraci√≥n CSS de nos brinda Bootstraps y alguno que otro codigo en jQuery para 
+crear dinamismo en las paginas y con la iteracion del usuario y la aplicaci√≥n.
 
 
 
@@ -246,9 +278,9 @@ Keyword1, Keyword2, Keyword2, ...
 
 \pagestyle{myheadings} %my head defined by markboth or markright
 % No funciona bien \markboth sin "twoside" en \documentclass, pero al
-% ponerlo se dan un montÛn de errores de underfull \vbox, con lo que no se
+% ponerlo se dan un mont√≥n de errores de underfull \vbox, con lo que no se
 % ha puesto.
-\markboth{Nombre del alumno}{TÌtulo del proyecto}
+\markboth{Jos√© Daniel Ju√°rez D√°vila}{GScout}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Numeracion en romanos
@@ -278,14 +310,16 @@ Keyword1, Keyword2, Keyword2, ...
 \setcounter{page}{1}
 
 
-\chapter{IntroducciÛn}
+\chapter{Introducci√≥n}
 \label{chapter:intro}
 
 \input{cap1.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage{\pagestyle{empty}\cleardoublepage}
+\thispagestyle{empty}
 
-\chapter{TÌtulo del CapÌtulo Dos}
+\chapter{Entorno de Desarrollo}
 \label{chapter:dos}
 
 \input{cap2.tex}
@@ -294,14 +328,18 @@ Keyword1, Keyword2, Keyword2, ...
 \newpage{\pagestyle{empty}\cleardoublepage}
 \thispagestyle{empty}
 
-\chapter{TÌtulo del CapÌtulo Tres}
+
+\chapter{Descripci√≥n de la aplicaci\'on}
 \label{chapter:tres}
 
 \input{cap3.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage{\pagestyle{empty}\cleardoublepage}
+\thispagestyle{empty}
 
-\chapter{TÌtulo del CapÌtulo Cuatro}
+
+\chapter{Desarrollo de la aplicaci\'on}
 \label{chapter:cuatro}
 
 \input{cap4.tex}
@@ -340,18 +378,18 @@ Keyword1, Keyword2, Keyword2, ...
 \thispagestyle{empty}
 \begin{appendix}
 
-\chapter{TÌtulo del ApÈndice 1}
+\chapter{T√≠tulo del Ap√©ndice 1}
 \label{appendix:1}
 \input{apendice1.tex}
 
-\chapter{TÌtulo del ApÈndice 2}
+\chapter{T√≠tulo del Ap√©ndice 2}
 \label{appendix:2}
 \input{apendice2.tex}
 
 \end{appendix}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\addcontentsline{toc}{chapter}{BibliografÌa}
+\addcontentsline{toc}{chapter}{Bibliograf√≠a}
 \bibliographystyle{plain}
 
 \bibliography{memtfg}

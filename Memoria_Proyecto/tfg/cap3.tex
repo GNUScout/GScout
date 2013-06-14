@@ -3,24 +3,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-En el cápitulo ~\ref{chapter:intro} se describió brevemente la aplicación. En este cápitulo nos expandiremos y eplicaremos toda la funcionalidad de GScout.
+En el cápitulo~\ref{chapter:intro} se describió brevemente la aplicación. En este cápitulo nos expandiremos y eplicaremos toda la funcionalidad de GScout.\\
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 \section{Usuarios}
 \label{3:sec1}
 
 La aplicación esta destinada para el uso de los empleados de la organización de scout Aguere 70, el inicio de sesión esta restringido, por tanto solo podrán 
-acceder con su cuenta de Google perteneciente al dominio ``gruposcoutaguere70.com''. En principio todos los usuarios son genericos, pero la aplicación esta preparada
+acceder con su cuenta de Google perteneciente al dominio ``gruposcoutaguere70.com''. En principio todos los usuarios son genéricos, pero la aplicación esta preparada
 para clasificarlos según su cargo, y que cada usuario pueda desempeñar unas funciones u otras dependiendo del cargo asignado por el administrador.\\
+
+En la Figura \ref{fig:login} se muestra la pantalla de acceso a la aplicación a través del login de Google.
 
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.5\textwidth]{images/login.jpg}
 \caption{Ventana de login}
-\label{fig:ArbolBinario}
+\label{fig:login}
 \end{center}
 \end{figure}
 
@@ -33,13 +33,15 @@ A continuación nombraremos las funcionalidades entorno a la gestión de socios.
 
 \subsection{Creación de Socios}
 
-Los usuarios podrán crear nuevos socios rellenando los formularios predefinidos en la aplicación, donde se clasifican los datos en personales, economicos, familiares y medicos.\\
+Los usuarios podrán crear nuevos socios rellenando los formularios predefinidos en la aplicación, dónde se clasifican los datos en personales, económicos, familiares y médicos.\\
+
+En la Figura \ref{fig:form} se puede apreciar una parte de estos formularios para la creación de socios.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.5\textwidth]{images/ejemplo_formulario_personal.jpg}
 \caption{Ejemplo de Formulario}
-\label{fig:ArbolBinario}
+\label{fig:form}
 \end{center}
 \end{figure}
 
@@ -47,22 +49,24 @@ Los usuarios podrán crear nuevos socios rellenando los formularios predefinidos
 
 Una vez creados los socios podremos visualizar su información accediendo a la ficha de socio, donde la informacion se divide en 4 pestañas: Personales, Familia, Economicos y Médicos \\
 
+En la Figura \ref{fig:ficha_socio} se ve un claro ejemplo de como se visualizan los datos, en este caso los datos personales del socio.\\
+
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{images/datos_personales.jpg}
 \caption{Ficha del Socio}
-\label{fig:ArbolBinario}
+\label{fig:ficha_socio}
 \end{center}
 \end{figure}
 
-Tambien se pueden editar sus datos, de una manera similar a la de creación de socios, simplemente buscamos el socio y le damos a editar, en la pestaña del tipo de información
+Tambien se pueden editar sus datos, de una manera similar a la de creación de socios, simplemente buscamos el socio y le damos a editar (boton de la Figura \ref{fig:edit}), en la pestaña del tipo de información
 que querramos cambiar.\\
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.15\textwidth]{images/boton_editar.jpg}
 \caption{Boton de Editar}
-\label{fig:ArbolBinario}
+\label{fig:edit}
 \end{center}
 \end{figure}
 
@@ -70,12 +74,13 @@ que querramos cambiar.\\
 Tambien podremos borrar los socios, de momento los socios se borran permanentemente, pero en el modelo de datos esta configurado pera poder implementar un metodo que en vez de borrarlos los socios pasen
 a un estado inactivo.\\
 
+En la Figura \ref{fig:borrar_socio} se ve la pantalla dónde se seleccionan los socios que se desean borrar.\\
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{images/borrado_socios.jpg}
 \caption{Borrado de Socios}
-\label{fig:ArbolBinario}
+\label{fig:borrar_socio}
 \end{center}
 \end{figure}
 
@@ -84,34 +89,38 @@ a un estado inactivo.\\
 Es obligado que cada socio pertenezca a una familia, la cual tendra un responsable que sera el indentificador de la familia, a la que se le pueden asignar varios socios, padres y/o tutores. En cierto modo, podremos
 formar lo que seria un arbol de familia entre los socios, saber que socios conviven en la misma familia, saber quienes son los padres/tutores del socio, etc.\\
 
+Un ejemplo de familia dentro de la aplicación lo podemos ver en la Figura \ref{fig:familia}.\\
+
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{images/familia_socio.jpg}
-\caption{Borrado de Socios}
-\label{fig:ArbolBinario}
+\caption{Ejemplo de Familia}
+\label{fig:familia}
 \end{center}
 \end{figure}
 
-Tambien GScout nos da la opción de cambiar o crear una familia nueva, por cualquier circunstancia que pueda pasar, en la que se necesite modificar las familias ya existentes.\\
+Tambien GScout nos da la opción de cambiar o crear una familia nueva, por cualquier circunstancia que pueda pasar, en la que se necesite modificar las familias ya existentes.
+Como muesta la Figura \ref{fig:edit_familia}.\\
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{images/cambio_familia.jpg}
 \caption{Edición de Familia}
-\label{fig:ArbolBinario}
+\label{fig:edit_familia}
 \end{center}
 \end{figure}
 
 
 \subsection{Medicamentos}
 
-Muchos de los socios podrían estar bajo medicación de algun tipo, por tanto existe un modulo en el que podemos anexar a los socios los datos de sus medicamentos, como el nombre, las pautas y las dosis correspondientes.\\
+Muchos de los socios podrían estar bajo medicación de algún tipo, por tanto existe un modulo en el que podemos anexar a los socios los datos de sus medicamentos, como el nombre, las pautas y las dosis correspondientes, 
+como se muestra en la Figura \ref{fig:medicamentos}.\\
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{images/medicamentos.jpg}
 \caption{Medicamentos}
-\label{fig:ArbolBinario}
+\label{fig:medicamentos}
 \end{center}
 \end{figure}
 
@@ -119,7 +128,11 @@ Muchos de los socios podrían estar bajo medicación de algun tipo, por tanto ex
 \section{Cambios de unidad}
 \label{3:sec3}
 
-A petición de la organización scout Aguere 70 se creó una función que llamada \textbf{Cambio de Unidad} que consistes en analizar todos los socios, verificar su edad, y si procede cambiarlo a la sección/unidad acorde a su edad.\\
+A petición de la organización scout Aguere 70 se creó una función que llamada \textbf{Cambio de Unidad} que consistes en analizar todos los socios, verificar su edad, y si procede cambiarlo a la sección/unidad acorde a su edad,
+cuyo rango se muestra en la Figura \ref{fig:rango}.\\
+
+Esta función se ejecuta al darle al botón de cambio de unidad que se encuentra en el menú principal.\\
+
 \begin{figure}[H]
 \begin{center}
 \begin{tabular}{c|p{25mm}c|p{25mm}|} \hline 
@@ -150,6 +163,7 @@ Scouter
 \hline
 \end{tabular}
 \caption{Rango de edades}
+\label{fig:rango}
 \end{center}
 \end{figure}
 
@@ -161,11 +175,13 @@ Hay una sección en la aplicación en la que podemos listar los socios visualiza
 
 En estos listados podremos interactuar filtrando los datos por medio de varios filtro, incluso ordenarlos alfabeticamente en orden creciente y decreciente si se desea.\\
 
+En la Figura \ref{fig:listado} se muestra un ejemplo de una pantalla de listado.
+
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{images/filtrado.jpg}
 \caption{Aplicación de algunos filtros al listado}
-\label{fig:ArbolBinario}
+\label{fig:listado}
 \end{center}
 \end{figure}
 
@@ -174,13 +190,13 @@ En estos listados podremos interactuar filtrando los datos por medio de varios f
 \section{Busquedas por ID}
 \label{3:sec5}
 
-Tambien se pueden realizar busquedas directas por el ID del socio, en la que nos redirecciona a directamente  a la ficha técnica del socio.\\
+Tambien se pueden realizar busquedas directas por el ID del socio, como se muestra en la Figura \ref{fig:busqueda_id}, en la que nos redirecciona a directamente  a la ficha técnica del socio.\\
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.40\textwidth]{images/busqueda_id.jpg}
 \caption{Busqueda ID}
-\label{fig:ArbolBinario}
+\label{fig:busqueda_id}
 \end{center}
 \end{figure}
 
@@ -190,21 +206,22 @@ Tambien se pueden realizar busquedas directas por el ID del socio, en la que nos
 
 Los resultados de los listados los podemos exportar a Google Drive en formato de hoja de calculo, con solo darle al botón de exportar debajo del listado. Veamos un ejemplo con imagenes:\\
 
+En la Figura \ref{fig:list_export} se muestra el listado que se desea exportar.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{images/listado_export.jpg}
 \caption{Exportación de un listado}
-\label{fig:ArbolBinario}
+\label{fig:list_export}
 \end{center}
 \end{figure}
 
-El resultado seria el siguiente:\\
+Al darle al botón exportar, se crea un documento en la cuenta de Drive del usuario con los datos que se exportaron, como se muestra en la Figura \ref{fig:export_drive}.\\
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{images/result_export.jpg}
 \caption{Resultado de la Esportación}
-\label{fig:ArbolBinario}
+\label{fig:export_drive}
 \end{center}
 \end{figure}
 
@@ -213,13 +230,13 @@ El resultado seria el siguiente:\\
 \label{3:sec7}
 
 GScout brinda a la organización de scout Aguere 70 la posibilidad de migrar su base de datos en \textbf{Access} a la propia aplicación, siempre y cuando este fichero se transforme en un archivo .csv, con la herramienta MDB Tools por ejemplo,
-y solo haría falta subirla a la aplicación, que lo demás lo hace la propia aplicación de manera automatica. De esta manera tendremo los datos de la antigua base de datos en la nueva base de datos que pertenece a GScout.\\
+y solo haría falta subirla a la aplicación, lo demás lo hace la propia aplicación de manera automática. De esta manera tendremos los datos de la antigua base de datos en la nueva base de datos que pertenece a GScout.\\
 
-
+En la Figura \ref{fig:import} se ve un ejemplo del proceso de importación.\\ 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{images/import_db.jpg}
 \caption{Subiendo archivo csv para importar base de datos}
-\label{fig:ArbolBinario}
+\label{fig:import}
 \end{center}
 \end{figure}

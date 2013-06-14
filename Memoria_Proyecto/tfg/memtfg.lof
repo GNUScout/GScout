@@ -3,22 +3,24 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Ejemplo}}{3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Ventana de login}}{11}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Ejemplo de Formulario}}{12}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Ficha del Socio}}{13}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Boton de Editar}}{13}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Borrado de Socios}}{14}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Borrado de Socios}}{15}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Edici\IeC {\'o}n de Familia}}{15}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Medicamentos}}{16}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Rango de edades}}{16}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Aplicaci\IeC {\'o}n de algunos filtros al listado}}{17}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Busqueda ID}}{17}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Exportaci\IeC {\'o}n de un listado}}{18}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Resultado de la Esportaci\IeC {\'o}n}}{18}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Subiendo archivo csv para importar base de datos}}{19}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Ventana de login}}{12}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Ejemplo de Formulario}}{13}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Ficha del Socio}}{14}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Boton de Editar}}{14}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Borrado de Socios}}{15}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Ejemplo de Familia}}{16}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Edici\IeC {\'o}n de Familia}}{16}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Medicamentos}}{17}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Rango de edades}}{17}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Aplicaci\IeC {\'o}n de algunos filtros al listado}}{18}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Busqueda ID}}{18}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Exportaci\IeC {\'o}n de un listado}}{19}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Resultado de la Esportaci\IeC {\'o}n}}{20}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Subiendo archivo csv para importar base de datos}}{21}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Resultado tras analizar socios/views.py con el Pylint.}}{36}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Propuesta del Grupo Aguere 70}}{24}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Panel de Control de administrador de Google}}{27}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Resultado del Pylint tras analizar un conjunto de ficheros con el script.}}{37}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
