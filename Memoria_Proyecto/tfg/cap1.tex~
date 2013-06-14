@@ -34,7 +34,7 @@ tareas de gestión y administración de sistemas.
 \label{1:sec:2}
 
 La aplicación esta creada para la gestión de socios Scout, donde se podrá interactuar con datos relevantes de los socios, en el Cápitulo \ref{chapter:tres}
-se describe toda la funcionalidad de la aplicación al igual que nos enseña como usarla.\\
+se describe toda la funcionalidad de la aplicación, al igual que nos enseña como usarla.\\
 
 En cuando al entorno de desarrollo tenemos como resumen el siguiente listado de tecnologias que se usaron en el desarrollo de la aplicación:\\
 
@@ -50,7 +50,7 @@ En cuando al entorno de desarrollo tenemos como resumen el siguiente listado de 
   
 \end{itemize}
 En el Cápitulo ~\ref{chapter:dos}, se profundizará en la descripción de las tecnologias empleadas en el proyecto y en el Cápitulo \ref{chapter:cuatro} 
-veremos como se usaron estas tecnologias y para que motivo en la aplicación GScout.\\
+veremos como se emplearon estas tecnologias y para que motivo usaron en la aplicación GScout.\\
 
 %---------------------------------------------------------------------------------
 \section{Actividades}
@@ -67,7 +67,7 @@ Analisis de la aplicación GNU Scout [1] y el modelo de datos utilizado.
 
 Tarea 2 &
 Entrevistas con los responsables de un grupo Scout para analizar las funcionalidades ya
-previstas según [1] y añadir/eliminar/modificar aquellas de interés.
+previstas según y añadir/eliminar/modificar aquellas de interés.
 \\
 \hline
 
@@ -78,13 +78,13 @@ estrategia de branching.
 \hline
 
 Tarea 4 &
-Definir u proyecto en Pivotal tracker[3] para el seguimiento del proyecto. Esta herramienta
+Definir u proyecto en Pivotal tracker para el seguimiento del proyecto. Esta herramienta
 facilita el desarrollo siguiento metodologías ágiles.
 \\
 \hline
 
 Tarea 5 & 
-Desarrollo de un proyecto piloto, realizar la implantación en GAE[2] comprobando el 
+Desarrollo de un proyecto piloto, realizar la implantación en GAE comprobando el 
 funcionamiento básico de esta plataforma.
 \\
 \hline

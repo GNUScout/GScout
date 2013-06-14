@@ -1,45 +1,127 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{URL:XML}
-{ACM LaTeX Style}.
-\newblock http://www.acm.org/publications/latex\_style/.
+\bibitem{URL:Aptana}
+{Aptana Studio 3 con Django}.
+\newblock
+  http://blog.yawd.eu/2011/using-aptana-studio-3-ide-django-applications-simp/.
+
+\bibitem{URL:AddRemoveRow}
+{Añadir/Eliminar filas en una tabla con JavaScript}.
+\newblock
+  http://viralpatel.net/blogs/dynamically-add-remove-rows-in-html-table-using-javascript/.
+
+\bibitem{URL:Bootstrap}
+{Bootstrap}.
+\newblock http://twitter.github.io/bootstrap/.
+
+\bibitem{URL:comparacion}
+{Comparación de fechas en Python}.
+\newblock http://stackoverflow.com/questions/1831410/python-time-comparison.
+
+\bibitem{URL:GAEcodigo}
+{Django-nonrel con GAE Tutorial (Código)}.
+\newblock http://djangosnippets.org/snippets/1003/.
+
+\bibitem{URL:GAEvideo}
+{Django-nonrel con GAE Tutorial (Vídeo)}.
+\newblock http://www.youtube.com/watch?v=\_NHX8HsCuJ4.
+
+\bibitem{URL:DjangoNonrel}
+{Django-nonrel con Google App Engine}.
+\newblock http://www.allbuttonspressed.com/projects/djangoappengine.
+
+\bibitem{URL:Django}
+{Django Tutorials}.
+\newblock http://django.es/docs/intro/tutorial01/.
+
+\bibitem{URL:ExportCSV}
+{Exportar QuerySet a CSV}.
+\newblock http://www.djangofoo.com/189/export-queryset-to-csv.
+
+\bibitem{URL:Filtros}
+{Filtros y ordenación de tablas}.
+\newblock
+  http://mottie.github.com/tablesorter/docs/example-widget-bootstrap-theme.html.
 
 \bibitem{URL:GitHub}
-{GitHub}.
-\newblock http://www.github.com.
+{GitHub (Repositorio)}.
+\newblock https://github.com/Jalcubo/GScout.
 
-\bibitem{Fujitsu}
-{FACOM OS IV SSL II USER'S GUIDE, 99SP0050E5}.
-\newblock Technical report, 1990.
+\bibitem{URL:GNUscout}
+{GNU Scout (Implementación en PHP)}.
+\newblock http://sourceforge.net/projects/gnuscout.
 
-\bibitem{Bailey}
-D.~H. Bailey and P.~Swarztrauber.
-\newblock The fractional {F}ourier transform and applications.
-\newblock {\em SIAM Rev.}, 33(3):389--404, 1991.
+\bibitem{URL:GoogleAccounts}
+{Google Accounts}.
+\newblock https://developers.google.com/appengine/docs/python/users/?hl=es.
 
-\bibitem{Bay1}
-A.~Bayliss, C.~I. Goldstein, and E.~Turkel.
-\newblock An iterative method for the {H}elmholtz equation.
-\newblock {\em J. Comp. Phys.}, 49:443--457, 1983.
+\bibitem{URL:GAE}
+{Google App Engine}.
+\newblock https://developers.google.com/appengine/?hl=es.
 
-\bibitem{Darwin:1859}
-C.~Darwin.
-\newblock {\em {The Origin Of Species}}.
-\newblock November 1859.
+\bibitem{URL:GooglePlus}
+{Google Plus API}.
+\newblock https://developers.google.com/+/api/.
 
-\bibitem{Gold3}
-C.~Goldstein.
-\newblock Multigrid methods for elliptic problems in unbounded domains.
-\newblock {\em SIAM J. Numer. Anal.}, 30:159--183, 1993.
+\bibitem{URL:GoogleDrive}
+{Google Plus SDK}.
+\newblock https://developers.google.com/drive/.
 
-\bibitem{Swa82}
-P.~Swarztrauber.
-\newblock {\em Vectorizing the {FFTs}}.
-\newblock Academic Press, New York, 1982.
+\bibitem{URL:CSS}
+{Hojas de estilo CSS}.
+\newblock http://www.w3schools.com/css/.
 
-\bibitem{Ta84}
-S.~Ta\'asan.
-\newblock {\em Multigrid Methods for Highly Oscillatory Problems}.
-\newblock PhD thesis, Weizmann Institute of Science, Rehovot, Israel, 1984.
+\bibitem{URL:tablesorterRangos}
+{Implementación de filtrar por rango de fechas en el Tablesorter}.
+\newblock
+  http://mottie.github.io/tablesorter/docs/example-widget-filter-formatter-1.html.
+
+\bibitem{URL:ImportCSV}
+{Importar un archivo CSV en un modelo de Django}.
+\newblock
+  http://django.es/blog/como-importar-un-archivo-csv-tsv-en-modelo-de-django/.
+
+\bibitem{URL:JavaScript}
+{JavaScript Tutorial}.
+\newblock http://www.w3schools.com/js/.
+
+\bibitem{URL:jQuery}
+{jQuery}.
+\newblock http://jquery.com/.
+
+\bibitem{URL:DatosPlus1}
+{Obtener datos de Google PLus (1)}.
+\newblock https://developers.google.com/+/api/latest/people/get.
+
+\bibitem{URL:DatosPlus2}
+{Obtener datos de Google PLus (2)}.
+\newblock
+  https://developers.google.com/api-client-library/python/start/get\_started.
+
+\bibitem{URL:DatosPlus3}
+{Obtener datos de Google PLus (3)}.
+\newblock
+  http://stackoverflow.com/questions/10423321/how-to-view-redirect-to-google-plus-user-profile-using-django-social-auth.
+
+\bibitem{URL:OnlineScoutManager}
+{Online Scout Manager}.
+\newblock https://www.onlinescoutmanager.co.uk/.
+
+\bibitem{URL:Pylint}
+{Pylint Tutorial}.
+\newblock http://docs.pylint.org/tutorial.html.
+
+\bibitem{URL:Pymetrics}
+{Pymetrics Tutorial}.
+\newblock http://mindref.blogspot.com.es/2010/06/python-pymetrics.html.
+
+\bibitem{URL:Python}
+{Python}.
+\newblock http://www.python.org/.
+
+\bibitem{URL:Upload}
+{Subida de Archivos a la Aplicación}.
+\newblock
+  http://stackoverflow.com/questions/5871730/need-a-minimal-django-file-upload-example.
 
 \end{thebibliography}
