@@ -29,7 +29,13 @@ En la Figura \ref{fig:login} se muestra la pantalla de acceso a la aplicación a
 \section{Gestión de socios}
 \label{3:sec2}
 
-A continuación nombraremos las funcionalidades entorno a la gestión de socios.
+Como se ha dicho a lo largo de la memoria, GScout esta enfocada a la gestión de socios, concretamente Scouts del grupo Aguere 70, 
+por tanto la aplicación brinda la posibilidad de crear socios, visualizar sus datos, incluso podemos editarlos y/o borrarlos. Además existe una funcionalidad que nos permiten 
+crear familias dentro de la aplicación, para asociar unos socios con otros, creando de esta manera un árbol de familia, el cual nos permite tener un contacto directo con los representantes de dichos
+socios en caso de cualquier incidencia o necesidad. Por otro lado muchos de los socios podrían estar bajo medicación, de modo que la aplicación posee otra funcionalidad encargada de asociar medicación a los socios,
+en la que se señalan las pautas y dosís que se deben de seguir con cada medicamento.\\
+
+A continuación se detallará cada una de estas funciones que nos proporciona la aplicación GScout.\\
 
 \subsection{Creación de Socios}
 
@@ -131,8 +137,6 @@ como se muestra en la Figura \ref{fig:medicamentos}.\\
 A petición de la organización scout Aguere 70 se creó una función que llamada \textbf{Cambio de Unidad} que consistes en analizar todos los socios, verificar su edad, y si procede cambiarlo a la sección/unidad acorde a su edad,
 cuyo rango se muestra en la Figura \ref{fig:rango}.\\
 
-Esta función se ejecuta al darle al botón de cambio de unidad que se encuentra en el menú principal.\\
-
 \begin{figure}[H]
 \begin{center}
 \begin{tabular}{c|p{25mm}c|p{25mm}|} \hline 
@@ -164,6 +168,17 @@ Scouter
 \end{tabular}
 \caption{Rango de edades}
 \label{fig:rango}
+\end{center}
+\end{figure}
+
+Esta función se ejecuta al darle al botón de cambio de unidad que se encuentra en el menú principal (Figura \ref{fig:cambio_unidad}).\\
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.40\textwidth]{images/cambio_unidad.jpg}
+\caption{Botón Cambio de Unidad}
+\label{fig:cambio_unidad}
 \end{center}
 \end{figure}
 
@@ -237,6 +252,17 @@ En la Figura \ref{fig:import} se ve un ejemplo del proceso de importación.\\
 \begin{center}
 \includegraphics[width=0.75\textwidth]{images/import_db.jpg}
 \caption{Subiendo archivo csv para importar base de datos}
+\label{fig:import}
+\end{center}
+\end{figure}
+
+Esta función se ejecuta al darle al botón de la Figura \ref{fig:import} que se encuentra en el menú principal.\\
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.40\textwidth]{images/import.jpg}
+\caption{Botón Importar Base de Datos}
 \label{fig:import}
 \end{center}
 \end{figure}

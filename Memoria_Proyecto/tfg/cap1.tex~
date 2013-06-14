@@ -1,38 +1,43 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Chapter 1: IntroducciÛn 
+% Chapter 1: Introducci√≥n 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-El objectivo de este proyecto es desarrollar una aplicaciÛn para la gestiÛn de un grupo
- Scout. La aplicaciÛn deber· gestionar a los chicos asociados al grupo y mantener su 
-informaciÛn personal, incluyendo familiares, datos bancarios y mÈdicos. 
+El objectivo de este proyecto es desarrollar una aplicaci√≥n para la gesti√≥n de un grupo
+ Scout. La aplicaci√≥n deber√° gestionar a los chicos asociados al grupo y mantener su 
+informaci√≥n personal, incluyendo familiares, datos bancarios y m√©dicos. 
 
 La tecnologia principal usada se basa en aplicaciones web con un entorno de desarrollo de alto
-nivel, en nuestro caso con el Framework de Django, y tambien con implantaciÛn en la nube, gracias a 
+nivel, en nuestro caso con el Framework de Django, y tambien con implantaci√≥n en la nube, gracias a 
 Google App Engine.
 %---------------------------------------------------------------------------------
 \section{Antecedentes y estado actual del tema}
 \label{1:sec:1}
-El Escultismo es un movimiento educativo fundado en el aÒo 1907 por Baden Powell en Inglaterra
-e instalado en EspaÒa en 1912. Su musiÛn es dejar este mundo mejor de como lo encontramos,
-una misiÛn que es posible gracias a una gran labor diaria y educativa que realizan de manera
-voluntaria jÛvenes de todo el mundo.
+El Escultismo es un movimiento educativo fundado en el a√±o 1907 por Baden Powell en Inglaterra
+e instalado en Espa√±a en 1912. Su musi√≥n es dejar este mundo mejor de como lo encontramos,
+una misi√≥n que es posible gracias a una gran labor diaria y educativa que realizan de manera
+voluntaria j√≥venes de todo el mundo.
 
-Hoy en dÌa se pueden encontrar p·ginas web de organizaciones de grupos Scout,  pero la mayoria
+Hoy en d√≠a se pueden encontrar p√°ginas web de organizaciones de grupos Scout,  pero la mayoria
 son simlemente para uso informativo y darse a conocer, como es el caso del grupo Aguere 70, que carece de
-una aplicaciÛn para la gestiÛn de los propios Scouts con sus tareas, que es en lo que se ennfocÛ este proyecto. Existe
-una implementaciÛn, ya desactualizada, basada en tecnologÌa PHP para las funciones b·sicas en la gestiÛn de grupos
-Scout: GNU Scout [1]. Esta implementaciÛn aunque no fue usada, sirvio para darnos una idea general
-de como enfocar nuestra aplicaciÛn.
+una aplicaci√≥n para la gesti√≥n de los propios Scouts con sus tareas, que es en lo que se ennfoc√≥ este proyecto. Existe
+una implementaci√≥n, ya desactualizada, basada en tecnolog√≠a PHP para las funciones b√°sicas en la gesti√≥n de grupos
+Scout: GNU Scout [1]. Esta implementaci√≥n aunque no fue usada, sirvio para darnos una idea general
+de como enfocar nuestra aplicaci√≥n.
 
-De modo que creamos una aplicaciÛn en la nube utilizando una versiÛn de Django adaptada a Google 
+De modo que creamos una aplicaci√≥n en la nube utilizando una versi√≥n de Django adaptada a Google 
 App Engine, un servicio de alojamiento web que permite desarrollar aplicaciones online sin 
-necesidad de administrar o mantener servidores dedicados. De esta forma, los usuarios podr·n utilizarla, evitando 
-tareas de gestiÛn y administraciÛn de sistemas.
+necesidad de administrar o mantener servidores dedicados. De esta forma, los usuarios podr√°n utilizarla, evitando 
+tareas de gesti√≥n y administraci√≥n de sistemas.
 
 
 %---------------------------------------------------------------------------------
-\section{Caracteristicas de la AplicaciÛn}
+\section{Caracteristicas de la Aplicaci√≥n}
 \label{1:sec:2}
-Resumen de los principales recursos utilizados en el desarrollo del proyecto:
+
+La aplicaci√≥n esta creada para la gesti√≥n de socios Scout, donde se podr√° interactuar con datos relevantes de los socios, en el C√°pitulo \ref{chapter:tres}
+se describe toda la funcionalidad de la aplicaci√≥n al igual que nos ense√±a como usarla.\\
+
+En cuando al entorno de desarrollo tenemos como resumen el siguiente listado de tecnologias que se usaron en el desarrollo de la aplicaci√≥n:\\
+
 \begin{itemize}
   \item Framework Django-nonrel
   \item Despliegue en Google App Engine
@@ -40,27 +45,29 @@ Resumen de los principales recursos utilizados en el desarrollo del proyecto:
   \item GitHub
   \item jQuery
   \item JavaScript
-  \item Bootstrap CSS
+  \item Bootstrap y CSS
+  \item Pylint y Pymetrics
   
 \end{itemize}
-En el c·pitulo ~\ref{chapter:dos}, se profundizar· en la descripciÛn de las herramientas empleadas en el proyecto.
+En el C√°pitulo ~\ref{chapter:dos}, se profundizar√° en la descripci√≥n de las tecnologias empleadas en el proyecto y en el C√°pitulo \ref{chapter:cuatro} 
+veremos como se usaron estas tecnologias y para que motivo en la aplicaci√≥n GScout.\\
 
 %---------------------------------------------------------------------------------
 \section{Actividades}
 \label{1:sec:3}
-El desarrollo del proyecto se organizÛ de las siguientes tareas:
+El desarrollo del proyecto se organiz√≥ de las siguientes tareas:
 
 
 \begin{tabular}{|p{25mm}|p{80mm}|} \hline 
 \textbf{Tarea } & \textbf{Actividad} \\ \hline
 Tarea1 &
-Analisis de la aplicaciÛn GNU Scout [1] y el modelo de datos utilizado.
+Analisis de la aplicaci√≥n GNU Scout [1] y el modelo de datos utilizado.
 \\
 \hline
 
 Tarea 2 &
 Entrevistas con los responsables de un grupo Scout para analizar las funcionalidades ya
-previstas seg˙n [1] y aÒadir/eliminar/modificar aquellas de interÈs.
+previstas seg√∫n [1] y a√±adir/eliminar/modificar aquellas de inter√©s.
 \\
 \hline
 
@@ -72,31 +79,31 @@ estrategia de branching.
 
 Tarea 4 &
 Definir u proyecto en Pivotal tracker[3] para el seguimiento del proyecto. Esta herramienta
-facilita el desarrollo siguiento metodologÌas ·giles.
+facilita el desarrollo siguiento metodolog√≠as √°giles.
 \\
 \hline
 
 Tarea 5 & 
-Desarrollo de un proyecto piloto, realizar la implantaciÛn en GAE[2] comprobando el 
-funcionamiento b·sico de esta plataforma.
+Desarrollo de un proyecto piloto, realizar la implantaci√≥n en GAE[2] comprobando el 
+funcionamiento b√°sico de esta plataforma.
 \\
 \hline
 
 Tarea 6 &
-Entrevistas de seguimiento. 2∫ reuniÛn con los responsables del grupo Scout para
-mostrar el piloto de la aplicaciÛn, refinar diseÒos,etc
+Entrevistas de seguimiento. 2¬∫ reuni√≥n con los responsables del grupo Scout para
+mostrar el piloto de la aplicaci√≥n, refinar dise√±os,etc
 \\
 \hline
 
 Tarea 7 &
-Desarrollo de la aplicaciÛn: implementar las funcionalidades requeridas (posibles
-entrevistas a lo largo del proceso para comprobar si la implementaciÛn cumple los requisitos
-del cliente: se realizar·n por lo menos 4 iteraciones completas: an·lisis, desarrollo, test, implantaciÛn)
+Desarrollo de la aplicaci√≥n: implementar las funcionalidades requeridas (posibles
+entrevistas a lo largo del proceso para comprobar si la implementaci√≥n cumple los requisitos
+del cliente: se realizar√°n por lo menos 4 iteraciones completas: an√°lisis, desarrollo, test, implantaci√≥n)
 \\
 \hline
 
 Tarea 8 &
-Puesta en producciÛn (fase beta), formaciÛn de usuario y gestiÛn de errores.
+Puesta en producci√≥n (fase beta), formaci√≥n de usuario y gesti√≥n de errores.
 \\
 \hline
 
@@ -104,12 +111,12 @@ Puesta en producciÛn (fase beta), formaciÛn de usuario y gestiÛn de errores.
 
 
 %---------------------------------------------------------------------------------
-\section{PerÌodo de Desarrollo del Proyecto}
+\section{Per√≠odo de Desarrollo del Proyecto}
 \label{1:sec:4}
 
-El perÌodo de elaboraciÛn del proyecto abarca desde el 11 de septiembre de 2012 cuando se presentaron las ofertas de los proyectos, 
-hasta mediados de junio de 2013 que es cuando corresponden las respectivas defensas orales, pero lo que es la elaboraciÛn en sÌ de la aplicaciÛn del proyecto
-abarcÛ del 30 de Enero de 2013 hasta primeros de Junio incluyendo los retoques finales y puesta a punto de la aplicaciÛn.
+El per√≠odo de elaboraci√≥n del proyecto abarca desde el 11 de septiembre de 2012 cuando se presentaron las ofertas de los proyectos, 
+hasta mediados de junio de 2013 que es cuando corresponden las respectivas defensas orales, pero lo que es la elaboraci√≥n en s√≠ de la aplicaci√≥n del proyecto
+abarc√≥ del 30 de Enero de 2013 hasta primeros de Junio incluyendo los retoques finales y puesta a punto de la aplicaci√≥n.
 %------------------------------------------------------------------------------
 \begin{figure}[!th]
 \begin{center}

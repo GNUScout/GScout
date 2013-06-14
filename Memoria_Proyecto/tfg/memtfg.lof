@@ -1,6 +1,6 @@
 \select@language {spanish}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Ejemplo}}{3}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Ejemplo}}{4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Ventana de login}}{12}
@@ -12,11 +12,13 @@
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Edici\IeC {\'o}n de Familia}}{16}
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Medicamentos}}{17}
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Rango de edades}}{17}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Aplicaci\IeC {\'o}n de algunos filtros al listado}}{18}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Busqueda ID}}{18}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Exportaci\IeC {\'o}n de un listado}}{19}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Resultado de la Esportaci\IeC {\'o}n}}{20}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Subiendo archivo csv para importar base de datos}}{21}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Bot\IeC {\'o}n Cambio de Unidad}}{17}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Aplicaci\IeC {\'o}n de algunos filtros al listado}}{18}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Busqueda ID}}{18}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Exportaci\IeC {\'o}n de un listado}}{19}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Resultado de la Esportaci\IeC {\'o}n}}{20}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Subiendo archivo csv para importar base de datos}}{21}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Bot\IeC {\'o}n Importar Base de Datos}}{21}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Propuesta del Grupo Aguere 70}}{24}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Panel de Control de administrador de Google}}{27}
