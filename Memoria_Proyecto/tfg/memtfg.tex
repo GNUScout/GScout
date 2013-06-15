@@ -231,15 +231,15 @@ Para ello utilizaremos el framework Django y realizaremos el despliegue en la in
 Un requerimiento que tiene esta infraestructura es que trabaja con bases de datos no relacionales, en concreto sigue el modelo no-relacional BigTable, 
 por tanto es necesario utilizar la versión de Django-nonrel que es compatible con este tipo de base de datos.\\
 
-La ventaja del uso de este tipo de base de datos es que son mas escalables, y gracias al framework de Django se pueden 
-manipular por medio de este con QuerySet de Django, con las restricciones de no poder usar joins ni many to many, ni ninguna relacion entre
+Una de las ventajas del uso de este tipo de base de datos es su escalabilidad, pues estan diseñadas para manejar grandes volumenes de datos. Gracias al modulo QuerySet de Django podemos manipular la informacion en estas bases de datos, 
+con las restricciones de no poder usar ``joins'' ni ``many to many'', ni ninguna relacion entre
 tablas que no sea de clave foranea.\\
 
-Aparte del framework y de Google App Engine, introducimos en la aplicación APIs de Google para poder iniciar sesión con una cuenta de google y obtener 
+Aparte del framework y el despliegue en Google App Engine, introducimos en la aplicación APIs de Google para poder iniciar sesión con una cuenta de Google y obtener 
 los datos de dicha cuenta sin necesidad de almacenarlo,
 ademas de utilizar otra API para la exportación de información a Google Drive.\\
 
-En cuanto al diseño de la aplicacion se utiliza tecnologías CCS y Ajax, introduciendo los frameworks Bootstraps y jQuery que mejoran la usabilidad de la interfaz de usuario y descargan
+En cuanto al diseño de la aplicacion se utilizan tecnologías CCS y Ajax, introduciendo los frameworks Bootstraps y jQuery que mejoran la usabilidad de la interfaz de usuario y descargan
 parte de la funcionalidad en el navegador.\\
 
 
@@ -250,7 +250,7 @@ parte de la funcionalidad en el navegador.\\
 }
 
 \begin{palabrasClave}
-Scout, Gestión, Django, Google App Engine, Base de datos no-relacional, API, Google Plus, Google Drive, CSS, AJAX, Bootstraps, jQuery
+Scout, Django, Google App Engine, Base de datos no-relacional, Google Plus, Google Drive, CSS, AJAX, Bootstraps, jQuery
 \end{palabrasClave}
 
 \end{abstract}
@@ -261,21 +261,19 @@ Scout, Gestión, Django, Google App Engine, Base de datos no-relacional, API, Go
 \begin{summary}
 {\em 
 
-The objective of this project was to create a web application for scouts of Aguere 70, which helps manage of the members of that organization.\\
+The goal of this project is to develop a web application for the Aguere 70 Scout group. The applications facilitates the typical management issues in a Scout organization.\\
 
-We will use the Django framework and we will deploy in the Google App Engine infrastructure.
-A requirement to have this infrastructure is working with non-relational databases, specifically follows the model non-relational BigTable,
-therefore it is necessary to use the Django-nonrel version that supports this type of database.\\
+To implement the applications, we have been used the Django framework. The deployment has been carried out on the Google App Engine infrastructure.
+One of the requirements to work with this infrastructure is the use of a non-relational database, specifically following the non-relational BigTable model.
+Therefore it is necessary to use the Django-nonrel version of the framework that supports this type of database.\\
 
-The advantage of using this type of database is that they are more scalable, and thanks to the Django framework can
-manipulate through this with Django QuerySet, but with restrictions to can't use joins or many to many, or no relationship between
-tables other than foreign key.\\
+One of the advantages ot these databases is its scalability. They are designed to manage BigData applications. 
+Thanks to the Django framework, we can
+manipulate the data with Django QuerySet, but with the restrictions of not using joins, many to many, neither table relationship other than foreign key.\\
 
-Apart from the framework and Google App Engine, we introduced in the application Google APIs to login with google account and get
-the data from that account without storage,
-addition to use another API to export information to Google Drive.\\
+Besides the framework used and the deployment on Google App Engine, we introduced other Google technologies. For example, the use of Google+ API to login with a google account and get its data profile, or the Google Drive API to implement import/export facilities.\\
 
-Regarding the design of the application using CCS and Ajax technologies, we introduce Bootstraps and jQuery frameworks that enhance the usability of the user interface and downloading
+Regarding the design of the application using CCS and Ajax technologies, we introduce Bootstraps and jQuery frameworks. This technologies enhance the usability of the user interface as well as deploys 
 part of the functionality in the browser.\\
 
 
