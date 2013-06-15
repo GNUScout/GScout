@@ -139,9 +139,9 @@
         {\Huge GScout} \\[2.5mm] 
         {\Huge Desarrollo e implantación de una 
         aplicación para la gestión de grupos Scout} \\[2.5mm]
-        {\Large \textit{Title in English} .} \\[5mm]
+        {\Large \textit{Developmen and implementation of an application for Scout group management}} \\[5mm]
         {\Large José Daniel Juárez Dávila} \\[5mm]
-        Dpto. Nombre del Departamento \\[5mm]
+        Dpto. de Estadística, Investigación Operativa y Computación \\[5mm]
         Escuela T\'ecnica Superior de Ingenier\'{\i}a Inform\'atica \\[5mm]
         
         Trabajo de Fin de Grado \\
@@ -181,7 +181,8 @@ de la Universidad de La Laguna
 Que la presente memoria titulada:
 
 \bigskip
-``{\it Titulo del Trabajo.}''
+``{\it \textbf{GScout:} Desarrollo e implantación de una 
+        aplicación para la gestión de grupos Scout}''
 
 \bigskip
 \bigskip
@@ -224,7 +225,7 @@ Equipo de scout Aguere 70 por su colaboración en el  desarrollo del proyecto.
 {\em 
 
 El objetivo de este trabajo ha sido crear una aplicación web para los scout de Aguere 70, la cual facilite 
-la gestión de los socios de dicha organización.
+la gestión de los socios de dicha organización.\\
 
 Para ello utilizaremos el framework Django y realizaremos el despliegue en la infraestructura de Google App Engine. 
 Un requerimiento que tiene esta infraestructura es que trabaja con bases de datos no relacionales, en concreto sigue el modelo no-relacional BigTable, 
@@ -232,14 +233,14 @@ por tanto es necesario utilizar la versión de Django-nonrel que es compatible c
 
 La ventaja del uso de este tipo de base de datos es que son mas escalables, y gracias al framework de Django se pueden 
 manipular por medio de este con QuerySet de Django, con las restricciones de no poder usar joins ni many to many, ni ninguna relacion entre
-tablas que no sea de clave foranea.
+tablas que no sea de clave foranea.\\
 
-Aparte del frameworky y de App Engine introducimos en la aplicación APIs de Google para poder iniciar sesión con una cuenta de google y obtener 
+Aparte del framework y de Google App Engine, introducimos en la aplicación APIs de Google para poder iniciar sesión con una cuenta de google y obtener 
 los datos de dicha cuenta sin necesidad de almacenarlo,
-ademas de utilizar otra API para la exportación de información a Google Drive.
+ademas de utilizar otra API para la exportación de información a Google Drive.\\
 
 En cuanto al diseño de la aplicacion se utiliza tecnologías CCS y Ajax, introduciendo los frameworks Bootstraps y jQuery que mejoran la usabilidad de la interfaz de usuario y descargan
-parte de la funcionalidad en el navegador.
+parte de la funcionalidad en el navegador.\\
 
 
 
@@ -260,7 +261,24 @@ Scout, Gestión, Django, Google App Engine, Base de datos no-relacional, API, Go
 \begin{summary}
 {\em 
 
-Here should be the abstract in a foreing language...
+The objective of this project was to create a web application for scouts of Aguere 70, which helps manage of the members of that organization.\\
+
+We will use the Django framework and we will deploy in the Google App Engine infrastructure.
+A requirement to have this infrastructure is working with non-relational databases, specifically follows the model non-relational BigTable,
+therefore it is necessary to use the Django-nonrel version that supports this type of database.\\
+
+The advantage of using this type of database is that they are more scalable, and thanks to the Django framework can
+manipulate through this with Django QuerySet, but with restrictions to can't use joins or many to many, or no relationship between
+tables other than foreign key.\\
+
+Apart from the framework and Google App Engine, we introduced in the application Google APIs to login with google account and get
+the data from that account without storage,
+addition to use another API to export information to Google Drive.\\
+
+Regarding the design of the application using CCS and Ajax technologies, we introduce Bootstraps and jQuery frameworks that enhance the usability of the user interface and downloading
+part of the functionality in the browser.\\
+
+
 
 }
 

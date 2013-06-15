@@ -39,14 +39,14 @@ se describe toda la funcionalidad de la aplicación, al igual que nos enseña co
 En cuando al entorno de desarrollo tenemos como resumen el siguiente listado de tecnologias que se usaron en el desarrollo de la aplicación:\\
 
 \begin{itemize}
-  \item Framework Django-nonrel
-  \item Despliegue en Google App Engine
-  \item Google APIs (Google+ y Google Drive)
-  \item GitHub
-  \item jQuery
-  \item JavaScript
-  \item Bootstrap y CSS
-  \item Pylint y Pymetrics
+  \item Framework Django-nonrel \cite{URL:DjangoNonrel}
+  \item Despliegue en Google App Engine \cite{URL:GAE}
+  \item Google APIs (Google+ \cite{URL:GooglePlus} y Google Drive \cite{URL:GoogleDrive}) 
+  \item GitHub \cite{URL:GitHub}
+  \item jQuery \cite{URL:jQuery}
+  \item JavaScript \cite{URL:JavaScript}
+  \item Bootstrap \cite{URL:Bootstrap} y CSS \cite{URL:CSS}
+  \item Pylint \cite{URL:Pylint} y Pymetrics \cite{URL:Pymetrics}
   
 \end{itemize}
 En el Cápitulo ~\ref{chapter:dos}, se profundizará en la descripción de las tecnologias empleadas en el proyecto y en el Cápitulo \ref{chapter:cuatro} 
@@ -61,7 +61,7 @@ El desarrollo del proyecto se organizó de las siguientes tareas:
 \begin{tabular}{|p{25mm}|p{80mm}|} \hline 
 \textbf{Tarea } & \textbf{Actividad} \\ \hline
 Tarea1 &
-Analisis de la aplicación GNU Scout [1] y el modelo de datos utilizado.
+Analisis de la aplicación GNU Scout y el modelo de datos utilizado.
 \\
 \hline
 
@@ -72,7 +72,7 @@ previstas según y añadir/eliminar/modificar aquellas de interés.
 \hline
 
 Tarea 3 &
-Montar un repositorio GIT \cite{URL:GitHub} para alojar los codigos del proyecto. Definir la
+Montar un repositorio GIT para alojar los codigos del proyecto. Definir la
 estrategia de branching.
 \\
 \hline
@@ -116,13 +116,16 @@ Puesta en producción (fase beta), formación de usuario y gestión de errores.
 
 El período de elaboración del proyecto abarca desde el 11 de septiembre de 2012 cuando se presentaron las ofertas de los proyectos, 
 hasta mediados de junio de 2013 que es cuando corresponden las respectivas defensas orales, pero lo que es la elaboración en sí de la aplicación del proyecto
-abarcó del 30 de Enero de 2013 hasta primeros de Junio incluyendo los retoques finales y puesta a punto de la aplicación.
+abarcó del 30 de Enero de 2013 hasta mediados de junio incluyendo los retoques finales y puesta a punto de la aplicación.\\
+
+La siguiente tabla de la Figura \ref{fig:periodo} refleja detalladamente todas las actividades y horas empleadas en cada una de ellas durante todo el 
+período de desarrollo del proyecto.
 %------------------------------------------------------------------------------
-\begin{figure}[!th]
+\begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.5\textwidth]{images/arbolbinario.eps}
-\caption{Ejemplo}
-\label{fig:ArbolBinario}
+\includegraphics[width=1.0\textwidth]{images/periodo.jpg}
+\caption{Tabla del Cronograma del Proyecto de Fin de Grado}
+\label{fig:periodo}
 \end{center}
 \end{figure}
 %------------------------------------------------------------------------------
