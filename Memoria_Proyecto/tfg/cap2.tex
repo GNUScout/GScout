@@ -4,7 +4,7 @@
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-En el capítulo anterior se ha introducido los antecedentes como el estado actual del proyecto, 
+En el capítulo anterior se han introducido tanto los antecedentes como el estado actual del proyecto, 
 nombrado sus herramientas, actividades y periodos de desarrollo. Ahora nos vamos enfocar y describir lo que es el
 entorno de desarrollo de la aplicación\\
 
@@ -37,8 +37,8 @@ En esta sección nos expandiremos en describir lo que es la arquitectura softwar
 
 
 \subsection{Modelo Template View (MTV)}
-Empezaremos diciendo que la aplicación sigue el paradigma del modelo template view(\textbf{MTV}).
-Pero para entender este modelo primero tenemos tener claro lo que es el modelo vista controlador(\textbf{MVC}), el cual se define de la siguiente manera:\\
+Empezaremos diciendo que la aplicación sigue el paradigma del modelo Template-View(\textbf{MTV}), que es una variante del modelo Vista-Controlador(\textbf{MVC}) que
+se deriva de la forma en la que está implementada el framework de Django. Por esta razón, para entender el modelo MTV, primero tenemos que tener claro lo que es el modelo MVC, el cual se define de la siguiente manera:\\
 
 \begin{itemize}
   \item \textbf{Modelo}: El modelo tiene como objetivo mapear a la base de datos de tal forma que crea una sincronización
@@ -66,7 +66,7 @@ pero específicamente el modelo que usa es el Modelo Template View. Fue desarrol
 y fue liberada al público bajo una licencia BSD en julio de 2005; el framework fue nombrado en alusión al guitarrista de jazz gitano Django Reinhardt.\\
 
 En la aplicación se usa una variante de este framework, \textbf{Django-nonrel}, debido a que la aplicación necesita gestionar una base de datos no relacional por requerimientos
-de la propia tecnología Googgle App Engine, cosa que la versión normal de Django no soporta.
+de la propia tecnología Googgle App Engine, no soportada por la versión normal de Django.
 
 
 
@@ -74,20 +74,20 @@ de la propia tecnología Googgle App Engine, cosa que la versión normal de Djan
 \section{Herramientas de Desarrollo}
 \label{2:sec3}
 
+En este apartado se describirán las herramientas que se usaron para el despliegue, aumento de funcionalidad, 
+gestión de versiones y repositorio, dinamismo en las plantillas y apariencia de la aplicación.\\
+
 \subsection{Despliegue: Google App Engine}
-Google App Engine te permite ejecutar tus aplicaciones web en la infraestructura de Google.Las 
-aplicaciones App Engine son fáciles de crear, de mantener y de ampliar al ir aumentando el tráfico 
-y las necesidades de almacenamiento de datos. Con App Engine no necesitarás utilizar ningún servidor: 
-solo tendrás que subir tu aplicación para que los usuarios puedan empezar a utilizarla.\\
+Google App Engine nos permite realizar el despliegue de la aplicación web en la infraestructura de Google, con el objetivo de no usar ningún servidor.\\
 
-Puedes proporcionar a la aplicación tu propio nombre de dominio (como, por ejemplo, http://www.example.com/) 
-a través de Google Apps. También puedes proporcionarle un nombre que esté disponible en el dominio appspot.com. 
-Podrás compartir tu aplicación con todo el mundo o limitar el acceso a los miembros de tu organización.\\
 
-Google App Engine admite aplicaciones escritas en varios lenguajes de programación.\\
+Las aplicaciones en App Engine son fáciles de gestionar. Podemos proporcionar nuestro propio nombre de dominio (como, por ejemplo, http://www.example.com/) 
+a través de Google Apps. También podemos proporcionarle un nombre que esté disponible en el dominio appspot.com. 
+Además podremos limitar el acceso a la aplicación a un determinado grupo de miembros.\\
 
-Google App Engine permite desarrollar fácilmente aplicaciones que se ejecuten de forma fiable, 
-incluso con pesadas cargas de trabajo y grandes cantidades de datos. App Engine incluye las siguientes funciones:
+Google App Engine admite aplicaciones escritas en varios lenguajes de programación, incluido Python.\\
+
+Las funciones que nos brinda Google App Engine son las siguientes:
 
 \begin{itemize}
   \item Servidor web dinámico, totalmente compatible con las tecnologías web más comunes,
@@ -107,13 +107,13 @@ En la aplicación se usaron dos APIs de Google para aumentar y mejorar su funcio
 
 \subsubsection{Google Plus}
 Como GAE ya posee un modulo de autenticación por medio de Google Auth,
-en el proyecto se modifico para que se hiciera por medio de Google Plus, generando unas credenciales que se guardaran en el usuarios
+en el proyecto se modifico para que se hiciera por medio de Google Plus, generando unas credenciales que se guardaran en el gestor de usuarios
 para que la aplicación pueda tener determinados permisos y poder obtener información que proporciona Google Plus. El objetivo de la incorporación de esta 
 API a nuestra aplicación es evitar almacenar datos personales de los integrantes de la organización que usa la aplicación en una base de datos, sino usar directamente los
 datos que nos proporciona Google Plus, como nombre, apellidos, foto de perfil, dirección, etc.
 
 \subsubsection{Google Drive}
-Uno de los objetivos de la aplicación en cuanto a funcionalidad era poder exportar una tabla filtrada o no con los datos de los socios, como estamos utilizando tecnología Google,
+Uno de los objetivos de la aplicación en cuanto a funcionalidad era poder exportar una tabla filtrada o no con los datos de los socios. Como estamos utilizando tecnología Google,
 decidimos que la mejor forma era utilizar la API de Google Drive, para crear documentos en formato de hoja de calculo en el entorno de Google Drive. Para ello fue necesario
 modificar las credenciales que se almacenaban en los usuarios, para darle permiso y poder utilizar las funciones que nos proporciona dicha API.
 
@@ -122,9 +122,13 @@ modificar las credenciales que se almacenaban en los usuarios, para darle permis
 GitHub es un software para alojar proyectos utilizando el sistema de control de versiones Git. 
 El código se almacena de forma pública, aunque también se puede hacer de forma privada, creando una cuenta de pago.\\
 
-Nuestra aplicación esta alojada en un repertorio público, cuyo repertorio se facilitara en la sección de enlaces.
+Nuestra aplicación esta alojada en un repositorio público, se facilitara en la sección de enlaces.
 
 \subsection{Dinamismo en las plantillas: JavaScript y JQuery}
+
+En ocasiones es necesario crear dinamismo en las plantillas, para que el usuario pueda desenvolverse mejor con la interfaz de la aplicación, esto los conseguimos con las dos
+tecnologías siguientes, JavaScript y jQuery, que además de mejorar la usabilidad de la aplicación, descargan parte de la funcionalidad de la aplicación en el navegador, 
+liberando de esta manera al servidor de algunas tareas. A continuación de describirá cada una de estas tecnologías.\\
 
 \subsubsection{JavaScript}
 JavaScript es un lenguaje de programación interpretado, orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico. 
@@ -151,7 +155,7 @@ manipular el árbol DOM, manejar eventos, desarrollar animaciones (FLV) y agrega
 \subsection{Apariencia de la Aplicación: CSS y Bootstrap}
 
 
-Para generar el estilo de nuestra aplicación utilizamos las tecnologías que se describirán a continuación.
+Para generar el estilo de nuestra aplicación utilizamos las tecnologías que se describirán a continuación.\\
 
 \subsubsection{CSS (Hojas de estilo)}
 Las hojas de estilo en cascada (Cascading Style Sheets, o sus siglas CSS) hacen referencia a un 
@@ -167,9 +171,67 @@ formularios, botones, gráficos, barras de navegación y demás componentes de i
 \section{Herramientas para Calidad de Código}
 \label{2:sec4}
 
-Con el uso de este tipo de herramientas hacemos que nuestro código tenga mayor calidad y sea mas legible por lo demás. En este proyecto se usaron las siguiente:\\
+Con el uso de este tipo de herramientas hacemos que nuestro código tenga mayor calidad y sea mas legible por lo demás desarrolladores. En este proyecto se usaron las siguiente:\\
 \subsubsection{Pylint}
-Pylint es una herramienta que básicamente tiene como función analizar código Python en busca de errores o síntomas de mala calidad en el código fuente.\\ 
+Pylint es una herramienta que básicamente tiene como función analizar código Python en busca de errores o síntomas de mala calidad en el código fuente.
+Cabe destacar que por omisión, la guía de estilo a la que se trata de apegar Pylint es la descrita en el PEP-8 \cite{URL:PEP8}.\\ 
+
+Entre la serie de revisiones que hace Pylint al código fuente se encuentran las siguientes:\\
+
+\begin{itemize}
+  \item Revisiones básicas:
+    \begin{itemize}
+    \item Presencia de cadenas de documentación (docstring).
+    \item Nombres de módulos, clases, funciones, métodos, argumentos, variables.
+    \item Número de argumentos, variables locales, retornos y sentencias en funciones y métodos.
+    \item Atributos requeridos para módulos.
+    \item Valores por omisión no recomendados como argumentos.
+    \item Redefinición de funciones, métodos, clases.
+    \item Uso de declaraciones globales.
+    \end{itemize}
+  \item Revisión de variables:
+    \begin{itemize}
+    \item Determina si una variable o \textbf{import} no está siendo usado.
+    \item Variables indefinidas.
+    \item Redefinición de variables proveniente de módulos builtins o de ámbito externo.
+    \item Uso de una variable antes de asignación de valor.
+    \item Revisión de clases:
+    \item Métodos sin \textbf{self} como primer argumento.
+    \item Acceso único a miembros existentes vía \textbf{self}
+    \item Atributos no definidos en el método \textbf{\_\_init\_\_}
+    \item Código inalcanzable.
+    \end{itemize}
+  \item Revisión de diseño:
+    \begin{itemize}
+    \item Número de métodos, atributos, variables locales, entre otros.
+    \item Tamaño, complejidad de funciones, métodos, entre otros.
+    \end{itemize}
+  \item Revisión de imports:
+    \begin{itemize}
+    \item Dependencias externas.
+    \item imports relativos o importe de todos los métodos, variables vía \textbf{*} (wildcard).
+    \item Uso de imports cíclicos.
+    \item Uso de módulos obsoletos.
+    \item Conflictos entre viejo/nuevo estilo:
+    \item Uso de \textbf{property}, \textbf{\_\_slots\_\_}, \textbf{super}.
+    \item Uso de \textbf{super}.
+    \end{itemize}
+  \item Revisiones de formato:
+    \begin{itemize}
+    \item Construcciones no autorizadas.
+    \item Sangrado estricto del código.
+    \item Longitud de la línea.
+    \item \lstinline{Uso de <> en vez de !=}
+    \end{itemize}
+  \item Otras revisiones:
+    \begin{itemize}
+    \item Notas de alerta en el código como \textbf{FIXME}, \textbf{XXX}.
+    \item Código fuente con caracteres non-ASCII sin tener una declaración de encoding. PEP-263
+    \item Búsqueda por similitudes o duplicación en el código fuente.
+    \item Revisión de excepciones.
+    \item Revisiones de tipo haciendo uso de inferencia de tipos.
+    \end{itemize}
+\end{itemize}
 
 \subsubsection{Pymetrics}
 Pymetrics es similar a la herramienta nombrada anteriormente pero esta calcula la complejidad que posee cada función dentro del archivo con código Python que analiza.\\

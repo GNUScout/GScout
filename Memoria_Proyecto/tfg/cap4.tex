@@ -115,7 +115,7 @@ Pero al final se descartó su desarrollo por lo nombrado anteriormente, por lo t
 y aún así se descartó la \textbf{Asistencia} y \textbf{Progresión} del socio, ya que se clasificaron como dos aplicaciones más del proyecto fuera de la app Socios.
 
 Lo que nos quedo solo por desarrollar una app Socios, destinada a la gestión de los mismos. Para el desarrollo del modelo de datos se nos facilitó
-la ficha de inscripción en formato papel, que han de cumplimentar los socios para inscribirse en la organización. Hablaremos de este modelo detalladamente en el Capítulo \ref{chapter:cuatro}.
+la ficha de inscripción en formato papel, que han de cumplimentar los socios para inscribirse en la organización. Hablaremos de este modelo detalladamente en el Capítulo \ref{4:sec5}.
 
 
 \section{Preparación para el proyecto}
@@ -200,7 +200,7 @@ por medio de la llamada oauth2cabllback que la incorpora el modulo plus.
 
 Con todo esto lo que logramos es que en el inicio de sesión se establezca una conexión entre el usuario y las APIs de google, en la cual se acepten una serie de permisos para posteriormente generar una credencial,
 que se guardará en el usuario, con la cual podrá acceder a los servicios activados previamente por el programador en Google APIs. Es importante señalar que el modelo de User que nos ofrece Django se modificó para que
-se pudieran guardar las credenciales, además se añadió el campo de \textbf{cargo}, donde se le asignara a cada usuario un cargo especifico, por tanto las funciones que podrá realizar en la aplicación estarán supeditadas a dicho cargo.
+se pudieran guardar las credenciales, además se añadió el campo de \textbf{cargo}, donde se le asignara a cada usuario un cargo especifico, por tanto las funciones que podrá realizar en la aplicación estarán supeditadas a dicho cargo.\\
 
 \textbf{Nota:} las credenciales suelen expirar a la hora por tanto, una vez expiradas el usuario no podrá acceder a la aplicación, al menos que se actualicen. Una forma de automatizar esto es que en cada inicio de sesión
 se restablezcan las credenciales, por eso añadimos dos campos mas a la variable FLOW, que son el \textbf{access-type='offline'} y \textbf{approval-prompt='force'} con esto logramos forzar el refresco de
@@ -301,7 +301,7 @@ y volcarla en nuestra aplicación.\\
 El principal problema era que esta toda la información en un sola tabla por tanto habría que implementar un mecanismo para separar la información y adaptarla a nuestro modelo de datos.\\
 
 Por otro lado tenemos el formato del fichero de la base de datos que estaba en formato \textbf{Access}, de modo que era necesario convertirlo a un formato que pudiera procesar la aplicación de manera eficiente. Se pensó 
-en el formato .csv separado por comas, ya que había una herramienta llamada \textbf{MDB Tools} que convertía los ficheros accecc en csv.
+en el formato .csv separado por comas, ya que había una herramienta llamada \textbf{MDB Tools} que convertía los ficheros Access en csv.
 
 Una vez obtenido el fichero csv, se implemento un mecanismo para subir el fichero a la aplicación sin que este se guardara en el servidor, sino que sólo estuviera ahí mientras se este procesando. De modo que se creo 
 una nueva app llamada \textbf{upload} específicamente para este proceso.\\

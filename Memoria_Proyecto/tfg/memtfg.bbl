@@ -44,6 +44,10 @@
 {Online Scout Manager}.
 \newblock https://www.onlinescoutmanager.co.uk/.
 
+\bibitem{URL:PEP8}
+{PEP-8. Guía de estilo para códigos en Python}.
+\newblock http://www.python.org/dev/peps/pep-0008/.
+
 \bibitem{URL:Pylint}
 {Pylint Tutorial}.
 \newblock http://docs.pylint.org/tutorial.html.
