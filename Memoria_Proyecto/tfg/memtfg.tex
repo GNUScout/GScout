@@ -231,15 +231,15 @@ Para ello utilizaremos el framework Django y realizaremos el despliegue en la in
 Un requerimiento que tiene esta infraestructura es que trabaja con bases de datos no relacionales, en concreto sigue el modelo no-relacional BigTable, 
 por tanto es necesario utilizar la versión de Django-nonrel que es compatible con este tipo de base de datos.\\
 
-Una de las ventajas del uso de este tipo de base de datos es su escalabilidad, pues estan diseñadas para manejar grandes volumenes de datos. Gracias al modulo QuerySet de Django podemos manipular la informacion en estas bases de datos, 
-con las restricciones de no poder usar ``joins'' ni ``many to many'', ni ninguna relacion entre
-tablas que no sea de clave foranea.\\
+Una de las ventajas del uso de este tipo de base de datos es su escalabilidad, pues están diseñadas para manejar grandes volúmenes de datos. Gracias al modulo QuerySet de Django podemos manipular la información en estas bases de datos, 
+con las restricciones de no poder usar ``joins'' ni ``many to many'', ni ninguna relación entre
+tablas que no sea de clave foránea.\\
 
 Aparte del framework y el despliegue en Google App Engine, introducimos en la aplicación APIs de Google para poder iniciar sesión con una cuenta de Google y obtener 
 los datos de dicha cuenta sin necesidad de almacenarlo,
-ademas de utilizar otra API para la exportación de información a Google Drive.\\
+además de utilizar otra API para la exportación de información a Google Drive.\\
 
-En cuanto al diseño de la aplicacion se utilizan tecnologías CCS y Ajax, introduciendo los frameworks Bootstraps y jQuery que mejoran la usabilidad de la interfaz de usuario y descargan
+En cuanto al diseño de la aplicación se utilizan tecnologías CCS y Ajax, introduciendo los frameworks Bootstraps y jQuery que mejoran la usabilidad de la interfaz de usuario y descargan
 parte de la funcionalidad en el navegador.\\
 
 

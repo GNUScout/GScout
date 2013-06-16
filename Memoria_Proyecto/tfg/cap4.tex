@@ -5,7 +5,7 @@
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 En el capitulo ~\ref{chapter:tres} se describieron las funcionalidades de la aplicación. A continuación
-hablaremos de todo lo que conllevó el proceso de  elaboración del proyeto, desde su comienzo hasta el final,
+hablaremos de todo lo que conllevó el proceso de  elaboración del proyecto, desde su comienzo hasta el final,
 incluyendo las entrevistas, problemas, etc.
 
 
@@ -20,7 +20,7 @@ crear una base de datos no relacional. Por otro lado teníamos de ejemplo la apl
 pero era de pago, y nuestro objetivo era hacer una aplicación gratuita adaptada al cliente, en nuestro caso la organización de scout Aguere 70 de La Laguna.\\
 
 Para adaptarla lo mejor posible, lo primero que hicimos fue tener una reunión con el grupo scout Aguere 70, previamente a esta reunión se realizó una serie de tutoriales
-básicos de Django para refrescar conocimientos, ademas de hacer pruebas con la tecnologia de Google App Engine e incorporarlas al framework de django-nonrel.\\ 
+básicos de Django para refrescar conocimientos, además de hacer pruebas con la tecnología de Google App Engine e incorporarlas al framework de django-nonrel.\\ 
 
 Después de estos pasos previos, se realizo la primera reunión con el grupo Aguere 70, en la que se elaboró un análisis de requisitos, se estudiaron las posibles 
 funcionalidades que tendría la aplicación, seleccionando las funciones fundamentales, debido al corto tiempo y personal que había para realizar la aplicación.\\
@@ -97,7 +97,7 @@ Compañía de seguridad \\
 
 Visto las siguientes aplicaciones se comprobó que el proyecto era ambicioso y extenso,
 por tanto no se podía acaparar todo en este corto período de tiempo para el desarrollo del proyecto de fin de grado. De modo que simplificamos funcionalidad,
-con el fin de ocuparnos de las applicaciones más importantes. Lo que originó el esquema de la Figura \ref{fig:modelo_inicial}
+con el fin de ocuparnos de las aplicaciones más importantes. Lo que originó el esquema de la Figura \ref{fig:modelo_inicial}
 
 
 \begin{figure}[H]
@@ -110,12 +110,12 @@ con el fin de ocuparnos de las applicaciones más importantes. Lo que originó e
 
 En la Figura \ref{fig:modelo_inicial} se puede apreciar este modelo aplicaciones inicial. En un principio se tenia previsto la realización de dos aplicaciones, 
 una para la gestión de \textbf{socios} y otra para la gestión de la \textbf{lista de espera}. Esta última consistía en gestionar las solicitudes de los
-futuros socios, como tambien facilitar a la aplicación Socio, los datos personales de los socios, una vez se proceda a la creación definitiva del mismo.
+futuros socios, como también facilitar a la aplicación Socio, los datos personales de los socios, una vez se proceda a la creación definitiva del mismo.
 Pero al final se descartó su desarrollo por lo nombrado anteriormente, por lo tanto, nos enfocamos sólo en el apartado de la app de Socios que era el más importante, 
 y aún así se descartó la \textbf{Asistencia} y \textbf{Progresión} del socio, ya que se clasificaron como dos aplicaciones más del proyecto fuera de la app Socios.
 
 Lo que nos quedo solo por desarrollar una app Socios, destinada a la gestión de los mismos. Para el desarrollo del modelo de datos se nos facilitó
-la ficha de inscripción en formato papel, que han de cumplimentar los socios para inscribirse en la organización. Hablaremos de este modelo detalladamente en el Cápitulo \ref{chapter:cuatro}.
+la ficha de inscripción en formato papel, que han de cumplimentar los socios para inscribirse en la organización. Hablaremos de este modelo detalladamente en el Capítulo \ref{chapter:cuatro}.
 
 
 \section{Preparación para el proyecto}
@@ -140,15 +140,15 @@ Por otro lado es importante hablar del archivo de configuración app.yaml, que e
 controladores de solicitudes y con los archivos estáticos en el entorno de Google App Engine. 
 También debe contener información sobre el código de la aplicación como, por ejemplo, el ID de la aplicación y el identificador de la última versión.\\
 
-De modo que el arhivo seria el que aparece en el Listado \ref{cod:yaml}.\\
+De modo que el archivo seria el que aparece en el Listado \ref{cod:yaml}.\\
 \lstinputlisting[caption={Archivo de configuración app.yaml}, label={cod:yaml}]{codes/app.yaml}
 
 
 \section{Inicio de sesión}
 \label{4:sec4}
 
-Como se ha dicho en el capitulo ~\ref{chapter:tres} el inicio de sesión esta limitado al dominio del grupo de scout de Aguere 70, lo cual se accede a la aplicación
-por medio de sus cuentas de google asociadas a dicho dominio.\\
+Como se ha dicho en el capitulo ~\ref{chapter:tres} el inicio de sesión esta limitado al dominio del grupo de Scout de Aguere 70, lo cual se accede a la aplicación
+por medio de sus cuentas de Google asociadas a dicho dominio.\\
 
 El archivo settings.py se configuró como muestra el listado \ref{cod:settings}.\\
 
@@ -158,17 +158,17 @@ Donde se puede apreciar las \textsc{INSTALLED APPS} necesarias para este apartad
 \begin{itemize}
 \item \textbf{djangoappengine}: es un backend para poder utilizar la base de datos que nos brinda Google App Engine.\\
 
-\item \textbf{gaeauth}: es otro backend que nos facilita el inicio de sesión a traves de la interfaz de Google Accounts, 
+\item \textbf{gaeauth}: es otro backend que nos facilita el inicio de sesión a través de la interfaz de Google Accounts, 
 para iniciar sesión con las cuentas de Google en nuestra aplicación.\\
 
 Es la ultima parte del archivo settings.py se ve claramente que esta seleccionado en \textsc{AUTHENTICATION BACKENDS} el backend de gaeauth y seguidamente elegimos en \textsc{ALLOWED DOMAINS} el dominio
-en el cual queremos restrigir el acceso, en nuestro caso solo los usuarios pertenecientes al dominio ``gruposcoutaguere70.org'' podran acceder a la aplicación.
+en el cual queremos restringir el acceso, en nuestro caso solo los usuarios pertenecientes al dominio ``gruposcoutaguere70.org'' podrán acceder a la aplicación.
 
 \item \textbf{plus}: Este es el modulo que nos permite obtener la información personal, foto de perfil y demás datos de los usuarios que acceden a la aplicación por medio de su cuenta de Google+, sin necesidad
 de guardar esos datos en nuestra base de datos.
 
-Este fue uno de los modulos que más dio problemas. Primero habia que acceder a la web de Google APIs con la cuenta de desarrollador y activar la API de Google+ posteriormente tenemos que editar el acceso a las APIs,
-para introducir nuestra aplicación en el entorno, por lo tanto se nos generaria una serie de datos que podriamos introducirlos en nuestra aplicación uno a uno o bien en formato JSON, este paso es importante ya que sino la aplicación
+Este fue uno de los módulos que más dio problemas. Primero había que acceder a la web de Google APIs con la cuenta de desarrollador y activar la API de Google+ posteriormente tenemos que editar el acceso a las APIs,
+para introducir nuestra aplicación en el entorno, por lo tanto se nos generaría una serie de datos que podríamos introducirlos en nuestra aplicación uno a uno o bien en formato JSON, este paso es importante ya que sino la aplicación
 no podría acceder a los servicios que nos proporciona la API.\\
 
 \end{itemize}
@@ -195,36 +195,36 @@ como muestra el Listado \ref{cod:flow} la configuración necesaria para utilizar
 \lstinputlisting[caption={Configuración del FLOW para utilizar los servicios de Google.}, label={cod:flow}]{codes/flow_plus.py}
 
 Donde \textbf{client-id} y \textbf{client-secret} son los datos que apuntan al acceso de API que ha establecido el programador de la aplicación, \textbf{token-uri} lo delegamos para que lo ejecute oauth2, en \textbf{scope}
-se añaden las direcciones de las API que se van a usar, en nuestro caso la de Google+ y la de Drive(esta la explicaremos mas adelante), en \textbf{redirect-uri} establecemos la direccion de retorno a nuestra aplicación 
+se añaden las direcciones de las API que se van a usar, en nuestro caso la de Google+ y la de Drive(esta la explicaremos mas adelante), en \textbf{redirect-uri} establecemos la dirección de retorno a nuestra aplicación 
 por medio de la llamada oauth2cabllback que la incorpora el modulo plus.
 
-Con todo esto lo que logramos es que en el inicio de sesión se establezca una conexion entre el usuario y las APIs de google, en la cual se acepten una serie de permisos para posteriormente generar una credencial,
-que se guardará en el usuario, con la cual podra acceder a los servicios activados previamente por el programador en Google APIs. Es importante señalar que el modelo de User que nos ofrece django se modificó para que
-se pudieran guardar las credenciales, ademas se añadio el campo de \textbf{cargo}, donde se le asignara a cada usuario un cargo especifico, por tanto las funciones que podra realizar en la aplicación estaran supeditadas a dicho cargo.
+Con todo esto lo que logramos es que en el inicio de sesión se establezca una conexión entre el usuario y las APIs de google, en la cual se acepten una serie de permisos para posteriormente generar una credencial,
+que se guardará en el usuario, con la cual podrá acceder a los servicios activados previamente por el programador en Google APIs. Es importante señalar que el modelo de User que nos ofrece Django se modificó para que
+se pudieran guardar las credenciales, además se añadió el campo de \textbf{cargo}, donde se le asignara a cada usuario un cargo especifico, por tanto las funciones que podrá realizar en la aplicación estarán supeditadas a dicho cargo.
 
-\textbf{Nota:} las credenciales suelen expirar a la hora por tanto, una vez expiradas el usuario no podra acceder a la aplicación, al menos que se actualicen. Una forma de automatizar esto es que en cada inicio de sesión
-se restablescan las credenciales, por eso añadimos dos campos mas a la variable FLOW, que son el \textbf{access-type='offline'} y \textbf{approval-prompt='force'} con esto logramos forzar el refrezco de
+\textbf{Nota:} las credenciales suelen expirar a la hora por tanto, una vez expiradas el usuario no podrá acceder a la aplicación, al menos que se actualicen. Una forma de automatizar esto es que en cada inicio de sesión
+se restablezcan las credenciales, por eso añadimos dos campos mas a la variable FLOW, que son el \textbf{access-type='offline'} y \textbf{approval-prompt='force'} con esto logramos forzar el refresco de
 credenciales una vez estas caduquen.
 
 
 \section{Creación de Usuarios}
 \label{4:sec5}
 
-Una vez definida la primera aproximación del modelo de datos que vamos a emplear en la aplicación, empezamos con la creacion de la app de socios que va a gestionar todo lo referente a la información de los socios de 
+Una vez definida la primera aproximación del modelo de datos que vamos a emplear en la aplicación, empezamos con la creación de la app de socios que va a gestionar todo lo referente a la información de los socios de 
 la organización.\\
 
-Esta tarea era simple pero tediosa a la hora de realizar templates, formularios, etc, para que luego en la vista de la app de socios por medio de diferentes llamadas POST, se fueran contruyendo los objetos necesarios
-para la creacion de un nuevo socio, cada objeto almacenaba un tipo de información especifica segun el modelo de datos. Por tanto un extracto de lo que seria el modelo de datos y la sintaxis se refleja en el Listado \ref{cod:modelo}.\\
+Esta tarea era simple pero tediosa a la hora de realizar plantillas, formularios, etc, para que luego en la vista de la app de socios por medio de diferentes llamadas POST, se fueran construyendo los objetos necesarios
+para la creación de un nuevo socio, cada objeto almacenaba un tipo de información especifica según el modelo de datos. Por tanto un extracto de lo que seria el modelo de datos y la sintaxis se refleja en el Listado \ref{cod:modelo}.\\
 
 \lstinputlisting[caption={Extracto del modelo de datos de la aplicación}, label={cod:modelo}]{codes/model_socio.py}
 
-El modelo esta compuesto por 8 tablas, debido a que no se pueden establecer relaciones en la base de datos de tipo no relacional, la unica forma de en cierto modo comunicar/unir una tabla con otra,
-es con claves foraneas(ForeignKey), de esta manera podremos asociar las tablas que nos interesen de manera unidimensional.\\
+El modelo esta compuesto por 8 tablas, debido a que no se pueden establecer relaciones en la base de datos de tipo no relacional, la única forma de en cierto modo comunicar/unir una tabla con otra,
+es con claves foráneas(ForeignKey), de esta manera podremos asociar las tablas que nos interesen de manera unidimensional.\\
 
-Cada tabla posee un nombre caracteristico que define para que se usa y el tipo de información que guarda, se dejo elaborada aunque no se usa todavía la tabla de \textbf{Autorizaciones} para que en un futuro los socios almacenen ahí las posibles autorizaciones/permisos
-cuando se realice una excursión, uso de fotografias de manera pública, etc.\\
+Cada tabla posee un nombre característico que define para que se usa y el tipo de información que guarda, se dejo elaborada aunque no se usa todavía la tabla de \textbf{Autorizaciones} para que en un futuro los socios almacenen ahí las posibles autorizaciones/permisos
+cuando se realice una excursión, uso de fotografías de manera pública, etc.\\
 
-Retomando a la creación de usuarios es necesario rellenar todos los campos importantes de cada objecto para conservar la integridad de la base datos. Los formularios comprueban que esto se cumpla y al finalizar lo manda como un POST
+Retomando a la creación de usuarios es necesario rellenar todos los campos importantes de cada objeto para conservar la integridad de la base datos. Los formularios comprueban que esto se cumpla y al finalizar lo manda como un POST
 al servidor donde es procesado y si todo esta correcto se guarda en la base de datos.\\
 
 Por otro lado en la carpeta \textbf{templates/socios} están todos los archivos .html que se usan para la interacción del usuario desde el cliente con el servidor, las plantillas que se usan para la creación de usuario se distinguen por 
@@ -237,12 +237,12 @@ Un proceso similar al de creación de usuarios se implementó para la modificaci
 y variables que se pasaban de la vista a la plantilla para autocompletar los campos de los formularios con los datos del socio, de esta forma si se va a editar un campo en concreto no es necesario rellenar 
 todos los campos restantes.\\
 
-Los archivos de templates relacionados con la edición de datos de los usuarios se caracterizan por tener la siguiente nomenclatura \textbf{f-edit-[nombreTabla]}
+Los archivos de plantillas relacionados con la edición de datos de los usuarios se caracterizan por tener la siguiente nomenclatura \textbf{f-edit-[nombreTabla]}
 \section{Listados de información}
 \label{4:sec7}
-Se implementaron dos formas de visualizar los datos de los socios, la más simple es una vez obtenido el ID del socio, se accede a las páginas de información del socio, donde cada template esta enfocada a una determinada tabla
+Se implementaron dos formas de visualizar los datos de los socios, la más simple es una vez obtenido el ID del socio, se accede a las páginas de información del socio, donde cada plantilla esta enfocada a una determinada tabla
 del modelo de datos, de esta forma los datos los clasificaríamos en personales, económicos, médicos y familiares. En la vista (Listado \ref{cod:economicos_py}) lo único que se hace es volcar los datos del socio a la plantilla 
-(Listado \ref{cod:economicos_html}), que es la que se encarga de la visualización de los repectivos datos.
+(Listado \ref{cod:economicos_html}), que es la que se encarga de la visualización de los receptivos datos.
 
 \lstinputlisting[caption={Vista que gestiona la visualización de los datos económicos}, label={cod:economicos_py}]{codes/datos_economicos.py}
 
@@ -251,7 +251,7 @@ del modelo de datos, de esta forma los datos los clasificaríamos en personales,
 Por otro lado para tener un vistazo general de los socios, se elaboró una tabla donde se listan todos los socios mostrando sus datos acorde con el listado en el que se esté, es decir existen varios listados para representar los 
 datos de los socios, listados de datos personales, económicos, etc.\\
 
-Para el formato de la tabla se encontro un widget con la  apariencia de bootstrap para mantener la escencia de la interfaz visual, en cuyas tablas se pueden
+Para el formato de la tabla se encontró un widget con la  apariencia de Bootstrap para mantener la esencia de la interfaz visual, en cuyas tablas se pueden
 realizar ordenaciones, filtrados y exportaciones que describirán detalladamente en los siguientes apartados.
 
 \section{Filtrado de tablas}
@@ -260,7 +260,7 @@ Para poder utilizar las funciones de filtrado y ordenaciones en los listados, er
 
 \lstinputlisting[language=html,basicstyle=\scriptsize,caption={Configuración de la plantilla para usar el widget Tablesorter}, label={cod:script_tablesorter}]{codes/script_tablesorter.html}
 
-En la zona comentada de cada script se nombra para que se utiliza cada uno. Ademas de estos script es necesario introducir una función en Javascript que nos  proporciona el propio widget donde se especifican la configuracion de 
+En la zona comentada de cada script se nombra para que se utiliza cada uno. Además de estos script es necesario introducir una función en Javascript que nos  proporciona el propio widget donde se especifican la configuración de 
 tabla, como el tema de apariencia, los filtros, paginación etc.\\
 
 Posteriormente la sintaxis de la tabla se muestra en el Listado \ref{cod:sintaxis_tabla}.\\
@@ -273,8 +273,8 @@ Posteriormente la sintaxis de la tabla se muestra en el Listado \ref{cod:sintaxi
 Para poder llevar las exportaciones a Google Drive primero que nada se tiene que establecer un permiso entre el  usuario, la aplicación y la API de Google Drive para poder utilizar el servicio. Esto con las credenciales que se han
 comentado en la sección de \textbf{Inicio de Sesión}, añadiendo en el campo de \textbf{scope} la ruta al servicio Drive antes de generar la credencial.\\
 
-Ahora bien, los filtrados de los listados se realizan sobre la template en el cliente, por tanto si quieremos exportar una listado filtrado tenermos que en cierto modo, realizar el filtrado en el lado del servidor.
-Esto se logro modificando los archivos del \textbf{tablesorter} para que cuando generara la tabla, cada input de filtrado tenga un nombre (\textbf{name}), el cual se utiliza cuando se realiza una llamada POST, para poder obtener los parametros de filtrado.
+Ahora bien, los filtrados de los listados se realizan sobre la plantilla en el cliente, por tanto si queremos exportar una listado filtrado tenemos que en cierto modo, realizar el filtrado en el lado del servidor.
+Esto se logro modificando los archivos del \textbf{tablesorter} para que cuando generara la tabla, cada input de filtrado tenga un nombre (\textbf{name}), el cual se utiliza cuando se realiza una llamada POST, para poder obtener los parámetros de filtrado.
 y realizar el filtrado directamente con el modelo de datos.\\
 
 Una vez realizado esto, nos queda el paso intermedio para poder exportar los datos a Google Drive, ya que para exportar necesitamos crear un fichero de extensión .csv para que la API de Google Drive lo interprete y lo procese.
@@ -304,7 +304,7 @@ Por otro lado tenemos el formato del fichero de la base de datos que estaba en f
 en el formato .csv separado por comas, ya que había una herramienta llamada \textbf{MDB Tools} que convertía los ficheros accecc en csv.
 
 Una vez obtenido el fichero csv, se implemento un mecanismo para subir el fichero a la aplicación sin que este se guardara en el servidor, sino que sólo estuviera ahí mientras se este procesando. De modo que se creo 
-una nueva app llamada \textbf{upload} especificamente para este proceso.\\
+una nueva app llamada \textbf{upload} específicamente para este proceso.\\
 
 Esta app tiene un fichero \textbf{forms.py} (Listado \ref{cod:form_upload}) que contiene el formato del form para datos de tipo fichero (FileField).\\
 
@@ -314,7 +314,7 @@ Esto lo procesa la plantilla y posteriormente con la llamada de POST se envía e
 \bigskip
 \lstinputlisting[caption={Ejemplo de listado desde archivo}, label={cod:transformacion_fichero}]{codes/transformacion_fichero.py}
 
-Después se procesa casilla a casilla el array y se introducen los datos en la base de datos, siempre cuidando la integridad de la base de datos, de modo que no queden ambiguedades, ni campos vacios que sean importantes 
+Después se procesa casilla a casilla el array y se introducen los datos en la base de datos, siempre cuidando la integridad de la base de datos, de modo que no queden ambigüedades, ni campos vacíos que sean importantes 
 en cada tabla del modelo.\\
 
 \section{Calidad de Código: Pylint y Pymetrics}

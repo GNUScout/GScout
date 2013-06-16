@@ -9,7 +9,7 @@ nombrado sus herramientas, actividades y periodos de desarrollo. Ahora nos vamos
 entorno de desarrollo de la aplicación\\
 
 Partimos de una implementación en PHP (GNU Scout \cite{URL:GNUscout}), que poseía las funcionalidades básicas, pero el problema era que la base de datos
-no era compatile con nuestra tecnología, debido a que seguía el model entidad-relación, y nosotros al contrario, necesitábamos
+no era compatible con nuestra tecnología, debido a que seguía el modelo entidad-relación, y nosotros al contrario, necesitábamos
 crear una base de datos no relacional. Por otro lado teníamos de ejemplo la aplicación web \textbf{online scout manager} \cite{URL:OnlineScoutManager}, la cual era muy completa
 pero era de pago, y nuestro objetivo era hacer una aplicación gratuita adaptada al cliente, en nuestro caso la organización de scout Aguere 70 de La Laguna.
 
@@ -21,14 +21,14 @@ pero era de pago, y nuestro objetivo era hacer una aplicación gratuita adaptada
 
 La aplicación GScout esta programada principalmente en lenguaje Python, bajo el framework de Django-nonrel,  
 ya que como se ha comentado antes se necesitaba este framework especifico para trabajar con bases de datos no relacionales,
-debido a que usamos Google App Engine para el despliegue. Por lo cual unn requerimiento que tiene esta tecnologia es que solo trabaja con
-bases de datos no relacionales. En un principio se habia propuesto el uso de pivotaltracker para el seguimiento del desarrollo de la aplicación, 
-pero como sólo habia un desarrollador en proceso, pues se descartó la idea y se limito a tener un repositorio gestor de versiones por medio de
-GitHub, donde se van guardando los cambios oportunos, y segun la información de los ``commit'' se puede ver lo que se ha hecho.\\
+debido a que usamos Google App Engine para el despliegue. Por lo cual un requerimiento que tiene esta tecnología es que solo trabaja con
+bases de datos no relacionales. En un principio se había propuesto el uso de PivotalTracker para el seguimiento del desarrollo de la aplicación, 
+pero como sólo había un desarrollador en proceso, pues se descartó la idea y se limito a tener un repositorio gestor de versiones por medio de
+GitHub, donde se van guardando los cambios oportunos, y seguí la información de los ``commit'' se puede ver lo que se ha hecho.\\
 
-Por otro lado el desarrollo del proyecto fue basado en metedologias agiles, en el cual se realizaban una serie de iteraciones compuestas por diferentes fases, como 
-las de planificación, análisis de requerimientos, diseño codificación, etc. De modo que al finalizar cada iteración se realizaba una evaluación y se repetia el ciclo una y otra vez,
-con el fin de elaborar un producto que cumpla las espectativas y necesidades del cliente.\\
+Por otro lado el desarrollo del proyecto fue basado en metodologías ágiles, en el cual se realizaban una serie de iteraciones compuestas por diferentes fases, como 
+las de planificación, análisis de requerimientos, diseño codificación, etc. De modo que al finalizar cada iteración se realizaba una evaluación y se repetía el ciclo una y otra vez,
+con el fin de elaborar un producto que cumpla las expectativas y necesidades del cliente.\\
 
 \section{Arquitectura Software}
 \label{2:sec2}
@@ -48,12 +48,12 @@ Pero para entender este modelo primero tenemos tener claro lo que es el modelo v
   \item \textbf{Vista}: Decide cómo se va a mostrar la información. 
 \end{itemize}
 
-Visto esto el modelo template vista funciona de la siguiente manera:\\
+Visto esto el modelo Template-Vista funciona de la siguiente manera:\\
 
 
 \begin{itemize}
   \item \textbf{Modelo}: Cumple la misma función que en el modelo anterior.
-  \item \textbf{Template}: Es basicamente un archivo html que tiene como objetivo mostrar las respuestas enviadas por la vista.
+  \item \textbf{Template}: Es básicamente un archivo html que tiene como objetivo mostrar las respuestas enviadas por la vista.
   \item \textbf{Vista}: La vista tiene como objetivo recibir el requerimiento que es enviado por el navegador, procesar la información,
 			 si es necesario realizar una petición al modelo para extraer un valor de base de datos entre otras funcionalidades, para posiblemente
 			 devolver una respuesta a la template.
@@ -62,11 +62,11 @@ Visto esto el modelo template vista funciona de la siguiente manera:\\
 
 \subsection{Django}
 Django es un framework de desarrollo web de código abierto, escrito en Python, que cumple en cierta medida el paradigma del Modelo Vista Controlador, 
-pero especificamente el modelo que usa es el Modelo Template View. Fue desarrollado en origen para gestionar varias páginas orientadas a noticias de la World Company de Lawrence, Kansas, 
+pero específicamente el modelo que usa es el Modelo Template View. Fue desarrollado en origen para gestionar varias páginas orientadas a noticias de la World Company de Lawrence, Kansas, 
 y fue liberada al público bajo una licencia BSD en julio de 2005; el framework fue nombrado en alusión al guitarrista de jazz gitano Django Reinhardt.\\
 
 En la aplicación se usa una variante de este framework, \textbf{Django-nonrel}, debido a que la aplicación necesita gestionar una base de datos no relacional por requerimientos
-de la propia tecnologia Googgle App Engine, cosa que la versión normal de Django no soporta.
+de la propia tecnología Googgle App Engine, cosa que la versión normal de Django no soporta.
 
 
 
@@ -108,12 +108,12 @@ En la aplicación se usaron dos APIs de Google para aumentar y mejorar su funcio
 \subsubsection{Google Plus}
 Como GAE ya posee un modulo de autenticación por medio de Google Auth,
 en el proyecto se modifico para que se hiciera por medio de Google Plus, generando unas credenciales que se guardaran en el usuarios
-para que la aplicaccion pueda tener determinados permisos y poder obtener información que proporciona Google Plus. El objetivo de la incorporación de esta 
+para que la aplicación pueda tener determinados permisos y poder obtener información que proporciona Google Plus. El objetivo de la incorporación de esta 
 API a nuestra aplicación es evitar almacenar datos personales de los integrantes de la organización que usa la aplicación en una base de datos, sino usar directamente los
-datos que nos proporciona Google Plus, como nombre, apellidos, foto de perfíl, dirección, etc.
+datos que nos proporciona Google Plus, como nombre, apellidos, foto de perfil, dirección, etc.
 
 \subsubsection{Google Drive}
-Uno de los objetivos de la aplicación en cuanto a funcionalidad era poder exportar una tabla filtrada o no con los datos de los socios, como estamos utilizando tecnologia Google,
+Uno de los objetivos de la aplicación en cuanto a funcionalidad era poder exportar una tabla filtrada o no con los datos de los socios, como estamos utilizando tecnología Google,
 decidimos que la mejor forma era utilizar la API de Google Drive, para crear documentos en formato de hoja de calculo en el entorno de Google Drive. Para ello fue necesario
 modificar las credenciales que se almacenaban en los usuarios, para darle permiso y poder utilizar las funciones que nos proporciona dicha API.
 
@@ -122,7 +122,7 @@ modificar las credenciales que se almacenaban en los usuarios, para darle permis
 GitHub es un software para alojar proyectos utilizando el sistema de control de versiones Git. 
 El código se almacena de forma pública, aunque también se puede hacer de forma privada, creando una cuenta de pago.\\
 
-Nuestra aplicación esta alojada en un repertorio público, cuyo repertorio se facilitara en la sección de enlances.
+Nuestra aplicación esta alojada en un repertorio público, cuyo repertorio se facilitara en la sección de enlaces.
 
 \subsection{Dinamismo en las plantillas: JavaScript y JQuery}
 
@@ -133,7 +133,7 @@ la interfaz de usuario y páginas web dinámicas, en bases de datos locales al n
 
 \subsubsection{JQuery}
 jQuery es una biblioteca de JavaScript, creada inicialmente por John Resig, que permite simplificar la manera de interactuar con los documentos HTML,
-manipular el árbol DOM, manejar eventos, desarrollar animaciones (FLV) y agregar interacción con la técnica AJAX a páginas web. Cuyas caracteristicas son:
+manipular el árbol DOM, manejar eventos, desarrollar animaciones (FLV) y agregar interacción con la técnica AJAX a páginas web. Cuyas características son:
 
 \begin{itemize}
   \item Selección de elementos DOM.
@@ -151,7 +151,7 @@ manipular el árbol DOM, manejar eventos, desarrollar animaciones (FLV) y agrega
 \subsection{Apariencia de la Aplicación: CSS y Bootstrap}
 
 
-Para generar el estilo de nuestra aplicación utilizamos las tecnologías que se descriran a continuación.
+Para generar el estilo de nuestra aplicación utilizamos las tecnologías que se describirán a continuación.
 
 \subsubsection{CSS (Hojas de estilo)}
 Las hojas de estilo en cascada (Cascading Style Sheets, o sus siglas CSS) hacen referencia a un 
@@ -172,4 +172,4 @@ Con el uso de este tipo de herramientas hacemos que nuestro código tenga mayor 
 Pylint es una herramienta que básicamente tiene como función analizar código Python en busca de errores o síntomas de mala calidad en el código fuente.\\ 
 
 \subsubsection{Pymetrics}
-Pymetrics es similar a la herramienta nombrada anteriormente pero esta calcula la complejidad que posee cada función dentro del archivo con código python que analiza.\\
+Pymetrics es similar a la herramienta nombrada anteriormente pero esta calcula la complejidad que posee cada función dentro del archivo con código Python que analiza.\\
