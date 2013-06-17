@@ -5,11 +5,11 @@
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 En el capítulo anterior se han introducido tanto los antecedentes como el estado actual del proyecto, 
-nombrado sus herramientas, actividades y periodos de desarrollo. Ahora nos vamos enfocar y describir lo que es el
-entorno de desarrollo de la aplicación\\
+se nombraron sus herramientas, actividades y periodos de desarrollo. Ahora nos vamos enfocar y describir lo que es el
+entorno de desarrollo de la aplicación.\\
 
 Partimos de una implementación en PHP (GNU Scout \cite{URL:GNUscout}), que poseía las funcionalidades básicas, pero el problema era que la base de datos
-no era compatible con nuestra tecnología, debido a que seguía el modelo entidad-relación, y nosotros al contrario, necesitábamos
+no era compatible con nuestra tecnología (Google App Engine), debido a que seguía el modelo entidad-relación, y nosotros al contrario, necesitábamos
 crear una base de datos no relacional. Por otro lado teníamos de ejemplo la aplicación web \textbf{online scout manager} \cite{URL:OnlineScoutManager}, la cual era muy completa
 pero era de pago, y nuestro objetivo era hacer una aplicación gratuita adaptada al cliente, en nuestro caso la organización de scout Aguere 70 de La Laguna.
 
@@ -21,10 +21,12 @@ pero era de pago, y nuestro objetivo era hacer una aplicación gratuita adaptada
 
 La aplicación GScout esta programada principalmente en lenguaje Python, bajo el framework de Django-nonrel,  
 ya que como se ha comentado antes se necesitaba este framework especifico para trabajar con bases de datos no relacionales,
-debido a que usamos Google App Engine para el despliegue. Por lo cual un requerimiento que tiene esta tecnología es que solo trabaja con
-bases de datos no relacionales. En un principio se había propuesto el uso de PivotalTracker para el seguimiento del desarrollo de la aplicación, 
-pero como sólo había un desarrollador en proceso, pues se descartó la idea y se limito a tener un repositorio gestor de versiones por medio de
-GitHub, donde se van guardando los cambios oportunos, y seguí la información de los ``commit'' se puede ver lo que se ha hecho.\\
+debido a que usamos Google App Engine para el despliegue, y esta tecnología tiene como requerimiento que solo trabaja con
+bases de datos no relacionales. \\
+
+En un principio se había propuesto el uso de PivotalTracker para el seguimiento del desarrollo de la aplicación, 
+pero como sólo había un desarrollador en proceso, se descartó la idea y se limito a tener un repositorio gestor de versiones por medio de
+GitHub, donde se van guardando los cambios oportunos, y siguiendo la información de los ``commit'' se puede ver lo que se ha hecho.\\
 
 Por otro lado el desarrollo del proyecto fue basado en metodologías ágiles, en el cual se realizaban una serie de iteraciones compuestas por diferentes fases, como 
 las de planificación, análisis de requerimientos, diseño codificación, etc. De modo que al finalizar cada iteración se realizaba una evaluación y se repetía el ciclo una y otra vez,
@@ -48,14 +50,14 @@ se deriva de la forma en la que está implementada el framework de Django. Por e
   \item \textbf{Vista}: Decide cómo se va a mostrar la información. 
 \end{itemize}
 
-Visto esto el modelo Template-Vista funciona de la siguiente manera:\\
+Visto esto, el modelo Template-Vista funciona de la siguiente manera:\\
 
 
 \begin{itemize}
   \item \textbf{Modelo}: Cumple la misma función que en el modelo anterior.
   \item \textbf{Template}: Es básicamente un archivo html que tiene como objetivo mostrar las respuestas enviadas por la vista.
   \item \textbf{Vista}: La vista tiene como objetivo recibir el requerimiento que es enviado por el navegador, procesar la información,
-			 si es necesario realizar una petición al modelo para extraer un valor de base de datos entre otras funcionalidades, para posiblemente
+			 si es necesario realizar una petición al modelo para extraer un valor de la base de datos, entre otras funcionalidades, para posiblemente
 			 devolver una respuesta a la template.
 \end{itemize}
 
@@ -107,7 +109,7 @@ En la aplicación se usaron dos APIs de Google para aumentar y mejorar su funcio
 
 \subsubsection{Google Plus}
 Como GAE ya posee un modulo de autenticación por medio de Google Auth,
-en el proyecto se modifico para que se hiciera por medio de Google Plus, generando unas credenciales que se guardaran en el gestor de usuarios
+en el proyecto fue necesario modificarlo para que se hiciera por medio de Google Plus, generando unas credenciales que se guardaran en el gestor de usuarios
 para que la aplicación pueda tener determinados permisos y poder obtener información que proporciona Google Plus. El objetivo de la incorporación de esta 
 API a nuestra aplicación es evitar almacenar datos personales de los integrantes de la organización que usa la aplicación en una base de datos, sino usar directamente los
 datos que nos proporciona Google Plus, como nombre, apellidos, foto de perfil, dirección, etc.
@@ -122,11 +124,11 @@ modificar las credenciales que se almacenaban en los usuarios, para darle permis
 GitHub es un software para alojar proyectos utilizando el sistema de control de versiones Git. 
 El código se almacena de forma pública, aunque también se puede hacer de forma privada, creando una cuenta de pago.\\
 
-Nuestra aplicación esta alojada en un repositorio público, se facilitara en la sección de enlaces.
+Nuestra aplicación esta alojada en un repositorio público que se facilitara en la sección de bibliografía.
 
 \subsection{Dinamismo en las plantillas: JavaScript y JQuery}
 
-En ocasiones es necesario crear dinamismo en las plantillas, para que el usuario pueda desenvolverse mejor con la interfaz de la aplicación, esto los conseguimos con las dos
+En ocasiones es necesario crear dinamismo en las plantillas, para que el usuario pueda desenvolverse mejor con la interfaz de la aplicación, esto los conseguimos con el uso de las dos
 tecnologías siguientes, JavaScript y jQuery, que además de mejorar la usabilidad de la aplicación, descargan parte de la funcionalidad de la aplicación en el navegador, 
 liberando de esta manera al servidor de algunas tareas. A continuación de describirá cada una de estas tecnologías.\\
 
@@ -171,7 +173,7 @@ formularios, botones, gráficos, barras de navegación y demás componentes de i
 \section{Herramientas para Calidad de Código}
 \label{2:sec4}
 
-Con el uso de este tipo de herramientas hacemos que nuestro código tenga mayor calidad y sea mas legible por lo demás desarrolladores. En este proyecto se usaron las siguiente:\\
+Con el uso de este tipo de herramientas hacemos que nuestro código tenga mayor calidad y sea mas legible por lo demás desarrolladores. En este proyecto se usaron las siguientes:\\
 \subsubsection{Pylint}
 Pylint es una herramienta que básicamente tiene como función analizar código Python en busca de errores o síntomas de mala calidad en el código fuente.
 Cabe destacar que por omisión, la guía de estilo a la que se trata de apegar Pylint es la descrita en el PEP-8 \cite{URL:PEP8}.\\ 
@@ -234,4 +236,4 @@ Entre la serie de revisiones que hace Pylint al código fuente se encuentran las
 \end{itemize}
 
 \subsubsection{Pymetrics}
-Pymetrics es similar a la herramienta nombrada anteriormente pero esta calcula la complejidad que posee cada función dentro del archivo con código Python que analiza.\\
+Pymetrics es similar a la herramienta nombrada anteriormente, produce indicadores para los programas en Python. Estos indicadores incluyen  el indicador de \textbf{Complejidad Ciclomática de McCabe} \cite{URL:McCabe}.

@@ -23,8 +23,8 @@ body = {
 }
 
 # Finalmente se llama al servicio de drive_service al cual le pasamos por 
-# parametros body, mediabody que tendra el contenido y convert=True para 
-# obligar la conversion del fichero.
+# parametros body, mediabody (que tendra el contenido del fichero) y 
+# convert=True para obligar la conversion del fichero.
 file = drive_service.files().insert(body=body, \
                                     media_body=media_body, \
                                     convert="true").execute()

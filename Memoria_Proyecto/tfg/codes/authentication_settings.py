@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
-.
 .  
 
 INSTALLED_APPS = (
-    .
-    .              
+    .            
     'plus',
     'gaeauth',
     'djangoappengine',

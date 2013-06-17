@@ -4,6 +4,10 @@
 {Bootstrap}.
 \newblock http://twitter.github.io/bootstrap/.
 
+\bibitem{URL:McCabe}
+{Complejidad Ciclomática de McCabe}.
+\newblock http://cnx.org/content/m17455/latest/.
+
 \bibitem{URL:DjangoNonrel}
 {Django-nonrel con Google App Engine}.
 \newblock http://www.allbuttonspressed.com/projects/djangoappengine.

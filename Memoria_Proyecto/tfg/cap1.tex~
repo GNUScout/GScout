@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 El objetivo de este proyecto es desarrollar una aplicación para la gestión de un grupo
  Scout. La aplicación deberá gestionar a los chicos asociados al grupo y mantener su 
-información personal, incluyendo familiares, datos bancarios y médicos. 
+información personal, incluyendo familiares, datos bancarios y médicos.  \\
 
 La tecnología principal usada se basa en aplicaciones web con un entorno de desarrollo de alto
 nivel, en nuestro caso con el Framework de Django, y también con implantación en la nube, gracias a 
@@ -14,14 +14,14 @@ Google App Engine.
 El Escultismo es un movimiento educativo fundado en el año 1907 por Baden Powell en Inglaterra
 e instalado en España en 1912. Su misión es dejar este mundo mejor de como lo encontramos,
 una misión que es posible gracias a una gran labor diaria y educativa que realizan de manera
-voluntaria jóvenes de todo el mundo.
+voluntaria jóvenes de todo el mundo.\\
 
 Hoy en día se pueden encontrar páginas web de organizaciones de grupos Scout,  pero la mayoría
 son simplemente para uso informativo y darse a conocer, como es el caso del grupo Aguere 70, que carece de
 una aplicación para la gestión de los propios Scouts con sus tareas, que es en lo que se enfocó este proyecto. Existe
 una implementación, ya desactualizada, basada en tecnología PHP para las funciones básicas en la gestión de grupos
 Scout: GNU Scout [1]. Esta implementación aunque no fue usada, sirvió para darnos una idea general
-de como enfocar nuestra aplicación.
+de como enfocar nuestra aplicación.\\
 
 De modo que creamos una aplicación en la nube utilizando una versión de Django adaptada a Google 
 App Engine, un servicio de alojamiento web que permite desarrollar aplicaciones online sin 
@@ -33,7 +33,7 @@ tareas de gestión y administración de sistemas.
 \section{Características de la Aplicación}
 \label{1:sec:2}
 
-La aplicación esta creada para la gestión de socios Scout, donde se podrá interactuar con datos relevantes de los socios, en el Capítulo \ref{chapter:tres}
+La aplicación esta creada para la gestión de socios Scout, donde se podrá interactuar con datos relevantes de los socios. En el Capítulo \ref{chapter:tres}
 se describe toda la funcionalidad de la aplicación, al igual que nos enseña como usarla.\\
 
 En cuando al entorno de desarrollo tenemos como resumen el siguiente listado de tecnologías que se usaron en el desarrollo de la aplicación:\\
@@ -50,7 +50,7 @@ En cuando al entorno de desarrollo tenemos como resumen el siguiente listado de 
   
 \end{itemize}
 En el Capítulo ~\ref{chapter:dos}, se profundizará en la descripción de las tecnologías empleadas en el proyecto y en el Capítulo \ref{chapter:cuatro} 
-veremos como se emplearon estas tecnologías y por que motivo usaron en la aplicación GScout.\\
+veremos como se emplearon estas tecnologías y por que motivo se usaron en la aplicación GScout.\\
 
 %---------------------------------------------------------------------------------
 \section{Actividades}
@@ -78,7 +78,7 @@ estrategia de branching.
 \hline
 
 Tarea 4 &
-Definir u proyecto en Pivotal tracker para el seguimiento del proyecto. Esta herramienta
+Definir un proyecto en Pivotal Tracker para el seguimiento del proyecto. Esta herramienta
 facilita el desarrollo siguiendo metodologías ágiles.
 \\
 \hline

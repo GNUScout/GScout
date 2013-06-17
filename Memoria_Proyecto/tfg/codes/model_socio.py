@@ -2,7 +2,8 @@ from django.db import models
      
 
 class Socio(models.Model):
-    n_asociado=models.CharField(max_length=100, primary_key=True, unique=True)
+    n_asociado=models.CharField(max_length=100, primary_key=True, 
+                                unique=True)
     alta=models.BooleanField()
     autorizaciones=models.ForeignKey(Autorizaciones, null=True)
     familia_id=models.ForeignKey(Familia,null=True)     
