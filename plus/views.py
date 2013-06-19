@@ -29,13 +29,13 @@ from oauth2client.client import OAuth2WebServerFlow
 CLIENT_SECRETS = os.path.join(os.path.dirname(__file__), '..', 'client_secrets.json')
 
 FLOW = OAuth2WebServerFlow (
-    client_id ='480482329789-dj8a6lggtm9cpml3oib7imbvs3b9fv4q.apps.googleusercontent.com',
-    client_secret = 'C5umC7xa_ML704wnmdT79Bh0',
+    client_id ='33789728665.apps.googleusercontent.com',
+    client_secret = 'eWgcclK9HuQngg3rXbojztbQ',
     token_uri='https://accounts.google.com/o/oauth2/token',
     scope= ['https://www.googleapis.com/auth/drive','https://www.googleapis.com/auth/plus.me'],
     #scope='https://www.googleapis.com/auth/plus.me',
     #oauth_scope= 'https://www.googleapis.com/auth/drive',
-    redirect_uri= 'http://ctstprueba.appspot.com/oauth2callback',
+    redirect_uri= 'https://gscoutaguere70.appspot.com/oauth2callback',
     access_type='offline',
     approval_prompt='force')
 
