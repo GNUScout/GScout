@@ -33,8 +33,7 @@ FLOW = OAuth2WebServerFlow (
     client_secret = 'eWgcclK9HuQngg3rXbojztbQ',
     token_uri='https://accounts.google.com/o/oauth2/token',
     scope= ['https://www.googleapis.com/auth/drive','https://www.googleapis.com/auth/plus.me'],
-    #scope='https://www.googleapis.com/auth/plus.me',
-    #oauth_scope= 'https://www.googleapis.com/auth/drive',
+    # en redirect_uri cuando se realicen pruebas en local usar http://localhost:8000/oauth2callback   
     redirect_uri= 'https://gscoutaguere70.appspot.com/oauth2callback',
     access_type='offline',
     approval_prompt='force')
