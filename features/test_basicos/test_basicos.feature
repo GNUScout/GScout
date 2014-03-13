@@ -9,3 +9,6 @@
 
        Escenario: Comprobar la existencia del fichero de configuración app.yaml para appengine
           Entonces comprobamos la existencia del fichero "app.yaml" con la función stat de python
+  
+       Escenario: Comprobar la existencia del fichero Readme 
+          Entonces comprobamos la existencia del fichero "README.md" con la función stat de python
