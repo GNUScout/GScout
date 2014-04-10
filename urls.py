@@ -6,14 +6,9 @@ from django.conf import settings
 handler500 = 'djangotoolbox.errorviews.server_error'
 
 urlpatterns = patterns('',
-    ('^_ah/warmup$', 'djangoappengine.views.warmup'),
-    (r'^accounts/', include('gaeauth.urls')),
-    ('^$', 'empleados.views.index'),
-    
-    (r'^prueba/', 'plus.views.index'),
-    (r'^oauth2callback', 'plus.views.auth_return'),
+    ('^$', 'socios.views.index'),
     (r'^socios/', include('socios.urls')), 
-    (r'^upload/', include('upload.urls')), 
+    #(r'^upload/', include('upload.urls')), 
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs'
     # to INSTALLED_APPS to enable admin documentation:

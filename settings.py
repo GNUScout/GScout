@@ -3,16 +3,21 @@
 # Initialize App Engine and import the default settings (DB backend, etc.).
 # If you want to use a different backend you have to remove all occurences
 # of "djangoappengine" from this file.
-from djangoappengine.settings_base import DATABASES
+import os.path
 
-import os
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
+DATABASES = {
+   'default': {
+      'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+      'NAME': '',                      # Or path to database file if using sqlite3.
+      'USER': '',                      # Not used with sqlite3.
+      'PASSWORD': '',                  # Not used with sqlite3.
+      'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+      'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+   }
+}
 
-
-# Activate django-dbindexer for the default database
-DATABASES['native'] = DATABASES['default']
-DATABASES['default'] = {'ENGINE': 'dbindexer', 'TARGET': 'native'}
-AUTOLOAD_SITECONF = 'indexes'
 
 SECRET_KEY = '=r-$b*8hglm+858&9t043hlm6-&6-3d3vfc4((7yd0dbrakhvi'
 
@@ -21,29 +26,19 @@ SITE_ID = 1
 DEBUG = True
 
 
-
-
 INSTALLED_APPS = (
     #'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.auth',
     'django.contrib.sessions',
     'djangotoolbox',
-    'autoload',
-    'dbindexer',
-    'plus',
-    'gaeauth',
+    'django.contrib.staticfiles',
     'socios',
-    'empleados',
-    'djangoappengine',
-    'upload',
     
+       
 )
 
 MIDDLEWARE_CLASSES = (
-    # This loads the index definitions, so it has to come first
-    'autoload.middleware.AutoloadMiddleware',
-
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -54,6 +49,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.request',
     'django.core.context_processors.media',
+    'django.core.context_processors.static', 
+)
+
+AUTHENTICATION_BACKENDS = (
   
 )
    
@@ -62,15 +61,15 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 TEST_RUNNER = 'djangotoolbox.test.CapturingTestSuiteRunner'
 
 ADMIN_MEDIA_PREFIX = '/media/admin/'
-TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'templates'),)
+TEMPLATE_DIRS = os.path.join(PROJECT_ROOT, 'templates')  
 
 ROOT_URLCONF = 'urls'
 
-AUTHENTICATION_BACKENDS = (
-      'gaeauth.backends.GoogleAccountBackend',
+STATIC_URL = '/static/'
+
+STATIC_ROOT = ''
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
 )
-ALLOWED_DOMAINS = ('dsic.ull.es', 'gruposcoutaguere70.org',)
-
-
-
 

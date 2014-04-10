@@ -28,6 +28,12 @@ import re
 import unicodedata
 
 
+def index(request):
+   return render_to_response('intro.html')
+
+def login(request):
+   return render_to_response('en vista login')
+
 
 @csrf_protect
 def newPersonal(request):

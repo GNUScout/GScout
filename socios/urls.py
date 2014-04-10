@@ -4,7 +4,8 @@
 from django.conf.urls.defaults import patterns
 from socios.views import *
 
-urlpatterns = patterns('',
+urlpatterns = patterns('', 
+   ('^login/',login),
    ('^new/', 'django.views.generic.simple.direct_to_template',
      {'template': 'socios/f_asociado.html'}),
    ('^search/', 'django.views.generic.simple.direct_to_template',
