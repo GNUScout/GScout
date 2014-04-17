@@ -1,0 +1,23 @@
+{% extends "base2.html" %}
+
+{% block title %} GSCout {% endblock %}
+   <ul>
+      {% block greeting %}
+
+         {% if user.is_authenticated %}
+            <h1>Welcome, {{ user.username }}. Thanks for logging in.</h1>
+            <li><a href="/LogOut/">Logout</a></li>
+         {% else %}
+            <h1>Welcome,new user. Please log in.</h1>
+         {% endif %}
+   
+      {% endblock %}
+
+    {% block sidebar %}
+            <li><a href="/LogIn/">Entrar</a></li>
+            <li><a href="/SignUp/">Registrarse</a></li>
+    {% endblock %}
+  <ul>
+{% block content %}
+
+{% endblock %}

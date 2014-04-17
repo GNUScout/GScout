@@ -1,6 +1,17 @@
-"""models.py de la app socios"""
-
 from django.db import models
+from django.contrib.auth.models import User
+
+class UserProfile(models.Model):
+    # This line is required. Links UserProfile to a User model instance.
+    user = models.OneToOneField(User)
+
+    # The additional attributes we wish to include.
+    website = models.URLField(blank=True)
+    #picture = models.ImageField(upload_to='profile_images', blank=True)
+
+    # Override the __unicode__() method to return out something meaningful!
+    def __unicode__(self):
+        return self.user.username
 
 
 class Autorizaciones(models.Model):
@@ -22,23 +33,19 @@ class Familiares(models.Model):
     nombre = models.CharField(max_length=100)
     apellidos = models.CharField(max_length=100)
     nif = models.CharField(max_length=100, primary_key=True, unique=True)
-    telefono = models.CharField(max_length=100) 
-    movil = models.CharField(max_length=100) 
+    telefono = models.CharField(max_length=100)
+    movil = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     rol = models.CharField(max_length=100)
     familia_id = models.ForeignKey(Familia, null=True)
-    
-    
-
-    
-    
+       
 
 class Socio(models.Model):
     """Clase para los datos principales del socio"""
     n_asociado = models.CharField(max_length=100, primary_key=True, unique=True)
     alta = models.BooleanField()
     autorizaciones = models.ForeignKey(Autorizaciones, null=True)
-    familia_id = models.ForeignKey(Familia, null=True)     
+    familia_id = models.ForeignKey(Familia, null=True)
     
 class D_Personales(models.Model):
     """Clase para los datos personales del socio"""
@@ -62,8 +69,6 @@ class D_Personales(models.Model):
     aficiones = models.TextField()
     socio_id = models.ForeignKey(Socio)
     
-    
-
     
 class D_Medicos(models.Model):
     """Clase para los datos medicos del socio"""
@@ -99,13 +104,12 @@ class D_Economicos(models.Model):
     n_cuenta = models.CharField(max_length=100)
     socio_id = models.ForeignKey(Socio)
     
-
-
-
     
 class Medicamentos(models.Model):
     """Clase para anexar medicamentos a los datos medicos del socio"""
     nombre = models.CharField(max_length=100)
     dosis = models.CharField(max_length=100)
     pauta = models.CharField(max_length=100)
-    socio_id = models.ForeignKey(Socio)    
+    socio_id = models.ForeignKey(Socio)
+
+

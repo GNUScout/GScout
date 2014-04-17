@@ -1,38 +1,126 @@
-""" Vista para la gestion de los Socios"""
 # -*- coding: utf-8 -*-
-from django.shortcuts import render_to_response, render, redirect
-from django.http import HttpResponseRedirect, HttpResponse
-from django.views.decorators.csrf import csrf_protect
-from django.template.loader import get_template
+from socios.forms import UserForm, UserProfileForm
+from socios.models import *
+from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.contrib.sessions.models import Session
-from socios.models import Socio, D_Personales, D_Medicos, D_Economicos, \
-                        Familia, Familiares, Medicamentos, Autorizaciones
-import datetime  
-from time import strftime
+from django.contrib.auth import authenticate,login,logout
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_protect
+import datetime
+
+#@login_required siempre entra como anonymouse_user
+def home(request):
+   return render_to_response('home.html',RequestContext(request))
 
 
-import csv
+def SignUp(request):
+    # Like before, get the request's context.
+    context = RequestContext(request)
 
-import httplib2
-import pprint
-import StringIO
+    # A boolean value for telling the template whether the registration was successful.
+    # Set to False initially. Code changes value to True when registration succeeds.
+    registered = False
 
-from apiclient.discovery import build
-from apiclient.http import MediaIoBaseUpload
-from oauth2client.client import OAuth2WebServerFlow
+    # If it's a HTTP POST, we're interested in processing form data.
+    if request.method == 'POST':
+        # Attempt to grab information from the raw form information.
+        # Note that we make use of both UserForm and UserProfileForm.
+        user_form = UserForm(data=request.POST)
+        profile_form = UserProfileForm(data=request.POST)
 
-from django.contrib.auth.models import User
+        # If the two forms are valid...
+        if user_form.is_valid() and profile_form.is_valid():
+            # Save the user's form data to the database.
+            user = user_form.save()
 
-import re
-import unicodedata
+            # Now we hash the password with the set_password method.
+            # Once hashed, we can update the user object.
+            user.set_password(user.password)
+            user.save()
 
+            # Now sort out the UserProfile instance.
+            # Since we need to set the user attribute ourselves, we set commit=False.
+            # This delays saving the model until we're ready to avoid integrity problems.
+            profile = profile_form.save(commit=False)
+            profile.user = user
 
-def index(request):
-   return render_to_response('intro.html')
+            # Did the user provide a profile picture?
+            # If so, we need to get it from the input form and put it in the UserProfile model.
+            #if 'picture' in request.FILES:
+             #   profile.picture = request.FILES['picture']
 
-def login(request):
-   return render_to_response('en vista login')
+            # Now we save the UserProfile model instance.
+            profile.save()
+
+            # Update our variable to tell the template registration was successful.
+            registered = True
+
+        # Invalid form or forms - mistakes or something else?
+        # Print problems to the terminal.
+        # They'll also be shown to the user.
+        else:
+            print user_form.errors, profile_form.errors
+
+    # Not a HTTP POST, so we render our form using two ModelForm instances.
+    # These forms will be blank, ready for user input.
+    else:
+        user_form = UserForm()
+        profile_form = UserProfileForm()
+
+    # Render the template depending on the context.
+    return render_to_response('signup.html',{'user_form': user_form, 'profile_form': profile_form, 'registered': registered},context)
+
+def LogIn(request):
+    # Like before, obtain the context for the user's request.
+    context = RequestContext(request)
+
+    # If the request is a HTTP POST, try to pull out the relevant information.
+    if request.method == 'POST':
+        # Gather the username and password provided by the user.
+        # This information is obtained from the login form.
+        username = request.POST['username']
+        password = request.POST['password']
+
+        # Use Django's machinery to attempt to see if the username/password
+        # combination is valid - a User object is returned if it is.
+        user = authenticate(username=username, password=password)
+
+        # If we have a User object, the details are correct.
+        # If None (Python's way of representing the absence of a value), no user
+        # with matching credentials was found.
+        if user is not None:
+            # Is the account active? It could have been disabled.
+            if user.is_active:
+                # If the account is valid and active, we can log the user in.
+                # We'll send the user back to the homepage.
+                login(request,user)
+                return HttpResponseRedirect('/')
+            else:
+                # An inactive account was used - no logging in!
+                return HttpResponse("Your account is disabled.")
+        else:
+            # Bad login details were provided. So we can't log the user in.
+            print "Invalid login details: {0}, {1}".format(username, password)
+            return HttpResponse("Invalid login details supplied.")
+
+    # The request is not a HTTP POST, so display the login form.
+    # This scenario would most likely be a HTTP GET.
+    else:
+        # No context variables to pass to the template system, hence the
+        # blank dictionary object...
+        return render_to_response('login.html', {}, context)
+
+# Use the login_required() decorator to ensure only those logged in can access the view.
+#@login_required
+def LogOut(request):
+    # Since we know the user is logged in, we can now just log them out.
+    logout(request)
+    # Take the user back to the homepage.
+    return HttpResponseRedirect('/')
+    #django_logout(request)
+    #return HttpResponseRedirect(users.create_logout_url("/"))
+
 
 
 @csrf_protect
@@ -180,8 +268,6 @@ def newPersonal(request):
         #new_socio.d_medicos = datos
          # and saved to database
          
-        
-        
         if toma_medicamentos == "si":
             a_nombre = request.POST.getlist('m[]')
             a_dosis = request.POST.getlist('md[]')
@@ -339,7 +425,7 @@ def edit_medicos(request, n_asociado):
                                                              "n_medicamentos" : n_medicamentos } , \
                               context_instance=RequestContext(request))
 
-#@csrf_protect
+
 def modify_personales(request):
     """ Vista que gestiona la modificación de los datos personales"""
     
@@ -488,162 +574,6 @@ def del_socios(request):
     return render_to_response('socios/list_del.html', {'socios': socios} , \
                               context_instance=RequestContext(request))
             
-def export_economicos(request):
-    """ Vista que gestiona la exportacion de datos economicos a Google Drive"""
-    usuario = request.user
-    storage = User.objects.get(username = usuario.username)
-    
-        
-    credentials = storage.credential
-    
-    # Create an httplib2.Http object and authorize it with our credentials
-    http = httplib2.Http()
-    http = credentials.authorize(http)
-    
-    drive_service = build('drive', 'v2', http=http)
-    
-    socios = D_Personales.objects.values()
-    economicos = D_Economicos.objects.values()
-    
-    lista = []
-    
-    for i in range(len(socios)):
-        selected = False
-        if (
-            (re.match(r'.*'+str(request.POST['filter0'])+'\.*',str(socios[i]['id']),re.IGNORECASE)) and
-            (re.match(r'.*'+request.POST['filter1']+'\.*',economicos[i]['titular'],re.IGNORECASE)) and
-            (re.match(r'.*'+request.POST['filter2']+'\.*',economicos[i]['nif_titular'],re.IGNORECASE)) and
-            (re.match(r'.*'+request.POST['filter3']+'\.*',economicos[i]['banco'],re.IGNORECASE)) and
-            (re.match(r'.*'+request.POST['filter4']+'\.*',socios[i]['nombre'],re.IGNORECASE)) and
-            (re.match(r'.*'+request.POST['filter5']+'\.*',socios[i]['apellidos'],re.IGNORECASE)) and
-            (re.match(r'.*'+request.POST['filter6']+'\.*',socios[i]['dni'],re.IGNORECASE))
-            ):
-            selected = True
-        
-        if selected:
-            lista.append(i)
-    
-    if (
-        (
-            (str(request.POST['filter0']) != "") and
-            (str(request.POST['filter1']) != "") and
-            (str(request.POST['filter2']) != "") and
-            (str(request.POST['filter3']) != "") and
-            (str(request.POST['filter4']) != "") and
-            (str(request.POST['filter5']) != "") and
-            (str(request.POST['filter6']) != "")) or len(lista) > 0 
-        ):  
-        datos = "ID, Titular, NIF Titular, Banco, Nombre Socio, Apellidos Socio, DNI Socio\n"
-        for d in range(len(lista)):
-            datos += str(socios[lista[d]]['socio_id_id']) + "," \
-            + unicodedata.normalize('NFKD', economicos[lista[d]]['titular']).encode('ascii','ignore') + "," \
-            + str(economicos[lista[d]]['nif_titular']) + "," \
-            + str(economicos[lista[d]]['banco']) + "," \
-            + unicodedata.normalize('NFKD', socios[lista[d]]['nombre']).encode('ascii','ignore') + "," \
-            + unicodedata.normalize('NFKD', socios[lista[d]]['apellidos']).encode('ascii','ignore') + "," \
-            + str(socios[lista[d]]['dni']) + "\n"
-            
-        now = datetime.datetime.now()
-        now = now.strftime("%d-%m-%Y")
-        # Insert a file
-        media_body = MediaIoBaseUpload(StringIO.StringIO(datos), 'text/csv', resumable=False)
-        body = {
-          'title': 'Datos_Economicos_'+now+'',
-          'description': 'A test document',
-          'mimeType': "text/csv"
-        }
-        
-        file = drive_service.files().insert(body=body, media_body=media_body, convert="true").execute()
-        pprint.pprint(file) 
-    
-    return  HttpResponseRedirect('/')  
-
-def export(request):
-    """ Vista que gestiona la exportacion de datos personales a Google Drive"""
-    usuario = request.user
-    storage = User.objects.get(username = usuario.username)
-    
-        
-    credentials = storage.credential
-    
-    # Create an httplib2.Http object and authorize it with our credentials
-    http = httplib2.Http()
-    http = credentials.authorize(http)
-    
-    drive_service = build('drive', 'v2', http=http)
-    
-    socios = D_Personales.objects.values()
-    lista = []
-    for i in range(len(socios)):
-        selected = False
-        if (
-            (re.match(r'.*'+request.POST['filter0']+'\.*',str(socios[i]['id']),re.IGNORECASE)) and
-            (re.match(r'.*'+request.POST['filter1']+'\.*',socios[i]['nombre'],re.IGNORECASE)) and
-            (re.match(r'.*'+request.POST['filter2']+'\.*',socios[i]['apellidos'],re.IGNORECASE)) and
-            (re.match(r'.*'+request.POST['filter3']+'\.*',socios[i]['dni'],re.IGNORECASE)) and
-            (re.match(r'.*'+request.POST['filter4']+'\.*',socios[i]['sexo'],re.IGNORECASE)) and
-            (re.match(r'.*'+request.POST['filter5']+'\.*',socios[i]['seccion'],re.IGNORECASE)) and
-            (re.match(r'.*'+request.POST['filter7']+'\.*',socios[i]['localidad'],re.IGNORECASE)) and
-            (re.match(r'.*'+request.POST['filter8']+'\.*',socios[i]['provincia'],re.IGNORECASE))
-            ):
-            #Convertimos las fechas del POST en el formato correcto para su comparacion
-            if (str(request.POST['from']) != "") and (str(request.POST['to']) != ""):
-                date = str(request.POST['from']).split("/")
-                fecha = datetime.datetime.now()
-                f = fecha.replace(year=int(date[2]), month=int(date[0]), \
-                                  day=int(date[1]), hour=0, minute=0, second=0, microsecond=0) 
-                date = str(request.POST['to']).split("/")
-                t = fecha.replace(year=int(date[2]), month=int(date[0]), \
-                                  day=int(date[1]), hour=0, minute=0, second=0, microsecond=0)
-                if ((socios[i]['f_nacimiento'] >= f) and (socios[i]['f_nacimiento'] <= t)): 
-                    selected = True
-            else:
-                selected = True
-        
-        if selected:
-            socios[i]['nombre'] = unicodedata.normalize('NFKD', socios[i]['nombre']).encode('ascii', 'ignore')
-            socios[i]['apellidos'] = unicodedata.normalize('NFKD', socios[i]['apellidos']).encode('ascii', 'ignore')
-            lista.append(socios[i])
-    
-    if (
-        (
-            (str(request.POST['filter0']) != "") and
-            (str(request.POST['filter1']) != "") and
-            (str(request.POST['filter2']) != "") and
-            (str(request.POST['filter3']) != "") and
-            (str(request.POST['filter4']) != "") and
-            (str(request.POST['filter5']) != "") and
-            (str(request.POST['filter7']) != "") and
-            (str(request.POST['filter8']) != "")) or len(lista) > 0 
-        ):  
-        datos = "ID, Nombre, Apellidos, DNI, Sexo, Seccion, F.Nacimiento, Localidad, Provincia\n"
-        for d in range(len(lista)):
-            datos += str(lista[d]['socio_id_id']) + "," \
-            + str(lista[d]['nombre']) + "," \
-            + str(lista[d]['apellidos']) + "," \
-            + str(lista[d]['dni']) + "," \
-            + str(lista[d]['sexo']) + "," \
-            + str(lista[d]['seccion']) + "," \
-            + str(lista[d]['f_nacimiento']) + ","\
-            + str(lista[d]['localidad']) + "," \
-            + str(lista[d]['provincia']) + "\n" 
-        now = datetime.datetime.now()
-        now = now.strftime("%d-%m-%Y")
-        # Insert a file
-        media_body = MediaIoBaseUpload(StringIO.StringIO(datos), 'text/csv', resumable=False)
-        body = {
-          'title': 'Datos_Personales_'+now+'',
-          'description': 'A test document',
-          'mimeType': "text/csv"
-        }
-        
-        file = drive_service.files().insert(body=body, media_body=media_body, convert="true").execute()
-        pprint.pprint(file) 
-    
-    return  HttpResponseRedirect('/')
-
-
-
 
 def search_familia(request):
     """Vista de los listados de familias"""

@@ -1,15 +1,11 @@
-""" urls de la aplicacion"""
-# -*- coding: utf-8 -*-
-
 from django.conf.urls.defaults import patterns
 from socios.views import *
+from django.views.generic import TemplateView
 
-urlpatterns = patterns('', 
-   ('^login/',login),
-   ('^new/', 'django.views.generic.simple.direct_to_template',
-     {'template': 'socios/f_asociado.html'}),
-   ('^search/', 'django.views.generic.simple.direct_to_template',
-     {'template': 'socios/search.html'}),                    
+urlpatterns = patterns('',
+   (r'^$',home),  
+   ('^new/',TemplateView.as_view(template_name='socios/f_asociado.html')),
+   ('^search/',TemplateView.as_view(template_name='socios/search.html')),
    (r'^create_personal/', newPersonal),
    (r'^search_socio/', search),
    (r'([0-9]+)/personales/?', personales_socio),
@@ -26,17 +22,13 @@ urlpatterns = patterns('',
    (r'^listado_del/', listado_del),
    (r'^listado_economicos/', listado_economicos),
    (r'^del_socios/', del_socios),
-   (r'^export_economicos/?', export_economicos),
-    (r'^export/?', export),
-   ('^familiares_new/', 'django.views.generic.simple.direct_to_template',
-     {'template': 'socios/f_familiares.html'}),
+   #(r'^export_economicos/?', export_economicos),
+   #(r'^export/?', export),
+   ('^familiares/',TemplateView.as_view(template_name='socios/f_familiares.html')),
    (r'search_familia', search_familia),
    (r'([A-Z]?[0-9]+\-?[a-z]?[A-Z]?)/edit_familia/?', edit_familia),
    (r'modify_familia/?', modify_familia),
    (r'post_change_familia/?', post_change_familia),
    (r'([0-9]+)/change_familia/?', change_familia),
-   (r'cambio_unidad/?', cambio_unidad),
-   
-   
+   (r'cambio_unidad/?', cambio_unidad),  
 )
-
