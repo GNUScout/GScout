@@ -6,3 +6,9 @@
           Cuando voy a la página inicial
           Entonces compruebo que el titulo es "GSCOUT"
 
+       Escenario: Comprobar elementos de la pagina
+          Cuando voy a la página inicial 
+          Entonces busco el elemento "active"
+
+
+
