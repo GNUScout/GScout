@@ -10,12 +10,15 @@ def before_all(context):
     from project import settings
     setup_environ(settings)
 
+    from django.test import utils
+    utils.setup_test_environment() 
+
     ### Take a TestRunner hostage.
-    from django.test.simple import DjangoTestSuiteRunner
+    #from django.test.simple import DjangoTestSuiteRunner
     # We'll use thise later to frog-march Django through the motions
     # of setting up and tearing down the test environment, including
     # test databases.
-    context.runner = DjangoTestSuiteRunner()
+    #context.runner = DjangoTestSuiteRunner()
 
     ## If you use South for migrations, uncomment this to monkeypatch
     ## syncdb to get migrations to run.
@@ -57,14 +60,15 @@ def before_all(context):
 
 def before_scenario(context, scenario):
     # Set up the scenario test environment
-    context.runner.setup_test_environment()
+    #context.runner.setup_test_environment()
     # We must set up and tear down the entire database between
     # scenarios. We can't just use db transactions, as Django's
     # TestClient does, if we're doing full-stack tests with Mechanize,
     # because Django closes the db connection after finishing the HTTP
     # response.
-    context.old_db_config = context.runner.setup_databases()
-
+    #context.old_db_config = context.runner.setup_databases()
+    from django.db import connection
+    connection.creation.create_test_db(verbosity=1, autoclobber=True)
     ### Set up the Mechanize browser.
     from wsgi_intercept import mechanize_intercept
     # MAGIC: All requests made by this monkeypatched browser to the magic
@@ -75,7 +79,15 @@ def before_scenario(context, scenario):
 
 def after_scenario(context, scenario):
     # Tear down the scenario test environment.
-    context.runner.teardown_databases(context.old_db_config)
-    context.runner.teardown_test_environment()
-    # Bob's your uncle.
+    #context.runner.teardown_databases(context.old_db_config)
+    #context.runner.teardown_test_environment()
+    #from django.db import connection
+    #connection.creation.destroy_test_db(verbosity=1, autoclobber=True)
+    from django.db import connection
+    from django.conf import settings
+    #connection.creation.destroy_test_db(verbosity=1,autoclobber=True)
 
+   
+def after_all(context):
+    from django.test import utils
+    utils.teardown_test_environment()

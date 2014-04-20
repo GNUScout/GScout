@@ -3,7 +3,7 @@ from socios.views import *
 from django.views.generic import TemplateView
 
 urlpatterns = patterns('',
-   (r'^$',home),  
+   (r'^$',socios_main_page),  
    ('^new/',TemplateView.as_view(template_name='socios/f_asociado.html')),
    ('^search/',TemplateView.as_view(template_name='socios/search.html')),
    (r'^create_personal/', newPersonal),

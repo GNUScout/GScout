@@ -6,7 +6,7 @@
 
          {% if user.is_authenticated %}
             <h1>Welcome, {{ user.username }}. Thanks for logging in.</h1>
-            <li><a href="/LogOut/">Logout</a></li>
+            <li><a href="/logout/">Logout</a></li>
          {% else %}
             <h1>Welcome,new user. Please log in.</h1>
          {% endif %}
@@ -14,8 +14,8 @@
       {% endblock %}
 
     {% block sidebar %}
-            <li><a href="/LogIn/">Entrar</a></li>
-            <li><a href="/SignUp/">Registrarse</a></li>
+            <li><a href="/login/">Entrar</a></li>
+            <li><a href="/register/">Registrarse</a></li>
     {% endblock %}
   <ul>
 {% block content %}

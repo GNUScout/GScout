@@ -6,7 +6,6 @@ LOGIN_URL = '/login/'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -20,7 +19,7 @@ DATABASES = {
         # The following settings are not used with sqlite3:
         'USER': 'steven',
         'PASSWORD': 'VGGQ6295',
-        'HOST': '127.0.0.1',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.
     }
 }
