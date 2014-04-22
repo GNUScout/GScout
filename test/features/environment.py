@@ -1,4 +1,24 @@
-import os
+"""from behave import *
+from splinter import Browser
+
+#b=Browser()
+
+def before_feature(context, feature):
+   b=Browser()
+   url = "http://localhost:8000"
+   b.visit(url)  
+
+def after_feature(context, feature):
+   b.quit()
+
+
+
+
+
+
+"""
+
+"""import os
 # This is necessary for all installed apps to be recognized, for some reason.
 os.environ['DJANGO_SETTINGS_MODULE'] = 'project.settings'
 
@@ -36,10 +56,10 @@ def before_all(context):
     wsgi_intercept.add_wsgi_intercept(host, port, WSGIHandler)
 
     def browser_url(url):
-        """Create a URL for the virtual WSGI server.
+        """"""Create a URL for the virtual WSGI server.
 
         e.g context.browser_url('/'), context.browser_url(reverse('my_view'))
-        """
+        """"""
         return urlparse.urljoin('http://%s:%d/' % (host, port), url)
 
     context.browser_url = browser_url
@@ -48,8 +68,8 @@ def before_all(context):
     #from BeautifulSoup import BeautifulSoup
     from bs4 import BeautifulSoup
     def parse_soup():
-        """Use BeautifulSoup to parse the current response and return the DOM tree.
-        """
+        """"""Use BeautifulSoup to parse the current response and return the DOM tree.
+        """"""
         r = context.browser.response()
         html = r.read()
         r.seek(0)
@@ -91,3 +111,6 @@ def after_scenario(context, scenario):
 def after_all(context):
     from django.test import utils
     utils.teardown_test_environment()
+
+
+"""

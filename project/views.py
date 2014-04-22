@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import authenticate,login as auth_login,logout as auth_logout
 from socios.models import *
 from socios.forms import UserForm, UserProfileForm
