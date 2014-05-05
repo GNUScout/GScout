@@ -15,9 +15,12 @@
           Entonces busco el elemento "body" y "head"
           Y compruebo que existe un elemento "h2" 
           Y un mensaje de bienvenida
-
-       #Escenario: LogIn
-        #  Entonces busco el botón "Entrar"
-        #  Y lo presiono
-        #  Cuando lo presiono me encuentro un formulario con título
+       
+       @registro
+       Escenario: Registrarse
+          Entonces busco el botón "Regístrate!"
+          Y lo presiono
+          Entonces relleno los campos para el usuario "test-user"
+          Y me registro         
+          #Cuando lo presiono me encuentro un formulario con título
 
