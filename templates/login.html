@@ -6,15 +6,15 @@
     </head>
 
     <body>
-        <h1>Login to GScout</h1>
+        <h1>Entrar a GScout</h1>
         <form id="login_form" method="post" action="/login/">
             {% csrf_token %} 
-            Username: <input type="text" name="username" value="" size="50" />
+            Nombre de usuario: <input type="text" name="username" value="" size="50" />
             <br />
-            Password: <input type="password" name="password" value="" size="50" />
+            Contraseña: <input type="password" name="password" value="" size="50" />
             <br />
 
-            <input type="submit" value="submit" />
+            <input type="submit" name="Acceder" value="Acceder" />
         </form>
 
     </body>

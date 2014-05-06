@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse
@@ -101,11 +102,11 @@ def login(request):
                 return HttpResponseRedirect('/socios/')
             else:
                 # An inactive account was used - no logging in!
-                return HttpResponse("Your account is disabled.")
+                return HttpResponse("Tu cuenta esta deshabilitada.")
         else:
             # Bad login details were provided. So we can't log the user in.
-            print "Invalid login details: {0}, {1}".format(username, password)
-            return HttpResponse("Invalid login details supplied.")
+            print "Compruebo su nombre de usuario y/o contraseña: {0}, {1}".format(username, password)
+            return HttpResponse("Datos de usuario erróneos.")
 
     # The request is not a HTTP POST, so display the login form.
     # This scenario would most likely be a HTTP GET.

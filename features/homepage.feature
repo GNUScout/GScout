@@ -10,7 +10,7 @@
        Escenario: Comprobando el titulo 
           Entonces compruebo que existe un título y que además es "GSCOUT | ACCESO"
                
-       @complejos                       
+                             
        Escenario: Comprobar elementos de la página 
           Entonces busco el elemento "body" y "head"
           Y compruebo que existe un elemento "h2" 
@@ -19,8 +19,12 @@
        @registro
        Escenario: Registrarse
           Entonces busco el botón "Regístrate!"
-          Y lo presiono
-          Entonces relleno los campos para el usuario "test-user"
-          Y me registro         
-          #Cuando lo presiono me encuentro un formulario con título
+          Y compruebo que estoy en la página "/register/"
+
+       @login
+       Escenario: Iniciar Sesión
+          Entonces busco el botón "Entrar"
+          Y compruebo que estoy en la página "/login/"
+            
+          
 
