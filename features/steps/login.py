@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*
-from behave import when,given,then,And,but #Step and como And si no reconoce and como función de python
+from behave import when,given,then 
 from splinter import Browser
 
 

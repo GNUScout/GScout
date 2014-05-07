@@ -2,7 +2,7 @@
 import os
 from behave import *
 
-ruta_absoluta="/home/steven/TFG/project/"
+ruta_absoluta="/home/steven/TFG/GScout/"
 
 @then(u'comprobamos la existencia del fichero "{fich}" con la función stat de python')
 def step_impl(context,fich):

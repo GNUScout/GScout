@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import time
-from behave import when,given,then,And,but #Step and como And si no reconoce and como función de python
+from behave import when,given,then 
 from splinter import Browser
 
 #paso definido en el atecedente por lo que se repetirá antes de cada escenario
