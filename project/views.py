@@ -8,15 +8,10 @@ from socios.forms import UserForm, UserProfileForm
 
 def main_page(request):
    context = RequestContext(request)
-#   user= request.user # user is the current user
- 
- #  if (user is None):
-   return render_to_response('intro.html',context)
-  # else:
-        #return HttpResponseRedirect('/user/%s/' % user,context)
-   #     return HttpResponseRedirect('/socios/',context)
-
-
+   if request.user.is_authenticated():
+      return HttpResponseRedirect('/socios/',context,{'name':request.user.username}) 
+   else:
+      return render_to_response('intro.html',context)
 
 def register(request):
     # Like before, get the request's context.
