@@ -11,12 +11,12 @@ import datetime
 
 @login_required
 def socios_main_page(request):
-    """
-    If users are authenticated, direct them to the main page. Otherwise, take
-    them to the login page.
-    """
-    return render_to_response('home.html')
-
+   """
+      If users are authenticated, direct them to the main page. Otherwise, take
+      them to the login page.
+   """
+   context=RequestContext(request) 
+   return render_to_response('home.html',context)
 
 @csrf_protect
 def newPersonal(request):
@@ -182,6 +182,8 @@ def newPersonal(request):
     else:
         return HttpResponseRedirect('/')
      
+@login_required
+@csrf_protect
 def search(request):
     """ Vista que busca un socio por su ID"""
     try:
@@ -416,6 +418,7 @@ def modify_medicos(request):
    
     return  HttpResponseRedirect('/socios/'+socio.socio_id.n_asociado+'/medicos')
 
+@login_required
 def listado(request):
     """ Vista que muestra un listado de los datos personales de los socios"""
     socios = D_Personales.objects.all()
@@ -426,6 +429,7 @@ def listado(request):
     return render_to_response('socios/list.html', {'socios': socios} , \
                               context_instance=RequestContext(request))
 
+@login_required
 def listado_del(request):
     """ Vista que muestra todos los socios que se pueden eliminar"""
     socios = D_Personales.objects.all()
@@ -435,7 +439,7 @@ def listado_del(request):
      
     return render_to_response('socios/list_del.html', {'socios': socios} , \
                               context_instance=RequestContext(request))
-
+@login_required
 def listado_economicos(request):
     """ Vista que muestra los datos economicos de los socios en forma de listado"""
     socios = D_Personales.objects.all()
@@ -469,7 +473,7 @@ def del_socios(request):
     return render_to_response('socios/list_del.html', {'socios': socios} , \
                               context_instance=RequestContext(request))
             
-
+@login_required
 def search_familia(request):
     """Vista de los listados de familias"""
 

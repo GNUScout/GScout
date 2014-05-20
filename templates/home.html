@@ -31,12 +31,25 @@ Listados
       }
 </style>
 {% endblock %}
-{% block title %}It works!{% endblock %}
+{% block title %} Panel de administración del usuario {% endblock %}
 
 {% block form %}
-<h1>Bienvenido {{ user.username }}</h1>
 
-<p>Cargo: {{cargo}}</p>
+<h1> Bienvenido 
+    {% if user.is_authenticated %} 
+       {{user.username}} 
+    {% else %}
+    {% endif %} 
+</h1>
+
+
+<p>Cargo: 
+   {% if user.is_authenticated %} 
+       {{user.cargo}} 
+   {% else %}
+   {% endif %}
+</p>
+
 <div class="centrar">
 <div class="">
 <a class="btn btn-large btn-primary" href="/socios/new">Nuevo Socio</a>

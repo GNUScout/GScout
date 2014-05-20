@@ -6,6 +6,9 @@ from django.contrib.auth import authenticate,login as auth_login,logout as auth_
 from socios.models import *
 from socios.forms import UserForm, UserProfileForm
 
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_protect
+
 def main_page(request):
    context = RequestContext(request)
    if request.user.is_authenticated():
@@ -13,6 +16,7 @@ def main_page(request):
    else:
       return render_to_response('intro.html',context)
 
+@csrf_protect
 def register(request):
     # Like before, get the request's context.
     context = RequestContext(request)
@@ -70,6 +74,7 @@ def register(request):
     # Render the template depending on the context.
     return render_to_response('signup.html',{'user_form': user_form, 'profile_form': profile_form, 'registered': registered},context)
 
+@csrf_protect
 def login(request):
     # Like before, obtain the context for the user's request.
     context = RequestContext(request)
@@ -110,7 +115,7 @@ def login(request):
         # blank dictionary object...
         return render_to_response('login.html', {}, context)
 
-
+@login_required
 def logout(request):
     """
     Log users out and re-direct them to the main page.
