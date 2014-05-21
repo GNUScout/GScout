@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 from socios.forms import UserForm, UserProfileForm
-from socios.models import *
+from socios.models import Socio, D_Personales, D_Medicos, D_Economicos, Familia, Familiares, Medicamentos, Autorizaciones
+
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponseRedirect, HttpResponse
+
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
+from django.contrib.sessions.models import Session
+
 import datetime
 
 
@@ -25,7 +29,7 @@ def newPersonal(request):
     
     if request.POST['form_id'] == "f1":
         s_socio = request.session.get('d_socio', {})
-        
+               
         s_socio['socio'] = Socio(n_asociado = request.POST['n_asociado']) 
         if (Socio.objects.filter(n_asociado=s_socio['socio'].n_asociado).count() > 0):
             return render_to_response('socios/f_asociado.html', \
@@ -219,7 +223,7 @@ def personales_socio(request, n_asociado):
                               {'personales': personales, \
                                'f_nacimiento':personales.f_nacimiento.strftime("%d-%m-%Y"), \
                                'f_ingreso':personales.f_ingreso.strftime("%d-%m-%Y"), \
-                               'f_baja': f_baja})
+                               'f_baja': f_baja},RequestContext(request))
 
 
 def medicos_socio(request, n_asociado):
@@ -440,6 +444,7 @@ def listado_del(request):
     return render_to_response('socios/list_del.html', {'socios': socios} , \
                               context_instance=RequestContext(request))
 @login_required
+@csrf_protect
 def listado_economicos(request):
     """ Vista que muestra los datos economicos de los socios en forma de listado"""
     socios = D_Personales.objects.all()

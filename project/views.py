@@ -12,7 +12,7 @@ from django.views.decorators.csrf import csrf_protect
 def main_page(request):
    context = RequestContext(request)
    if request.user.is_authenticated():
-      return HttpResponseRedirect('/socios/',context,{'name':request.user.username}) 
+      return HttpResponseRedirect('/socios/') 
    else:
       return render_to_response('intro.html',context)
 
