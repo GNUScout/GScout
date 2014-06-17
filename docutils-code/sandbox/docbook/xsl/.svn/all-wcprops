@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/p/docutils/code/!svn/ver/7521/trunk/sandbox/docbook/xsl
+END
+docutils_to_docbook.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/docutils/code/!svn/ver/7387/trunk/sandbox/docbook/xsl/docutils_to_docbook.xsl
+END
+error.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/docutils/code/!svn/ver/7364/trunk/sandbox/docbook/xsl/error.xsl
+END
+math.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/docutils/code/!svn/ver/7370/trunk/sandbox/docbook/xsl/math.xsl
+END
+raw.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/docutils/code/!svn/ver/7395/trunk/sandbox/docbook/xsl/raw.xsl
+END
+block.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/docutils/code/!svn/ver/7387/trunk/sandbox/docbook/xsl/block.xsl
+END
+line_block.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/docutils/code/!svn/ver/7352/trunk/sandbox/docbook/xsl/line_block.xsl
+END
+glossary.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/docutils/code/!svn/ver/7516/trunk/sandbox/docbook/xsl/glossary.xsl
+END
+front_matter.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/docutils/code/!svn/ver/7370/trunk/sandbox/docbook/xsl/front_matter.xsl
+END
+section.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/docutils/code/!svn/ver/7362/trunk/sandbox/docbook/xsl/section.xsl
+END
+long_table.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/docutils/code/!svn/ver/7362/trunk/sandbox/docbook/xsl/long_table.xsl
+END
+csv_split.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/docutils/code/!svn/ver/7370/trunk/sandbox/docbook/xsl/csv_split.xsl
+END
+appendix.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/docutils/code/!svn/ver/7357/trunk/sandbox/docbook/xsl/appendix.xsl
+END
+code.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/docutils/code/!svn/ver/7364/trunk/sandbox/docbook/xsl/code.xsl
+END
+citation.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/docutils/code/!svn/ver/7352/trunk/sandbox/docbook/xsl/citation.xsl
+END
+utilities.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/docutils/code/!svn/ver/7387/trunk/sandbox/docbook/xsl/utilities.xsl
+END
+inline.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/docutils/code/!svn/ver/7521/trunk/sandbox/docbook/xsl/inline.xsl
+END
+field_list.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/docutils/code/!svn/ver/7352/trunk/sandbox/docbook/xsl/field_list.xsl
+END
+image.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/docutils/code/!svn/ver/7521/trunk/sandbox/docbook/xsl/image.xsl
+END
+bullet_list.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/docutils/code/!svn/ver/7352/trunk/sandbox/docbook/xsl/bullet_list.xsl
+END
+params.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/docutils/code/!svn/ver/7521/trunk/sandbox/docbook/xsl/params.xsl
+END
+root.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/docutils/code/!svn/ver/7518/trunk/sandbox/docbook/xsl/root.xsl
+END
+admonitions.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/docutils/code/!svn/ver/7352/trunk/sandbox/docbook/xsl/admonitions.xsl
+END
+xlink.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/docutils/code/!svn/ver/7352/trunk/sandbox/docbook/xsl/xlink.xsl
+END
+table.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/docutils/code/!svn/ver/7362/trunk/sandbox/docbook/xsl/table.xsl
+END

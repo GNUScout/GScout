@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/docutils/code/!svn/ver/7352/trunk/sandbox/docbook/test_files/xsl
+END
+endnotes_traditional.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/docutils/code/!svn/ver/7352/trunk/sandbox/docbook/test_files/xsl/endnotes_traditional.xsl
+END
+no_body.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/7352/trunk/sandbox/docbook/test_files/xsl/no_body.xsl
+END
+footnotes_traditional.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/docutils/code/!svn/ver/7352/trunk/sandbox/docbook/test_files/xsl/footnotes_traditional.xsl
+END
+endnotes.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/docutils/code/!svn/ver/7352/trunk/sandbox/docbook/test_files/xsl/endnotes.xsl
+END

@@ -10,6 +10,20 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
 
 def main_page(request):
+   """
+      Main application. This view allows the user to register and access the application.   
+
+      **Context**
+
+      ``RequestContext``
+
+   
+      **Template:**
+
+      :template:`intro.html`
+
+   """
+
    context = RequestContext(request)
    if request.user.is_authenticated():
       return HttpResponseRedirect('/socios/') 
@@ -18,6 +32,29 @@ def main_page(request):
 
 @csrf_protect
 def register(request):
+    """
+      This view allows the user to register the application
+      
+      **Context**
+
+      ``context``
+        An instance of RequestContext(request)
+
+      ``user_form``
+        An instance of :model:`auth.User`.
+
+       ``profile_form``
+        An instance of :model:`socios.UserProfile`.
+  
+       ``registered``
+        Variable indicating if the registration process was successful or not
+ 
+      **Template:**
+
+      :template:`signup.html`
+
+    """
+
     # Like before, get the request's context.
     context = RequestContext(request)
 
@@ -76,6 +113,24 @@ def register(request):
 
 @csrf_protect
 def login(request):
+
+    """
+      This view allows the user to access the application
+      
+      **Context**
+
+      ``context``
+        An instance of RequestContext(request)
+
+
+      **Template:**
+
+      :template:`login.html`
+
+    """
+
+
+
     # Like before, obtain the context for the user's request.
     context = RequestContext(request)
 

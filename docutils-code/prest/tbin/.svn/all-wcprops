@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/p/docutils/code/!svn/ver/6247/trunk/prest/tbin
+END
+extract_tests
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/p/docutils/code/!svn/ver/4580/trunk/prest/tbin/extract_tests
+END
+diffre
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/p/docutils/code/!svn/ver/4633/trunk/prest/tbin/diffre
+END
+run_prest
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/docutils/code/!svn/ver/5286/trunk/prest/tbin/run_prest
+END
+redom
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/p/docutils/code/!svn/ver/6246/trunk/prest/tbin/redom
+END
+retex
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/p/docutils/code/!svn/ver/4580/trunk/prest/tbin/retex
+END
+rexml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/p/docutils/code/!svn/ver/4580/trunk/prest/tbin/rexml
+END
+rehtml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/p/docutils/code/!svn/ver/6247/trunk/prest/tbin/rehtml
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/docutils/code/!svn/ver/7676/trunk/sandbox/rst2graph/tests/xmllint/input
+END
+invalid.gxl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/input/invalid.gxl
+END
+textOnly.gxl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/input/textOnly.gxl
+END
+multiedgeSections.gxl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/input/multiedgeSections.gxl
+END
+sections.gxl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/input/sections.gxl
+END
+selectTable.gxl
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/input/selectTable.gxl
+END
+table.gxl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/input/table.gxl
+END
+titlePath.gxl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/docutils/code/!svn/ver/7676/trunk/sandbox/rst2graph/tests/xmllint/input/titlePath.gxl
+END
+reverseTable.gxl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/input/reverseTable.gxl
+END

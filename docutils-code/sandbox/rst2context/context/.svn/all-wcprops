@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/docutils/code/!svn/ver/7311/trunk/sandbox/rst2context/context
+END
+default.tex
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/7311/trunk/sandbox/rst2context/context/default.tex
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/7311/trunk/sandbox/rst2context/context/__init__.py
+END
+docutils-05-compat.sty
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/docutils/code/!svn/ver/7311/trunk/sandbox/rst2context/context/docutils-05-compat.sty
+END
+xelatex.tex
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/7311/trunk/sandbox/rst2context/context/xelatex.tex
+END
+titlepage.tex
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/docutils/code/!svn/ver/7311/trunk/sandbox/rst2context/context/titlepage.tex
+END

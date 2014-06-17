@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/docutils/code/!svn/ver/1721/trunk/sandbox/tibs/pysource2/trivial_package
+END
+not_python
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/docutils/code/!svn/ver/1721/trunk/sandbox/tibs/pysource2/trivial_package/not_python
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/docutils/code/!svn/ver/1721/trunk/sandbox/tibs/pysource2/trivial_package/__init__.py
+END
+file1.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/docutils/code/!svn/ver/1721/trunk/sandbox/tibs/pysource2/trivial_package/file1.py
+END
+file2.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/docutils/code/!svn/ver/1721/trunk/sandbox/tibs/pysource2/trivial_package/file2.py
+END

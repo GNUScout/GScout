@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/docutils/code/!svn/ver/7745/trunk/docutils/test/test_writers
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/docutils/code/!svn/ver/3509/trunk/docutils/test/test_writers/__init__.py
+END
+test_get_writer_class.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/docutils/code/!svn/ver/7660/trunk/docutils/test/test_writers/test_get_writer_class.py
+END
+test_pseudoxml.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/docutils/code/!svn/ver/5174/trunk/docutils/test/test_writers/test_pseudoxml.py
+END
+test_latex2e.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/7745/trunk/docutils/test/test_writers/test_latex2e.py
+END
+test_docutils_xml.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/docutils/code/!svn/ver/7315/trunk/docutils/test/test_writers/test_docutils_xml.py
+END
+test_odt.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/docutils/code/!svn/ver/7337/trunk/docutils/test/test_writers/test_odt.py
+END
+test_s5.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/docutils/code/!svn/ver/7437/trunk/docutils/test/test_writers/test_s5.py
+END
+test_manpage.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/7626/trunk/docutils/test/test_writers/test_manpage.py
+END
+test_null.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/5174/trunk/docutils/test/test_writers/test_null.py
+END
+test_html4css1_parts.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/docutils/code/!svn/ver/6502/trunk/docutils/test/test_writers/test_html4css1_parts.py
+END
+test_html4css1_misc.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/docutils/code/!svn/ver/7630/trunk/docutils/test/test_writers/test_html4css1_misc.py
+END
+test_html4css1_template.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/7437/trunk/docutils/test/test_writers/test_html4css1_template.py
+END

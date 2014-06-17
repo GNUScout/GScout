@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/p/docutils/code/!svn/ver/7579/trunk/docutils/tools
+END
+rst2latex.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/docutils/code/!svn/ver/5905/trunk/docutils/tools/rst2latex.py
+END
+rst2xetex.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/docutils/code/!svn/ver/7038/trunk/docutils/tools/rst2xetex.py
+END
+rst2odt_prepstyles.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/docutils/code/!svn/ver/5839/trunk/docutils/tools/rst2odt_prepstyles.py
+END
+rst2pseudoxml.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/docutils/code/!svn/ver/4564/trunk/docutils/tools/rst2pseudoxml.py
+END
+rst2xml.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/docutils/code/!svn/ver/4564/trunk/docutils/tools/rst2xml.py
+END
+quicktest.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/docutils/code/!svn/ver/7442/trunk/docutils/tools/quicktest.py
+END
+rst2html.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/docutils/code/!svn/ver/4564/trunk/docutils/tools/rst2html.py
+END
+rst2odt.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/docutils/code/!svn/ver/5839/trunk/docutils/tools/rst2odt.py
+END
+rst2s5.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/p/docutils/code/!svn/ver/4564/trunk/docutils/tools/rst2s5.py
+END
+docutils.conf
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/docutils/code/!svn/ver/4181/trunk/docutils/tools/docutils.conf
+END
+buildhtml.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/docutils/code/!svn/ver/7579/trunk/docutils/tools/buildhtml.py
+END
+rstpep2html.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/docutils/code/!svn/ver/4564/trunk/docutils/tools/rstpep2html.py
+END
+rst2man.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/docutils/code/!svn/ver/6085/trunk/docutils/tools/rst2man.py
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/docutils/code/!svn/ver/6515/trunk/sandbox/paultremblay/old/rst_to_docbook/rst_to_docbook
+END
+options_trem.py
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/docutils/code/!svn/ver/6515/trunk/sandbox/paultremblay/old/rst_to_docbook/rst_to_docbook/options_trem.py
+END
+xsl_convert.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/docutils/code/!svn/ver/6515/trunk/sandbox/paultremblay/old/rst_to_docbook/rst_to_docbook/xsl_convert.py
+END
+location.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/docutils/code/!svn/ver/6515/trunk/sandbox/paultremblay/old/rst_to_docbook/rst_to_docbook/location.py
+END
+output.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/docutils/code/!svn/ver/6515/trunk/sandbox/paultremblay/old/rst_to_docbook/rst_to_docbook/output.xml
+END
+convert_rst_to_docbook.py
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/p/docutils/code/!svn/ver/6515/trunk/sandbox/paultremblay/old/rst_to_docbook/rst_to_docbook/convert_rst_to_docbook.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/docutils/code/!svn/ver/6515/trunk/sandbox/paultremblay/old/rst_to_docbook/rst_to_docbook/__init__.py
+END
+read_config.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/docutils/code/!svn/ver/6515/trunk/sandbox/paultremblay/old/rst_to_docbook/rst_to_docbook/read_config.py
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/p/docutils/code/!svn/ver/5304/trunk/sandbox/html4trans/tools
+END
+check_html4trans.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/docutils/code/!svn/ver/5304/trunk/sandbox/html4trans/tools/check_html4trans.py
+END
+rst2html_trans.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/5304/trunk/sandbox/html4trans/tools/rst2html_trans.py
+END
+test-syntax-examples
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/docutils/code/!svn/ver/5235/trunk/sandbox/html4trans/tools/test-syntax-examples
+END
+textsamples.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/5304/trunk/sandbox/html4trans/tools/textsamples.py
+END

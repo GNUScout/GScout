@@ -5,7 +5,9 @@
       <p><strong>Gracias por registrarte</strong> {{ user.username }}</p>
       <a href="/">Volver a la página principal.</a><br/>
       {% else %}
-         <strong>Regístrese aquí!</strong> Haga click <a href="/">aquí</a> para ir a la página principal <br />
+         <p>A partir del siguiente formulario se puede <strong>dar de alta en nuestra aplicacición</strong> y disfrutar de los servicios que ofrecemos.</p>
+         <p> Haga click <a href="/">aquí</a> para ir a la <strong>página principal</strong>.</p>
+         </br>
          <form id="user_form" method="post" action="/register/" enctype="multipart/form-data">
             {% csrf_token %}
 

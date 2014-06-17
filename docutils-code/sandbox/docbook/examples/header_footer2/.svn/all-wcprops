@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/7386/trunk/sandbox/docbook/examples/header_footer2
+END
+document.rst
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/docutils/code/!svn/ver/7386/trunk/sandbox/docbook/examples/header_footer2/document.rst
+END
+docbook_fo.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/docutils/code/!svn/ver/7386/trunk/sandbox/docbook/examples/header_footer2/docbook_fo.xsl
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/docutils/code/!svn/ver/7386/trunk/sandbox/docbook/examples/header_footer2/makefile
+END
+rst_docbook.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/docutils/code/!svn/ver/7386/trunk/sandbox/docbook/examples/header_footer2/rst_docbook.xsl
+END

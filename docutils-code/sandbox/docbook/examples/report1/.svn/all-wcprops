@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/docutils/code/!svn/ver/7521/trunk/sandbox/docbook/examples/report1
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/docutils/code/!svn/ver/7521/trunk/sandbox/docbook/examples/report1/makefile
+END
+rst_docbook.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/docutils/code/!svn/ver/7378/trunk/sandbox/docbook/examples/report1/rst_docbook.xsl
+END
+rst_docbook_draft.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/docutils/code/!svn/ver/7379/trunk/sandbox/docbook/examples/report1/rst_docbook_draft.xsl
+END
+long_tables.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/docutils/code/!svn/ver/7378/trunk/sandbox/docbook/examples/report1/long_tables.xsl
+END
+.configure
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/docutils/code/!svn/ver/7393/trunk/sandbox/docbook/examples/report1/.configure
+END
+make_title_page.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/docutils/code/!svn/ver/7393/trunk/sandbox/docbook/examples/report1/make_title_page.xsl
+END
+report.rst
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/docutils/code/!svn/ver/7386/trunk/sandbox/docbook/examples/report1/report.rst
+END
+format_numbers.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/docutils/code/!svn/ver/7378/trunk/sandbox/docbook/examples/report1/format_numbers.xsl
+END
+docbook_fo.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/docutils/code/!svn/ver/7393/trunk/sandbox/docbook/examples/report1/docbook_fo.xsl
+END
+title_page.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/docutils/code/!svn/ver/7378/trunk/sandbox/docbook/examples/report1/title_page.xml
+END

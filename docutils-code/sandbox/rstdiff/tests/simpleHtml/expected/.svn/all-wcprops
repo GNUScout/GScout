@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/docutils/code/!svn/ver/7001/trunk/sandbox/rstdiff/tests/simpleHtml/expected
+END
+attributes.html
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/docutils/code/!svn/ver/6995/trunk/sandbox/rstdiff/tests/simpleHtml/expected/attributes.html
+END
+textOnly.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/docutils/code/!svn/ver/6995/trunk/sandbox/rstdiff/tests/simpleHtml/expected/textOnly.html
+END
+textDifferent.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/docutils/code/!svn/ver/6995/trunk/sandbox/rstdiff/tests/simpleHtml/expected/textDifferent.html
+END
+textEqual.html
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/docutils/code/!svn/ver/6995/trunk/sandbox/rstdiff/tests/simpleHtml/expected/textEqual.html
+END
+sectionSequence.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/docutils/code/!svn/ver/7001/trunk/sandbox/rstdiff/tests/simpleHtml/expected/sectionSequence.html
+END
+inlineStyles.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/p/docutils/code/!svn/ver/6995/trunk/sandbox/rstdiff/tests/simpleHtml/expected/inlineStyles.html
+END
+section.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/docutils/code/!svn/ver/6995/trunk/sandbox/rstdiff/tests/simpleHtml/expected/section.html
+END

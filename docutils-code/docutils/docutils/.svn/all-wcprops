@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/p/docutils/code/!svn/ver/7749/trunk/docutils/docutils
+END
+examples.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/docutils/code/!svn/ver/7320/trunk/docutils/docutils/examples.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/docutils/code/!svn/ver/7699/trunk/docutils/docutils/__init__.py
+END
+frontend.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/docutils/code/!svn/ver/7584/trunk/docutils/docutils/frontend.py
+END
+_compat.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/docutils/code/!svn/ver/7486/trunk/docutils/docutils/_compat.py
+END
+docutils.conf
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/docutils/code/!svn/ver/3904/trunk/docutils/docutils/docutils.conf
+END
+statemachine.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/docutils/code/!svn/ver/7464/trunk/docutils/docutils/statemachine.py
+END
+io.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/docutils/code/!svn/ver/7596/trunk/docutils/docutils/io.py
+END
+core.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/docutils/code/!svn/ver/7466/trunk/docutils/docutils/core.py
+END
+nodes.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/docutils/code/!svn/ver/7595/trunk/docutils/docutils/nodes.py
+END

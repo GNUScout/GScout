@@ -1,0 +1,365 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/docutils/code/!svn/ver/6498/trunk/prest/t/70_plugins/perl.init
+END
+perl15.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/5351/trunk/prest/t/70_plugins/perl.init/perl15.dom
+END
+perl15.skip.pl
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/docutils/code/!svn/ver/5365/trunk/prest/t/70_plugins/perl.init/perl15.skip.pl
+END
+perl16.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/5351/trunk/prest/t/70_plugins/perl.init/perl16.dom
+END
+perl17.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6233/trunk/prest/t/70_plugins/perl.init/perl17.dom
+END
+perl18.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6233/trunk/prest/t/70_plugins/perl.init/perl18.dom
+END
+perl19.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6280/trunk/prest/t/70_plugins/perl.init/perl19.dom
+END
+trusted01.dom
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/70_plugins/perl.init/trusted01.dom
+END
+perl10.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/5479/trunk/prest/t/70_plugins/perl.init/perl10.rst
+END
+trusted02.dom
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/70_plugins/perl.init/trusted02.dom
+END
+perl11.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4710/trunk/prest/t/70_plugins/perl.init/perl11.rst
+END
+trusted03.dom
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/4710/trunk/prest/t/70_plugins/perl.init/trusted03.dom
+END
+perl12.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4710/trunk/prest/t/70_plugins/perl.init/perl12.rst
+END
+perl13.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4710/trunk/prest/t/70_plugins/perl.init/perl13.rst
+END
+perl14.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4710/trunk/prest/t/70_plugins/perl.init/perl14.rst
+END
+perl15.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/5351/trunk/prest/t/70_plugins/perl.init/perl15.rst
+END
+perl16.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/5351/trunk/prest/t/70_plugins/perl.init/perl16.rst
+END
+role01.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6498/trunk/prest/t/70_plugins/perl.init/role01.dom
+END
+perl01.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/70_plugins/perl.init/perl01.dom
+END
+perl17.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6233/trunk/prest/t/70_plugins/perl.init/perl17.rst
+END
+role02.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6498/trunk/prest/t/70_plugins/perl.init/role02.dom
+END
+perl02.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/70_plugins/perl.init/perl02.dom
+END
+perl18.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6233/trunk/prest/t/70_plugins/perl.init/perl18.rst
+END
+role03.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6498/trunk/prest/t/70_plugins/perl.init/role03.dom
+END
+perl03.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/70_plugins/perl.init/perl03.dom
+END
+perl19.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6280/trunk/prest/t/70_plugins/perl.init/perl19.rst
+END
+role04.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6498/trunk/prest/t/70_plugins/perl.init/role04.dom
+END
+perl04.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6498/trunk/prest/t/70_plugins/perl.init/perl04.dom
+END
+role05.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6498/trunk/prest/t/70_plugins/perl.init/role05.dom
+END
+perl05.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/70_plugins/perl.init/perl05.dom
+END
+perl06.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6498/trunk/prest/t/70_plugins/perl.init/perl06.dom
+END
+perl07.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/70_plugins/perl.init/perl07.dom
+END
+perl08.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/70_plugins/perl.init/perl08.dom
+END
+perl09.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/70_plugins/perl.init/perl09.dom
+END
+trusted01.rst
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/6286/trunk/prest/t/70_plugins/perl.init/trusted01.rst
+END
+trusted02.rst
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/6286/trunk/prest/t/70_plugins/perl.init/trusted02.rst
+END
+perl4.dom
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/docutils/code/!svn/ver/4710/trunk/prest/t/70_plugins/perl.init/perl4.dom
+END
+trusted03.rst
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/4710/trunk/prest/t/70_plugins/perl.init/trusted03.rst
+END
+perl15.prl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/5351/trunk/prest/t/70_plugins/perl.init/perl15.prl
+END
+Dir.smak
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/docutils/code/!svn/ver/6498/trunk/prest/t/70_plugins/perl.init/Dir.smak
+END
+role01.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/5477/trunk/prest/t/70_plugins/perl.init/role01.rst
+END
+perl01.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/70_plugins/perl.init/perl01.rst
+END
+role02.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/5477/trunk/prest/t/70_plugins/perl.init/role02.rst
+END
+perl02.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/70_plugins/perl.init/perl02.rst
+END
+role03.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6498/trunk/prest/t/70_plugins/perl.init/role03.rst
+END
+perl03.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/70_plugins/perl.init/perl03.rst
+END
+role04.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6498/trunk/prest/t/70_plugins/perl.init/role04.rst
+END
+perl18.stderr
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/6233/trunk/prest/t/70_plugins/perl.init/perl18.stderr
+END
+perl04.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/5479/trunk/prest/t/70_plugins/perl.init/perl04.rst
+END
+role05.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6498/trunk/prest/t/70_plugins/perl.init/role05.rst
+END
+perl05.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/70_plugins/perl.init/perl05.rst
+END
+perl06.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/5756/trunk/prest/t/70_plugins/perl.init/perl06.rst
+END
+skip.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/70_plugins/perl.init/skip.pl
+END
+perl07.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/70_plugins/perl.init/perl07.rst
+END
+perl10.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/6498/trunk/prest/t/70_plugins/perl.init/perl10.dom
+END
+perl08.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4710/trunk/prest/t/70_plugins/perl.init/perl08.rst
+END
+perl11.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4710/trunk/prest/t/70_plugins/perl.init/perl11.dom
+END
+perl09.rst
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/70_plugins/perl.init/perl09.rst
+END
+perl12.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4710/trunk/prest/t/70_plugins/perl.init/perl12.dom
+END
+perl13.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4710/trunk/prest/t/70_plugins/perl.init/perl13.dom
+END
+perl14.dom
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4710/trunk/prest/t/70_plugins/perl.init/perl14.dom
+END

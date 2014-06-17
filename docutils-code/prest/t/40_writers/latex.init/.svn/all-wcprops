@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/docutils/code/!svn/ver/6229/trunk/prest/t/40_writers/latex.init
+END
+math.skip.pl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/5435/trunk/prest/t/40_writers/latex.init/math.skip.pl
+END
+Dir.smak
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/docutils/code/!svn/ver/5058/trunk/prest/t/40_writers/latex.init/Dir.smak
+END
+tables01.mytex
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/docutils/code/!svn/ver/6229/trunk/prest/t/40_writers/latex.init/tables01.mytex
+END
+test.stderr
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/40_writers/latex.init/test.stderr
+END
+tables01.rst
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/5749/trunk/prest/t/40_writers/latex.init/tables01.rst
+END
+test.mytex
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/docutils/code/!svn/ver/6229/trunk/prest/t/40_writers/latex.init/test.mytex
+END
+test.rst
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/40_writers/latex.init/test.rst
+END
+biohazard.eps
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/40_writers/latex.init/biohazard.eps
+END
+test.skip.pl
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/5789/trunk/prest/t/40_writers/latex.init/test.skip.pl
+END
+simple.mytex
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/5750/trunk/prest/t/40_writers/latex.init/simple.mytex
+END
+math.mytex
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/docutils/code/!svn/ver/5750/trunk/prest/t/40_writers/latex.init/math.mytex
+END
+docsize.tex
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/40_writers/latex.init/docsize.tex
+END
+simple.rst
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/docutils/code/!svn/ver/5446/trunk/prest/t/40_writers/latex.init/simple.rst
+END
+math.rst
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/docutils/code/!svn/ver/5435/trunk/prest/t/40_writers/latex.init/math.rst
+END
+title.eps
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/40_writers/latex.init/title.eps
+END

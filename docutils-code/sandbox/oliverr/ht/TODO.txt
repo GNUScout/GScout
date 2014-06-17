@@ -1,0 +1,10 @@
+=========
+TODO List
+=========
+
+:Date: $Date: 2003-02-11 14:28:54 +0000 (mar 11 de feb de 2003) $
+
+* convert all chars > 128 to &#n;?
+* add an option to try to break document to use all of page 
+  below sections?
+

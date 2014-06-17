@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/docutils/code/!svn/ver/7668/trunk/docutils/test/test_parsers
+END
+test_parser.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/docutils/code/!svn/ver/7463/trunk/docutils/test/test_parsers/test_parser.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/docutils/code/!svn/ver/3509/trunk/docutils/test/test_parsers/__init__.py
+END
+test_get_parser_class.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/docutils/code/!svn/ver/7504/trunk/docutils/test/test_parsers/test_get_parser_class.py
+END

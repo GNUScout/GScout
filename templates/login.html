@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <!-- Is anyone getting tired of repeatedly entering the header over and over?? -->
-        <title>GScout</title>
-    </head>
-
-    <body>
-        <h1>Entrar a GScout</h1>
-        <form id="login_form" method="post" action="/login/">
-            {% csrf_token %} 
-            Nombre de usuario: <input type="text" name="username" value="" size="50" />
-            <br />
-            Contraseña: <input type="password" name="password" value="" size="50" />
-            <br />
-
-            <input type="submit" name="Acceder" value="Acceder" />
-        </form>
-
-    </body>
-</html>
-
+{% extends 'base_Gusers.html' %}
+{% block form-title %}<h2>Registro en GScout</h2>{% endblock %}
+{% block form %}
+   <p> A partir del siguiente formulario <strong>accederá</strong> a la aplicación. </p> </br>
+   <form id="login_form" method="post" action="/login/">
+      {% csrf_token %} 
+      Nombre de usuario: </br>
+      <input type="text" name="username" value="" size="50" />
+      <br />
+      Contraseña: </br>
+      <input type="password" name="password" value="" size="50" />
+      <br />
+      <input type="submit" name="Acceder" value="Acceder" />
+   </form>
+{% endblock %}

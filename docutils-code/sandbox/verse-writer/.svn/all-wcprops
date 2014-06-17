@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/docutils/code/!svn/ver/4847/trunk/sandbox/verse-writer
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/docutils/code/!svn/ver/4847/trunk/sandbox/verse-writer/README.txt
+END
+runtest
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/docutils/code/!svn/ver/4842/trunk/sandbox/verse-writer/runtest
+END
+rst2verse.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/docutils/code/!svn/ver/4847/trunk/sandbox/verse-writer/rst2verse.py
+END

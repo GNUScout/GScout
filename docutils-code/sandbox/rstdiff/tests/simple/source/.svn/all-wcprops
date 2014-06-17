@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/docutils/code/!svn/ver/7000/trunk/sandbox/rstdiff/tests/simple/source
+END
+textDifferent.rst
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/6347/trunk/sandbox/rstdiff/tests/simple/source/textDifferent.rst
+END
+textEqual.rst
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/docutils/code/!svn/ver/6338/trunk/sandbox/rstdiff/tests/simple/source/textEqual.rst
+END
+sectionSequence.rst
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/docutils/code/!svn/ver/7000/trunk/sandbox/rstdiff/tests/simple/source/sectionSequence.rst
+END
+inlineStyles.rst
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/docutils/code/!svn/ver/6382/trunk/sandbox/rstdiff/tests/simple/source/inlineStyles.rst
+END
+section.rst
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/docutils/code/!svn/ver/6481/trunk/sandbox/rstdiff/tests/simple/source/section.rst
+END
+attributes.rst
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/docutils/code/!svn/ver/6382/trunk/sandbox/rstdiff/tests/simple/source/attributes.rst
+END
+textOnly.rst
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/docutils/code/!svn/ver/6350/trunk/sandbox/rstdiff/tests/simple/source/textOnly.rst
+END

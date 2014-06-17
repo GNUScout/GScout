@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/docutils/code/!svn/ver/6995/trunk/sandbox/rstdiff/tests/optionOldNew/input
+END
+strip.opt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/docutils/code/!svn/ver/6995/trunk/sandbox/rstdiff/tests/optionOldNew/input/strip.opt
+END
+generator.opt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/docutils/code/!svn/ver/6995/trunk/sandbox/rstdiff/tests/optionOldNew/input/generator.opt
+END
+strip.rst
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/docutils/code/!svn/ver/6995/trunk/sandbox/rstdiff/tests/optionOldNew/input/strip.rst
+END
+generator.rst
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/docutils/code/!svn/ver/6995/trunk/sandbox/rstdiff/tests/optionOldNew/input/generator.rst
+END

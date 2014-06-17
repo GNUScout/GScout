@@ -1,0 +1,49 @@
+10
+
+dir
+7752
+http://svn.code.sf.net/p/docutils/code/trunk/sandbox/rstdiff/tests
+http://svn.code.sf.net/p/docutils/code
+
+
+
+2011-04-09T11:02:30.655499Z
+7004
+smerten
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+929543f6-e4f2-0310-98a6-ba3bd3dd1d04
+
+htmlNoSource
+dir
+
+html
+dir
+
+simpleNoSource
+dir
+
+optionCompareNormal
+dir
+
+simple
+dir
+
+simpleHtml
+dir
+
+optionOldNew
+dir
+

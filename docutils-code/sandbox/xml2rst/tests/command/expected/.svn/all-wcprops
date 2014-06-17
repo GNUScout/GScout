@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/docutils/code/!svn/ver/7216/trunk/sandbox/xml2rst/tests/command/expected
+END
+argument.emp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/docutils/code/!svn/ver/7216/trunk/sandbox/xml2rst/tests/command/expected/argument.emp
+END
+stdout.emp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/docutils/code/!svn/ver/7216/trunk/sandbox/xml2rst/tests/command/expected/stdout.emp
+END

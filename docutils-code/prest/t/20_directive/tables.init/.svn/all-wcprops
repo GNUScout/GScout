@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/docutils/code/!svn/ver/6228/trunk/prest/t/20_directive/tables.init
+END
+ExtractTests.pm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/20_directive/tables.init/ExtractTests.pm
+END
+empty.txt
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/20_directive/tables.init/empty.txt
+END
+utf-16.csv
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/20_directive/tables.init/utf-16.csv
+END
+tables24.skip.pl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/20_directive/tables.init/tables24.skip.pl
+END
+test_tables.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/20_directive/tables.init/test_tables.py
+END

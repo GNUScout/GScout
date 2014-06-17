@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/docutils/code/!svn/ver/6999/trunk/sandbox/rstdiff/tests/optionCompareNormal/input
+END
+section.new.rst
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/docutils/code/!svn/ver/6999/trunk/sandbox/rstdiff/tests/optionCompareNormal/input/section.new.rst
+END
+section.old.rst
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/docutils/code/!svn/ver/6999/trunk/sandbox/rstdiff/tests/optionCompareNormal/input/section.old.rst
+END

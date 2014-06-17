@@ -1,0 +1,19 @@
+K 10
+svn:ignore
+V 131
+build 
+test_output
+svn_config
+foo_bar
+temp.fo
+temp.xml
+temp.pdf
+build
+dist
+test.xsl
+MANIFEST
+docutils_test
+functional
+scripts_ver3
+
+END

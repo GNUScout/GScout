@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/docutils/code/!svn/ver/7648/trunk/docutils/docutils/readers
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/docutils/code/!svn/ver/7648/trunk/docutils/docutils/readers/__init__.py
+END
+pep.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/docutils/code/!svn/ver/7320/trunk/docutils/docutils/readers/pep.py
+END
+doctree.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/docutils/code/!svn/ver/4564/trunk/docutils/docutils/readers/doctree.py
+END
+standalone.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/4802/trunk/docutils/docutils/readers/standalone.py
+END

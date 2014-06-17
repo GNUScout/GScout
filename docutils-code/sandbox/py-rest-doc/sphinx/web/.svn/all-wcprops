@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/docutils/code/!svn/ver/5393/trunk/sandbox/py-rest-doc/sphinx/web
+END
+admin.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/5349/trunk/sandbox/py-rest-doc/sphinx/web/admin.py
+END
+antispam.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/5128/trunk/sandbox/py-rest-doc/sphinx/web/antispam.py
+END
+util.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/docutils/code/!svn/ver/5381/trunk/sandbox/py-rest-doc/sphinx/web/util.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/5273/trunk/sandbox/py-rest-doc/sphinx/web/__init__.py
+END
+markup.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/docutils/code/!svn/ver/5254/trunk/sandbox/py-rest-doc/sphinx/web/markup.py
+END
+mail.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/docutils/code/!svn/ver/5393/trunk/sandbox/py-rest-doc/sphinx/web/mail.py
+END
+application.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/docutils/code/!svn/ver/5393/trunk/sandbox/py-rest-doc/sphinx/web/application.py
+END
+feed.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/docutils/code/!svn/ver/5109/trunk/sandbox/py-rest-doc/sphinx/web/feed.py
+END
+webconf.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/docutils/code/!svn/ver/5326/trunk/sandbox/py-rest-doc/sphinx/web/webconf.py
+END
+database.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/5385/trunk/sandbox/py-rest-doc/sphinx/web/database.py
+END
+oldurls.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/docutils/code/!svn/ver/5393/trunk/sandbox/py-rest-doc/sphinx/web/oldurls.py
+END
+serve.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/5331/trunk/sandbox/py-rest-doc/sphinx/web/serve.py
+END
+userdb.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/docutils/code/!svn/ver/5159/trunk/sandbox/py-rest-doc/sphinx/web/userdb.py
+END
+wsgiutil.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/5382/trunk/sandbox/py-rest-doc/sphinx/web/wsgiutil.py
+END

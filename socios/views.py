@@ -18,14 +18,44 @@ def socios_main_page(request):
    """
       If users are authenticated, direct them to the main page. Otherwise, take
       them to the login page.
+     
+      **Context**
+
+      ``context``
+        An instance of RequestContext(request)
+
+
+      **Template:**
+
+      :template:`home.html`
    """
    context=RequestContext(request) 
    return render_to_response('home.html',context)
 
 @csrf_protect
 def newPersonal(request):
-    """ Vista que se encarga de gestionar los diferentes 
-        formularios para la creacion de un socio"""
+    """View manages the different forms for creating a partner
+       
+      **Context**
+
+      ``context_instance``
+        An instance of RequestContext(request)
+
+      ``errorSocio``
+       variable displayed when there is already a partner with the same number of n_asociado
+
+      ``familia``
+       variable that contains the members of a given family
+
+      **Template:**
+
+      :template: `socios/f_asociado.html`
+      :template: `socios/f_personales.html`
+      :template: `socios/f_personales.html`
+      :template: `socios/f_familiares.html`
+      :template: `socios/f_economicos.html`
+      :template: `socios/f_medicos.html`
+    """
     
     if request.POST['form_id'] == "f1":
         s_socio = request.session.get('d_socio', {})
@@ -189,8 +219,24 @@ def newPersonal(request):
 @login_required
 @csrf_protect
 def search(request):
-    """ Vista que busca un socio por su ID"""
-    try:
+
+    """
+     view to seeking a partner for its id    
+ 
+      **Context**
+
+      ``context_instance``
+        An instance of RequestContext(request)
+
+      ``errorNoFound``
+        if the user is looking for is not there then this variable shows
+
+      **Template:**
+
+      :template:`socios/search.html`
+    """
+
+       try:
         socio = Socio.objects.get(n_asociado = request.POST['asociado'])
     except:
         return render_to_response('socios/search.html', \

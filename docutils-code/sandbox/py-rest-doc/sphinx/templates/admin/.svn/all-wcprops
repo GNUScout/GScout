@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/docutils/code/!svn/ver/5243/trunk/sandbox/py-rest-doc/sphinx/templates/admin
+END
+manage_users.html
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/docutils/code/!svn/ver/5151/trunk/sandbox/py-rest-doc/sphinx/templates/admin/manage_users.html
+END
+layout.html
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/docutils/code/!svn/ver/5137/trunk/sandbox/py-rest-doc/sphinx/templates/admin/layout.html
+END
+moderate_comments.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/docutils/code/!svn/ver/5243/trunk/sandbox/py-rest-doc/sphinx/templates/admin/moderate_comments.html
+END
+change_password.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/docutils/code/!svn/ver/5137/trunk/sandbox/py-rest-doc/sphinx/templates/admin/change_password.html
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/5145/trunk/sandbox/py-rest-doc/sphinx/templates/admin/index.html
+END
+login.html
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/5137/trunk/sandbox/py-rest-doc/sphinx/templates/admin/login.html
+END

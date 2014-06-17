@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 47
+temp.xml
+temp.fo
+temp.pdf
+doc.xml
+my_notes.rst
+
+END

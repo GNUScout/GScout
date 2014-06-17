@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/docutils/code/!svn/ver/7675/trunk/sandbox/rst2graph/tests/xmllint/expected
+END
+titlePath.ex
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/7675/trunk/sandbox/rst2graph/tests/xmllint/expected/titlePath.ex
+END
+reverseTable.err
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/reverseTable.err
+END
+invalid.err
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/invalid.err
+END
+textOnly.err
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/textOnly.err
+END
+table.err
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/table.err
+END
+selectTable.err
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/selectTable.err
+END
+sections.err
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/sections.err
+END
+multiedgeSections.err
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/multiedgeSections.err
+END
+titlePath.err
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/docutils/code/!svn/ver/7675/trunk/sandbox/rst2graph/tests/xmllint/expected/titlePath.err
+END
+reverseTable.out
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/reverseTable.out
+END
+invalid.out
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/invalid.out
+END
+textOnly.out
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/textOnly.out
+END
+selectTable.out
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/selectTable.out
+END
+sections.out
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/sections.out
+END
+multiedgeSections.out
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/multiedgeSections.out
+END
+table.out
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/table.out
+END
+reverseTable.ex
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/reverseTable.ex
+END
+invalid.ex
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/invalid.ex
+END
+textOnly.ex
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/textOnly.ex
+END
+selectTable.ex
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/selectTable.ex
+END
+sections.ex
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/sections.ex
+END
+multiedgeSections.ex
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/multiedgeSections.ex
+END
+table.ex
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/docutils/code/!svn/ver/7672/trunk/sandbox/rst2graph/tests/xmllint/expected/table.ex
+END
+titlePath.out
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/docutils/code/!svn/ver/7675/trunk/sandbox/rst2graph/tests/xmllint/expected/titlePath.out
+END

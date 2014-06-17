@@ -1,0 +1,22 @@
+K 10
+svn:ignore
+V 163
+xml2rst.pod
+xml2rst.html
+tests.tgz
+.dist.ok
+dist
+version.gmk
+.tests.ok
+.build.ok
+.cvsignore
+.svnignore
+build
+MANIFEST
+docutilsOptions.rst
+.*.gmk
+Makefile
+CVS
+docs
+
+END

@@ -1,12 +1,20 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
+
+    """
+      Class for user profile management. 
+      This class uses the default :model:`auth.User` django model and returns the user's name.
+
+    """
+
     # This line is required. Links UserProfile to a User model instance.
     user = models.OneToOneField(User)
 
     # The additional attributes we wish to include.
-    website = models.URLField(blank=True)
+    website = models.URLField(blank=True,help_text="This attribute is optional")
     #picture = models.ImageField(upload_to='profile_images', blank=True)
 
     # Override the __unicode__() method to return out something meaningful!
@@ -15,40 +23,42 @@ class UserProfile(models.Model):
 
 
 class Autorizaciones(models.Model):
-    """Clase para las Autorizaciones"""
+
+    """Class for authorization management. Authorizations can be: medical, concerning activities undertaken or relevant to the distribution of photographs."""
+    
     autorizacion_medica = models.BooleanField()
     autorizacion_actividades = models.BooleanField()
     autorizacion_fotografias = models.BooleanField()
     
 
 class Familia(models.Model):
-    """Clase para las Familias"""
+    """This class is needed to determine which family belongs to a user."""
     nombre = models.CharField(max_length=100)
     apellidos = models.CharField(max_length=100)
-    nif = models.CharField(max_length=100, primary_key=True, unique=True)
+    nif = models.CharField(max_length=100, primary_key=True, unique=True,help_text="Primary key")
     
     
 class Familiares(models.Model):
-    """Clase para los Familiares pertenecientes a las Familias"""
+    """Class managed by the members of a family unit."""
     nombre = models.CharField(max_length=100)
     apellidos = models.CharField(max_length=100)
-    nif = models.CharField(max_length=100, primary_key=True, unique=True)
+    nif = models.CharField(max_length=100, primary_key=True, unique=True,help_text="Primary Key")
     telefono = models.CharField(max_length=100)
     movil = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     rol = models.CharField(max_length=100)
-    familia_id = models.ForeignKey(Familia, null=True)
+    familia_id = models.ForeignKey(Familia, null=True,help_text="foreign key family")
        
 
 class Socio(models.Model):
-    """Clase para los datos principales del socio"""
-    n_asociado = models.CharField(max_length=100, primary_key=True, unique=True)
+    """Class for managing partner"""
+    n_asociado = models.CharField(max_length=100, primary_key=True, unique=True,help_text="Primary Key")
     alta = models.BooleanField()
     autorizaciones = models.ForeignKey(Autorizaciones, null=True)
-    familia_id = models.ForeignKey(Familia, null=True)
+    familia_id = models.ForeignKey(Familia, null=True,help_text="foreign key family")
     
 class D_Personales(models.Model):
-    """Clase para los datos personales del socio"""
+    """class that stores personal data partner"""
     nombre = models.CharField(max_length=100)
     apellidos = models.CharField(max_length=100)
     dni = models.CharField(max_length=100)
@@ -67,11 +77,11 @@ class D_Personales(models.Model):
     profesion = models.TextField()
     deportes = models.TextField()
     aficiones = models.TextField()
-    socio_id = models.ForeignKey(Socio)
+    socio_id = models.ForeignKey(Socio,help_text="foreign key socio")
     
     
 class D_Medicos(models.Model):
-    """Clase para los datos medicos del socio"""
+    """class medical data managed by partner"""
     c_seguro = models.CharField(max_length=100)
     n_poliza = models.CharField(max_length=100)
     enfermedad = models.CharField(max_length=2, default='no')
@@ -88,11 +98,11 @@ class D_Medicos(models.Model):
     t_dieta = models.TextField()
     toma_medicamentos = models.CharField(max_length=2, default='no')
     info_adicional = models.TextField()
-    socio_id = models.ForeignKey(Socio)
+    socio_id = models.ForeignKey(Socio,help_text="foreign key socio")
     
  
 class D_Economicos(models.Model):
-    """Clase para los datos economicos del socio"""
+    """clase que gestiona los datos económicos del socio"""
     titular = models.CharField(max_length=100)
     nif_titular = models.CharField(max_length=100)
     banco = models.CharField(max_length=100)
@@ -102,14 +112,14 @@ class D_Economicos(models.Model):
     d_sucursal = models.CharField(max_length=100)
     dc = models.CharField(max_length=100)
     n_cuenta = models.CharField(max_length=100)
-    socio_id = models.ForeignKey(Socio)
+    socio_id = models.ForeignKey(Socio,help_text="foreign key socio")
     
     
 class Medicamentos(models.Model):
-    """Clase para anexar medicamentos a los datos medicos del socio"""
+    """Class to add medicines to medical data partner"""
     nombre = models.CharField(max_length=100)
     dosis = models.CharField(max_length=100)
     pauta = models.CharField(max_length=100)
-    socio_id = models.ForeignKey(Socio)
+    socio_id = models.ForeignKey(Socio,help_text="foreign key socio")
 
 

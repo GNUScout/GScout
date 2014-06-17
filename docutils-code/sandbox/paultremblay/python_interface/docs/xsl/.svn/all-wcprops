@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl
+END
+utils.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/utils.xsl
+END
+document_parameters.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/document_parameters.xsl
+END
+line_block.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/line_block.xsl
+END
+comment.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/comment.xsl
+END
+option_list.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/option_list.xsl
+END
+front_matter.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/front_matter.xsl
+END
+section.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/section.xsl
+END
+header_footer.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/header_footer.xsl
+END
+table_long.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/table_long.xsl
+END
+table_extended.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/table_extended.xsl
+END
+page.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/page.xsl
+END
+inline.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/inline.xsl
+END
+field_list.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/field_list.xsl
+END
+body_directives.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/body_directives.xsl
+END
+bullet_list.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/bullet_list.xsl
+END
+image_figure.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/image_figure.xsl
+END
+definition_list.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/definition_list.xsl
+END
+root.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/root.xsl
+END
+enumerated_list.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/enumerated_list.xsl
+END
+bibliographic_fields.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/bibliographic_fields.xsl
+END
+admonitions.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/admonitions.xsl
+END
+toc.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/toc.xsl
+END
+document_stylesheet.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/document_stylesheet.xsl
+END
+table.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/table.xsl
+END
+body_elements.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/body_elements.xsl
+END
+table_extended2.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/table_extended2.xsl
+END
+footnote.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docs/xsl/footnote.xsl
+END

@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/docutils/code/!svn/ver/7619/trunk/docutils/test/functional/input/data
+END
+custom_roles_latex.txt
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/docutils/code/!svn/ver/6443/trunk/docutils/test/functional/input/data/custom_roles_latex.txt
+END
+errors.txt
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/docutils/code/!svn/ver/2357/trunk/docutils/test/functional/input/data/errors.txt
+END
+latex.txt
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/docutils/code/!svn/ver/5934/trunk/docutils/test/functional/input/data/latex.txt
+END
+custom_roles.txt
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/docutils/code/!svn/ver/6475/trunk/docutils/test/functional/input/data/custom_roles.txt
+END
+table_complex.txt
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/2357/trunk/docutils/test/functional/input/data/table_complex.txt
+END
+list_table.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/docutils/code/!svn/ver/3165/trunk/docutils/test/functional/input/data/list_table.txt
+END
+nonalphanumeric.txt
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/docutils/code/!svn/ver/2660/trunk/docutils/test/functional/input/data/nonalphanumeric.txt
+END
+latex_encoding.txt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/docutils/code/!svn/ver/7591/trunk/docutils/test/functional/input/data/latex_encoding.txt
+END
+svg_images.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/docutils/code/!svn/ver/6254/trunk/docutils/test/functional/input/data/svg_images.txt
+END
+swf_images.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/docutils/code/!svn/ver/7099/trunk/docutils/test/functional/input/data/swf_images.txt
+END
+urls.txt
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/docutils/code/!svn/ver/7325/trunk/docutils/test/functional/input/data/urls.txt
+END
+option_lists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/docutils/code/!svn/ver/5862/trunk/docutils/test/functional/input/data/option_lists.txt
+END
+unicode.txt
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/docutils/code/!svn/ver/6319/trunk/docutils/test/functional/input/data/unicode.txt
+END
+section_titles.txt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/docutils/code/!svn/ver/7368/trunk/docutils/test/functional/input/data/section_titles.txt
+END
+math.txt
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/docutils/code/!svn/ver/7129/trunk/docutils/test/functional/input/data/math.txt
+END
+html4css1.css
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/docutils/code/!svn/ver/7437/trunk/docutils/test/functional/input/data/html4css1.css
+END
+standard.txt
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/docutils/code/!svn/ver/7514/trunk/docutils/test/functional/input/data/standard.txt
+END
+table_rowspan.txt
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/3362/trunk/docutils/test/functional/input/data/table_rowspan.txt
+END
+math.css
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/docutils/code/!svn/ver/7619/trunk/docutils/test/functional/input/data/math.css
+END
+hyperlinking.txt
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/docutils/code/!svn/ver/6225/trunk/docutils/test/functional/input/data/hyperlinking.txt
+END
+header_footer.txt
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/3184/trunk/docutils/test/functional/input/data/header_footer.txt
+END
+table_colspan.txt
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/2357/trunk/docutils/test/functional/input/data/table_colspan.txt
+END
+tables_latex.txt
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/docutils/code/!svn/ver/7616/trunk/docutils/test/functional/input/data/tables_latex.txt
+END

@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/p/docutils/code/!svn/ver/7751/trunk/docutils
+END
+RELEASE-NOTES.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/docutils/code/!svn/ver/7751/trunk/docutils/RELEASE-NOTES.txt
+END
+FAQ.txt
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/p/docutils/code/!svn/ver/7677/trunk/docutils/FAQ.txt
+END
+COPYING.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/docutils/code/!svn/ver/7530/trunk/docutils/COPYING.txt
+END
+THANKS.txt
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/p/docutils/code/!svn/ver/7503/trunk/docutils/THANKS.txt
+END
+setup.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/p/docutils/code/!svn/ver/7699/trunk/docutils/setup.py
+END
+docutils.conf
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/p/docutils/code/!svn/ver/7375/trunk/docutils/docutils.conf
+END
+MANIFEST.in
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/docutils/code/!svn/ver/6258/trunk/docutils/MANIFEST.in
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/p/docutils/code/!svn/ver/7700/trunk/docutils/README.txt
+END
+install.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/p/docutils/code/!svn/ver/2428/trunk/docutils/install.py
+END
+setup.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/p/docutils/code/!svn/ver/7442/trunk/docutils/setup.cfg
+END
+BUGS.txt
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/p/docutils/code/!svn/ver/7670/trunk/docutils/BUGS.txt
+END
+HISTORY.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/docutils/code/!svn/ver/7749/trunk/docutils/HISTORY.txt
+END

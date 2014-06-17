@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/docutils/code/!svn/ver/7668/trunk/docutils/test/test_parsers/test_rst
+END
+test_east_asian_text.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/p/docutils/code/!svn/ver/7313/trunk/docutils/test/test_parsers/test_rst/test_east_asian_text.py
+END
+test_interpreted_fr.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/docutils/code/!svn/ver/7017/trunk/docutils/test/test_parsers/test_rst/test_interpreted_fr.py
+END
+test_transitions.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/docutils/code/!svn/ver/4564/trunk/docutils/test/test_parsers/test_rst/test_transitions.py
+END
+test_SimpleTableParser.py
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/docutils/code/!svn/ver/7313/trunk/docutils/test/test_parsers/test_rst/test_SimpleTableParser.py
+END
+test_footnotes.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/4564/trunk/docutils/test/test_parsers/test_rst/test_footnotes.py
+END
+test_outdenting.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/docutils/code/!svn/ver/4564/trunk/docutils/test/test_parsers/test_rst/test_outdenting.py
+END
+test_line_blocks.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/docutils/code/!svn/ver/7638/trunk/docutils/test/test_parsers/test_rst/test_line_blocks.py
+END
+test_comments.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/docutils/code/!svn/ver/4564/trunk/docutils/test/test_parsers/test_rst/test_comments.py
+END
+test_interpreted.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/docutils/code/!svn/ver/7514/trunk/docutils/test/test_parsers/test_rst/test_interpreted.py
+END
+test_option_lists.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/docutils/code/!svn/ver/7128/trunk/docutils/test/test_parsers/test_rst/test_option_lists.py
+END
+test_paragraphs.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/docutils/code/!svn/ver/4564/trunk/docutils/test/test_parsers/test_rst/test_paragraphs.py
+END
+test_literal_blocks.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/docutils/code/!svn/ver/4564/trunk/docutils/test/test_parsers/test_rst/test_literal_blocks.py
+END
+test_block_quotes.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/docutils/code/!svn/ver/4564/trunk/docutils/test/test_parsers/test_rst/test_block_quotes.py
+END
+test_citations.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/5510/trunk/docutils/test/test_parsers/test_rst/test_citations.py
+END
+test_inline_markup.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/docutils/code/!svn/ver/7668/trunk/docutils/test/test_parsers/test_rst/test_inline_markup.py
+END
+test_section_headers.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/p/docutils/code/!svn/ver/6476/trunk/docutils/test/test_parsers/test_rst/test_section_headers.py
+END
+test_substitutions.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/docutils/code/!svn/ver/4564/trunk/docutils/test/test_parsers/test_rst/test_substitutions.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/docutils/code/!svn/ver/3509/trunk/docutils/test/test_parsers/test_rst/__init__.py
+END
+test_field_lists.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/docutils/code/!svn/ver/4564/trunk/docutils/test/test_parsers/test_rst/test_field_lists.py
+END
+test_doctest_blocks.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/docutils/code/!svn/ver/4564/trunk/docutils/test/test_parsers/test_rst/test_doctest_blocks.py
+END
+test_TableParser.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/docutils/code/!svn/ver/7668/trunk/docutils/test/test_parsers/test_rst/test_TableParser.py
+END
+test_bullet_lists.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/docutils/code/!svn/ver/4593/trunk/docutils/test/test_parsers/test_rst/test_bullet_lists.py
+END
+test_definition_lists.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/docutils/code/!svn/ver/4564/trunk/docutils/test/test_parsers/test_rst/test_definition_lists.py
+END
+test_enumerated_lists.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/docutils/code/!svn/ver/5033/trunk/docutils/test/test_parsers/test_rst/test_enumerated_lists.py
+END
+test_functions.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/docutils/code/!svn/ver/7337/trunk/docutils/test/test_parsers/test_rst/test_functions.py
+END
+test_targets.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/docutils/code/!svn/ver/7062/trunk/docutils/test/test_parsers/test_rst/test_targets.py
+END
+test_tables.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/docutils/code/!svn/ver/7313/trunk/docutils/test/test_parsers/test_rst/test_tables.py
+END

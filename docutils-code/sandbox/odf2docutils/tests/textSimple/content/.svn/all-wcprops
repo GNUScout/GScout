@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/docutils/code/!svn/ver/7724/trunk/sandbox/odf2docutils/tests/textSimple/content
+END
+wrongNestedHeader.xml
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/docutils/code/!svn/ver/7714/trunk/sandbox/odf2docutils/tests/textSimple/content/wrongNestedHeader.xml
+END
+emphasis.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/docutils/code/!svn/ver/7724/trunk/sandbox/odf2docutils/tests/textSimple/content/emphasis.xml
+END
+oneLine.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/docutils/code/!svn/ver/7707/trunk/sandbox/odf2docutils/tests/textSimple/content/oneLine.xml
+END
+oneHeader.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/p/docutils/code/!svn/ver/7714/trunk/sandbox/odf2docutils/tests/textSimple/content/oneHeader.xml
+END
+nestedHeader.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/docutils/code/!svn/ver/7714/trunk/sandbox/odf2docutils/tests/textSimple/content/nestedHeader.xml
+END
+wrongerNesting.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/docutils/code/!svn/ver/7707/trunk/sandbox/odf2docutils/tests/textSimple/content/wrongerNesting.xml
+END
+italicAutomatic.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/docutils/code/!svn/ver/7724/trunk/sandbox/odf2docutils/tests/textSimple/content/italicAutomatic.xml
+END
+empty.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/docutils/code/!svn/ver/7707/trunk/sandbox/odf2docutils/tests/textSimple/content/empty.xml
+END
+nestedList.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/docutils/code/!svn/ver/7707/trunk/sandbox/odf2docutils/tests/textSimple/content/nestedList.xml
+END
+manyHeaders.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/docutils/code/!svn/ver/7714/trunk/sandbox/odf2docutils/tests/textSimple/content/manyHeaders.xml
+END
+twoParas.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/docutils/code/!svn/ver/7707/trunk/sandbox/odf2docutils/tests/textSimple/content/twoParas.xml
+END
+wrongNesting.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/docutils/code/!svn/ver/7707/trunk/sandbox/odf2docutils/tests/textSimple/content/wrongNesting.xml
+END
+simpleList.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/docutils/code/!svn/ver/7707/trunk/sandbox/odf2docutils/tests/textSimple/content/simpleList.xml
+END
+twoHeaders.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/docutils/code/!svn/ver/7714/trunk/sandbox/odf2docutils/tests/textSimple/content/twoHeaders.xml
+END

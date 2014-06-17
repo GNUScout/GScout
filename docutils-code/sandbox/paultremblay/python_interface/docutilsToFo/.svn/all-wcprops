@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docutilsToFo
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docutilsToFo/__init__.py
+END
+docutils_fo_dicts.py
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docutilsToFo/docutils_fo_dicts.py
+END
+rst2xml_lib.py
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docutilsToFo/rst2xml_lib.py
+END
+att_set_dict.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docutilsToFo/att_set_dict.py
+END
+make_stylesheet.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/docutilsToFo/make_stylesheet.py
+END

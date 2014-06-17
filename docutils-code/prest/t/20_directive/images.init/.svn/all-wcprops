@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/20_directive/images.init
+END
+ExtractTests.pm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/20_directive/images.init/ExtractTests.pm
+END
+test_images.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/20_directive/images.init/test_images.py
+END
+images30.mydom
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/20_directive/images.init/images30.mydom
+END
+images14.mydom
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/20_directive/images.init/images14.mydom
+END
+images24.mydom
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/20_directive/images.init/images24.mydom
+END

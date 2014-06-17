@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/docutils/code/!svn/ver/1306/trunk/sandbox/dreamcatcher/rlpdf
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/docutils/code/!svn/ver/1300/trunk/sandbox/dreamcatcher/rlpdf/__init__.py
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/docutils/code/!svn/ver/1300/trunk/sandbox/dreamcatcher/rlpdf/README.txt
+END
+rllicense.txt
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/docutils/code/!svn/ver/1300/trunk/sandbox/dreamcatcher/rlpdf/rllicense.txt
+END
+rlpdf.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/docutils/code/!svn/ver/1306/trunk/sandbox/dreamcatcher/rlpdf/rlpdf.py
+END
+rltemplate.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/docutils/code/!svn/ver/1300/trunk/sandbox/dreamcatcher/rlpdf/rltemplate.py
+END
+stylesheet.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/docutils/code/!svn/ver/1306/trunk/sandbox/dreamcatcher/rlpdf/stylesheet.py
+END

@@ -1,0 +1,281 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/docutils/code/!svn/ver/7664/trunk/docutils/test/test_parsers/test_rst/test_directives
+END
+test_tables.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/docutils/code/!svn/ver/7664/trunk/docutils/test/test_parsers/test_rst/test_directives/test_tables.py
+END
+test_replace.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/docutils/code/!svn/ver/7021/trunk/docutils/test/test_parsers/test_rst/test_directives/test_replace.py
+END
+include10.txt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/docutils/code/!svn/ver/6314/trunk/docutils/test/test_parsers/test_rst/test_directives/include10.txt
+END
+include12.txt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/docutils/code/!svn/ver/5015/trunk/docutils/test/test_parsers/test_rst/test_directives/include12.txt
+END
+test_sectnum.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/docutils/code/!svn/ver/5174/trunk/docutils/test/test_parsers/test_rst/test_directives/test_sectnum.py
+END
+include13.txt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/docutils/code/!svn/ver/5015/trunk/docutils/test/test_parsers/test_rst/test_directives/include13.txt
+END
+test_include.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/docutils/code/!svn/ver/7514/trunk/docutils/test/test_parsers/test_rst/test_directives/test_include.py
+END
+test_line_blocks.py
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/docutils/code/!svn/ver/7062/trunk/docutils/test/test_parsers/test_rst/test_directives/test_line_blocks.py
+END
+test_admonitions.py
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/docutils/code/!svn/ver/7348/trunk/docutils/test/test_parsers/test_rst/test_directives/test_admonitions.py
+END
+test_unicode.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/docutils/code/!svn/ver/5889/trunk/docutils/test/test_parsers/test_rst/test_directives/test_unicode.py
+END
+utf-16.csv
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/docutils/code/!svn/ver/2595/trunk/docutils/test/test_parsers/test_rst/test_directives/utf-16.csv
+END
+include_literal.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/docutils/code/!svn/ver/6186/trunk/docutils/test/test_parsers/test_rst/test_directives/include_literal.txt
+END
+test_math.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/docutils/code/!svn/ver/7062/trunk/docutils/test/test_parsers/test_rst/test_directives/test_math.py
+END
+test_code_none.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/docutils/code/!svn/ver/7221/trunk/docutils/test/test_parsers/test_rst/test_directives/test_code_none.py
+END
+test_code_long.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/docutils/code/!svn/ver/7267/trunk/docutils/test/test_parsers/test_rst/test_directives/test_code_long.py
+END
+test_raw.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/docutils/code/!svn/ver/7384/trunk/docutils/test/test_parsers/test_rst/test_directives/test_raw.py
+END
+test_block_quotes.py
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/docutils/code/!svn/ver/5174/trunk/docutils/test/test_parsers/test_rst/test_directives/test_block_quotes.py
+END
+test_sidebars.py
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/docutils/code/!svn/ver/7062/trunk/docutils/test/test_parsers/test_rst/test_directives/test_sidebars.py
+END
+test_unknown.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/docutils/code/!svn/ver/4564/trunk/docutils/test/test_parsers/test_rst/test_directives/test_unknown.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/docutils/code/!svn/ver/3509/trunk/docutils/test/test_parsers/test_rst/test_directives/__init__.py
+END
+test_test_directives.py
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/p/docutils/code/!svn/ver/4564/trunk/docutils/test/test_parsers/test_rst/test_directives/test_test_directives.py
+END
+test_figures.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/docutils/code/!svn/ver/7062/trunk/docutils/test/test_parsers/test_rst/test_directives/test_figures.py
+END
+test_images.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/docutils/code/!svn/ver/7621/trunk/docutils/test/test_parsers/test_rst/test_directives/test_images.py
+END
+test_default_role.py
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/docutils/code/!svn/ver/4564/trunk/docutils/test/test_parsers/test_rst/test_directives/test_default_role.py
+END
+test_class.py
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/docutils/code/!svn/ver/5174/trunk/docutils/test/test_parsers/test_rst/test_directives/test_class.py
+END
+test_rubrics.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/p/docutils/code/!svn/ver/7062/trunk/docutils/test/test_parsers/test_rst/test_directives/test_rubrics.py
+END
+test_decorations.py
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/docutils/code/!svn/ver/4667/trunk/docutils/test/test_parsers/test_rst/test_directives/test_decorations.py
+END
+test_code.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/docutils/code/!svn/ver/7514/trunk/docutils/test/test_parsers/test_rst/test_directives/test_code.py
+END
+test_parsed_literals.py
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/p/docutils/code/!svn/ver/7072/trunk/docutils/test/test_parsers/test_rst/test_directives/test_parsed_literals.py
+END
+test_date.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/docutils/code/!svn/ver/7491/trunk/docutils/test/test_parsers/test_rst/test_directives/test_date.py
+END
+include 11.txt
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/docutils/code/!svn/ver/3046/trunk/docutils/test/test_parsers/test_rst/test_directives/include%2011.txt
+END
+test_title.py
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/docutils/code/!svn/ver/5174/trunk/docutils/test/test_parsers/test_rst/test_directives/test_title.py
+END
+test_container.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/docutils/code/!svn/ver/7062/trunk/docutils/test/test_parsers/test_rst/test_directives/test_container.py
+END
+test_compound.py
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/docutils/code/!svn/ver/7072/trunk/docutils/test/test_parsers/test_rst/test_directives/test_compound.py
+END
+test_meta.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/docutils/code/!svn/ver/4667/trunk/docutils/test/test_parsers/test_rst/test_directives/test_meta.py
+END
+empty.txt
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/docutils/code/!svn/ver/2979/trunk/docutils/test/test_parsers/test_rst/test_directives/empty.txt
+END
+include1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/docutils/code/!svn/ver/740/trunk/docutils/test/test_parsers/test_rst/test_directives/include1.txt
+END
+test_contents.py
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/docutils/code/!svn/ver/5889/trunk/docutils/test/test_parsers/test_rst/test_directives/test_contents.py
+END
+include2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/docutils/code/!svn/ver/1572/trunk/docutils/test/test_parsers/test_rst/test_directives/include2.txt
+END
+include3.txt
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/docutils/code/!svn/ver/968/trunk/docutils/test/test_parsers/test_rst/test_directives/include3.txt
+END
+test_target_notes.py
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/docutils/code/!svn/ver/7062/trunk/docutils/test/test_parsers/test_rst/test_directives/test_target_notes.py
+END
+test_role.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/docutils/code/!svn/ver/6424/trunk/docutils/test/test_parsers/test_rst/test_directives/test_role.py
+END
+test_topics.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/docutils/code/!svn/ver/7062/trunk/docutils/test/test_parsers/test_rst/test_directives/test_topics.py
+END
+raw1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/p/docutils/code/!svn/ver/740/trunk/docutils/test/test_parsers/test_rst/test_directives/raw1.txt
+END
+test_replace_fr.py
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/p/docutils/code/!svn/ver/7021/trunk/docutils/test/test_parsers/test_rst/test_directives/test_replace_fr.py
+END
+include8.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/docutils/code/!svn/ver/1086/trunk/docutils/test/test_parsers/test_rst/test_directives/include8.txt
+END

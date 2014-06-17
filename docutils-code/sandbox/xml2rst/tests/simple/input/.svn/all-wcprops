@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/docutils/code/!svn/ver/7703/trunk/sandbox/xml2rst/tests/simple/input
+END
+header.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/docutils/code/!svn/ver/7541/trunk/sandbox/xml2rst/tests/simple/input/header.xml
+END
+quoteBlock.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/docutils/code/!svn/ver/7541/trunk/sandbox/xml2rst/tests/simple/input/quoteBlock.xml
+END
+oneLine.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/docutils/code/!svn/ver/7541/trunk/sandbox/xml2rst/tests/simple/input/oneLine.xml
+END
+targets.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/docutils/code/!svn/ver/7541/trunk/sandbox/xml2rst/tests/simple/input/targets.xml
+END
+docinfoHeader.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/docutils/code/!svn/ver/7541/trunk/sandbox/xml2rst/tests/simple/input/docinfoHeader.xml
+END
+manyLines.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/docutils/code/!svn/ver/7541/trunk/sandbox/xml2rst/tests/simple/input/manyLines.xml
+END
+quoteOriginal.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/docutils/code/!svn/ver/7541/trunk/sandbox/xml2rst/tests/simple/input/quoteOriginal.xml
+END
+titles.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/docutils/code/!svn/ver/7541/trunk/sandbox/xml2rst/tests/simple/input/titles.xml
+END
+wrongNesting.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/docutils/code/!svn/ver/7703/trunk/sandbox/xml2rst/tests/simple/input/wrongNesting.xml
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/docutils/code/!svn/ver/7394/trunk/sandbox/docbook/scripts/test
+END
+utf8.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/docutils/code/!svn/ver/7394/trunk/sandbox/docbook/scripts/test/utf8.xml
+END
+simple.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/docutils/code/!svn/ver/7394/trunk/sandbox/docbook/scripts/test/simple.xml
+END
+math1.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/docutils/code/!svn/ver/7394/trunk/sandbox/docbook/scripts/test/math1.xml
+END
+math2.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/docutils/code/!svn/ver/7394/trunk/sandbox/docbook/scripts/test/math2.xml
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/docutils/code/!svn/ver/7394/trunk/sandbox/docbook/scripts/test/makefile
+END

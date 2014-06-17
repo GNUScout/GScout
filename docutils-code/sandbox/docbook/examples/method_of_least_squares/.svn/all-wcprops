@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/docutils/code/!svn/ver/7521/trunk/sandbox/docbook/examples/method_of_least_squares
+END
+method_of_least_squares.rst
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/docutils/code/!svn/ver/7376/trunk/sandbox/docbook/examples/method_of_least_squares/method_of_least_squares.rst
+END
+make_default.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/p/docutils/code/!svn/ver/7377/trunk/sandbox/docbook/examples/method_of_least_squares/make_default.py
+END
+docbook_fo.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/docutils/code/!svn/ver/7521/trunk/sandbox/docbook/examples/method_of_least_squares/docbook_fo.xsl
+END
+bibliography.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/docutils/code/!svn/ver/7376/trunk/sandbox/docbook/examples/method_of_least_squares/bibliography.xml
+END
+docbook_default_fo.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/docutils/code/!svn/ver/7377/trunk/sandbox/docbook/examples/method_of_least_squares/docbook_default_fo.xsl
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/docutils/code/!svn/ver/7521/trunk/sandbox/docbook/examples/method_of_least_squares/makefile
+END
+make_graph.R
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/docutils/code/!svn/ver/7376/trunk/sandbox/docbook/examples/method_of_least_squares/make_graph.R
+END
+make_title_page.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/docutils/code/!svn/ver/7364/trunk/sandbox/docbook/examples/method_of_least_squares/make_title_page.xsl
+END
+methods_title_page.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/docutils/code/!svn/ver/7377/trunk/sandbox/docbook/examples/method_of_least_squares/methods_title_page.xml
+END
+rst_xml_to_docbook.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/docutils/code/!svn/ver/7376/trunk/sandbox/docbook/examples/method_of_least_squares/rst_xml_to_docbook.xsl
+END
+bibliography.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/p/docutils/code/!svn/ver/7376/trunk/sandbox/docbook/examples/method_of_least_squares/bibliography.xsl
+END
+rst_xml_to_docbook_default.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/p/docutils/code/!svn/ver/7377/trunk/sandbox/docbook/examples/method_of_least_squares/rst_xml_to_docbook_default.xsl
+END

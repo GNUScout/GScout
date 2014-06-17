@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/scripts
+END
+docutils_to_fo.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/scripts/docutils_to_fo.py
+END
+validate_fo.py
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/scripts/validate_fo.py
+END
+validate_docutils.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/docutils/code/!svn/ver/7131/trunk/sandbox/paultremblay/python_interface/scripts/validate_docutils.py
+END

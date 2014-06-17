@@ -1,0 +1,55 @@
+10
+
+dir
+7752
+http://svn.code.sf.net/p/docutils/code/trunk/sandbox/blais
+http://svn.code.sf.net/p/docutils/code
+
+
+
+2008-10-14T14:48:04.168918Z
+5672
+blais
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+929543f6-e4f2-0310-98a6-ba3bd3dd1d04
+
+movesec
+dir
+
+pickle_writer
+dir
+
+rst2pdf
+dir
+
+emacs-movie
+dir
+
+rst-literals
+dir
+
+css_tricks
+dir
+
+elisp-reader
+dir
+
+rst-fields
+dir
+
+rstserver
+dir
+

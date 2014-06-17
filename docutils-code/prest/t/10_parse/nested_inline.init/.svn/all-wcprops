@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/10_parse/nested_inline.init
+END
+test_nested_inline.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/10_parse/nested_inline.init/test_nested_inline.py
+END
+nested_inline03.mydom
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/docutils/code/!svn/ver/4580/trunk/prest/t/10_parse/nested_inline.init/nested_inline03.mydom
+END

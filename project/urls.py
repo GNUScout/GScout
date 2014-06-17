@@ -1,7 +1,12 @@
 #from django.conf.urls import patterns, include, url
 from django.conf.urls.defaults import patterns,include,url
+from django.contrib import admin
 
 urlpatterns = patterns('project.views',
+    (r'^admin/doc/', include('django.contrib.admindocs.urls')),
+     #Uncomment the next line to enable the admin:
+     url(r'^admin/', include(admin.site.urls)), 
+    
     (r'^$', 'main_page'), 
     (r'^register/$','register'),
     (r'^login/$', 'login'),
@@ -13,7 +18,4 @@ urlpatterns = patterns('project.views',
     #url(r'^picks/(?P<choice>\w+)/$', 'app.views.picks', name='needed_picks'),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
 )

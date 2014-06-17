@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 66
+*.bak
+*.log*
+*.tmp
+*.gz
+bin
+Makefile
+Makefile.old
+pm_to_blib
+blib
+
+END

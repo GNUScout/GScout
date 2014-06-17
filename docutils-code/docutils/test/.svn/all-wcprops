@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/p/docutils/code/!svn/ver/7749/trunk/docutils/test
+END
+coverage.sh
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/docutils/code/!svn/ver/5539/trunk/docutils/test/coverage.sh
+END
+test_error_reporting.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/docutils/code/!svn/ver/7723/trunk/docutils/test/test_error_reporting.py
+END
+test_language.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/docutils/code/!svn/ver/7503/trunk/docutils/test/test_language.py
+END
+docutils.conf
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/docutils/code/!svn/ver/2385/trunk/docutils/test/docutils.conf
+END
+DocutilsTestSupport.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/docutils/code/!svn/ver/7539/trunk/docutils/test/DocutilsTestSupport.py
+END
+test_command_line.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/docutils/code/!svn/ver/7668/trunk/docutils/test/test_command_line.py
+END
+local-parser.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/docutils/code/!svn/ver/7504/trunk/docutils/test/local-parser.py
+END
+test_dependencies.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/docutils/code/!svn/ver/7463/trunk/docutils/test/test_dependencies.py
+END
+test_traversals.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/docutils/code/!svn/ver/7463/trunk/docutils/test/test_traversals.py
+END
+package_unittest.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/docutils/code/!svn/ver/7320/trunk/docutils/test/package_unittest.py
+END
+local-reader.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/docutils/code/!svn/ver/7504/trunk/docutils/test/local-reader.py
+END
+alltests.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/docutils/code/!svn/ver/7433/trunk/docutils/test/alltests.py
+END
+test_publisher.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/docutils/code/!svn/ver/7539/trunk/docutils/test/test_publisher.py
+END
+test__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/docutils/code/!svn/ver/7668/trunk/docutils/test/test__init__.py
+END
+test_settings.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/docutils/code/!svn/ver/7630/trunk/docutils/test/test_settings.py
+END
+test_utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/docutils/code/!svn/ver/7618/trunk/docutils/test/test_utils.py
+END
+test_functional.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/docutils/code/!svn/ver/7539/trunk/docutils/test/test_functional.py
+END
+local-writer.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/docutils/code/!svn/ver/7500/trunk/docutils/test/local-writer.py
+END
+test_statemachine.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/docutils/code/!svn/ver/7463/trunk/docutils/test/test_statemachine.py
+END
+test_viewlist.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/docutils/code/!svn/ver/7463/trunk/docutils/test/test_viewlist.py
+END
+local_dummy_lang.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/docutils/code/!svn/ver/7504/trunk/docutils/test/local_dummy_lang.py
+END
+test_io.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/p/docutils/code/!svn/ver/7622/trunk/docutils/test/test_io.py
+END
+test_pickle.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/docutils/code/!svn/ver/7539/trunk/docutils/test/test_pickle.py
+END
+test_nodes.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/docutils/code/!svn/ver/7746/trunk/docutils/test/test_nodes.py
+END

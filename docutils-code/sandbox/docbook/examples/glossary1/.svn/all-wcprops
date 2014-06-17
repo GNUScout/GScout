@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/docutils/code/!svn/ver/7393/trunk/sandbox/docbook/examples/glossary1
+END
+document.rst
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/docutils/code/!svn/ver/7393/trunk/sandbox/docbook/examples/glossary1/document.rst
+END
+docbook_fo.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/docutils/code/!svn/ver/7393/trunk/sandbox/docbook/examples/glossary1/docbook_fo.xsl
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/docutils/code/!svn/ver/7393/trunk/sandbox/docbook/examples/glossary1/makefile
+END
+rst_docbook.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/docutils/code/!svn/ver/7393/trunk/sandbox/docbook/examples/glossary1/rst_docbook.xsl
+END
