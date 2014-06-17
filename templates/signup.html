@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>GSCOUT | REGISTRO </title>
-    </head>
-
-    <body>
-        <h1>Registro en GSCout</h1>
-
-        {% if registered %}
-           <strong>Gracias por registrarte</strong>
-           <p>{{ user.username }}</p>
-           <a href="/">Volver a la página principal.</a><br/>
-        {% else %}
-           <strong>Regístrese aquí!</strong> Haga click <a href="/">aquí</a> para ir a la página principal <br />
-           <form id="user_form" method="post" action="/register/"
-              enctype="multipart/form-data">
-              
-              {% csrf_token %}
+{% extends 'base_Gusers.html' %}
+{% block form-title %}<h2>Registro en GScout</h2>{% endblock %}
+{% block form %}
+   {% if registered %}
+      <p><strong>Gracias por registrarte</strong> {{ user.username }}</p>
+      <a href="/">Volver a la página principal.</a><br/>
+      {% else %}
+         <strong>Regístrese aquí!</strong> Haga click <a href="/">aquí</a> para ir a la página principal <br />
+         <form id="user_form" method="post" action="/register/" enctype="multipart/form-data">
+            {% csrf_token %}
 
             <!-- Display each form. The as_p method wraps each element in a paragraph
                  (<p>) element. This ensures each element appears on a new line,
@@ -27,6 +18,5 @@
             <!-- Provide a button to click to submit the form. -->
                <input type="submit" name="Enviar" value="Enviar" />
            </form>
-        {% endif %}
-    </body>
-</html>
+   {% endif %}
+{% endblock %}
