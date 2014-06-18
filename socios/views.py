@@ -236,7 +236,7 @@ def search(request):
       :template:`socios/search.html`
     """
 
-       try:
+    try:
         socio = Socio.objects.get(n_asociado = request.POST['asociado'])
     except:
         return render_to_response('socios/search.html', \
@@ -273,7 +273,23 @@ def personales_socio(request, n_asociado):
 
 
 def medicos_socio(request, n_asociado):
-    """ Vista que visualiza los datos medicos de un determinado socio"""
+    """ medical view that displays data from a particular partner 
+    
+    **Context***
+    
+    ``medicos``
+        variable containing medical data partner
+
+    ``medicamentos``
+         Medications the partner
+
+     **Template:**
+        
+     :template:`socios/datos_medicos.html` 
+
+    """
+    
+
     try:
         socio = Socio.objects.get(n_asociado=n_asociado)
     except:
@@ -290,7 +306,29 @@ def medicos_socio(request, n_asociado):
                                                             'medicamentos': medicamentos })
 
 def familiares_socio(request, n_asociado):
-    """ Vista que visualiza los datos familiares de un determinado socio"""
+    """
+    "Displays the data for a particular family member 
+    
+    **Context**
+    
+    ``socio``
+        
+         variable containing the partner n_asociado
+
+    ``familia``
+         variable that contains the data of the partner family
+
+    ``familiares``
+          variable that contains the data members of the family unit of the partner
+
+    ``hermanos``
+        variable containing the brothers Partner
+
+     **Template:**
+        
+     :template:`socios/datos_familiares.html`
+
+    """
     try:
         socio = Socio.objects.get(n_asociado=n_asociado)
     except:
@@ -320,7 +358,20 @@ def familiares_socio(request, n_asociado):
 
 
 def economicos_socio(request, n_asociado):
-    """ Vista que visualiza los datos economicos de un determinado socio"""
+    """ 
+    economic view that displays data from a particular partner
+
+    **Context**
+    
+    ``economicos``
+        
+        variable containing socio economic data
+        
+     **Template:**
+    
+      :template:`socios/datos_economicos.html`
+
+    """
     try:
         socio = Socio.objects.get(n_asociado=n_asociado)
     except:
@@ -332,8 +383,38 @@ def economicos_socio(request, n_asociado):
 
 
 def edit_personales(request, n_asociado):
-    """ Vista que visualiza los posibles datos personales a editar"""
+    """
+    view that displays the possible personal data to edit
+
+    **Context**
     
+    ``personales``
+        
+    variable containing the personal information of a member
+        
+    ``f_nacimiento``
+  
+     variable containing the date of birth of partner
+
+
+    ``f_ingreso``
+
+     variable containing the date of admission to the application by the partner
+
+    ``f_baja``
+
+     variable containing the date of expiry date of usuaio. if the user has not been decommissioned in the app stores "No"
+
+    ``context_instance``
+        An instance of RequestContext(request)
+
+    **Template:**
+   
+    :template:`socios/f_edit_personales.html`
+
+    """
+
+   
     socio = Socio.objects.get(n_asociado=n_asociado)
     personales = D_Personales.objects.get(socio_id=socio)
     
@@ -349,7 +430,23 @@ def edit_personales(request, n_asociado):
                               context_instance=RequestContext(request))
 
 def edit_economicos(request, n_asociado):
-    """ Vista que visualiza los posibles datos economicos a editar"""
+    """
+    View that displays the possible economic data editing
+
+    **Context**
+    
+    ``economicos``
+        
+        variable containing socio economic data
+
+    ``context_instance``
+        An instance of RequestContext(request)
+        
+     **Template:**
+    
+      :template:`socios/f_edit_economicos.html`
+
+    """
     
     socio = Socio.objects.get(n_asociado=n_asociado)
     economicos = D_Economicos.objects.get(socio_id=socio)
@@ -358,9 +455,29 @@ def edit_economicos(request, n_asociado):
                               context_instance=RequestContext(request))
 
 def edit_medicos(request, n_asociado):
-    """ Vista que visualiza los posibles datos medicos a editar"""
+    """ 
+    view displaying medical data possible editing 
+   
+    **Context**
+
+     ``medicos``
+        
+        variable containing socio medical data
+
+     ``medicamentos``
+         Medications the partner
+
+     ``n_medicamentos``
+        number of medications taken by the partner
+
+    ``context_instance``
+        An instance of RequestContext(request)
+        
+     **Template:**
     
-    socio = Socio.objects.get(n_asociado=n_asociado)
+      :template:`socios/f_edit_medicos.html`
+
+    """
     medicos = D_Medicos.objects.get(socio_id=socio)
     medicamentos = Medicamentos.objects.filter(socio_id=socio)
     n_medicamentos = medicamentos.count()
@@ -374,7 +491,14 @@ def edit_medicos(request, n_asociado):
 
 
 def modify_personales(request):
-    """ Vista que gestiona la modificación de los datos personales"""
+    """
+    view managed by the modification of personal data
+
+    **Context**
+
+    **Template:**
+   
+    """
     
     socio = D_Personales.objects.get(socio_id= request.POST['socio'])
     socio.nombre = request.POST['nombre']
@@ -403,8 +527,14 @@ def modify_personales(request):
     return  HttpResponseRedirect('/socios/'+socio.socio_id.n_asociado+'/personales')
 
 def modify_economicos(request):
-    """ Vista que gestiona la modificación de los datos economicos"""
-    
+    """
+    view managed by changing economic  data
+
+    **Context**
+
+    **Template:**
+   
+    """    
     socio = D_Economicos.objects.get(socio_id= request.POST['socio'])
     socio.titular = request.POST['titular']
     socio.nif_titular = request.POST['nif_titular']
@@ -423,7 +553,14 @@ def modify_economicos(request):
     return  HttpResponseRedirect('/socios/'+socio.socio_id.n_asociado+'/economicos')
 
 def modify_medicos(request):
-    """ Vista que gestiona la modificación de los datos medicos"""
+    """
+    view managed by the modification of medical data   
+
+    **Context**
+
+    **Template:**
+   
+    """
     
     total_medicamentos = request.POST['total_medicamentos']
     
@@ -470,7 +607,25 @@ def modify_medicos(request):
 
 @login_required
 def listado(request):
-    """ Vista que muestra un listado de los datos personales de los socios"""
+    """
+    View showing a list of personal data from partners
+ 
+    **Context***
+  
+    ``socios``
+        
+         variable containing a list of all partners
+
+    ``context_instance``  
+         
+         An instance of RequestContext(request)
+
+    **Template:**
+
+    :template:`socios/list.html`
+
+
+    """
     socios = D_Personales.objects.all()
     
     for s in socios:
@@ -481,7 +636,24 @@ def listado(request):
 
 @login_required
 def listado_del(request):
-    """ Vista que muestra todos los socios que se pueden eliminar"""
+    """
+    view showing all members that can be removed
+
+    **Context***
+  
+    ``socios``
+        
+         variable containing a list of all partners
+
+    ``context_instance``  
+         
+         An instance of RequestContext(request)
+
+    **Template:**
+
+    :template:`socios/list_del.html`
+
+    """
     socios = D_Personales.objects.all()
     
     for s in socios:
@@ -489,10 +661,30 @@ def listado_del(request):
      
     return render_to_response('socios/list_del.html', {'socios': socios} , \
                               context_instance=RequestContext(request))
+
 @login_required
 @csrf_protect
 def listado_economicos(request):
-    """ Vista que muestra los datos economicos de los socios en forma de listado"""
+
+    """
+    view showing a list of socio economic data
+
+    **Context***
+  
+    ``lista``
+        
+         variable containing a list of socio economic data
+
+    ``context_instance``  
+         
+         An instance of RequestContext(request)
+                              
+    **Template:**
+
+    :template:`socios/listado_economicos.html`
+
+    """
+
     socios = D_Personales.objects.all()
     
     economicos = D_Economicos.objects.all()
@@ -503,7 +695,23 @@ def listado_economicos(request):
                               context_instance=RequestContext(request))
 
 def del_socios(request):
-    """ Vista que gestiona la eliminacion permanente de socios"""
+    """ 
+    view manages the permanent removal of partners
+    
+    **Context***
+  
+    ``socios``
+        
+        variable containing the personal information of a memberontext_instance``  
+    ``context_instance``     
+         An instance of RequestContext(request)
+
+    **Template:**
+
+    :template:`socios/list_del.html`
+
+
+    """
     sel_socios = request.POST.getlist('sel_borrar[]')
 
     for i in range(len(sel_socios)):
@@ -526,7 +734,22 @@ def del_socios(request):
             
 @login_required
 def search_familia(request):
-    """Vista de los listados de familias"""
+    """
+    variable that list all members of a family
+
+    **Context***
+  
+    ``familia``
+        variable that contains the data of the partner family        
+       
+    ``context_instance``     
+         An instance of RequestContext(request)
+
+    **Template:**
+
+    :template:`socios/search_familia.html`
+
+    """
 
     familia = Familia.objects.all()
     
@@ -534,7 +757,28 @@ def search_familia(request):
                               context_instance=RequestContext(request))
 
 def edit_familia(request, familia_id):
-    """Vista que muestra las familias que se pueden editar"""
+    """
+    Families view showing editable
+
+    **Context**
+
+    ``familia``
+         variable that contains the data of the partner family
+
+    ``familiares``
+          variable that contains the data members of the family unit of the partner
+
+    ``hermanos``
+        variable containing the brothers Partner
+
+    ``context_instance``     
+         An instance of RequestContext(request)
+
+    **Template:**
+
+    :template:`socios/f_edit_familiares.html`
+
+    """
     familia = Familia.objects.get(nif=familia_id)
     
     familiares = []
@@ -563,7 +807,14 @@ def edit_familia(request, familia_id):
     
     
 def modify_familia(request):
-    """Vista que modifica la familia con los datos que se le han pasado"""    
+    """
+    Family amending view with data passed to it via the form
+
+    **Context**
+
+    **Template:**
+
+    """    
     
     familia_old = Familia.objects.get(nif=request.POST['oldfamily'])
     
@@ -609,7 +860,24 @@ def modify_familia(request):
     return  HttpResponseRedirect('/socios/'+familia_new.nif+'/edit_familiares')
 
 def change_familia(request, n_asociado):
-    """Vista para la visualizacion de las posibles familiares a editar"""
+    """
+    View for displaying possible family edit
+
+    **Context**
+
+   ``socios``
+        
+        variable containing the personal information of a memberontext_instance``  
+    ``familia``
+
+       variable containing a list of all the relatives of a partner
+   
+    ``context_instance``     
+         An instance of RequestContext(request)
+
+    **Template:**
+
+    """
     
     familia = Familiares.objects.all()
     
@@ -618,7 +886,14 @@ def change_familia(request, n_asociado):
                               context_instance=RequestContext(request))
     
 def post_change_familia(request):
-    """Vista de post para los cambios de familia"""     
+    """    
+    view post updates for family
+
+    **Context**
+
+    **Template:**
+
+    """     
     socio = Socio.objects.get(n_asociado=request.POST["n_asociado"])
         
     if request.POST['new_family'] == "si":
@@ -658,7 +933,14 @@ def post_change_familia(request):
     return HttpResponseRedirect('socios/'+request.POST["n_asociado"]+"/familiares")   
 
 def cambio_unidad(request):  
-    """ Vista para el cambio de unidad en los socios"""
+    """
+    view for the unit change in partner
+
+    **Context**
+
+    **Template:**
+
+    """
     socios = D_Personales.objects.all()
     
     date = datetime.datetime.now()
