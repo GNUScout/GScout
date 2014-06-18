@@ -18,7 +18,7 @@ def antecedente_paso1(context,page):
 @then(u'compruebo que el contenido de la página es el correcto')
 def escenario1_paso2(context):
    #si estoy en la página registro debo ver el titulo y el texto que se encuentra en dicha página,si se cumple retorno True,False en otro caso.
-   if ((context.splinter.title == 'GSCOUT | REGISTRO') & (context.splinter.is_text_present('Registro en GSCout'))):
+   if ((context.splinter.title == 'GSCOUT | REGISTRO') & (context.splinter.is_text_present('Registro en GScout'))):
       assert True
    else:
       print 'No me encuentro en la página de registro' 

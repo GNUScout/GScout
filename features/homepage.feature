@@ -8,7 +8,7 @@
           Cuando estoy en la página inicial
 
        Escenario: Comprobando el titulo 
-          Entonces compruebo que existe un título y que además es "GSCOUT | ACCESO"
+          Entonces compruebo que existe un título y que además es "GSCOUT | Aplicación para la gestión de grupos Scout"
                
                              
        Escenario: Comprobar elementos de la página 
