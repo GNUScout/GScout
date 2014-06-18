@@ -1,49 +1,0 @@
-10
-
-dir
-7752
-http://svn.code.sf.net/p/docutils/code/trunk/sandbox/rst2graph/tests
-http://svn.code.sf.net/p/docutils/code
-
-
-
-2013-06-22T11:25:15.581542Z
-7676
-smerten
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-929543f6-e4f2-0310-98a6-ba3bd3dd1d04
-
-complex
-dir
-
-xmllint
-dir
-
-simple
-dir
-
-options
-dir
-
-command
-dir
-
-variantsDot
-dir
-
-simpleDot
-dir
-

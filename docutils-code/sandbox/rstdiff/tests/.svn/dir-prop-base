@@ -1,9 +1,0 @@
-K 10
-svn:ignore
-V 27
-secret*
-CVS
-Makefile
-*.gmk
-
-END
