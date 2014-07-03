@@ -6,7 +6,7 @@ from splinter import Browser
 #paso definido en el atecedente por lo que se repetirá antes de cada escenario
 @when(u'estoy en la página inicial')
 def antecedente_paso1(context):
-   context.url_base = "http://localhost:8000"
+   context.url_base = "http://127.0.0.1:8000"
    context.splinter.visit(context.url_base)  
    return True
 
