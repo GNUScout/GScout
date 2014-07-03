@@ -1,6 +1,7 @@
 docutils-code/
 .project
 .env/
+.env2/
 .venv/
 # Editor backups
 *~
