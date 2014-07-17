@@ -7,12 +7,6 @@ branches:
   only:
     - test
 
-addons:
-  sauce_connect:
-    username: "hamiltonetsii"
-    access_key: "ed01da28-a815-4e5f-abb2-535e7178d6ec"
-
-
 # command to install dependencies
 install:
   - "pip install -r requirements.txt"
