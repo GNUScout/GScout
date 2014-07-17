@@ -17,6 +17,8 @@ install:
   - "pip install -r requirements.txt"
 
 before_script:
+  - virtualenv .env
+  - source .env/bin/activate
   - python manage.py runserver 127.0.0.1:8000 &
 
 # command to run tests
