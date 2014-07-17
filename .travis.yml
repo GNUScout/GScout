@@ -12,13 +12,15 @@ addons:
     username: "hamiltonetsii"
     access_key: "ed01da28-a815-4e5f-abb2-535e7178d6ec"
 
+before_install:
+  - virtualenv .env
+  - source .env/bin/activate
+
 # command to install dependencies
 install:
   - "pip install -r requirements.txt"
 
 before_script:
-  - virtualenv .env
-  - source .env/bin/activate
   - python manage.py runserver 127.0.0.1:8000 &
 
 # command to run tests
