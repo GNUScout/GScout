@@ -1,7 +1,11 @@
 from behave import *
 from splinter import Browser
+from pyvirtualdisplay import Display
 
 def before_all(context):
+   display = Display(visible=0, size=(800, 600))
+   display.start()
+
    context.splinter= Browser()
    url = "http://localhost:8000"
    context.splinter.visit(url)  

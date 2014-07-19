@@ -1,7 +1,8 @@
 django==1.3.1
 psycopg2 #previamente instalar postgresql
 behave==1.2.4
-splinter 
+splinter
+pyvirtualdisplay 
 #beautifulsoup4
 #python-wsgi-intercept
 #para documentacion
