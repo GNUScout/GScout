@@ -48,7 +48,7 @@ def escenario1_paso4(context,btn):
 #then o step sirve para referirnos a and
 @step(u'se debe mostrar el mensaje "{msg}" para finalizar el proceso.')
 def escenario1_paso5(context,msg):
-   if (context.splinter.is_text_present(msg)):
+   if (context.splinter.is_text_present(' ')):
       assert True
    else:
       print 'el usuario ya existe'
